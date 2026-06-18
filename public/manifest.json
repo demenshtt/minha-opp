@@ -1,0 +1,11 @@
+{
+  "name": "Minha Opp+",
+  "short_name": "Minha Opp+",
+  "description": "Configure seu email corporativo @grupooppmais.com.br",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1419",
+  "theme_color": "#0F1419",
+  "orientation": "portrait",
+  "icons": []
+}
