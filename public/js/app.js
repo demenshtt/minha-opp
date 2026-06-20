@@ -67,7 +67,9 @@ function currentLogoVariant() {
 }
 
 function logoSrc(variant) {
-  return `img/logo-rebrand-gopp-${variant || currentLogoVariant()}.svg`;
+  const v = variant || currentLogoVariant();
+  const ext = (v === 'diamante' && currentTheme() === 'light') ? 'png' : 'svg';
+  return `img/logo-rebrand-gopp-${v}.${ext}`;
 }
 
 function logoImg(cssClass, variant) {
