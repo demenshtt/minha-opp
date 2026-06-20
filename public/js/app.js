@@ -290,6 +290,10 @@ function handleEmailSubmit() {
 // HEADER
 // ═══════════════════════════════════════════════════════════════
 
+function headerLogoVariant() {
+  return currentTheme() === 'light' ? 'padrao' : currentLogoVariant();
+}
+
 function renderHeader() {
   const screen = SCREENS[state.currentScreen];
   if (screen.id === 'splash') return '';
@@ -301,7 +305,7 @@ function renderHeader() {
   return `
     <div class="wizard-header">
       <div class="wizard-header__top">
-        ${logoImg('wizard-header__logo')}
+        ${logoImg('wizard-header__logo', headerLogoVariant())}
         <div class="wizard-header__info">
           <span class="wizard-header__phase">Missão ${screen.mission} — ${missionName}</span>
           <span class="wizard-header__step">${state.currentScreen + 1} / ${total}</span>
