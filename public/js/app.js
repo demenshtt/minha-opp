@@ -55,7 +55,6 @@ const LOGO_VARIANTS = [
   { from: 7,  variant: 'prata-envelhecida' },
   { from: 9,  variant: 'ouro-envelhecido' },
   { from: 15, variant: 'ouro-brilhante' },
-  { from: 19, variant: 'diamante' },
 ];
 
 function currentLogoVariant() {
@@ -67,9 +66,7 @@ function currentLogoVariant() {
 }
 
 function logoSrc(variant) {
-  const v = variant || currentLogoVariant();
-  if (v === 'diamante' && currentTheme() === 'light') return 'img/logo-rebrand-gopp-diamante-light.png';
-  return `img/logo-rebrand-gopp-${v}.png`;
+  return `img/logo-rebrand-gopp-${variant || currentLogoVariant()}.png`;
 }
 
 function logoImg(cssClass, variant) {
@@ -870,7 +867,7 @@ const screenRenderers = {
       <h2 class="screen__title">Resumo de Acessos</h2>
 
       <div class="card card--accent">
-        <div class="card__title">${logoImg('summary__logo-img', 'diamante')}</div>
+        <div class="card__title">${logoImg('summary__logo-img', 'ouro-brilhante')}</div>
       </div>
 
       <div class="summary-table">
