@@ -1,8 +1,47 @@
 /**
  * Minha Opp+ — PWA de onboarding gamificado
  * Grupo Opp+ | Design System Opp+ v1.1
- * Vanilla JS | Mobile-first | Dark-first
+ * Vanilla JS | Mobile-first | Dual-theme
  */
+
+// ═══════════════════════════════════════════════════════════════
+// THEME MANAGEMENT
+// ═══════════════════════════════════════════════════════════════
+
+const THEME_KEY = 'minha-opp-theme';
+
+function getStoredTheme() {
+  try { return localStorage.getItem(THEME_KEY); } catch (_) { return null; }
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = theme === 'light' ? '#FFFFFF' : '#0F1419';
+  try { localStorage.setItem(THEME_KEY, theme); } catch (_) { /* noop */ }
+}
+
+function currentTheme() {
+  return document.documentElement.getAttribute('data-theme') || 'dark';
+}
+
+function toggleTheme() {
+  applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+  render();
+}
+
+function setTheme(theme) {
+  applyTheme(theme);
+  render();
+}
+
+(function initTheme() {
+  const stored = getStoredTheme();
+  if (stored) { applyTheme(stored); return; }
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    applyTheme('light');
+  }
+})();
 
 // ═══════════════════════════════════════════════════════════════
 // LOGO PROGRESSIVO — variantes desbloqueadas por milestone
@@ -67,6 +106,7 @@ const SCREENS = [
   { id: 'smtp-8', mission: 3 },
   { id: 'smtp-9', mission: 3 },
   { id: 'celebration', mission: 4 },
+  { id: 'feedback', mission: 4 },
   { id: 'summary', mission: 4 },
 ];
 
@@ -128,6 +168,8 @@ const state = {
   termsAccepted: false,
   completedSteps: [],
   lookupError: '',
+  feedback: { q1: 0, q2: 0, q3: 0, q4: 0, q5: 0, q6: '' },
+  feedbackSent: false,
 };
 
 let usersDb = [];
@@ -140,6 +182,8 @@ function saveState() {
       user: state.user,
       termsAccepted: state.termsAccepted,
       completedSteps: state.completedSteps,
+      feedback: state.feedback,
+      feedbackSent: state.feedbackSent,
     }));
   } catch (_) { /* noop */ }
 }
@@ -214,6 +258,8 @@ function restart() {
   state.termsAccepted = false;
   state.completedSteps = [];
   state.lookupError = '';
+  state.feedback = { q1: 0, q2: 0, q3: 0, q4: 0, q5: 0, q6: '' };
+  state.feedbackSent = false;
   saveState();
   render();
 }
@@ -323,7 +369,7 @@ const screenRenderers = {
 
   'splash': () => `
     <div class="splash">
-      <div class="splash__logo">${logoImg('splash__logo-img', 'fonte-branca')}</div>
+      <div class="splash__logo">${logoImg('splash__logo-img', currentTheme() === 'light' ? 'padrao' : 'fonte-branca')}</div>
       <h1 class="splash__title">Bem-vindo(a) ao Ambiente OPP Virtual!</h1>
       <p class="splash__subtitle">Sua jornada digital começa aqui 🚀</p>
       <p class="splash__tagline">
@@ -335,7 +381,11 @@ const screenRenderers = {
       <p class="splash__tagline" style="margin-top:var(--space-3)">
         Vamos configurar seus acessos de um jeito rápido e sem complicação.
       </p>
-      <div class="btn-row" style="width:100%;max-width:300px;margin-top:var(--space-6);">
+      <div class="theme-toggle" style="margin-top:var(--space-5);">
+        <button class="theme-toggle__btn ${currentTheme() === 'light' ? 'theme-toggle__btn--active' : ''}" onclick="setTheme('light')">☀️ Claro</button>
+        <button class="theme-toggle__btn ${currentTheme() === 'dark' ? 'theme-toggle__btn--active' : ''}" onclick="setTheme('dark')">🌙 Escuro</button>
+      </div>
+      <div class="btn-row" style="width:100%;max-width:300px;">
         <button class="btn btn--primary" onclick="nextWithFeedback('tap')">Começar agora</button>
       </div>
     </div>
@@ -748,9 +798,65 @@ const screenRenderers = {
         </p>
         <div class="divider divider--center"></div>
       </div>
-      ${btnRow({ nextLabel: 'Ver meu painel', showBack: false, feedback: 'tap' })}
+      ${btnRow({ nextLabel: 'Compartilhar sua opinião', showBack: false, feedback: 'tap' })}
     </div>
   `,
+
+  'feedback': () => {
+    const fb = state.feedback;
+    function scaleHtml(qKey, label, leftHint, rightHint) {
+      return `
+        <div class="feedback-question">
+          <label class="feedback-question__label">${label}</label>
+          <div class="feedback-scale" data-question="${qKey}">
+            ${[1,2,3,4,5].map(n => `
+              <button class="feedback-scale__btn ${fb[qKey] === n ? 'feedback-scale__btn--selected' : ''}"
+                onclick="setFeedback('${qKey}', ${n})">${n}</button>
+            `).join('')}
+          </div>
+          <div class="feedback-scale__labels">
+            <span class="feedback-scale__hint">${leftHint}</span>
+            <span class="feedback-scale__hint">${rightHint}</span>
+          </div>
+        </div>
+      `;
+    }
+    const allAnswered = fb.q1 && fb.q2 && fb.q3 && fb.q4 && fb.q5;
+    return `
+      <div class="screen">
+        <span class="phase-badge phase-badge--4">Sua Opinião</span>
+        <h2 class="screen__title">Queremos te ouvir!</h2>
+        <p class="screen__lead">Ajude a gente a melhorar. Suas respostas são anônimas e levam menos de 1 minuto.</p>
+
+        ${scaleHtml('q1', '1. Antes da Opp+, você já usava ferramentas Google (Gmail, Drive, Docs) no dia a dia?', 'Nunca usei', 'Uso diariamente')}
+        ${scaleHtml('q2', '2. Como você avalia a aparência e a facilidade de uso deste aplicativo?', 'Muito ruim', 'Excelente')}
+        ${scaleHtml('q3', '3. A diferença entre seu email de acesso e seu email corporativo ficou clara?', 'Nada claro', 'Totalmente claro')}
+        ${scaleHtml('q4', '4. A configuração do SMTP foi...', 'Muito difícil', 'Muito fácil')}
+        ${scaleHtml('q5', '5. Depois deste processo, você se sente preparado(a) para usar suas ferramentas digitais?', 'Nada preparado', 'Totalmente preparado')}
+
+        <div class="feedback-question">
+          <label class="feedback-question__label">6. Tem algo que ficou confuso ou que poderia ser explicado melhor? Qual modo visual preferiu?</label>
+          <textarea id="feedback-text" class="feedback-textarea"
+            placeholder="Opcional — escreva aqui..."
+            oninput="setFeedbackText(this.value)">${fb.q6}</textarea>
+        </div>
+
+        ${state.feedbackSent ? `
+          <div class="feedback-sent">
+            <div class="feedback-sent__icon">✅</div>
+            <div class="feedback-sent__text">Obrigado pelo seu feedback!</div>
+          </div>
+        ` : ''}
+
+        ${btnRow({
+          nextLabel: state.feedbackSent ? 'Ver meu painel' : 'Enviar e continuar',
+          nextDisabled: !allAnswered,
+          nextAction: 'submitFeedback()',
+          feedback: '',
+        })}
+      </div>
+    `;
+  },
 
   'summary': () => `
     <div class="screen">
@@ -951,12 +1057,37 @@ function bindScreenEvents(screenId) {
 // EXPOSE GLOBALS
 // ═══════════════════════════════════════════════════════════════
 
+function setFeedback(key, value) {
+  state.feedback[key] = value;
+  saveState();
+  haptic.tap();
+  render();
+}
+
+function setFeedbackText(value) {
+  state.feedback.q6 = value;
+  saveState();
+}
+
+function submitFeedback() {
+  if (state.feedbackSent) { next(); return; }
+  state.feedbackSent = true;
+  saveState();
+  feedbackSuccess();
+  render();
+}
+
 window.next = next;
 window.back = back;
 window.restart = restart;
 window.goTo = goTo;
 window.handleEmailSubmit = handleEmailSubmit;
 window.nextWithFeedback = nextWithFeedback;
+window.setFeedback = setFeedback;
+window.setFeedbackText = setFeedbackText;
+window.submitFeedback = submitFeedback;
+window.setTheme = setTheme;
+window.toggleTheme = toggleTheme;
 
 // ═══════════════════════════════════════════════════════════════
 // INIT
