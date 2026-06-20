@@ -520,7 +520,7 @@ const screenRenderers = {
         <li class="feature-list__item">
           <span class="feature-list__icon">🌐</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Grupo "Agora"</div>
+            <div class="feature-list__name">Grupo "Ágora"</div>
             <div class="feature-list__desc">Fórum para assuntos diversos da equipe.</div>
           </div>
         </li>
@@ -646,7 +646,7 @@ const screenRenderers = {
           ${state.termsAccepted ? 'checked' : ''}
         />
         <span class="checkbox-group__label">
-          Eu, <strong>${fullName()}</strong>, entendi como usar meus e-mails, conheço minhas ferramentas (Nexo, Drive Exclusivo, Grupo Agora) e aceito as regras de segurança e privacidade.
+          Eu, <strong>${fullName()}</strong>, entendi como usar meus e-mails, conheço minhas ferramentas (Nexo, Drive Exclusivo, Grupo Ágora) e aceito as regras de segurança e privacidade.
         </span>
       </label>
       ${btnRow({ nextLabel: 'Desbloquear Missão 3 🔓', nextDisabled: !state.termsAccepted, feedback: 'mission' })}
@@ -800,7 +800,7 @@ const screenRenderers = {
         <div class="celebration__icon">🏆</div>
         <h2 class="celebration__title">Parabéns, ${firstName()}!</h2>
         <p class="celebration__text">
-          Tudo pronto! Seus acessos aos Drives (Nexo e Exclusivo) e ao Grupo Agora estão totalmente liberados.
+          Tudo pronto! Seus acessos aos Drives (Nexo e Exclusivo) e ao Grupo Ágora estão totalmente liberados.
         </p>
         <div class="divider divider--center"></div>
       </div>
@@ -911,7 +911,7 @@ const screenRenderers = {
         <li class="feature-list__item">
           <span class="feature-list__icon">📧</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Grupo Agora</div>
+            <div class="feature-list__name">Grupo Ágora</div>
             <div class="feature-list__desc">groups.google.com</div>
           </div>
         </li>
