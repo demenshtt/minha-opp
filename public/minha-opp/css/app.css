@@ -326,6 +326,26 @@ body {
   line-height: var(--line-height-normal);
 }
 
+.feature-list__link {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.feature-list__link:active {
+  background: var(--color-hover-overlay);
+}
+
+.feature-list__link .feature-list__desc {
+  color: var(--color-primary);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    SMTP STEP CARD
    ═══════════════════════════════════════════════════════════════ */

@@ -1030,31 +1030,46 @@ const screenRenderers = {
       <h3 class="screen__title" style="font-size:var(--font-size-lg);margin-top:var(--space-5);">Atalhos Rápidos</h3>
       <ul class="feature-list">
         <li class="feature-list__item">
-          <span class="feature-list__icon">📁</span>
-          <div class="feature-list__content">
-            <div class="feature-list__name">Google Drive</div>
-            <div class="feature-list__desc">drive.google.com</div>
-          </div>
+          <a href="https://drive.google.com" target="_blank" rel="noopener" class="feature-list__link">
+            <span class="feature-list__icon">📁</span>
+            <div class="feature-list__content">
+              <div class="feature-list__name">Google Drive</div>
+              <div class="feature-list__desc">Abrir no navegador →</div>
+            </div>
+          </a>
         </li>
         <li class="feature-list__item">
-          <span class="feature-list__icon">💬</span>
-          <div class="feature-list__content">
-            <div class="feature-list__name">Google Chat</div>
-            <div class="feature-list__desc">chat.google.com</div>
-          </div>
+          <a href="https://chat.google.com" target="_blank" rel="noopener" class="feature-list__link">
+            <span class="feature-list__icon">💬</span>
+            <div class="feature-list__content">
+              <div class="feature-list__name">Google Chat</div>
+              <div class="feature-list__desc">Abrir no navegador →</div>
+            </div>
+          </a>
         </li>
         <li class="feature-list__item">
-          <span class="feature-list__icon">📧</span>
-          <div class="feature-list__content">
-            <div class="feature-list__name">Grupo Ágora</div>
-            <div class="feature-list__desc">groups.google.com</div>
-          </div>
+          <a href="https://groups.google.com" target="_blank" rel="noopener" class="feature-list__link">
+            <span class="feature-list__icon">📧</span>
+            <div class="feature-list__content">
+              <div class="feature-list__name">Grupo Ágora</div>
+              <div class="feature-list__desc">Abrir no navegador →</div>
+            </div>
+          </a>
+        </li>
+        <li class="feature-list__item">
+          <a href="mailto:agora@grupooppmais.com.br" class="feature-list__link">
+            <span class="feature-list__icon">✉️</span>
+            <div class="feature-list__content">
+              <div class="feature-list__name">E-mail do Grupo Ágora</div>
+              <div class="feature-list__desc">agora@grupooppmais.com.br →</div>
+            </div>
+          </a>
         </li>
       </ul>
 
       <div class="card card--info" style="margin-top:var(--space-4)">
         <div class="card__title">Dúvidas?</div>
-        <div class="card__text">Nossa equipe de TI está à disposição!</div>
+        <div class="card__text">Fale com a TI pelo Chat ou envie para agora@grupooppmais.com.br</div>
       </div>
 
       <div class="btn-row">
