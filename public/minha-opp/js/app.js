@@ -348,7 +348,7 @@ function btnRow(opts = {}) {
 // SMTP STEP HELPER
 // ═══════════════════════════════════════════════════════════════
 
-function smtpStep(num, action, detail, btnLabel) {
+function smtpStep(num, action, detail, btnLabel, illustration) {
   return `
     <div class="screen">
       <span class="phase-badge phase-badge--3">Passo ${num} de 9</span>
@@ -357,10 +357,146 @@ function smtpStep(num, action, detail, btnLabel) {
         <div class="step-instruction__action">${action}</div>
         <div class="step-instruction__detail">${detail}</div>
       </div>
+      ${illustration ? `<div class="smtp-illustration">${illustration}</div>` : ''}
       ${btnRow({ nextLabel: btnLabel || 'Feito ✓', nextClass: 'btn--done', feedback: 'step' })}
     </div>
   `;
 }
+
+function gmailMockup(elements) {
+  const isLight = currentTheme() === 'light';
+  const bg = isLight ? '#f6f8fc' : '#1a1f26';
+  const cardBg = isLight ? '#ffffff' : '#242a33';
+  const textPri = isLight ? '#1f1f1f' : '#e8e8e8';
+  const textSec = isLight ? '#5f6368' : '#b0b0b0';
+  const border = isLight ? '#e0e0e0' : 'rgba(255,255,255,0.1)';
+  const accent = '#219653';
+  const highlight = 'rgba(33,150,83,0.15)';
+  const highlightBorder = '#6FCF97';
+  return `<svg viewBox="0 0 320 ${elements.height || 280}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;border-radius:12px;overflow:hidden;">
+    <rect width="320" height="${elements.height || 280}" fill="${bg}" rx="12"/>
+    ${elements.render({ bg, cardBg, textPri, textSec, border, accent, highlight, highlightBorder })}
+  </svg>`;
+}
+
+const SMTP_ILLUSTRATIONS = {
+  1: () => gmailMockup({
+    height: 200,
+    render: (c) => `
+      <rect x="30" y="20" width="260" height="50" rx="25" fill="${c.cardBg}" stroke="${c.border}"/>
+      <text x="55" y="50" font-size="13" fill="${c.textSec}" font-family="sans-serif">Pesquisar no e-mail</text>
+      <circle cx="280" cy="45" r="16" fill="${c.accent}" opacity="0.15"/>
+      <text x="274" y="50" font-size="14" fill="${c.accent}" font-family="sans-serif">🔍</text>
+      <rect x="10" y="90" width="300" height="44" rx="8" fill="${c.cardBg}" stroke="${c.border}"/>
+      <circle cx="32" cy="112" r="12" fill="#4285f4"/>
+      <text x="26" y="116" font-size="10" fill="white" font-family="sans-serif">G</text>
+      <text x="52" y="108" font-size="12" fill="${c.textPri}" font-weight="600" font-family="sans-serif">Google</text>
+      <text x="52" y="122" font-size="10" fill="${c.textSec}" font-family="sans-serif">Bem-vindo ao Gmail</text>
+      <rect x="10" y="140" width="300" height="44" rx="8" fill="${c.cardBg}" stroke="${c.border}"/>
+      <circle cx="32" cy="162" r="12" fill="#ea4335"/>
+      <text x="24" y="166" font-size="10" fill="white" font-family="sans-serif">YT</text>
+      <text x="52" y="158" font-size="12" fill="${c.textPri}" font-weight="600" font-family="sans-serif">YouTube</text>
+      <text x="52" y="172" font-size="10" fill="${c.textSec}" font-family="sans-serif">Novo vídeo disponível</text>
+    `
+  }),
+
+  2: () => gmailMockup({
+    height: 300,
+    render: (c) => `
+      <rect x="0" y="0" width="320" height="48" fill="${c.cardBg}"/>
+      <rect x="14" y="16" width="18" height="2.5" rx="1" fill="${c.textSec}"/>
+      <rect x="14" y="22" width="18" height="2.5" rx="1" fill="${c.textSec}"/>
+      <rect x="14" y="28" width="18" height="2.5" rx="1" fill="${c.textSec}"/>
+      <circle cx="52" cy="24" r="5" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="2"/>
+      <line x1="20" y1="14" x2="42" y2="24" stroke="${c.highlightBorder}" stroke-width="2" stroke-dasharray="4"/>
+      <text x="60" y="28" font-size="14" fill="${c.textPri}" font-weight="700" font-family="sans-serif">Caixa de entrada</text>
+      <rect x="0" y="48" width="240" height="252" fill="${c.cardBg}" stroke="${c.border}"/>
+      <rect x="0" y="48" width="240" height="40" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="2" rx="0"/>
+      <text x="45" y="72" font-size="13" fill="${c.accent}" font-weight="700" font-family="sans-serif">📥 Caixa de entrada</text>
+      <text x="45" y="108" font-size="12" fill="${c.textSec}" font-family="sans-serif">⭐ Com estrela</text>
+      <text x="45" y="138" font-size="12" fill="${c.textSec}" font-family="sans-serif">📤 Enviados</text>
+      <text x="45" y="168" font-size="12" fill="${c.textSec}" font-family="sans-serif">📝 Rascunhos</text>
+      <rect x="20" y="195" width="200" height="1" fill="${c.border}"/>
+      <rect x="20" y="210" width="200" height="36" rx="6" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="2"/>
+      <text x="45" y="233" font-size="13" fill="${c.accent}" font-weight="700" font-family="sans-serif">⚙️ Configurações</text>
+      <line x1="130" y1="246" x2="130" y2="270" stroke="${c.highlightBorder}" stroke-width="2" stroke-dasharray="4"/>
+      <text x="85" y="285" font-size="11" fill="${c.accent}" font-weight="600" font-family="sans-serif">👆 Toque aqui</text>
+    `
+  }),
+
+  3: () => gmailMockup({
+    height: 310,
+    render: (c) => `
+      <rect x="0" y="0" width="320" height="44" fill="${c.accent}"/>
+      <text x="16" y="28" font-size="13" fill="white" font-weight="600" font-family="sans-serif">← Configurações</text>
+      <rect x="10" y="56" width="300" height="36" rx="6" fill="${c.cardBg}" stroke="${c.border}"/>
+      <text x="24" y="79" font-size="12" fill="${c.textPri}" font-family="sans-serif">Contas e importação</text>
+      <rect x="10" y="98" width="300" height="36" rx="6" fill="${c.cardBg}" stroke="${c.border}"/>
+      <text x="24" y="121" font-size="12" fill="${c.textPri}" font-family="sans-serif">Filtros e endereços bloqueados</text>
+      <text x="10" y="158" font-size="11" fill="${c.textSec}" font-weight="600" font-family="sans-serif">ENVIAR E-MAIL COMO:</text>
+      <rect x="10" y="168" width="300" height="36" rx="6" fill="${c.cardBg}" stroke="${c.border}"/>
+      <text x="24" y="191" font-size="12" fill="${c.textSec}" font-family="sans-serif">meu.email@gmail.com</text>
+      <rect x="10" y="212" width="300" height="44" rx="8" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="2"/>
+      <text x="24" y="233" font-size="12" fill="${c.accent}" font-weight="700" font-family="sans-serif">➕ Adicionar outro endereço</text>
+      <text x="28" y="248" font-size="10" fill="${c.accent}" font-family="sans-serif">de e-mail</text>
+      <line x1="160" y1="256" x2="160" y2="278" stroke="${c.highlightBorder}" stroke-width="2" stroke-dasharray="4"/>
+      <text x="115" y="293" font-size="11" fill="${c.accent}" font-weight="600" font-family="sans-serif">👆 Toque aqui</text>
+    `
+  }),
+
+  5: () => gmailMockup({
+    height: 220,
+    render: (c) => `
+      <rect x="0" y="0" width="320" height="44" fill="${c.accent}"/>
+      <text x="16" y="28" font-size="13" fill="white" font-weight="600" font-family="sans-serif">← Adicionar conta</text>
+      <rect x="20" y="64" width="280" height="48" rx="8" fill="#ff6b6b22" stroke="#FF6B6B" stroke-width="2"/>
+      <rect x="40" y="76" width="18" height="18" rx="3" fill="${c.cardBg}" stroke="#FF6B6B" stroke-width="2"/>
+      <text x="44" y="89" font-size="10" fill="#FF6B6B" font-family="sans-serif">✗</text>
+      <text x="68" y="88" font-size="12" fill="${c.textPri}" font-family="sans-serif">Tratar como um alias</text>
+      <text x="68" y="103" font-size="9" fill="#FF6B6B" font-weight="600" font-family="sans-serif">⚠ DESMARQUE esta opção!</text>
+      <rect x="20" y="130" width="280" height="40" rx="8" fill="${c.cardBg}" stroke="${c.border}"/>
+      <text x="85" y="155" font-size="12" fill="${c.textPri}" font-family="sans-serif">Próxima etapa ›</text>
+      <text x="55" y="198" font-size="10" fill="${c.textSec}" font-style="italic" font-family="sans-serif">Se não aparecer, apenas avance normalmente</text>
+    `
+  }),
+
+  6: () => gmailMockup({
+    height: 280,
+    render: (c) => `
+      <rect x="0" y="0" width="320" height="44" fill="${c.accent}"/>
+      <text x="16" y="28" font-size="13" fill="white" font-weight="600" font-family="sans-serif">← Servidor SMTP</text>
+      <text x="20" y="74" font-size="11" fill="${c.textSec}" font-weight="600" font-family="sans-serif">SERVIDOR SMTP</text>
+      <rect x="20" y="82" width="280" height="36" rx="6" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="1.5"/>
+      <text x="32" y="105" font-size="13" fill="${c.accent}" font-weight="700" font-family="monospace">smtp.gmail.com</text>
+      <text x="20" y="138" font-size="11" fill="${c.textSec}" font-weight="600" font-family="sans-serif">PORTA</text>
+      <rect x="20" y="146" width="120" height="36" rx="6" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="1.5"/>
+      <text x="32" y="169" font-size="13" fill="${c.accent}" font-weight="700" font-family="monospace">465</text>
+      <text x="20" y="205" font-size="11" fill="${c.textSec}" font-weight="600" font-family="sans-serif">SEGURANÇA</text>
+      <rect x="20" y="213" width="280" height="36" rx="6" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="1.5"/>
+      <rect x="32" y="224" width="16" height="16" rx="3" fill="${c.accent}"/>
+      <text x="35" y="236" font-size="10" fill="white" font-family="sans-serif">✓</text>
+      <text x="56" y="236" font-size="11" fill="${c.textPri}" font-family="sans-serif">Conexão segura usando SSL</text>
+    `
+  }),
+
+  9: () => gmailMockup({
+    height: 250,
+    render: (c) => `
+      <rect x="0" y="0" width="320" height="44" fill="${c.accent}"/>
+      <text x="16" y="28" font-size="13" fill="white" font-weight="600" font-family="sans-serif">← Configurações</text>
+      <text x="20" y="74" font-size="11" fill="${c.textSec}" font-weight="600" font-family="sans-serif">RESPONDER COMO</text>
+      <rect x="20" y="82" width="280" height="36" rx="6" fill="${c.cardBg}" stroke="${c.border}"/>
+      <text x="32" y="105" font-size="11" fill="${c.textSec}" font-family="sans-serif">Sempre responder do endereço padrão</text>
+      <rect x="20" y="126" width="280" height="52" rx="8" fill="${c.highlight}" stroke="${c.highlightBorder}" stroke-width="2"/>
+      <rect x="34" y="140" width="16" height="16" rx="8" fill="${c.accent}"/>
+      <circle cx="42" cy="148" r="4" fill="white"/>
+      <text x="58" y="148" font-size="11" fill="${c.accent}" font-weight="600" font-family="sans-serif">Responder pelo mesmo endereço</text>
+      <text x="58" y="164" font-size="10" fill="${c.accent}" font-family="sans-serif">para o qual a mensagem foi enviada</text>
+      <line x1="160" y1="178" x2="160" y2="200" stroke="${c.highlightBorder}" stroke-width="2" stroke-dasharray="4"/>
+      <text x="113" y="215" font-size="11" fill="${c.accent}" font-weight="600" font-family="sans-serif">👆 Marque esta</text>
+    `
+  })
+};
 
 // ═══════════════════════════════════════════════════════════════
 // SCREEN RENDERERS
@@ -683,15 +819,15 @@ const screenRenderers = {
 
   'smtp-1': () => smtpStep(1, 'Abra o Gmail',
     `No seu celular, abra o aplicativo do Gmail. Fique logado na sua conta pessoal (<strong>${state.emailInput}</strong>).`,
-    'Já abri ✓'),
+    'Já abri ✓', SMTP_ILLUSTRATIONS[1]()),
 
   'smtp-2': () => smtpStep(2, 'Vá em Configurações',
-    `Toque no menu (três linhas) > "<strong>Configurações</strong>" > Toque na sua conta pessoal (<strong>${state.emailInput}</strong>).`,
-    'Feito ✓'),
+    `Toque no menu (três linhas ☰) > "<strong>Configurações</strong>" > Toque na sua conta pessoal (<strong>${state.emailInput}</strong>).`,
+    'Feito ✓', SMTP_ILLUSTRATIONS[2]()),
 
   'smtp-3': () => smtpStep(3, 'Adicionar conta',
     `Procure e toque na opção "<strong>Adicionar outro endereço de e-mail</strong>" ou "<strong>Enviar e-mail como</strong>".`,
-    'Achei ✓'),
+    'Achei ✓', SMTP_ILLUSTRATIONS[3]()),
 
   'smtp-4': () => `
     <div class="screen">
@@ -714,7 +850,7 @@ const screenRenderers = {
 
   'smtp-5': () => smtpStep(5, 'Atenção 🛑',
     `Se aparecer a opção "<strong>Tratar como um alias</strong>", <strong>DESMARQUE-A</strong>. <em>(Se não aparecer, é só avançar).</em>`,
-    'Desmarcado ✓'),
+    'Desmarcado ✓', SMTP_ILLUSTRATIONS[5]()),
 
   'smtp-6': () => `
     <div class="screen">
@@ -735,6 +871,7 @@ const screenRenderers = {
         <div class="card__title">Segurança</div>
         <div class="card__text">Marque "<strong>Conexão segura usando SSL</strong>"</div>
       </div>
+      <div class="smtp-illustration">${SMTP_ILLUSTRATIONS[6]()}</div>
       ${btnRow({ nextLabel: 'Copiado ✓', nextClass: 'btn--done', feedback: 'step' })}
     </div>
   `,
@@ -785,6 +922,7 @@ const screenRenderers = {
           Nas configurações, marque: "<strong>Responder pelo mesmo endereço para o qual a mensagem foi enviada</strong>".
         </div>
       </div>
+      <div class="smtp-illustration">${SMTP_ILLUSTRATIONS[9]()}</div>
       ${btnRow({ nextLabel: 'Concluir! 🎉', nextClass: 'btn--done', feedback: 'celebration' })}
     </div>
   `,
