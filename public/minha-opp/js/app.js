@@ -1254,6 +1254,68 @@ window.setTheme = setTheme;
 window.toggleTheme = toggleTheme;
 
 // ═══════════════════════════════════════════════════════════════
+// PWA INSTALL
+// ═══════════════════════════════════════════════════════════════
+
+let deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  showInstallBanner();
+});
+
+function showInstallBanner() {
+  if (document.getElementById('install-banner')) return;
+  const banner = document.createElement('div');
+  banner.id = 'install-banner';
+  banner.className = 'install-banner';
+  banner.innerHTML = `
+    <div class="install-banner__content">
+      <img src="img/icon-192.png" alt="" class="install-banner__icon">
+      <div class="install-banner__text">
+        <strong>Instalar Minha Opp+</strong>
+        <span>Acesse direto da tela inicial</span>
+      </div>
+    </div>
+    <div class="install-banner__actions">
+      <button class="install-banner__btn install-banner__btn--install" onclick="installPwa()">Instalar</button>
+      <button class="install-banner__btn install-banner__btn--dismiss" onclick="dismissInstall()">Agora não</button>
+    </div>
+  `;
+  document.body.appendChild(banner);
+  requestAnimationFrame(() => banner.classList.add('install-banner--visible'));
+}
+
+function installPwa() {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then((result) => {
+    deferredInstallPrompt = null;
+    dismissInstall();
+  });
+}
+
+function dismissInstall() {
+  const banner = document.getElementById('install-banner');
+  if (banner) {
+    banner.classList.remove('install-banner--visible');
+    setTimeout(() => banner.remove(), 300);
+  }
+}
+
+window.installPwa = installPwa;
+window.dismissInstall = dismissInstall;
+
+// ═══════════════════════════════════════════════════════════════
+// SERVICE WORKER
+// ═══════════════════════════════════════════════════════════════
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// ═══════════════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════════════
 
