@@ -52,9 +52,9 @@ const LOGO_VARIANTS = [
   { from: 2,  variant: 'esmeralda' },
   { from: 3,  variant: 'branco' },
   { from: 5,  variant: 'rubi' },
-  { from: 7,  variant: 'prata-envelhecida' },
-  { from: 9,  variant: 'ouro-envelhecido' },
-  { from: 15, variant: 'ouro-brilhante' },
+  { from: 7,  variant: 'prata-brilhante' },
+  { from: 9,  variant: 'ouro-brilhante' },
+  { from: 15, variant: 'diamante' },
 ];
 
 function currentLogoVariant() {
@@ -65,8 +65,16 @@ function currentLogoVariant() {
   return variant;
 }
 
+function iconSrc(variant) {
+  return `img/icon/icon-gopp-${variant || currentLogoVariant()}.png`;
+}
+
 function logoSrc(variant) {
-  return `img/logo-rebrand-gopp-${variant || currentLogoVariant()}.png`;
+  return `img/logo/logo-gopp-${variant || 'padrao'}.png`;
+}
+
+function iconImg(cssClass, variant) {
+  return `<img class="${cssClass}" src="${iconSrc(variant)}" alt="Grupo Opp+" loading="lazy">`;
 }
 
 function logoImg(cssClass, variant) {
@@ -290,7 +298,7 @@ function handleEmailSubmit() {
 // ═══════════════════════════════════════════════════════════════
 
 function headerLogoVariant() {
-  return currentTheme() === 'light' ? 'padrao' : currentLogoVariant();
+  return currentLogoVariant();
 }
 
 function renderHeader() {
@@ -304,7 +312,7 @@ function renderHeader() {
   return `
     <div class="wizard-header">
       <div class="wizard-header__top">
-        ${logoImg('wizard-header__logo', headerLogoVariant())}
+        ${iconImg('wizard-header__logo', headerLogoVariant())}
         <div class="wizard-header__info">
           <span class="wizard-header__phase">Missão ${screen.mission} — ${missionName}</span>
           <span class="wizard-header__step">${state.currentScreen + 1} / ${total}</span>
@@ -508,7 +516,7 @@ const screenRenderers = {
 
   'splash': () => `
     <div class="splash">
-      <div class="splash__logo">${logoImg('splash__logo-img', currentTheme() === 'light' ? 'padrao' : 'fonte-branca')}</div>
+      <div class="splash__logo">${logoImg('splash__logo-img', 'padrao')}</div>
       <h1 class="splash__title">Bem-vindo(a) ao Ambiente OPP Virtual!</h1>
       <p class="splash__subtitle">Sua jornada digital começa aqui 🚀</p>
       <p class="splash__tagline">
@@ -1005,7 +1013,7 @@ const screenRenderers = {
       <h2 class="screen__title">Resumo de Acessos</h2>
 
       <div class="card card--accent">
-        <div class="card__title">${logoImg('summary__logo-img', 'ouro-brilhante')}</div>
+        <div class="card__title">${logoImg('summary__logo-img', 'diamante')}</div>
       </div>
 
       <div class="summary-table">
