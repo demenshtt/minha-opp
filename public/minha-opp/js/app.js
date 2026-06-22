@@ -205,10 +205,13 @@ function loadState() {
   } catch (_) { /* noop */ }
 }
 
+const API_URL = 'https://script.google.com/macros/s/AKfycbz5kICPSL0qLzVXOwaWgfPdzfVn4Wm5kUlc8dFyEGovT9mfXbzXHNbHP_i-WCFYrsIFLA/exec';
+
 async function loadUsers() {
   try {
-    const res = await fetch('data/users.json');
-    usersDb = await res.json();
+    const res = await fetch(API_URL);
+    const json = await res.json();
+    usersDb = Array.isArray(json) ? json : (json.data || []);
   } catch (_) {
     usersDb = [];
   }
@@ -1235,6 +1238,23 @@ function setFeedbackText(value) {
 
 function submitFeedback() {
   if (state.feedbackSent) { next(); return; }
+  const payload = {
+    timestamp: new Date().toISOString(),
+    userName: fullName(),
+    userEmail: u().personalEmail || '',
+    corporateEmail: corpEmail(),
+    q1: state.feedback.q1 || '',
+    q2: state.feedback.q2 || '',
+    q3: state.feedback.q3 || '',
+    q4: state.feedback.q4 || '',
+    q5: state.feedback.q5 || '',
+    q6: state.feedback.q6 || '',
+  };
+  fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload),
+  }).catch(() => {});
   state.feedbackSent = true;
   saveState();
   feedbackSuccess();
