@@ -209,7 +209,7 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbz5kICPSL0qLzVXOwaWgfPd
 
 async function loadUsers() {
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(`${API_URL}?t=${Date.now()}`);
     const json = await res.json();
     usersDb = Array.isArray(json) ? json : (json.data || []);
   } catch (_) {
@@ -924,7 +924,7 @@ const screenRenderers = {
       <div class="card card--accent">
         <div class="card__title">1. Código de confirmação</div>
         <div class="card__text">
-          O Google enviou um código para <strong>${state.emailInput}</strong>. Copie lá e cole aqui.
+          O Google enviou um código de verificação para <strong>${state.emailInput}</strong>. Abra seu e-mail pessoal, copie o código e cole no campo de confirmação que o Gmail apresentou na tela anterior.
         </div>
       </div>
       <div class="card card--accent">
@@ -955,6 +955,20 @@ const screenRenderers = {
   `,
 
   'feedback': () => {
+    if (state.feedbackSent) {
+      return `
+        <div class="screen screen--center">
+          <div class="celebration">
+            <div class="celebration__icon">🙏</div>
+            <h2 class="celebration__title">Obrigado, ${firstName()}!</h2>
+            <p class="celebration__text">
+              Sua opinião foi registrada com sucesso. Ela nos ajuda a melhorar esta experiência para todos.
+            </p>
+          </div>
+          ${btnRow({ nextLabel: 'Ver meu painel de acessos', showBack: false, feedback: 'tap' })}
+        </div>
+      `;
+    }
     const fb = state.feedback;
     function scaleHtml(qKey, label, leftHint, rightHint) {
       return `
@@ -993,15 +1007,8 @@ const screenRenderers = {
             oninput="setFeedbackText(this.value)">${fb.q6}</textarea>
         </div>
 
-        ${state.feedbackSent ? `
-          <div class="feedback-sent">
-            <div class="feedback-sent__icon">✅</div>
-            <div class="feedback-sent__text">Obrigado pelo seu feedback!</div>
-          </div>
-        ` : ''}
-
         ${btnRow({
-          nextLabel: state.feedbackSent ? 'Ver meu painel' : 'Enviar e continuar',
+          nextLabel: 'Enviar e continuar',
           nextDisabled: !allAnswered,
           nextAction: 'submitFeedback()',
           feedback: '',
@@ -1155,6 +1162,8 @@ function render() {
     return;
   }
 
+  const isSameScreen = app.dataset.currentScreen === screen.id;
+  app.dataset.currentScreen = screen.id;
   app.innerHTML = renderHeader() + renderer();
   bindScreenEvents(screen.id);
 
@@ -1163,7 +1172,7 @@ function render() {
     feedbackCelebration();
   }
 
-  window.scrollTo(0, 0);
+  if (!isSameScreen) window.scrollTo(0, 0);
 }
 
 // ═══════════════════════════════════════════════════════════════
