@@ -70,7 +70,9 @@ function iconSrc(variant) {
 }
 
 function logoSrc(variant) {
-  return `img/logo/logo-gopp-${variant || 'padrao'}.png`;
+  const base = variant || 'padrao';
+  if (base === 'padrao' && currentTheme() === 'dark') return 'img/logo/logo-gopp-padrao-branca.png';
+  return `img/logo/logo-gopp-${base}.png`;
 }
 
 function iconImg(cssClass, variant) {
@@ -1247,6 +1249,10 @@ function setFeedbackText(value) {
 
 function submitFeedback() {
   if (state.feedbackSent) { next(); return; }
+  if (!state.user && state.emailInput) {
+    state.user = lookupUser(state.emailInput);
+    if (state.user) saveState();
+  }
   const payload = {
     timestamp: new Date().toISOString(),
     userName: fullName(),
