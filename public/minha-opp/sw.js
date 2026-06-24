@@ -1,4 +1,4 @@
-const CACHE_NAME = 'minha-opp-v4';
+const CACHE_NAME = 'minha-opp-v5';
 const ASSETS = [
   '/minha-opp/',
   '/minha-opp/css/tokens.css',

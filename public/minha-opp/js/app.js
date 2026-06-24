@@ -1254,9 +1254,9 @@ function submitFeedback() {
     if (state.user) saveState();
   }
   const payload = {
-    timestamp: new Date().toISOString(),
-    userName: fullName(),
-    userEmail: u().personalEmail || '',
+    name: fullName(),
+    email: u().personalEmail || '',
+    role: userRole(),
     corporateEmail: corpEmail(),
     q1: state.feedback.q1 || '',
     q2: state.feedback.q2 || '',
