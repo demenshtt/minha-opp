@@ -522,16 +522,36 @@ const screenRenderers = {
   'splash': () => `
     <div class="splash">
       <div class="splash__logo">${logoImg('splash__logo-img', 'padrao')}</div>
-      <h1 class="splash__title">Bem-vindo(a) ao Ambiente OPP Virtual!</h1>
-      <p class="splash__subtitle">Sua jornada digital começa aqui 🚀</p>
+      <h1 class="splash__title">Bem-vindo(a) ao seu Escritório Digital!</h1>
+      <p class="splash__subtitle">Grupo Opp+ — Sua jornada começa aqui</p>
       <p class="splash__tagline">
-        O Grupo Opp+ tem o prazer de fornecer a você as ferramentas do <strong>Google Workspace</strong>. Este é o seu novo escritório digital, estruturado para facilitar sua rotina, conectar nossa equipe e impulsionar resultados.
+        O Grupo Opp+ preparou para você um <strong>escritório digital</strong> completo. Pense assim: é como ganhar uma mesa de trabalho, com seus armários, seu crachá e um pátio onde toda a equipe se encontra — só que tudo no celular ou computador.
       </p>
       <p class="splash__tagline" style="margin-top:var(--space-3)">
-        <span class="text-warn">Atenção:</span> este é um ambiente estritamente profissional. O uso de sua identidade e das ferramentas concedidas exige responsabilidade, ética e compromisso com a segurança dos dados. Lembre-se de que toda ação realizada aqui reflete a credibilidade da nossa marca.
+        Neste guia rápido, você vai:
       </p>
-      <p class="splash__tagline" style="margin-top:var(--space-3)">
-        Vamos configurar seus acessos de um jeito rápido e sem complicação.
+      <ul class="feature-list" style="margin-bottom:var(--space-3)">
+        <li class="feature-list__item">
+          <span class="feature-list__icon">🔑</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Receber seus acessos e e-mails</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">🧰</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Conhecer suas ferramentas de trabalho</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">📲</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Configurar o e-mail corporativo no celular</div>
+          </div>
+        </li>
+      </ul>
+      <p class="splash__tagline">
+        <span class="text-warn">Importante:</span> este é um ambiente profissional. Tudo que você faz aqui representa o Grupo Opp+. Use com responsabilidade.
       </p>
       <div class="theme-toggle" style="margin-top:var(--space-5);">
         <button class="theme-toggle__btn ${currentTheme() === 'light' ? 'theme-toggle__btn--active' : ''}" onclick="setTheme('light')">☀️ Claro</button>
@@ -622,66 +642,72 @@ const screenRenderers = {
   'identity': () => `
     <div class="screen">
       <span class="phase-badge phase-badge--2">Missão 2: Ferramentas</span>
-      <h2 class="screen__title">Entenda seus acessos</h2>
+      <h2 class="screen__title">Por que você tem dois e-mails?</h2>
       <p class="screen__lead">
-        Você tem duas contas que trabalham juntas:
+        Pense no seu escritório digital como um prédio comercial. Para entrar, você precisa de uma <strong>chave</strong>. Para se comunicar, você usa seu <strong>cartão de visita</strong>. São coisas diferentes — e é assim que funciona aqui também:
       </p>
       <div class="card card--accent">
-        <div class="card__title">🔑 Para fazer Login</div>
+        <div class="card__title">🔑 A chave da porta (Login)</div>
         <div class="step-instruction__value">${accessEmail()}</div>
         <div class="card__text">
-          Use apenas para entrar no Google e acessar arquivos.
+          Serve <strong>só para entrar</strong> no sistema. Você usa essa chave para abrir o Drive, o Grupo Ágora e os demais serviços. Não se envia e-mail com ela.
         </div>
       </div>
       <div class="card card--info">
-        <div class="card__title">✉️ Para Enviar E-mails</div>
+        <div class="card__title">💼 Seu cartão de visita (E-mail)</div>
         <div class="step-instruction__value">${corpEmail()}</div>
         <div class="card__text">
-          Use apenas para se comunicar com as pessoas.
+          É o endereço que aparece quando você envia uma mensagem. É o que clientes e colegas veem. Este é o seu <strong>e-mail profissional</strong>.
         </div>
       </div>
-      ${btnRow({ nextLabel: 'Entendi', feedback: 'tap' })}
+      <p class="screen__text" style="margin-top:var(--space-3);font-style:italic;color:var(--color-text-secondary)">
+        Resumindo: um é para abrir a porta, o outro é para conversar. Simples assim.
+      </p>
+      ${btnRow({ nextLabel: 'Entendi!', feedback: 'tap' })}
     </div>
   `,
 
   'tools': () => `
     <div class="screen">
       <span class="phase-badge phase-badge--2">Missão 2: Ferramentas</span>
-      <h2 class="screen__title">Seus novos recursos</h2>
+      <h2 class="screen__title">O que tem no seu escritório?</h2>
+      <p class="screen__lead">
+        Seu escritório digital vem com tudo que você precisa. Conheça cada espaço:
+      </p>
       <ul class="feature-list">
         <li class="feature-list__item">
-          <span class="feature-list__icon">📝</span>
+          <span class="feature-list__icon">🏛️</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Google Workspace</div>
-            <div class="feature-list__desc">Docs, Planilhas, Agenda e Meet.</div>
+            <div class="feature-list__name">Ágora — O pátio de conversas</div>
+            <div class="feature-list__desc">Como uma praça onde toda a equipe se encontra. Avisos, discussões e novidades ficam aqui. É o nosso mural.</div>
           </div>
         </li>
         <li class="feature-list__item">
-          <span class="feature-list__icon">💬</span>
+          <span class="feature-list__icon">🗄️</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Google Chat</div>
-            <div class="feature-list__desc">Nosso canal interno oficial.</div>
-          </div>
-        </li>
-        <li class="feature-list__item">
-          <span class="feature-list__icon">🌐</span>
-          <div class="feature-list__content">
-            <div class="feature-list__name">Grupo "Ágora"</div>
-            <div class="feature-list__desc">Fórum para assuntos diversos da equipe.</div>
-          </div>
-        </li>
-        <li class="feature-list__item">
-          <span class="feature-list__icon">📁</span>
-          <div class="feature-list__content">
-            <div class="feature-list__name">Drive "Nexo Opp Virtual"</div>
-            <div class="feature-list__desc">Arquivos e atualizações gerais da empresa.</div>
+            <div class="feature-list__name">Nexo — Os armários comunitários</div>
+            <div class="feature-list__desc">Documentos, manuais e arquivos que todo mundo da equipe pode acessar. Tudo organizado em pastas compartilhadas.</div>
           </div>
         </li>
         <li class="feature-list__item">
           <span class="feature-list__icon">📂</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Seu Drive Exclusivo</div>
-            <div class="feature-list__desc">Pasta só sua para troca de arquivos com a empresa.</div>
+            <div class="feature-list__name">Seu Drive Exclusivo — Seu armário pessoal</div>
+            <div class="feature-list__desc">Uma pasta só sua, onde você e a empresa trocam arquivos de forma privada.</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">💬</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Google Chat — O WhatsApp do trabalho</div>
+            <div class="feature-list__desc">Mensagens rápidas com colegas, sem misturar com seu WhatsApp pessoal.</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">📝</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Docs, Planilhas e Agenda</div>
+            <div class="feature-list__desc">Crie documentos, planilhas e agende reuniões — tudo conectado ao seu e-mail.</div>
           </div>
         </li>
       </ul>
@@ -806,8 +832,13 @@ const screenRenderers = {
       <span class="phase-badge phase-badge--3">Missão 3: Celular</span>
       <h2 class="screen__title">Hora de conectar 📱</h2>
       <p class="screen__lead">
-        Vamos configurar seu app do Gmail pessoal para enviar e-mails em nome da Opp+.
+        Agora vamos fazer o seu Gmail pessoal enviar e-mails com o endereço <strong>${corpEmail()}</strong>. Assim você não precisa de dois apps — tudo sai do mesmo Gmail.
       </p>
+      <div class="card card--warning" style="margin-bottom:var(--space-4)">
+        <div class="card__text">
+          <strong>Atenção:</strong> os próximos passos devem ser feitos no <strong>aplicativo Gmail</strong> do celular (ícone vermelho com o <strong>M</strong> branco). <em>Não</em> use o navegador (Chrome, Safari).
+        </div>
+      </div>
       <p class="screen__text" style="font-weight:var(--font-weight-semibold);color:var(--color-text-primary);">
         Tenha em mãos:
       </p>
@@ -815,23 +846,24 @@ const screenRenderers = {
         <li class="feature-list__item">
           <span class="feature-list__icon">1️⃣</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Seu celular com o Gmail aberto.</div>
+            <div class="feature-list__name">Seu celular com o aplicativo Gmail</div>
+            <div class="feature-list__desc">O app com o ícone vermelho e branco, não o navegador.</div>
           </div>
         </li>
         <li class="feature-list__item">
           <span class="feature-list__icon">2️⃣</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">A Senha de Aplicativo</div>
-            <div class="feature-list__desc">Código de 16 letras que a TI enviou.</div>
+            <div class="feature-list__name">A Senha de Aplicativo (16 letras)</div>
+            <div class="feature-list__desc">Código que a TI enviou por mensagem. Guarde-o por perto.</div>
           </div>
         </li>
       </ul>
-      ${btnRow({ nextLabel: 'Iniciar passo a passo', feedback: 'mission' })}
+      ${btnRow({ nextLabel: 'Tenho tudo, iniciar!', feedback: 'mission' })}
     </div>
   `,
 
-  'smtp-1': () => smtpStep(1, 'Abra o Gmail',
-    `No seu celular, abra o aplicativo do Gmail. Fique logado na sua conta pessoal (<strong>${state.emailInput}</strong>).`,
+  'smtp-1': () => smtpStep(1, 'Abra o aplicativo Gmail',
+    `No seu celular, toque no ícone do <strong>Gmail</strong> (o M vermelho e branco). Você deve estar logado na sua conta pessoal (<strong>${state.emailInput}</strong>). Se tiver mais de uma conta, escolha a pessoal.`,
     'Já abri ✓', SMTP_ILLUSTRATIONS[1]()),
 
   'smtp-2': () => smtpStep(2, 'Vá em Configurações',
@@ -848,14 +880,15 @@ const screenRenderers = {
       <div class="step-instruction">
         <div class="step-instruction__number">4</div>
         <div class="step-instruction__action">Preencha seus dados</div>
-      </div>
-      <div class="card card--accent">
-        <div class="card__title">Nome</div>
-        <div class="step-instruction__value">${fullName()} | Grupo Opp+</div>
+        <div class="step-instruction__detail">Preencha os campos exatamente como abaixo:</div>
       </div>
       <div class="card card--accent">
         <div class="card__title">E-mail</div>
         <div class="step-instruction__value">${corpEmail()}</div>
+      </div>
+      <div class="card card--accent">
+        <div class="card__title">Nome exibido</div>
+        <div class="step-instruction__value">${fullName()} | Grupo Opp+</div>
       </div>
       ${btnRow({ nextLabel: 'Preenchido ✓', nextClass: 'btn--done', feedback: 'step' })}
     </div>
@@ -948,10 +981,39 @@ const screenRenderers = {
         <div class="celebration__icon">🏆</div>
         <h2 class="celebration__title">Parabéns, ${firstName()}!</h2>
         <p class="celebration__text">
-          Tudo pronto! Seus acessos aos Drives (Nexo e Exclusivo) e ao Grupo Ágora estão totalmente liberados.
+          Configuração concluída! Agora faltam só alguns passos para você estar 100% operacional:
         </p>
-        <div class="divider divider--center"></div>
       </div>
+      <ul class="feature-list" style="text-align:left;margin-top:var(--space-4)">
+        <li class="feature-list__item">
+          <span class="feature-list__icon">🔑</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Faça login no Workspace</div>
+            <div class="feature-list__desc">Use seu e-mail de acesso (<strong>${accessEmail()}</strong>). A senha de primeiro acesso é o seu próprio e-mail pessoal.</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">🔄</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Troque sua senha</div>
+            <div class="feature-list__desc">O sistema vai pedir uma nova senha automaticamente no primeiro login. Escolha uma senha forte.</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">🏛️</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Explore o Ágora e o Nexo</div>
+            <div class="feature-list__desc">Visite o pátio de conversas e os armários da equipe. Seus atalhos estão no painel a seguir.</div>
+          </div>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">🆘</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Dúvidas? Fale com a TI</div>
+            <div class="feature-list__desc">Pelo Google Chat ou pelo e-mail agora@grupooppmais.com.br</div>
+          </div>
+        </li>
+      </ul>
       ${btnRow({ nextLabel: 'Compartilhar sua opinião', showBack: false, feedback: 'tap' })}
     </div>
   `,
@@ -1034,11 +1096,11 @@ const screenRenderers = {
           <span class="summary-row__value">${fullName()}</span>
         </div>
         <div class="summary-row">
-          <span class="summary-row__label">Login</span>
+          <span class="summary-row__label">🔑 Login</span>
           <span class="summary-row__value">${accessEmail()}</span>
         </div>
         <div class="summary-row">
-          <span class="summary-row__label">E-mail</span>
+          <span class="summary-row__label">💼 E-mail</span>
           <span class="summary-row__value" style="color:var(--color-primary)">${corpEmail()}</span>
         </div>
         <div class="summary-row">
@@ -1047,14 +1109,32 @@ const screenRenderers = {
         </div>
       </div>
 
+      <div class="card card--warning" style="margin-top:var(--space-4)">
+        <div class="card__title">🔐 Primeiro login no Workspace</div>
+        <div class="card__text">
+          <strong>Usuário:</strong> ${accessEmail()}<br>
+          <strong>Senha:</strong> seu e-mail pessoal (<em>${state.emailInput}</em>)<br><br>
+          O sistema vai pedir para <strong>criar uma nova senha</strong> no primeiro acesso. Escolha algo seguro e que só você saiba.
+        </div>
+      </div>
+
       <h3 class="screen__title" style="font-size:var(--font-size-lg);margin-top:var(--space-5);">Atalhos Rápidos</h3>
       <ul class="feature-list">
         <li class="feature-list__item">
           <a href="https://drive.google.com" target="_blank" rel="noopener" class="feature-list__link">
-            <span class="feature-list__icon">📁</span>
+            <span class="feature-list__icon">🗄️</span>
             <div class="feature-list__content">
-              <div class="feature-list__name">Google Drive</div>
-              <div class="feature-list__desc">Abrir no navegador →</div>
+              <div class="feature-list__name">Nexo — Armários da equipe</div>
+              <div class="feature-list__desc">Abrir Google Drive →</div>
+            </div>
+          </a>
+        </li>
+        <li class="feature-list__item">
+          <a href="https://groups.google.com" target="_blank" rel="noopener" class="feature-list__link">
+            <span class="feature-list__icon">🏛️</span>
+            <div class="feature-list__content">
+              <div class="feature-list__name">Ágora — Pátio de conversas</div>
+              <div class="feature-list__desc">Abrir Grupo Ágora →</div>
             </div>
           </a>
         </li>
@@ -1063,16 +1143,7 @@ const screenRenderers = {
             <span class="feature-list__icon">💬</span>
             <div class="feature-list__content">
               <div class="feature-list__name">Google Chat</div>
-              <div class="feature-list__desc">Abrir no navegador →</div>
-            </div>
-          </a>
-        </li>
-        <li class="feature-list__item">
-          <a href="https://groups.google.com" target="_blank" rel="noopener" class="feature-list__link">
-            <span class="feature-list__icon">📧</span>
-            <div class="feature-list__content">
-              <div class="feature-list__name">Grupo Ágora</div>
-              <div class="feature-list__desc">Abrir no navegador →</div>
+              <div class="feature-list__desc">WhatsApp do trabalho →</div>
             </div>
           </a>
         </li>
@@ -1093,7 +1164,7 @@ const screenRenderers = {
       </div>
 
       <div class="btn-row">
-        <button class="btn btn--secondary" onclick="restart()">Voltar ao Início</button>
+        <button class="btn btn--secondary" onclick="restart()">Refazer onboarding</button>
       </div>
     </div>
   `,
