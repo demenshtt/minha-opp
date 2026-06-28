@@ -1,6 +1,6 @@
-const CACHE_NAME = 'minhaopp-v10';
+const CACHE_NAME = 'minhaopp-v11';
 const ASSETS = [
-  '/minhaopp',
+  '/minhaopp/',
   '/minhaopp/css/tokens.css',
   '/minhaopp/css/app.css',
   '/minhaopp/js/app.js',
