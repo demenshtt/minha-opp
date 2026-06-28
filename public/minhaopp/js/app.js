@@ -1157,6 +1157,13 @@ const screenRenderers = {
             <div class="feature-list__desc">Pelo Google Chat ou pelo e-mail contato@grupooppmais.com.br</div>
           </div>
         </li>
+        <li class="feature-list__item">
+          <span class="feature-list__icon">📲</span>
+          <div class="feature-list__content">
+            <div class="feature-list__name">Instale este app no celular</div>
+            <div class="feature-list__desc">Toque no menu do navegador e selecione "Adicionar à tela inicial" para acesso rápido por ícone.</div>
+          </div>
+        </li>
       </ul>
       ${btnRow({ nextLabel: 'Compartilhar sua opinião', showBack: false, feedback: 'tap' })}
     </div>
@@ -1301,6 +1308,11 @@ const screenRenderers = {
       <div class="card card--info" style="margin-top:var(--space-4)">
         <div class="card__title">Dúvidas?</div>
         <div class="card__text">Fale com a TI pelo Chat ou envie para <a href="mailto:contato@grupooppmais.com.br" style="color:var(--color-primary)">contato@grupooppmais.com.br</a></div>
+      </div>
+
+      <div class="card" style="margin-top:var(--space-4);text-align:center">
+        <div class="card__title">📲 Acesse sempre por aqui</div>
+        <div class="card__text">Instale este app no celular: toque no menu do navegador (⋮) e selecione <strong>"Adicionar à tela inicial"</strong>. Um ícone será criado para acesso direto.</div>
       </div>
 
       <div class="btn-row">

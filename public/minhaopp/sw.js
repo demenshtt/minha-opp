@@ -1,10 +1,10 @@
-const CACHE_NAME = 'minha-opp-v9';
+const CACHE_NAME = 'minhaopp-v10';
 const ASSETS = [
-  '/minha-opp/',
-  '/minha-opp/css/tokens.css',
-  '/minha-opp/css/app.css',
-  '/minha-opp/js/app.js',
-  '/minha-opp/manifest.json',
+  '/minhaopp',
+  '/minhaopp/css/tokens.css',
+  '/minhaopp/css/app.css',
+  '/minhaopp/js/app.js',
+  '/minhaopp/manifest.json',
 ];
 
 self.addEventListener('install', (e) => {
