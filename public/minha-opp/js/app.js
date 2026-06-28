@@ -133,7 +133,7 @@ const haptic = {
   step: () => vibrate(50),
   success: () => vibrate([50, 40, 50]),
   mission: () => vibrate([80, 60, 80, 60, 120]),
-  celebration: () => vibrate([100, 50, 100, 50, 200]),
+  celebration: () => vibrate([100, 50, 100, 50, 150, 50, 100, 50, 300]),
 };
 
 function playTone(freq, duration, type = 'sine') {
@@ -155,7 +155,7 @@ function playTone(freq, duration, type = 'sine') {
 const audio = {
   step: () => playTone(880, 0.1),
   success: () => { playTone(523, 0.12); setTimeout(() => playTone(659, 0.12), 100); setTimeout(() => playTone(784, 0.18), 200); },
-  celebration: () => { playTone(523, 0.15); setTimeout(() => playTone(659, 0.15), 120); setTimeout(() => playTone(784, 0.15), 240); setTimeout(() => playTone(1047, 0.3, 'triangle'), 380); },
+  celebration: () => { playTone(523, 0.2); setTimeout(() => playTone(659, 0.2), 150); setTimeout(() => playTone(784, 0.2), 300); setTimeout(() => playTone(1047, 0.25, 'triangle'), 480); setTimeout(() => playTone(1319, 0.3, 'triangle'), 650); setTimeout(() => playTone(1568, 0.5, 'triangle'), 850); },
   error: () => playTone(220, 0.2, 'square'),
 };
 
@@ -234,6 +234,36 @@ const firstName = () => u().firstName || 'colaborador';
 const corpEmail = () => u().corporateEmail || 'seu-email@grupooppmais.com.br';
 const fullName = () => u().name || 'Colaborador';
 const userRole = () => u().role || '';
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.textContent = 'Copiado!';
+    document.body.appendChild(toast);
+    vibrate(30);
+    setTimeout(() => toast.remove(), 1600);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+    const toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.textContent = 'Copiado!';
+    document.body.appendChild(toast);
+    vibrate(30);
+    setTimeout(() => toast.remove(), 1600);
+  });
+}
+
+function copyableValue(text) {
+  return `<div class="step-instruction__value copyable" onclick="copyToClipboard('${text}')">${text}</div><div class="copy-hint">toque para copiar</div>`;
+}
 
 // ═══════════════════════════════════════════════════════════════
 // NAVIGATION
@@ -610,25 +640,25 @@ const screenRenderers = {
   'splash': () => `
     <div class="splash">
       <div class="splash__logo">${logoImg('splash__logo-img', 'padrao')}</div>
-      <h1 class="splash__title">Bem-vindo(a) ao seu Escritório Digital!</h1>
+      <h1 class="splash__title">Bem-vindo(a) à sua Opp Digital!</h1>
       <p class="splash__subtitle">Grupo Opp+ — Sua jornada começa aqui</p>
       <p class="splash__tagline">
-        O Grupo Opp+ preparou para você um <strong>escritório digital</strong> completo. Pense assim: é como ganhar uma mesa de trabalho, com seus armários, seu crachá e um pátio onde toda a equipe se encontra — só que tudo no celular ou computador.
+        O Grupo Opp+ coloca à sua disposição um <strong>ambiente digital em nuvem</strong>, que poderá ser acessado de onde você estiver. Neste ambiente você terá um e-mail com <strong>@grupooppmais.com.br</strong>, um Drive (armário digital pessoal), acesso ao Drive compartilhado <strong>Nexo</strong> (armário comunitário) e ao grupo <strong>Ágora</strong> para discussões diversas (similar a uma praça pública onde todos se encontram para conversar). Tudo no celular ou computador.
       </p>
       <p class="splash__tagline" style="margin-top:var(--space-3)">
-        Neste guia rápido, você vai:
+        A seguir, um guia rápido. Leia com muita atenção para que possa:
       </p>
       <ul class="feature-list" style="margin-bottom:var(--space-3)">
         <li class="feature-list__item">
           <span class="feature-list__icon">🔑</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Receber seus acessos e e-mails</div>
+            <div class="feature-list__name">Receber seu acesso à nuvem e e-mail</div>
           </div>
         </li>
         <li class="feature-list__item">
           <span class="feature-list__icon">🧰</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Conhecer suas ferramentas de trabalho</div>
+            <div class="feature-list__name">Conhecer ferramentas que agregam valor</div>
           </div>
         </li>
         <li class="feature-list__item">
@@ -758,9 +788,9 @@ const screenRenderers = {
   'tools': () => `
     <div class="screen">
       <span class="phase-badge phase-badge--2">Missão 2: Ferramentas</span>
-      <h2 class="screen__title">O que tem no seu escritório?</h2>
+      <h2 class="screen__title">O que temos em nosso ambiente digital?</h2>
       <p class="screen__lead">
-        Seu escritório digital vem com tudo que você precisa. Conheça cada espaço:
+        Este ambiente é dividido em algumas partes com ferramentas digitais que enriquecem e facilitam a nossa comunicação:
       </p>
       <ul class="feature-list">
         <li class="feature-list__item">
@@ -869,7 +899,7 @@ const screenRenderers = {
           <span class="feature-list__icon">🔒</span>
           <div class="feature-list__content">
             <div class="feature-list__name">Ative o 2FA</div>
-            <div class="feature-list__desc">A verificação em duas etapas é obrigatória.</div>
+            <div class="feature-list__desc">A verificação em duas etapas é obrigatória. <a href="#" onclick="event.preventDefault();document.getElementById('modal-2fa').classList.add('modal--open')" style="color:var(--color-primary);text-decoration:underline;">Saiba mais</a></div>
           </div>
         </li>
         <li class="feature-list__item">
@@ -888,6 +918,24 @@ const screenRenderers = {
         </li>
       </ul>
       ${btnRow({ nextLabel: 'Serei um guardião', feedback: 'tap' })}
+      <div id="modal-2fa" class="modal" onclick="if(event.target===this)this.classList.remove('modal--open')">
+        <div class="modal__content">
+          <button class="modal__close" onclick="document.getElementById('modal-2fa').classList.remove('modal--open')">✕</button>
+          <h3 class="modal__title">O que é 2FA?</h3>
+          <p class="modal__text">
+            <strong>2FA</strong> (autenticação em duas etapas) é uma camada extra de segurança. Além da senha, você confirma o acesso com um código enviado ao seu celular. Mesmo que alguém descubra sua senha, não conseguirá entrar sem o seu telefone.
+          </p>
+          <h4 class="modal__subtitle">Como ativar:</h4>
+          <ol class="modal__list">
+            <li>Acesse <a href="https://myaccount.google.com/security" target="_blank" rel="noopener" style="color:var(--color-primary)">myaccount.google.com/security</a></li>
+            <li>Na seção "Como fazer login", clique em "Verificação em duas etapas"</li>
+            <li>Siga as instruções na tela (vai pedir seu número de celular)</li>
+          </ol>
+          <p class="modal__text" style="margin-top:var(--space-3);font-style:italic;color:var(--color-text-secondary)">
+            A TI pode ajudar com a ativação caso precise.
+          </p>
+        </div>
+      </div>
     </div>
   `,
 
@@ -935,7 +983,7 @@ const screenRenderers = {
           <span class="feature-list__icon">1️⃣</span>
           <div class="feature-list__content">
             <div class="feature-list__name">Seu celular com o Chrome instalado</div>
-            <div class="feature-list__desc">O navegador (ícone redondo colorido), não o app do Gmail.</div>
+            <div class="feature-list__desc">O navegador (ícone redondo colorido), não o app do Gmail.<br><a href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank" rel="noopener" style="color:var(--color-primary)">Android</a> · <a href="https://apps.apple.com/app/google-chrome/id535886823" target="_blank" rel="noopener" style="color:var(--color-primary)">iPhone</a></div>
           </div>
         </li>
         <li class="feature-list__item">
@@ -951,11 +999,11 @@ const screenRenderers = {
   `,
 
   'smtp-1': () => smtpStep(1, 'Abra o Chrome e acesse o Gmail',
-    `No seu celular, abra o <strong>Chrome</strong> (ícone redondo colorido) e digite na barra de endereço: <strong>mail.google.com</strong>. Faça login com sua conta pessoal (<strong>${state.emailInput}</strong>).`,
+    `No seu celular, abra o <strong>Chrome</strong> (ícone redondo colorido) e acesse o link abaixo. Faça login com sua conta pessoal (<strong>${state.emailInput}</strong>).<br><br><a href="https://mail.google.com" target="_blank" rel="noopener" style="color:var(--color-primary);font-weight:700;font-size:1.1em;">📧 Abrir mail.google.com</a>`,
     'Acessei ✓', SMTP_ILLUSTRATIONS[1]()),
 
   'smtp-2': () => smtpStep(2, 'Ative o modo computador',
-    `Toque nos <strong>três pontinhos (⋮)</strong> no canto superior direito do Chrome. No menu que abrir, marque a opção "<strong>Site para computador</strong>". A página vai recarregar com visual de PC.`,
+    `Toque nos <strong>três pontinhos (⋮)</strong> no canto superior direito do Chrome. No menu que abrir, marque a opção "<strong>Site para computador</strong>". A página vai recarregar com o visual de PC.<br><br><em style="color:var(--color-text-secondary)">A tela ficará em miniatura — é normal. Use o gesto de pinça (dois dedos) para dar zoom e ampliar o que precisar.</em>`,
     'Ativei ✓', SMTP_ILLUSTRATIONS[2]()),
 
   'smtp-3': () => smtpStep(3, 'Abra as Configurações',
@@ -976,11 +1024,11 @@ const screenRenderers = {
       </div>
       <div class="card card--accent">
         <div class="card__title">Endereço de e-mail</div>
-        <div class="step-instruction__value">${corpEmail()}</div>
+        ${copyableValue(corpEmail())}
       </div>
       <div class="card card--accent">
         <div class="card__title">Nome</div>
-        <div class="step-instruction__value">${fullName()} | Grupo Opp+</div>
+        ${copyableValue(fullName() + ' | Grupo Opp+')}
       </div>
       <div class="smtp-illustration">${SMTP_ILLUSTRATIONS[5]()}</div>
       ${btnRow({ nextLabel: 'Preenchido ✓', nextClass: 'btn--done', feedback: 'step' })}
@@ -1001,11 +1049,11 @@ const screenRenderers = {
       </div>
       <div class="card card--accent">
         <div class="card__title">Servidor SMTP</div>
-        <div class="step-instruction__value">smtp.gmail.com</div>
+        ${copyableValue('smtp.gmail.com')}
       </div>
       <div class="card card--accent">
         <div class="card__title">Porta</div>
-        <div class="step-instruction__value">465</div>
+        ${copyableValue('465')}
       </div>
       <div class="card card--accent">
         <div class="card__title">Segurança</div>
@@ -1026,12 +1074,12 @@ const screenRenderers = {
       </div>
       <div class="card card--accent">
         <div class="card__title">Nome de usuário</div>
-        <div class="step-instruction__value">opp@grupooppmais.com.br</div>
+        ${copyableValue('opp@grupooppmais.com.br')}
         <div class="card__text"><strong>Atenção:</strong> NÃO use seu e-mail pessoal aqui.</div>
       </div>
       <div class="card card--accent">
         <div class="card__title">Senha (Chave de Integração)</div>
-        <div class="card__text">Cole os <strong>16 dígitos</strong> que a TI te enviou (tudo junto, sem espaços).</div>
+        <div class="card__text">Vá até a mensagem que a TI te enviou com os <strong>16 dígitos</strong>. Pressione sobre o código até que seja selecionado, escolha <strong>Copiar</strong>. Volte para esta página do Gmail, toque no campo "Senha", mantenha pressionado e escolha <strong>Colar</strong>.</div>
       </div>
       <div class="smtp-illustration">${SMTP_ILLUSTRATIONS[8]()}</div>
       ${btnRow({ nextLabel: 'Adicionado ✓', nextClass: 'btn--done', feedback: 'step' })}
@@ -1045,7 +1093,7 @@ const screenRenderers = {
         <div class="step-instruction__number">9</div>
         <div class="step-instruction__action">Código de confirmação</div>
         <div class="step-instruction__detail">
-          O Google enviou um código de verificação para <strong>${state.emailInput}</strong>. Abra seu e-mail pessoal, copie o código e cole no campo de confirmação.
+          O Google enviou um código de verificação para <strong>${state.emailInput}</strong>. Alterne para o seu e-mail pessoal, copie o código e cole no campo de confirmação.
         </div>
       </div>
       <div class="smtp-illustration">${SMTP_ILLUSTRATIONS[9]()}</div>
@@ -1060,7 +1108,7 @@ const screenRenderers = {
         <div class="step-instruction__number">10</div>
         <div class="step-instruction__action">Responder pelo mesmo endereço</div>
         <div class="step-instruction__detail">
-          Volte em <strong>Configurações</strong> > <strong>Contas e importação</strong>. Na seção "Ao responder uma mensagem", marque:<br>
+          Ainda em <strong>Configurações</strong> > <strong>Contas e importação</strong>. Na seção "Ao responder uma mensagem", marque:<br>
           "<strong>Responder do mesmo endereço para o qual a mensagem foi enviada</strong>".
         </div>
       </div>
@@ -1084,7 +1132,7 @@ const screenRenderers = {
         <li class="feature-list__item">
           <span class="feature-list__icon">🔑</span>
           <div class="feature-list__content">
-            <div class="feature-list__name">Faça login no Workspace</div>
+            <div class="feature-list__name"><a href="https://accounts.google.com/signin" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Faça login no Workspace</a></div>
             <div class="feature-list__desc">Use seu e-mail corporativo (<strong>${corpEmail()}</strong>). A senha de primeiro acesso é o seu próprio e-mail pessoal.</div>
           </div>
         </li>
@@ -1106,7 +1154,7 @@ const screenRenderers = {
           <span class="feature-list__icon">🆘</span>
           <div class="feature-list__content">
             <div class="feature-list__name">Dúvidas? Fale com a TI</div>
-            <div class="feature-list__desc">Pelo Google Chat ou pelo e-mail agora@grupooppmais.com.br</div>
+            <div class="feature-list__desc">Pelo Google Chat ou pelo e-mail contato@grupooppmais.com.br</div>
           </div>
         </li>
       </ul>
@@ -1156,7 +1204,7 @@ const screenRenderers = {
 
         ${scaleHtml('q1', '1. Antes da Opp+, você já usava ferramentas Google (Gmail, Drive, Docs) no dia a dia?', 'Nunca usei', 'Uso diariamente')}
         ${scaleHtml('q2', '2. Como você avalia a aparência e a facilidade de uso deste aplicativo?', 'Muito ruim', 'Excelente')}
-        ${scaleHtml('q3', '3. A diferença entre seu email de acesso e seu email corporativo ficou clara?', 'Nada claro', 'Totalmente claro')}
+        ${scaleHtml('q3', '3. O papel do seu e-mail corporativo e das ferramentas (Ágora, Nexo, Chat) ficou claro?', 'Nada claro', 'Totalmente claro')}
         ${scaleHtml('q4', '4. A configuração do SMTP foi...', 'Muito difícil', 'Muito fácil')}
         ${scaleHtml('q5', '5. Depois deste processo, você se sente preparado(a) para usar suas ferramentas digitais?', 'Nada preparado', 'Totalmente preparado')}
 
@@ -1240,11 +1288,11 @@ const screenRenderers = {
           </a>
         </li>
         <li class="feature-list__item">
-          <a href="mailto:agora@grupooppmais.com.br" class="feature-list__link">
+          <a href="mailto:contato@grupooppmais.com.br" class="feature-list__link">
             <span class="feature-list__icon">✉️</span>
             <div class="feature-list__content">
-              <div class="feature-list__name">E-mail do Grupo Ágora</div>
-              <div class="feature-list__desc">agora@grupooppmais.com.br →</div>
+              <div class="feature-list__name">Suporte / Contato</div>
+              <div class="feature-list__desc">contato@grupooppmais.com.br →</div>
             </div>
           </a>
         </li>
@@ -1252,11 +1300,15 @@ const screenRenderers = {
 
       <div class="card card--info" style="margin-top:var(--space-4)">
         <div class="card__title">Dúvidas?</div>
-        <div class="card__text">Fale com a TI pelo Chat ou envie para agora@grupooppmais.com.br</div>
+        <div class="card__text">Fale com a TI pelo Chat ou envie para <a href="mailto:contato@grupooppmais.com.br" style="color:var(--color-primary)">contato@grupooppmais.com.br</a></div>
       </div>
 
       <div class="btn-row">
         <button class="btn btn--secondary" onclick="restart()">Refazer onboarding</button>
+      </div>
+
+      <div class="credits">
+        <div class="credits__text">Desenvolvido por ΣΘ Sistere Stabilis<br>com assistência de IA Claude (Anthropic)</div>
       </div>
     </div>
   `,
