@@ -231,7 +231,6 @@ function lookupUser(email) {
 const u = () => state.user || {};
 const firstName = () => u().firstName || 'colaborador';
 const corpEmail = () => u().corporateEmail || 'seu-email@grupooppmais.com.br';
-const accessEmail = () => u().accessEmail || 'seuemailacesso@grupooppmais.com.br';
 const fullName = () => u().name || 'Colaborador';
 const userRole = () => u().role || '';
 
@@ -642,26 +641,26 @@ const screenRenderers = {
   'identity': () => `
     <div class="screen">
       <span class="phase-badge phase-badge--2">Missão 2: Ferramentas</span>
-      <h2 class="screen__title">Por que você tem dois e-mails?</h2>
+      <h2 class="screen__title">Seu e-mail profissional</h2>
       <p class="screen__lead">
-        Pense no seu escritório digital como um prédio comercial. Para entrar, você precisa de uma <strong>chave</strong>. Para se comunicar, você usa seu <strong>cartão de visita</strong>. São coisas diferentes — e é assim que funciona aqui também:
+        A partir de agora, você tem um e-mail do Grupo Opp+. Ele é a sua <strong>identidade digital</strong> dentro da empresa — é com ele que você faz login, envia mensagens e acessa todas as ferramentas.
       </p>
       <div class="card card--accent">
-        <div class="card__title">🔑 A chave da porta (Login)</div>
-        <div class="step-instruction__value">${accessEmail()}</div>
+        <div class="card__title">💼 Seu e-mail corporativo</div>
+        <div class="step-instruction__value">${corpEmail()}</div>
         <div class="card__text">
-          Serve <strong>só para entrar</strong> no sistema. Você usa essa chave para abrir o Drive, o Grupo Ágora e os demais serviços. Não se envia e-mail com ela.
+          Use para <strong>tudo</strong>: entrar no sistema, enviar e-mails profissionais, acessar o Drive, o Ágora e o Chat. É o seu endereço oficial.
         </div>
       </div>
       <div class="card card--info">
-        <div class="card__title">💼 Seu cartão de visita (E-mail)</div>
-        <div class="step-instruction__value">${corpEmail()}</div>
+        <div class="card__title">📱 Seu e-mail pessoal continua seu</div>
+        <div class="step-instruction__value">${state.emailInput}</div>
         <div class="card__text">
-          É o endereço que aparece quando você envia uma mensagem. É o que clientes e colegas veem. Este é o seu <strong>e-mail profissional</strong>.
+          A empresa <strong>não tem acesso</strong> ao seu e-mail pessoal. Ele é usado apenas para identificar você no cadastro.
         </div>
       </div>
       <p class="screen__text" style="margin-top:var(--space-3);font-style:italic;color:var(--color-text-secondary)">
-        Resumindo: um é para abrir a porta, o outro é para conversar. Simples assim.
+        Resumindo: um e-mail para o trabalho, outro para a vida pessoal. Simples assim.
       </p>
       ${btnRow({ nextLabel: 'Entendi!', feedback: 'tap' })}
     </div>
@@ -725,7 +724,7 @@ const screenRenderers = {
       <div class="card card--accent">
         <div class="card__title">🏢 Espaço Opp+ (Trabalho)</div>
         <div class="card__text">
-          Seu login <strong>${accessEmail()}</strong> é da empresa. Pode ser auditado. Use só para trabalhar.
+          Seu e-mail <strong>${corpEmail()}</strong> é da empresa. Pode ser auditado. Use só para trabalhar.
         </div>
       </div>
       <div class="card card--info">
@@ -989,7 +988,7 @@ const screenRenderers = {
           <span class="feature-list__icon">🔑</span>
           <div class="feature-list__content">
             <div class="feature-list__name">Faça login no Workspace</div>
-            <div class="feature-list__desc">Use seu e-mail de acesso (<strong>${accessEmail()}</strong>). A senha de primeiro acesso é o seu próprio e-mail pessoal.</div>
+            <div class="feature-list__desc">Use seu e-mail corporativo (<strong>${corpEmail()}</strong>). A senha de primeiro acesso é o seu próprio e-mail pessoal.</div>
           </div>
         </li>
         <li class="feature-list__item">
@@ -1096,11 +1095,7 @@ const screenRenderers = {
           <span class="summary-row__value">${fullName()}</span>
         </div>
         <div class="summary-row">
-          <span class="summary-row__label">🔑 Login</span>
-          <span class="summary-row__value">${accessEmail()}</span>
-        </div>
-        <div class="summary-row">
-          <span class="summary-row__label">💼 E-mail</span>
+          <span class="summary-row__label">💼 E-mail corporativo</span>
           <span class="summary-row__value" style="color:var(--color-primary)">${corpEmail()}</span>
         </div>
         <div class="summary-row">
@@ -1112,7 +1107,7 @@ const screenRenderers = {
       <div class="card card--warning" style="margin-top:var(--space-4)">
         <div class="card__title">🔐 Primeiro login no Workspace</div>
         <div class="card__text">
-          <strong>Usuário:</strong> ${accessEmail()}<br>
+          <strong>Usuário:</strong> ${corpEmail()}<br>
           <strong>Senha:</strong> seu e-mail pessoal (<em>${state.emailInput}</em>)<br><br>
           O sistema vai pedir para <strong>criar uma nova senha</strong> no primeiro acesso. Escolha algo seguro e que só você saiba.
         </div>

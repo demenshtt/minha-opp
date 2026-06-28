@@ -1,0 +1,27 @@
+Planilha App — minha-opp
+========================
+
+Nome:       20260622_db_minha-opp_v1_0
+Tipo:       Google Sheets (nativo, nao exportavel como arquivo local)
+ID:         1kcnRRYz4GFRcM7nTtWbQkbbjawYOb7UQIpU6J9gsoiI
+URL:        https://docs.google.com/spreadsheets/d/1kcnRRYz4GFRcM7nTtWbQkbbjawYOb7UQIpU6J9gsoiI/edit
+Conta:      opp@grupooppmais.com.br (Drive Opp+)
+Localizacao: Raiz do Drive (pendente organizacao em pasta)
+
+Abas
+----
+- USERS          : IMPORTRANGE da planilha admin (CADASTRO_WORKSPACE)
+- MINHAOPP_FEEDBACK : Respostas do questionario de feedback da PWA
+
+Funcao
+------
+Planilha intermediaria entre a planilha admin e o Apps Script.
+O app nunca acessa a planilha admin diretamente (ADR-008).
+Leitura: Apps Script le aba USERS para autenticar usuario.
+Escrita: Apps Script grava feedback na aba MINHAOPP_FEEDBACK.
+
+Apps Script
+-----------
+Projeto: sheets-api-gateway
+Conta:   opp@grupooppmais.com.br
+Config:  100% via Script Properties (SHEET_ID, COLUMN_MAP, FILTER_COLUMN, FILTER_VALUE)
