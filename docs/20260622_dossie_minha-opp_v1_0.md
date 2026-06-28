@@ -4,7 +4,7 @@
 **Data:** 2026-06-22
 **Operador:** Luciano F. Oliveira (ΣΘ Sistere Stabilis)
 **Assistente:** Claude Opus 4.6
-**Status:** Em produção — pendente redesenho UX
+**Status:** v1.0 entregue (2026-06-28)
 
 ---
 
