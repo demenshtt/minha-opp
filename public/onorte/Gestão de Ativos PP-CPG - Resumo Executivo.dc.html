@@ -29,6 +29,7 @@
   </template>
 </helmet>
 
+<x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
 <x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.55in" hint-size="816px,1056px">
 
   <div slot="header" style="display:flex; align-items:center; justify-content:space-between; padding:10px 4px; border-bottom:1px solid #E6E7E4; font-family:'Montserrat',sans-serif;">

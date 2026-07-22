@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+  <style>*, *::before, *::after { box-sizing:border-box; } body { margin:0; background:#DDE1DA; } a { color:#219653; } a:hover { color:#1B7A44; }</style>
+</helmet>
+<div style="padding:48px 40px 80px; font-family:'Montserrat',sans-serif; display:flex; flex-direction:column; align-items:center; gap:40px;">
+  <div style="text-align:center; max-width:70ch;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:20px; color:#39453A;">Cartão de Visita — Arte final para gráfica</div>
+    <div style="font-size:12px; color:#6B716A; margin-top:6px; line-height:1.6;">Cada prancha: 96 × 56 mm com sangria (1134 × 661 px @ 300 DPI). A linha tracejada marca o corte em 90 × 50 mm — ela é só guia visual desta página, não sai no PNG exportado. Titular via Tweaks (pessoa/emissor).</div>
+  </div>
+  <sc-for list="{{ pranchas }}" as="p" hint-placeholder-count="4">
+    <div>
+      <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#6B716A; font-weight:600; margin-bottom:10px; text-align:center;">{{ p.rotulo }}</div>
+      <div style="position:relative; box-shadow:0 18px 50px rgba(57,69,58,.25);">
+        <sc-if value="{{ p.ehFrente }}" hint-placeholder-val="{{ true }}">
+          <div id="{{ p.id }}" style="width:1134px; height:661px; background:#FFFFFF; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:101px 115px;">
+            <div style="position:absolute; left:0; top:0; bottom:0; width:16px; background:linear-gradient(180deg, #219653, #6FCF97);"></div>
+            <div style="display:flex; align-items:flex-start; justify-content:space-between;">
+              <img src="{{ p.logo }}" alt="" style="height:{{ p.logoAltura }}; width:auto; display:block;">
+              <sc-if value="{{ p.mostraGrupo }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; align-items:center; gap:16px; padding-top:9px;">
+                  <img src="assets/icone-opp-grupo.png" alt="" style="height:36px; width:auto; opacity:0.75;">
+                  <span style="font-family:'Comfortaa',sans-serif; font-size:20px; font-weight:600; letter-spacing:0.02em; color:#9AA097;">Grupo opp+</span>
+                </div>
+              </sc-if>
+            </div>
+            <div>
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:53px; color:#39453A; line-height:1.15;">{{ nome }}</div>
+              <div style="font-size:28px; font-weight:500; color:#219653; letter-spacing:0.04em; margin-top:9px;">{{ cargo }}</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:9px; font-size:24px; color:#4A4F49;">
+              <div style="display:flex; gap:20px;"><span style="color:#8A8F89; font-weight:600; width:24px;">T</span>{{ telefone }}</div>
+              <div style="display:flex; gap:20px;"><span style="color:#8A8F89; font-weight:600; width:24px;">E</span>{{ email }}</div>
+              <div style="display:flex; gap:20px;"><span style="color:#8A8F89; font-weight:600; width:24px;">W</span>www.grupooppmais.com.br</div>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ p.ehVerso }}" hint-placeholder-val="{{ false }}">
+          <div id="{{ p.id }}" style="width:1134px; height:661px; background:#39453A; position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:40px;">
+            <div style="position:absolute; top:-244px; right:-178px; width:667px; height:667px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.18), transparent 62%);"></div>
+            <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:511px; height:auto; position:relative;">
+            <div style="font-size:22px; letter-spacing:0.22em; text-transform:uppercase; color:#8FA394; position:relative;">Sorriso · Mato Grosso</div>
+            <sc-if value="{{ qrAtivo }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute; right:101px; bottom:90px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+                <div style="background:#FFFFFF; border-radius:14px; padding:12px;"><img src="{{ qrSrc }}" alt="QR vCard" style="width:150px; height:150px; display:block;"></div>
+                <div style="font-size:15px; letter-spacing:0.1em; text-transform:uppercase; color:#8FA394; font-weight:600;">Salve meu contato</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+        <div style="position:absolute; inset:35px; border:1.5px dashed rgba(220,60,60,.55); pointer-events:none;"></div>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:3200},&quot;pessoa&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;abner&quot;,&quot;options&quot;:[&quot;abner&quot;,&quot;rafael&quot;,&quot;alexsandra&quot;,&quot;personalizado&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Titular&quot;},&quot;nome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Nome Completo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Titular (se personalizado)&quot;},&quot;cargo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Cargo / Função&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Titular (se personalizado)&quot;},&quot;telefone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+55 (41) 99947-1355&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Titular (se personalizado)&quot;},&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;contato@grupooppmais.com.br&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Titular (se personalizado)&quot;},&quot;qrVcard&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Verso&quot;},&quot;todasVariantes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Exibição&quot;},&quot;emissor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;holding&quot;,&quot;options&quot;:[&quot;holding&quot;,&quot;aviacao&quot;,&quot;ativos&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Exibição (se não todas)&quot;}}">
+class Component extends DCLogic {
+  state = { qrSrc: '', qrDe: '' };
+  vcardTexto(p) {
+    const partes = p.nome.trim().split(/\s+/);
+    const sobrenome = partes.length > 1 ? partes[partes.length - 1] : '';
+    const primeiro = partes.length > 1 ? partes.slice(0, -1).join(' ') : partes[0] || '';
+    return [
+      'BEGIN:VCARD', 'VERSION:3.0',
+      'N:' + sobrenome + ';' + primeiro + ';;;',
+      'FN:' + p.nome,
+      'ORG:Grupo Opp+ (Opp Aviação Agrícola Ltda)',
+      'TITLE:' + p.cargo,
+      'TEL;TYPE=CELL:' + p.telefone.replace(/[^\d+]/g, ''),
+      'EMAIL;TYPE=WORK:' + p.email,
+      'URL:https://www.grupooppmais.com.br',
+      'END:VCARD',
+    ].join('\r\n');
+  }
+  gerarQr() {
+    if (!(this.props.qrVcard ?? true) || !window.qrcode || !this._pessoaAtual) return;
+    const texto = this.vcardTexto(this._pessoaAtual);
+    if (texto === this.state.qrDe) return;
+    try {
+      if (window.qrcode.stringToBytesFuncs && window.qrcode.stringToBytesFuncs['UTF-8']) {
+        window.qrcode.stringToBytes = window.qrcode.stringToBytesFuncs['UTF-8'];
+      }
+      const qr = window.qrcode(0, 'M');
+      qr.addData(texto, 'Byte');
+      qr.make();
+      const n = qr.getModuleCount();
+      const escala = 8, tam = n * escala;
+      const c = document.createElement('canvas');
+      c.width = tam; c.height = tam;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, tam, tam);
+      ctx.fillStyle = '#39453A';
+      for (let r = 0; r < n; r++) for (let col = 0; col < n; col++) {
+        if (qr.isDark(r, col)) ctx.fillRect(col * escala, r * escala, escala, escala);
+      }
+      this.setState({ qrSrc: c.toDataURL('image/png'), qrDe: texto });
+    } catch (e) {}
+  }
+  componentDidMount() { this.gerarQr(); this._qt = setInterval(() => this.gerarQr(), 600); setTimeout(() => clearInterval(this._qt), 5000); }
+  componentDidUpdate() { this.gerarQr(); }
+  componentWillUnmount() { clearInterval(this._qt); }
+  renderVals() {
+    const emissor = this.props.emissor ?? 'holding';
+    const presets = {
+      abner: { nome: 'Abner G Carvalho', cargo: 'Gestor Financeiro', telefone: '+55 (41) 99947-1355', email: 'financeiro@grupooppmais.com.br' },
+      rafael: { nome: 'Rafael A Sousa', cargo: 'Téc. Agrícola Executor', telefone: '+55 (66) 99921-8027', email: 'rafaelsousa@grupooppmais.com.br' },
+      alexsandra: { nome: 'Alexsandra C Souza', cargo: 'Gestora Administrativa', telefone: '+55 (66) 99232-0821', email: 'contato@grupooppmais.com.br' },
+    };
+    const p = presets[this.props.pessoa ?? 'abner'] || {
+      nome: this.props.nome ?? 'Nome Completo',
+      cargo: this.props.cargo ?? 'Cargo / Função',
+      telefone: this.props.telefone ?? '+55 (41) 99947-1355',
+      email: this.props.email ?? 'contato@grupooppmais.com.br',
+    };
+    const frentes = {
+      holding: { id: 'frente-holding', rotulo: 'Frente — Grupo Opp+ (holding)', logo: 'assets/logo-opp-flat.png', logoAltura: '116px', mostraGrupo: false },
+      aviacao: { id: 'frente-aviacao', rotulo: 'Frente — Opp Aviação Agrícola', logo: 'assets/logo-opp-aviacao.png', logoAltura: '125px', mostraGrupo: true },
+      ativos: { id: 'frente-ativos', rotulo: 'Frente — Opp Gestão de Ativos', logo: 'assets/logo-opp-ativos.png', logoAltura: '125px', mostraGrupo: true },
+    };
+    const pranchas = (this.props.todasVariantes ?? true)
+      ? [frentes.holding, frentes.aviacao, frentes.ativos]
+      : [frentes[emissor] || frentes.holding];
+    this._pessoaAtual = p;
+    const qrAtivo = (this.props.qrVcard ?? true) && !!this.state.qrSrc;
+    return {
+      ...p,
+      qrAtivo,
+      qrSrc: this.state.qrSrc,
+      pranchas: [
+        ...pranchas.map(f => ({ ...f, ehFrente: true, ehVerso: false })),
+        { id: 'verso', rotulo: qrAtivo ? 'Verso — com QR do contato (personalizado por titular)' : 'Verso — comum a todas as variantes', ehFrente: false, ehVerso: true },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

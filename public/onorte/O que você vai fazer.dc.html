@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:960px; margin:0 auto;">
+
+  <div style="margin-bottom:36px;">
+    <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#219653; font-weight:600; margin-bottom:12px;"><span style="width:24px; height:1.5px; background:#219653; display:inline-block;"></span>O Norte · Guia rápido</div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:34px; color:#39453A; margin:0 0 10px;">O que você vai fazer?</h1>
+    <p style="font-size:14.5px; color:#565B56; line-height:1.6; margin:0; max-width:62ch;">Escolha a tarefa e leve o kit pronto — sem procurar página por página. Textos têm botão de copiar; documentos têm botão Baixar PDF; a apresentação sai em PPTX (abre no PowerPoint e no Google Slides).</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+    <sc-for list="{{ kits }}" as="k" hint-placeholder-count="6">
+      <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px; display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="flex:none; width:42px; height:42px; border-radius:12px; background:#EEF3EF; color:#219653; display:flex; align-items:center; justify-content:center; font-size:20px;"><i data-lucide="{{ k.icone }}"></i></span>
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#39453A;">{{ k.tarefa }}</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <sc-for list="{{ k.itens }}" as="i" hint-placeholder-count="3">
+            <a href="{{ i.href }}" download="{{ i.download }}" style="display:flex; align-items:center; gap:10px; background:#F7F8F6; border:1px solid #EEF0ED; border-radius:10px; padding:10px 14px; font-size:12.5px; font-weight:500; color:#3E453D;" style-hover="border-color:#CBE3D2; background:#F1F7F2;">
+              <span style="color:#219653; font-size:15px;"><i data-lucide="{{ i.icone }}"></i></span>
+              <span style="flex:1;">{{ i.rotulo }}</span>
+              <span style="font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:{{ i.tagCor }};">{{ i.tag }}</span>
+            </a>
+          </sc-for>
+        </div>
+        <div style="font-size:11.5px; color:#8A8F89; line-height:1.55;">{{ k.dica }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <a href="Central de Marca Opp+.dc.html" style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600;"><i data-lucide="arrow-left"></i>Voltar à Central de Marca</a>
+    <div style="font-size:10.5px; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.renderIcons(); this._t = setInterval(() => this.renderIcons(), 700);
+    setTimeout(() => clearInterval(this._t), 5000);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderIcons() { if (window.lucide) lucide.createIcons(); }
+  renderVals() {
+    const abrir = { tag: 'Abrir', tagCor: '#9AA097' };
+    const copiar = { tag: 'Copiar', tagCor: '#219653' };
+    const pdf = { tag: 'PDF', tagCor: '#B8860B' };
+    const baixar = { tag: 'Baixar', tagCor: '#B8860B' };
+    return {
+      kits: [
+        { tarefa: 'Enviar um e-mail pela empresa', icone: 'mail', dica: 'Assinatura: preencha seus dados na página e clique em copiar. Timbrado: baixe o PDF ou escreva por cima do modelo.', itens: [
+          { rotulo: 'Assinatura de e-mail (preencher e copiar)', href: 'Assinatura de E-mail.dc.html', icone: 'pen-line', ...copiar },
+          { rotulo: 'Papel timbrado (botão Baixar PDF na página)', href: 'Papel Timbrado.dc.html', icone: 'file-text', ...pdf },
+        ]},
+        { tarefa: 'Mandar uma proposta', icone: 'handshake', dica: 'Escolha o serviço, ajuste os dados do cliente e use o botão Baixar PDF no canto da página.', itens: [
+          { rotulo: 'Proposta SAE — aplicação aérea', href: 'Proposta Comercial.dc.html', icone: 'plane', ...pdf },
+          { rotulo: 'Proposta OACO — gestão de aeronave', href: 'Proposta Comercial - OACO.dc.html', icone: 'gauge', ...pdf },
+        ]},
+        { tarefa: 'Apresentar em reunião', icone: 'presentation', dica: 'O PPTX abre direto no PowerPoint; no Workspace, suba no Drive que ele vira Google Slides sozinho. 8 modelos de slide com instruções nas notas.', itens: [
+          { rotulo: 'Modelo de apresentação (.pptx)', href: 'entregas/downloads/Apresentacao Grupo Opp+ (modelo).pptx', download: 'Apresentacao Grupo Opp+ (modelo).pptx', icone: 'download', ...baixar },
+          { rotulo: 'Convite de diretoria (peça digital)', href: 'Convite - Reunião de Diretoria.dc.html', icone: 'calendar-check', ...abrir },
+        ]},
+        { tarefa: 'Fechar o relatório do mês', icone: 'clipboard-list', dica: 'Resumo executivo pra diretoria, analítico pro detalhe. Cada um com botão Baixar PDF na página.', itens: [
+          { rotulo: 'Gerencial — Resumo Executivo', href: 'Relatório Gerencial - Resumo Executivo.dc.html', icone: 'file-chart-column', ...pdf },
+          { rotulo: 'Gerencial — Analítico (padrão MDC)', href: 'Relatório Gerencial - Analítico (padrão MDC).dc.html', icone: 'table', ...pdf },
+          { rotulo: 'PP-CPG — Resumo Executivo', href: 'Gestão de Ativos PP-CPG - Resumo Executivo.dc.html', icone: 'file-chart-column', ...pdf },
+          { rotulo: 'PP-CPG — Analítico (padrão MDC)', href: 'Gestão de Ativos PP-CPG - Analítico (padrão MDC).dc.html', icone: 'table', ...pdf },
+        ]},
+        { tarefa: 'Atender no WhatsApp', icone: 'message-circle', dica: 'Mensagens de saudação, ausência e respostas rápidas — todas com botão de copiar. As figuras de contato são os PNG oficiais do perfil.', itens: [
+          { rotulo: 'Mensagens prontas (copiar e colar)', href: 'WhatsApp Business.dc.html', icone: 'copy', ...copiar },
+          { rotulo: 'Contato digital .vcf (salvar na agenda)', href: 'Contato Digital (vCard).dc.html', icone: 'contact', ...baixar },
+          { rotulo: 'Figuras de contato (PNG do perfil)', href: 'Figuras de Contato.dc.html', icone: 'image', ...abrir },
+          { rotulo: 'Figurinhas oficiais', href: 'Figurinhas WhatsApp.dc.html', icone: 'sticker', ...abrir },
+        ]},
+        { tarefa: 'Cuidar da presença digital', icone: 'globe', dica: 'Antes de criar perfil ou postar qualquer coisa em nome da Opp: leia o protocolo. É curto e evita dor de cabeça.', itens: [
+          { rotulo: 'Protocolo de Redes Sociais (regras)', href: 'Protocolo de Redes Sociais.dc.html', icone: 'shield', ...abrir },
+          { rotulo: 'Kit de Presença Digital', href: 'Kit de Presença Digital.dc.html', icone: 'layout-grid', ...abrir },
+          { rotulo: 'Fundos de Marca (wallpapers)', href: 'Fundos de Marca.dc.html', icone: 'wallpaper', ...abrir },
+        ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

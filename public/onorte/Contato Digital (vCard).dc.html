@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background:#F4F5F3; }
+    a { color: #219653; } a:hover { color:#1B7A44; }
+    input::placeholder { color: #B0B5AE; }
+    input:focus, select:focus { outline: none; border-color: #219653 !important; box-shadow: 0 0 0 3px rgba(33,150,83,.12); }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; font-family:'Montserrat',sans-serif; color:#1C201C; padding:40px 32px 80px;">
+  <div style="max-width:960px; margin:0 auto;">
+
+    <div style="margin-bottom:28px;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#219653; font-weight:600; margin-bottom:12px;"><span style="width:24px; height:1.5px; background:#219653;"></span>O Norte · Template</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:32px; color:#39453A; margin:0 0 8px;">Contato Digital (vCard)</h1>
+      <p style="font-size:14.5px; color:#565B56; line-height:1.6; margin:0; max-width:64ch;">Preencha seus dados e baixe o arquivo .vcf — o formato universal de contato. Quem receber toca no arquivo e salva você na agenda com nome, empresa, endereço e a foto oficial da marca, tudo de uma vez.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:340px 1fr; gap:20px; align-items:start;">
+
+      <!-- FORM -->
+      <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:18px;">Seus dados</div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+            <label style="display:block;">
+              <span style="display:block; font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#8A8F89; margin-bottom:6px;">{{ f.label }}</span>
+              <input type="text" value="{{ f.value }}" placeholder="{{ f.ph }}" onInput="{{ f.onInput }}" style="width:100%; padding:10px 12px; border:1px solid #DADCD7; border-radius:9px; font-family:'Montserrat',sans-serif; font-size:13.5px; color:#39453A; background:#FFFFFF; transition:border-color .15s, box-shadow .15s;">
+            </label>
+          </sc-for>
+          <label style="display:block;">
+            <span style="display:block; font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#8A8F89; margin-bottom:6px;">Unidade</span>
+            <select onChange="{{ setUnidade }}" style="width:100%; padding:10px 12px; border:1px solid #DADCD7; border-radius:9px; font-family:'Montserrat',sans-serif; font-size:13.5px; color:#39453A; background:#FFFFFF;">
+              <option value="grupo">Grupo Opp+ (holding)</option>
+              <option value="aviacao">Opp Aviação Agrícola</option>
+              <option value="ativos">Opp Gestão de Ativos</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- PREVIEW + AÇÃO -->
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89;">Como vai aparecer na agenda</div>
+          <button onClick="{{ baixar }}" style="display:inline-flex; align-items:center; gap:8px; background:#219653; color:#FFFFFF; border:none; border-radius:9px; padding:10px 18px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:background .15s;" style-hover="background:#1B7A44;">{{ baixarRotulo }}</button>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:30px 32px; display:flex; align-items:center; gap:22px;">
+          <img src="{{ fotoSrc }}" alt="" style="width:84px; height:84px; border-radius:50%; object-fit:cover; flex:none; border:3px solid #EEF3EF;">
+          <div style="min-width:0;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">{{ nome }}</div>
+            <div style="font-size:13.5px; color:#219653; font-weight:600; margin-top:2px;">{{ cargo }} · {{ unidadeNome }}</div>
+            <div style="font-size:12.5px; color:#4A4F49; line-height:1.8; margin-top:10px;">
+              <div>📱 {{ celular }}</div>
+              <div>✉️ {{ email }}</div>
+              <div>🌐 www.grupooppmais.com.br</div>
+              <div>📍 Rua Santa Catarina de Alexandria, 2127 · Sorriso/MT</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; background:#EEF3EF; border:1px solid #D8E8DD; border-radius:12px; padding:14px 18px; font-size:12px; color:#5B6E60; line-height:1.55;">
+          <strong style="color:#1B7A44;">Como usar:</strong> baixe o .vcf e guarde no celular. Quando pedirem seu contato, compartilhe o arquivo pelo WhatsApp — a pessoa toca e salva tudo de uma vez, já com a foto da marca. Funciona em iPhone, Android, Gmail e Outlook.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <a href="Central de Marca Opp+.dc.html" style="font-size:12.5px; font-weight:600; text-decoration:none;">← Voltar à Central de Marca</a>
+      <div style="font-size:10.5px; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1000,&quot;height&quot;:680}}">
+class Component extends DCLogic {
+  state = {
+    nome: 'Nome Sobrenome',
+    cargo: 'Cargo / Função',
+    celular: '+55 (41) 99947-1355',
+    email: 'nome@grupooppmais.com.br',
+    unidade: 'grupo',
+    gerando: false,
+  };
+  set(key) { return (e) => this.setState({ [key]: e.target.value }); }
+
+  unidades = {
+    grupo: { nome: 'Grupo Opp+', org: 'Grupo Opp+ (Opp Aviação Agrícola Ltda)', foto: 'assets/contato-zap-verde-logo.png' },
+    aviacao: { nome: 'Opp Aviação Agrícola', org: 'Opp Aviação Agrícola Ltda', foto: 'assets/contato-zap-verde-logo.png' },
+    ativos: { nome: 'Opp Gestão de Ativos', org: 'Opp Gestão de Ativos (Opp Aviação Agrícola Ltda)', foto: 'assets/contato-zap-branco-logo.png' },
+  };
+
+  async fotoBase64(src) {
+    const img = new Image();
+    img.src = src;
+    await new Promise((ok, err) => { img.onload = ok; img.onerror = err; });
+    const c = document.createElement('canvas');
+    c.width = 480; c.height = 480;
+    c.getContext('2d').drawImage(img, 0, 0, 480, 480);
+    return c.toDataURL('image/jpeg', 0.85).split(',')[1];
+  }
+
+  baixar = async () => {
+    const s = this.state, u = this.unidades[s.unidade];
+    this.setState({ gerando: true });
+    let foto = '';
+    try { foto = await this.fotoBase64(u.foto); } catch (e) {}
+    const partes = s.nome.trim().split(/\s+/);
+    const sobrenome = partes.length > 1 ? partes[partes.length - 1] : '';
+    const primeiro = partes.length > 1 ? partes.slice(0, -1).join(' ') : partes[0] || '';
+    const tel = s.celular.replace(/[^\d+]/g, '');
+    const linhas = [
+      'BEGIN:VCARD', 'VERSION:3.0',
+      'N:' + sobrenome + ';' + primeiro + ';;;',
+      'FN:' + s.nome,
+      'ORG:' + u.org,
+      'TITLE:' + s.cargo,
+      'TEL;TYPE=CELL:' + tel,
+      'EMAIL;TYPE=WORK:' + s.email,
+      'URL:https://www.grupooppmais.com.br',
+      'ADR;TYPE=WORK:;;Rua Santa Catarina de Alexandria\\, 2127 - Parque Universitário;Sorriso;MT;78893-126;Brasil',
+      'NOTE:Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56',
+    ];
+    if (foto) linhas.push('PHOTO;ENCODING=b;TYPE=JPEG:' + foto);
+    linhas.push('END:VCARD');
+    const blob = new Blob([linhas.join('\r\n')], { type: 'text/vcard;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = s.nome.trim().replace(/\s+/g, '-') + '-opp.vcf';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    this.setState({ gerando: false });
+  };
+
+  renderVals() {
+    const s = this.state, u = this.unidades[s.unidade];
+    return {
+      nome: s.nome, cargo: s.cargo, celular: s.celular, email: s.email,
+      unidadeNome: u.nome, fotoSrc: u.foto,
+      baixar: this.baixar,
+      baixarRotulo: s.gerando ? 'Gerando…' : 'Baixar contato (.vcf)',
+      setUnidade: (e) => this.setState({ unidade: e.target.value }),
+      fields: [
+        { label: 'Nome completo', value: s.nome, ph: 'Nome Sobrenome', onInput: this.set('nome') },
+        { label: 'Cargo / função', value: s.cargo, ph: 'Cargo', onInput: this.set('cargo') },
+        { label: 'Celular / WhatsApp', value: s.celular, ph: '+55 (41) 99947-1355', onInput: this.set('celular') },
+        { label: 'E-mail', value: s.email, ph: 'nome@grupooppmais.com.br', onInput: this.set('email') },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
