@@ -1,20 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grupo Opp+</title>
-  <style>
-    body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f5f7f5; color: #1a1a1a; }
-    .container { text-align: center; padding: 2rem; }
-    h1 { font-size: 1.5rem; color: #219653; }
-    p { color: #4a4a4a; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Opp+ — Em breve</title>
+<meta name="description" content="O site do Grupo Opp+ está em construção. O trabalho, esse nunca parou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* DS Grupo Opp+ v1.2 — tema claro (padrão) */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #1C201C;
+    background: #F7F8F6;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background: linear-gradient(rgba(247,248,246,.93), rgba(247,248,246,.93)),
+                url('/img-site/fundo-opp-branco.png') center/cover;
+  }
+  a { color: #219653; text-decoration: none; }
+  a:hover { color: #1B7A44; }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 24px;
+    gap: 0;
+  }
+  .logo { width: min(280px, 70vw); height: auto; margin-bottom: 40px; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+    color: #219653; font-weight: 700; margin-bottom: 22px;
+  }
+  .kicker::before, .kicker::after { content: ''; width: 26px; height: 1.5px; background: #A5D6A7; }
+  h1 {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(26px, 4.6vw, 42px);
+    line-height: 1.18;
+    color: #39453A;
+    margin: 0 0 18px;
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+  .sub {
+    font-size: clamp(14px, 1.8vw, 16.5px);
+    line-height: 1.7;
+    color: #4A4F49;
+    max-width: 52ch;
+    margin: 0 0 40px;
+    text-wrap: pretty;
+  }
+  .contatos { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 14px; font-weight: 600;
+    padding: 14px 26px; border-radius: 12px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(57,69,58,.16); }
+  .btn-primario { background: #219653; color: #FFFFFF; }
+  .btn-primario:hover { color: #FFFFFF; background: #1B7A44; }
+  .btn-secundario { background: #FFFFFF; color: #39453A; border: 1px solid #E6E7E4; }
+  .btn-secundario:hover { color: #39453A; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .equipe {
+    font-size: 12.5px; color: #7A8079;
+  }
+  .equipe a { font-weight: 600; }
+  footer {
+    padding: 22px 24px 26px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.7;
+    color: #9AA097;
+    border-top: 1px solid #E6E7E4;
+    background: rgba(255,255,255,.72);
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Grupo Opp+</h1>
-    <p>Em breve.</p>
+<main>
+  <img class="logo" src="/img-site/logo-opp-flat.png" alt="Grupo Opp+">
+  <div class="kicker">Em breve</div>
+  <h1>Estamos preparando um lugar à altura da confiança que recebemos.</h1>
+  <p class="sub">O site do Grupo Opp+ está em construção. O trabalho, esse nunca parou: seguimos na lavoura, no hangar e ao lado de cada parceiro — como sempre. Precisando de nós, é só chamar.</p>
+  <div class="contatos">
+    <a class="btn btn-primario" href="https://wa.me/5541999471355" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      Falar pelo WhatsApp
+    </a>
+    <a class="btn btn-secundario" href="mailto:contato@grupooppmais.com.br">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      contato@grupooppmais.com.br
+    </a>
   </div>
+  <div class="equipe">Já é da equipe? <a href="/minhaopp">Configure seu e-mail corporativo na Minha Opp+ →</a><br>
+  Emite comunicação pela marca? <a href="/onorte">Acesse O Norte — Central de Marca →</a></div>
+</main>
+<footer>
+  Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56<br>
+  Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126
+</footer>
 </body>
 </html>
