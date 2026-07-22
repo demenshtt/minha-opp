@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:900px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <!-- HERO -->
+  <div style="position:relative; background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 52px 40px; color:#FFFFFF; overflow:hidden;">
+    <div style="position:relative; display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;">
+          <span style="width:24px; height:1.5px; background:#6FCF97; display:inline-block;"></span>Canal digital · Em produção
+        </div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.08; letter-spacing:-0.01em; margin:0 0 14px; color:#FFFFFF; max-width:16ch; text-wrap:balance;">Minha Opp+</h1>
+        <p style="font-size:14.5px; line-height:1.6; color:#D6DDD5; max-width:56ch; margin:0 0 16px; font-weight:400;">A porta digital de quem já é de dentro. Hoje, onboarding gamificado da equipe; amanhã, o hub de relacionamento do Grupo Opp+ — com O Norte morando dentro dela.</p>
+        <a href="https://www.grupooppmais.com.br/minhaopp" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:#219653; color:#FFFFFF; font-size:12.5px; font-weight:600; padding:9px 16px; border-radius:10px;"><i data-lucide="external-link"></i>grupooppmais.com.br/minhaopp</a>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 52px 8px;">
+
+    <!-- HOJE vs DESTINO -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:44px;">
+      <div style="background:#F7F8F6; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+        <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#39453A; margin-bottom:12px;"><i data-lucide="map-pin"></i>O que é hoje (v1.0)</div>
+        <p style="font-size:13px; line-height:1.65; color:#5A5F58; margin:0;">PWA instalável, mobile-first, que guia o colaborador na configuração do e-mail corporativo e apresenta as ferramentas digitais do grupo — <strong style="color:#39453A;">4 missões, 22 telas</strong>, logos progressivos como recompensa. Vanilla JS, custo zero, publicada na Vercel.</p>
+      </div>
+      <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:16px; padding:24px 26px;">
+        <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#1B7A44; margin-bottom:12px;"><i data-lucide="compass"></i>O que vai se tornar</div>
+        <p style="font-size:13px; line-height:1.65; color:#3E453D; margin:0;">Portal de relacionamento com login: conteúdo aberto na entrada, serviços restritos por perfil — colaboradores, clientes, fornecedores. O site oficial valida a indicação; a Minha Opp+ <strong style="color:#1B7A44;">acolhe quem já é de casa</strong>. Acolhedora, porém não a casa da avó.</p>
+      </div>
+    </div>
+
+    <!-- MISSÕES -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">O fluxo atual — quatro missões</div>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:44px;">
+      <sc-for list="{{ missoes }}" as="m" hint-placeholder-count="4">
+        <div style="display:flex; gap:20px; align-items:flex-start; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:20px 24px;">
+          <div style="flex:none; width:40px; height:40px; border-radius:12px; background:#EEF3EF; color:#219653; display:flex; align-items:center; justify-content:center; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px;">{{ m.n }}</div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:5px;">
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15.5px; color:#39453A;">{{ m.titulo }}</div>
+              <span style="font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:#7A8079; background:#F1F2EF; padding:3px 9px; border-radius:20px;">{{ m.telas }}</span>
+            </div>
+            <p style="font-size:13px; line-height:1.6; color:#5A5F58; margin:0;">{{ m.corpo }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- DS v1.2 -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">Design System v1.2 — harmonizado com o Norte</div>
+    <p style="font-size:13.5px; line-height:1.65; color:#5A5F58; margin:0 0 18px;">A PWA nasceu com o DS v1.1. Regra acordada: <strong style="color:#39453A;">o que divergir do Norte, o Norte substitui</strong>. Três correções, tudo o resto absorvido como está (espaçamento, raios, sombras, estados de alerta/erro/info).</p>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:22px;">
+      <sc-for list="{{ correcoes }}" as="c" hint-placeholder-count="3">
+        <div style="display:flex; gap:16px; background:#FBF7F0; border:1px solid #EFE6D6; border-left:3px solid #C9A54A; border-radius:14px; padding:18px 22px;">
+          <span style="color:#C9A54A; font-size:20px; padding-top:2px;"><i data-lucide="{{ c.icone }}"></i></span>
+          <div style="flex:1;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:4px;">{{ c.titulo }}</div>
+            <p style="font-size:12.5px; line-height:1.6; color:#5A5F58; margin:0;">{{ c.corpo }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- SWATCHES DARK antes/depois -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:22px;">
+      <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden;">
+        <div style="padding:12px 18px; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#9AA097; border-bottom:1px solid #E6E7E4;">Tema escuro v1.1 — slate azulado</div>
+        <div style="background:#0F1419; padding:18px; display:flex; gap:10px;">
+          <sc-for list="{{ swatchesAntes }}" as="s" hint-placeholder-count="3">
+            <div style="flex:1;">
+              <div style="height:44px; border-radius:9px; background:{{ s.hex }}; border:1px solid rgba(255,255,255,.09);"></div>
+              <div style="font-size:10px; color:#8A9099; margin-top:6px; font-weight:500;">{{ s.hex }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border:1px solid #CBE3D2; border-radius:16px; overflow:hidden;">
+        <div style="padding:12px 18px; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; color:#1B7A44; border-bottom:1px solid #CBE3D2;">Tema escuro v1.2 — família do #39453A</div>
+        <div style="background:#141814; padding:18px; display:flex; gap:10px;">
+          <sc-for list="{{ swatchesDepois }}" as="s" hint-placeholder-count="3">
+            <div style="flex:1;">
+              <div style="height:44px; border-radius:9px; background:{{ s.hex }}; border:1px solid rgba(255,255,255,.09);"></div>
+              <div style="font-size:10px; color:#9AA097; margin-top:6px; font-weight:500;">{{ s.hex }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px; background:#F7F8F6; border:1px solid #E6E7E4; border-radius:14px; padding:16px 20px; margin-bottom:44px;">
+      <span style="color:#219653; font-size:20px;"><i data-lucide="file-down"></i></span>
+      <div style="flex:1; font-size:13px; line-height:1.5; color:#5A5F58;"><strong style="color:#39453A;">tokens.css v1.2</strong> pronto para substituir <span style="font-family:monospace; font-size:12px;">public/minhaopp/css/tokens.css</span> no repositório — cada mudança marcada com <span style="font-family:monospace; font-size:12px;">[v1.2]</span>.</div>
+      <a href="entregas/minhaopp-tokens-v1-2.css" download style="flex:none; display:inline-flex; align-items:center; gap:7px; background:#39453A; color:#FFFFFF; font-size:12px; font-weight:600; padding:9px 15px; border-radius:10px;"><i data-lucide="download"></i>Baixar</a>
+    </div>
+
+    <!-- NORTE DENTRO DA MINHA OPP -->
+    <div style="background:#39453A; border-radius:16px; padding:28px 30px; margin-bottom:44px; color:#E7EBE6;">
+      <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15.5px; color:#FFFFFF; margin-bottom:12px;"><i data-lucide="key-round" style="color:#6FCF97;"></i>O Norte dentro da Minha Opp+</div>
+      <p style="font-size:13.5px; line-height:1.7; margin:0 0 10px; color:#D6DDD5;">A Central de Marca será acessada de dentro da PWA — não por link público. Tem acesso quem tiver no cadastro a <strong style="color:#FFFFFF;">prerrogativa de emitir comunicação em nome do Grupo Opp+</strong>: visual, escrita, sonora, física ou digital. Colaboradores e terceiros credenciados.</p>
+      <p style="font-size:13px; line-height:1.7; margin:0; color:#A9B3A8;">Quem fala pela marca, encontra o padrão a um toque. Quem não fala, nem sabe que ele existe.</p>
+    </div>
+
+    <!-- ARQUITETURA -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">Fundação técnica — custo zero</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:16px;">
+      <sc-for list="{{ stack }}" as="s" hint-placeholder-count="6">
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:14px; padding:18px 20px;">
+          <div style="display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:#7A8079; margin-bottom:7px;"><i data-lucide="{{ s.icone }}" style="color:#219653; font-size:15px;"></i>{{ s.camada }}</div>
+          <div style="font-size:13.5px; font-weight:600; color:#39453A;">{{ s.tec }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+  </div>
+
+  <!-- RODAPÉ -->
+  <div style="border-top:1px solid #E6E7E4; padding:20px 52px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <a href="Central de Marca Opp+.dc.html" style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600;"><i data-lucide="arrow-left"></i>Voltar à Central de Marca</a>
+    <div style="font-size:10.5px; color:#9AA097; line-height:1.5; text-align:right;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56<br>Rua Santa Catarina de Alexandria, 2127 · Sorriso/MT</div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.renderIcons(); this._t = setInterval(() => this.renderIcons(), 700);
+    setTimeout(() => clearInterval(this._t), 4000);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderIcons() { if (window.lucide) lucide.createIcons(); }
+  renderVals() {
+    return {
+      missoes: [
+        { n: '1', titulo: 'Preparação', telas: 'Telas 1–3', corpo: 'Splash, identificação por e-mail pessoal e visão geral personalizada do que vem pela frente.' },
+        { n: '2', titulo: 'Suas Ferramentas', telas: 'Telas 4–9', corpo: 'Identidade digital, ferramentas Google, privacidade, conduta, segurança e termo de uso.' },
+        { n: '3', titulo: 'Configurando o Celular', telas: 'Telas 10–20', corpo: 'Wizard SMTP passo a passo com ilustrações — o colaborador sai enviando e-mail pelo endereço do grupo.' },
+        { n: '4', titulo: 'Finalização', telas: 'Telas 21–22', corpo: 'Celebração, questionário de feedback e resumo de acessos com atalhos funcionais.' },
+      ],
+      correcoes: [
+        { icone: 'type', titulo: 'Tipografia — papéis restaurados', corpo: 'No v1.1 o corpo de texto era Comfortaa. Regra do Norte: Comfortaa só em títulos e marca; Montserrat assume corpo e interface.' },
+        { icone: 'moon', titulo: 'Tema escuro — verde, não azul', corpo: 'Os fundos escuros eram slate azulado (#0F1419). Passam para a família do Verde Escuro âncora #39453A — escuro com identidade Opp+.' },
+        { icone: 'palette', titulo: 'Neutros claros — tons do Norte', corpo: 'Fundos e bordas do tema claro alinhados aos neutros esverdeados já usados em toda a Central de Marca (#F7F8F6, #EEF3EF, #E6E7E4).' },
+      ],
+      swatchesAntes: [ { hex: '#0F1419' }, { hex: '#1A1F26' }, { hex: '#242A33' } ],
+      swatchesDepois: [ { hex: '#141814' }, { hex: '#1D231D' }, { hex: '#272E27' } ],
+      stack: [
+        { camada: 'Frontend', tec: 'Vanilla JS · PWA', icone: 'code' },
+        { camada: 'Hospedagem', tec: 'Vercel (grátis)', icone: 'server' },
+        { camada: 'Dados', tec: 'Google Sheets + Apps Script', icone: 'table' },
+        { camada: 'Domínio', tec: 'grupooppmais.com.br', icone: 'globe' },
+        { camada: 'Offline', tec: 'Service Worker', icone: 'wifi-off' },
+        { camada: 'Repositório', tec: 'GitHub', icone: 'git-branch' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

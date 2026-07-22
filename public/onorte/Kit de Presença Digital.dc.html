@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #F4F6F3; }
+    a { color: #219653; }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <circle cx="200" cy="160" r="70" fill="#F0F0F0"/>
+      <circle cx="200" cy="160" r="42" fill="#219653"/>
+      <rect x="110" y="270" width="180" height="12" rx="6" fill="#6FCF97"/>
+      <rect x="140" y="296" width="120" height="8" rx="4" fill="#A5D6A7" opacity="0.6"/>
+    </svg>
+  </template>
+</helmet>
+
+<div style="font-family:'Montserrat',sans-serif; color:#1C201C; max-width:1060px; margin:0 auto; padding:48px 32px 80px;">
+
+  <!-- CABEÇALHO -->
+  <div style="background:#39453A; border-radius:18px; padding:42px 44px; position:relative; overflow:hidden; margin-bottom:36px;">
+    <div style="position:absolute; top:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.22), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:14px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>O Norte · Central de Marca</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#FFFFFF; margin:0 0 10px; line-height:1.15;">Kit de Presença Digital Mínima</h1>
+      <p style="font-size:14px; color:#C4CAC2; font-weight:300; margin:0; max-width:640px; line-height:1.6;">Presença que <strong style="color:#EDEFEC; font-weight:600;">protege o nome</strong>, não que busca engajamento. Reservamos os perfis, padronizamos a identidade e definimos regras claras — sem gerar obrigação de conteúdo nem risco de exposição.</p>
+    </div>
+  </div>
+
+  <!-- 1 · AVATARES -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">1 ·</span> Avatar padrão (foto de perfil)</h2>
+  <div style="height:2px; background:#E3E6E1; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:14px;">
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:26px; text-align:center;">
+      <div id="avatar-claro" style="width:180px; height:180px; border-radius:50%; background:#F0F0F0; display:inline-flex; align-items:center; justify-content:center;">
+        <img src="assets/simbolo-opp.png" alt="Símbolo Opp+" style="width:96px; height:auto;">
+      </div>
+      <div style="font-weight:600; font-size:13px; color:#39453A; margin-top:16px;">Versão clara — padrão</div>
+      <div style="font-size:11.5px; color:#767C75; margin-top:4px;">Fundo cinza claro da marca. Usar em todas as plataformas.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:26px; text-align:center;">
+      <div id="avatar-escuro" style="width:180px; height:180px; border-radius:50%; background:#39453A; display:inline-flex; align-items:center; justify-content:center;">
+        <img src="assets/simbolo-opp.png" alt="Símbolo Opp+" style="width:96px; height:auto;">
+      </div>
+      <div style="font-weight:600; font-size:13px; color:#39453A; margin-top:16px;">Versão escura — alternativa</div>
+      <div style="font-size:11.5px; color:#767C75; margin-top:4px;">Só o símbolo (sem texto), respeitando a regra do fundo escuro.</div>
+    </div>
+  </div>
+  <div style="font-size:11.5px; color:#868C85; line-height:1.55; margin:0 0 36px; padding-left:12px; border-left:2px solid #A5D6A7;">Exportar em <strong style="color:#39453A;">no mínimo 640×640 px</strong>. O símbolo isolado garante leitura mesmo no círculo pequeno do WhatsApp — o logo completo com texto fica ilegível nesse tamanho.</div>
+
+  <!-- 2 · CAPAS -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">2 ·</span> Capa (LinkedIn / Facebook)</h2>
+  <div style="height:2px; background:#E3E6E1; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:14px;">
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:20px;">
+      <div id="capa-clara" style="aspect-ratio:4/1; background:#F0F0F0; border-radius:10px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:6px; background:linear-gradient(180deg, #219653, #6FCF97);"></div>
+        <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:52%; width:auto;">
+      </div>
+      <div style="font-weight:600; font-size:13px; color:#39453A; margin-top:12px;">Capa clara — padrão <span style="font-weight:400; color:#9AA097;">(LinkedIn 1584×396 · Facebook 820×312)</span></div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:20px;">
+      <div id="capa-escura" style="aspect-ratio:4/1; background:#39453A; border-radius:10px; display:flex; align-items:center; justify-content:center; gap:22px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-60px; right:-40px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.2), transparent 62%);"></div>
+        <img src="assets/simbolo-opp.png" alt="" style="height:46%; width:auto;">
+        <div style="font-family:'Comfortaa',sans-serif; color:#FFFFFF; text-align:left;">
+          <div style="font-weight:400; font-size:15px; line-height:1;">Grupo</div>
+          <div style="font-weight:700; font-size:32px; line-height:1.1;">opp+</div>
+        </div>
+      </div>
+      <div style="font-weight:600; font-size:13px; color:#39453A; margin-top:12px;">Capa escura — alternativa <span style="font-weight:400; color:#9AA097;">(texto branco provisório até termos o arquivo oficial do logo em fonte branca)</span></div>
+    </div>
+  </div>
+  <div style="font-size:11.5px; color:#868C85; line-height:1.55; margin:0 0 36px; padding-left:12px; border-left:2px solid #A5D6A7;">Quando quiser os PNGs prontos para upload, é só pedir — eu exporto cada peça daqui nas dimensões exatas de cada plataforma.</div>
+
+  <!-- 3 · BIOS -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">3 ·</span> Bios padronizadas (copiar e colar)</h2>
+  <div style="height:2px; background:#E3E6E1; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:36px;">
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;">Instagram · perfil reservado</div>
+      <div style="background:#F7F8F6; border:1px solid #EDEFEA; border-radius:10px; padding:14px 16px; font-size:12.5px; line-height:1.65; color:#39453A;">Aplicação aérea e gestão de aeronaves agrícolas · Sorriso/MT<br>Atendimento pelo WhatsApp: {{ telefone }}<br>www.grupooppmais.com.br</div>
+      <div style="font-size:10.5px; color:#9AA097; margin-top:8px;">Perfil sem publicações. Bio aponta para os canais que funcionam.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;">LinkedIn · tagline + sobre</div>
+      <div style="background:#F7F8F6; border:1px solid #EDEFEA; border-radius:10px; padding:14px 16px; font-size:12.5px; line-height:1.65; color:#39453A;"><strong>Aplicação aérea e gestão de aeronaves agrícolas — Sorriso/MT.</strong><br><br>O Grupo Opp+ reúne a Opp Aviação Agrícola e a Opp Gestão de Ativos. Prestamos serviços de aplicação aérea com equipe treinada, aeronaves novas e operação 100% dentro da lei — e administramos aeronaves de terceiros com transparência total e agenda exclusiva do proprietário. Trabalho bem feito, safra após safra.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;">Google · Perfil da Empresa</div>
+      <div style="background:#F7F8F6; border:1px solid #EDEFEA; border-radius:10px; padding:14px 16px; font-size:12.5px; line-height:1.65; color:#39453A;">Serviços aeroagrícolas especializados e administração de aeronaves agrícolas em Sorriso/MT. Aplicação aérea de defensivos, fertilizantes e sementes com precisão e segurança, em conformidade com ANAC, MAPA e órgãos ambientais. Atendimento: {{ telefone }}.</div>
+      <div style="font-size:10.5px; color:#9AA097; margin-top:8px;">É onde o cliente indicado confere se a empresa é séria — manter endereço, horário e telefone sempre atualizados.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;">WhatsApp Business · perfil</div>
+      <div style="background:#F7F8F6; border:1px solid #EDEFEA; border-radius:10px; padding:14px 16px; font-size:12.5px; line-height:1.65; color:#39453A;"><strong>Nome:</strong> Grupo Opp+<br><strong>Descrição:</strong> Aplicação aérea e gestão de aeronaves agrícolas. Sorriso/MT. Atendimento em horário comercial.<br><strong>Telefone:</strong> +55 (41) 99947-1355<br><strong>Site:</strong> www.grupooppmais.com.br</div>
+    </div>
+  </div>
+
+  <!-- 4 · WHATSAPP -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">4 ·</span> WhatsApp Business — mensagens prontas</h2>
+  <div style="height:2px; background:#E3E6E1; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:14px;">
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;">Saudação automática</div>
+      <div style="background:#F7F8F6; border:1px solid #EDEFEA; border-radius:10px; padding:14px 16px; font-size:12.5px; line-height:1.65; color:#39453A;">Olá! Aqui é o Grupo Opp+ (Opp Aviação Agrícola e Opp Gestão de Ativos). Recebemos sua mensagem e respondemos em horário comercial, o mais rápido possível. Como podemos ajudar?</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;">Mensagem de ausência</div>
+      
+</x-dc>
+</body>
+</html>

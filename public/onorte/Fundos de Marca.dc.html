@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #F0F0F0; font-family: 'Montserrat', sans-serif; }
+a { color: #219653; } a:hover { color: #39453A; }
+</style>
+</helmet>
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px 32px 80px; display: flex; flex-direction: column; gap: 40px">
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <div style="font-family: 'Comfortaa', sans-serif; font-size: 28px; font-weight: 700; color: #39453A">Planos de Fundo Oficiais</div>
+    <div style="font-size: 14px; color: #333333">Versões fable_version — logo flat e ícones atualizados. Clique com o botão direito em uma imagem para salvá-la.</div>
+  </div>
+  <sc-for list="{{ fundos }}" as="f" hint-placeholder-count="6">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; align-items: baseline; gap: 12px">
+        <div style="font-family: 'Comfortaa', sans-serif; font-size: 17px; font-weight: 700; color: #39453A">{{ f.titulo }}</div>
+        <div style="font-size: 12px; color: #333333; opacity: 0.7">{{ f.arquivo }}</div>
+      </div>
+      <img src="{{ f.src }}" style="width: 100%; display: block; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.12)" alt="{{ f.titulo }}">
+      <div style="font-size: 13px; color: #333333">{{ f.uso }}</div>
+    </div>
+  </sc-for>
+  <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px">
+    <div style="font-family: 'Comfortaa', sans-serif; font-size: 22px; font-weight: 700; color: #39453A">Wallpapers — celular e tablet</div>
+    <div style="font-size: 14px; color: #333333">1440×3120 (vertical). Logo na metade inferior, longe do relógio e da barra de apps.</div>
+  </div>
+  <div style="display: flex; gap: 32px; flex-wrap: wrap">
+    <sc-for list="{{ wallpapers }}" as="w" hint-placeholder-count="2">
+      <div style="display: flex; flex-direction: column; gap: 10px; width: 300px">
+        <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+          <div style="font-family: 'Comfortaa', sans-serif; font-size: 16px; font-weight: 700; color: #39453A">{{ w.titulo }}</div>
+        </div>
+        <img src="{{ w.src }}" style="width: 100%; display: block; border-radius: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.15)" alt="{{ w.titulo }}">
+        <div style="font-size: 12px; color: #333333; opacity: 0.7">{{ w.arquivo }}</div>
+        <div style="font-size: 13px; color: #333333">{{ w.uso }}</div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const bust = '?v=' + Date.now();
+    return { fundos: [
+      { titulo: 'Fundo verde — 3 marcas', arquivo: 'assets/fundo-opp-logos.png', src: 'assets/fundo-opp-logos.png' + bust, uso: 'Capas e encerramentos em fundo escuro. Grupo Opp+ flat branco + controladas em branco sólido.' },
+      { titulo: 'Fundo branco — 3 marcas', arquivo: 'assets/fundo-opp-logos-branco.png', src: 'assets/fundo-opp-logos-branco.png' + bust, uso: 'Capas em fundo claro. Logos oficiais nas cores originais.' },
+      { titulo: 'Fundo verde — ícone', arquivo: 'assets/fundo-opp-icones.png', src: 'assets/fundo-opp-icones.png' + bust, uso: 'Slides internos e peças onde a marca já foi apresentada.' },
+      { titulo: 'Fundo verde — limpo', arquivo: 'assets/fundo-opp-verde.png', src: 'assets/fundo-opp-verde.png' + bust, uso: 'Base neutra escura, sem marca.' },
+      { titulo: 'Fundo branco — limpo', arquivo: 'assets/fundo-opp-branco.png', src: 'assets/fundo-opp-branco.png' + bust, uso: 'Base neutra clara, sem marca.' },
+    ], wallpapers: [
+      { titulo: 'Wallpaper verde', arquivo: 'assets/wallpaper-opp-verde.png', src: 'assets/wallpaper-opp-verde.png' + bust, uso: 'Celulares e tablets — tela escura.' },
+      { titulo: 'Wallpaper claro', arquivo: 'assets/wallpaper-opp-claro.png', src: 'assets/wallpaper-opp-claro.png' + bust, uso: 'Celulares e tablets — tela clara.' },
+    ]};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 32px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+  <div style="max-width:1100px; margin:0 auto 32px;">
+    <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#7A8079; font-weight:600; margin-bottom:12px;">
+      <span style="width:24px; height:1.5px; background:#219653; display:inline-block;"></span>Conceito · Site institucional
+    </div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:28px; margin:0 0 8px; color:#39453A;">A chamada para a Minha Opp+</h1>
+    <p style="font-size:13.5px; line-height:1.6; color:#5A5F58; max-width:70ch; margin:0;">Três pontos de entrada, sempre os mesmos: botão fixo no cabeçalho (o principal), faixa de convite antes do rodapé (pra quem rolou até o fim) e link no rodapé (o "caminho de casa" de quem já conhece).</p>
+  </div>
+
+  <!-- 1 · CABEÇALHO -->
+  <div style="max-width:1100px; margin:0 auto 14px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600;">1 · Cabeçalho — presente em todas as páginas</div>
+  <div style="max-width:1100px; margin:0 auto 40px; background:#FFFFFF; border-radius:16px; box-shadow:0 14px 40px rgba(57,69,58,.12); overflow:hidden;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:16px 32px; border-bottom:1px solid #E6E7E4;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:34px; width:auto;">
+      <div style="display:flex; align-items:center; gap:26px; font-size:13px; font-weight:500; color:#4A4F49;">
+        <span>O Grupo</span><span>Serviços</span><span>Nossa história</span><span>Contato</span>
+      </div>
+      <div style="display:inline-flex; align-items:center; gap:8px; background:#39453A; color:#FFFFFF; font-size:12.5px; font-weight:600; padding:10px 18px; border-radius:11px;">
+        <i data-lucide="circle-user" style="color:#A5D6A7;"></i>Minha Opp+<span style="opacity:.55; font-weight:400;">·</span><span style="font-weight:500; color:#D6DDD5;">Entrar</span>
+      </div>
+    </div>
+    <div style="padding:14px 32px; font-size:12px; color:#7A8079; background:#F7F8F6;">O botão vive no canto direito, cor da âncora #39453A — visível sem gritar. Quem é de casa encontra sempre no mesmo lugar.</div>
+  </div>
+
+  <!-- 2 · FAIXA CONVITE -->
+  <div style="max-width:1100px; margin:0 auto 14px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600;">2 · Faixa de convite — antes do rodapé</div>
+  <div style="max-width:1100px; margin:0 auto 40px; border-radius:16px; overflow:hidden; box-shadow:0 14px 40px rgba(57,69,58,.12);">
+    <div style="background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 48px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <div style="max-width:56ch;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:24px; color:#FFFFFF; margin-bottom:10px;">Quem caminha com a gente, entra por aqui.</div>
+        <div style="font-size:13.5px; line-height:1.65; color:#D6DDD5;">A Minha Opp+ é o espaço de equipe, parceiros e fornecedores: documentos, acompanhamento e um canal direto com quem você já conhece pelo nome.</div>
+      </div>
+      <div style="display:inline-flex; align-items:center; gap:9px; background:#219653; color:#FFFFFF; font-size:14px; font-weight:600; padding:15px 28px; border-radius:12px; flex:none;">Acessar a Minha Opp+<i data-lucide="arrow-right"></i></div>
+    </div>
+  </div>
+
+  <!-- 3 · RODAPÉ -->
+  <div style="max-width:1100px; margin:0 auto 14px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600;">3 · Rodapé — o caminho de casa</div>
+  <div style="max-width:1100px; margin:0 auto; background:#FFFFFF; border-radius:16px; box-shadow:0 14px 40px rgba(57,69,58,.12); overflow:hidden;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; padding:36px 48px 30px;">
+      <div>
+        <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:30px; width:auto; margin-bottom:14px;">
+        <div style="font-size:11px; line-height:1.7; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56<br>Rua Santa Catarina de Alexandria, 2127 · Sorriso/MT</div>
+      </div>
+      <div style="font-size:12.5px; line-height:2.1; color:#4A4F49;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:12px; color:#39453A; margin-bottom:6px;">Institucional</div>
+        O Grupo<br>Serviços<br>Contato
+      </div>
+      <div style="font-size:12.5px; line-height:2.1; color:#4A4F49;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:12px; color:#39453A; margin-bottom:6px;">Acesso</div>
+        <span style="color:#219653; font-weight:600;">Minha Opp+ — entrar</span><br>WhatsApp<br>E-mail
+      </div>
+    </div>
+    <div style="padding:14px 48px; font-size:11px; color:#9AA097; border-top:1px solid #E6E7E4;">© Grupo Opp+ · Todos os direitos reservados</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.renderIcons(); this._t = setInterval(() => this.renderIcons(), 700);
+    setTimeout(() => clearInterval(this._t), 4000);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderIcons() { if (window.lucide) lucide.createIcons(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

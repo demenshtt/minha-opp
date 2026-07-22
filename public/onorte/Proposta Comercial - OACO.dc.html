@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; }
+    .card, .kpi, .sigblock, .invest { break-inside: avoid; }
+    h2, h3 { break-after: avoid; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"></rect>
+      <rect x="90" y="110" width="220" height="20" rx="5" fill="#FFFFFF"></rect>
+      <rect x="90" y="146" width="140" height="10" rx="5" fill="#6FCF97"></rect>
+      <rect x="90" y="200" width="220" height="8" rx="4" fill="#A5D6A7" opacity="0.6"></rect>
+      <rect x="90" y="220" width="180" height="8" rx="4" fill="#A5D6A7" opacity="0.4"></rect>
+      <text x="200" y="300" font-family="Comfortaa,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">Proposta</text>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.7in" hint-size="816px,1056px">
+
+  <!-- CABEÇALHO -->
+  <div slot="header" style="font-family:'Montserrat',sans-serif;">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; padding:6px 0 12px;">
+      <div>
+        <div><sc-if value="{{ isSAE }}" hint-placeholder-val="{{ false }}"><img src="assets/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="height:44px; width:auto; display:block;"></sc-if><sc-if value="{{ isOACO }}" hint-placeholder-val="{{ true }}"><img src="assets/logo-opp-ativos.png" alt="Opp Gestão de Ativos" style="height:44px; width:auto; display:block;"></sc-if></div>
+      </div>
+      <div style="text-align:right; font-size:9px; line-height:1.5; color:#8A8F89;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:600; color:#39453A; font-size:10px;">{{ legalName }}</div>
+        <div>CNPJ {{ cnpj }}</div>
+        <div>{{ address }}</div>
+      </div>
+    </div>
+    <div style="height:2.5px; background:linear-gradient(90deg, #39453A 0%, #39453A 62%, #219653 62%, #6FCF97 100%); border-radius:2px;"></div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div slot="footer" style="font-family:'Montserrat',sans-serif;">
+    <div style="height:1.5px; background:linear-gradient(90deg, #6FCF97 0%, #219653 38%, #39453A 38%, #39453A 100%); border-radius:2px; margin-bottom:7px;"></div>
+    <div style="display:flex; align-items:center; justify-content:space-between; font-size:8px; letter-spacing:0.04em; color:#A0A59D;">
+      <span>+55 (41) 99947-1355 · contato@grupooppmais.com.br · www.grupooppmais.com.br</span>
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:15px; width:auto; filter:grayscale(1); opacity:0.55;">
+    </div>
+  </div>
+
+  <!-- CAPA / MASTHEAD -->
+  <div style="background:#39453A; border-radius:16px; padding:44px 42px; margin:4px 0 28px; position:relative; overflow:hidden; font-family:'Montserrat',sans-serif;">
+    <div style="position:absolute; top:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.22), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:18px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>Proposta Comercial · Nº 000/2026</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:34px; line-height:1.12; color:#FFFFFF; margin:0 0 10px;">{{ tituloProposta }}</h1>
+      <div style="font-size:15px; color:#C4CAC2; font-weight:300; margin-bottom:24px;">{{ subtituloProposta }}</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px 26px; font-size:11.5px; color:#9AA598; max-width:520px;">
+        <div><span style="display:block; font-size:8.5px; letter-spacing:0.12em; text-transform:uppercase; color:#7E8F82; font-weight:600; margin-bottom:2px;">Cliente</span><strong style="color:#EDEFEC; font-weight:600;">[Nome do cliente / fazenda]</strong></div>
+        <div><span style="display:block; font-size:8.5px; letter-spacing:0.12em; text-transform:uppercase; color:#7E8F82; font-weight:600; margin-bottom:2px;">A/C</span><strong style="color:#EDEFEC; font-weight:600;">[Responsável]</strong></div>
+        <div><span style="display:block; font-size:8.5px; letter-spacing:0.12em; text-transform:uppercase; color:#7E8F82; font-weight:600; margin-bottom:2px;">Data</span><strong style="color:#EDEFEC; font-weight:600;">Sorriso/MT, 18 de julho de 2026</strong></div>
+        <div><span style="display:block; font-size:8.5px; letter-spacing:0.12em; text-transform:uppercase; color:#7E8F82; font-weight:600; margin-bottom:2px;">Validade</span><strong style="color:#EDEFEC; font-weight:600;">30 dias</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-family:'Montserrat',sans-serif; color:#1C201C; font-size:12px; line-height:1.7;">
+
+    <!-- 1 · QUEM SOMOS -->
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">1 ·</span> Quem somos</h2>
+    <div style="height:2px; background:#EEF0ED; margin:0 0 14px; border-radius:2px;"></div>
+    <p style="margin:0 0 12px; text-align:justify;">O <strong>Grupo Opp+</strong> reúne empresas especializadas no ambiente aeroagrícola, com atuação em prestação de serviços de aplicação aérea e administração de ativos de terceiros. Operamos com tudo dentro da lei e das normas do setor, equipe treinada periodicamente, aeronaves novas e equipamentos de última geração.</p>
+    <p style="margin:0 0 24px; text-align:justify;">Nosso compromisso é simples: <strong>fazer o investimento do parceiro render mais</strong>. Quando o trabalho é bem planejado dos dois lados, todos ganham — o resultado na lavoura e a eficiência da operação. É assim que construímos parcerias que atravessam safras e gerações.</p>
+
+    <!-- 2 · O SERVIÇO -->
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">2 ·</span> {{ tituloServico }}</h2>
+    <div style="height:2px; background:#EEF0ED; margin:0 0 14px; border-radius:2px;"></div>
+
+    <sc-if value="{{ isSAE }}" hint-placeholder-val="{{ true }}">
+      <p style="margin:0 0 12px; text-align:justify;">Propomos a prestação de <strong>Serviços Aeroagrícolas Especializados (SAE)</strong>: aplicação aérea de defensivos, fertilizantes e sementes com precisão, rastreabilidade e segurança operacional. Cada operação é planejada em conjunto com o cliente, considerando cultura, alvo, janela climática e logística de pátio.</p>
+      <p style="margin:0 0 14px; text-align:justify;"><strong>Tempo é a nossa moeda de troca.</strong> Quanto mais otimizados forem o ambiente, a técnica e as áreas de aplicação, menor será o investimento do contratante. Por isso trabalhamos lado a lado com sua equipe para maximizar o rendimento operacional de cada hora de voo.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px;">
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Tudo dentro da lei</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Operação 100% regularizada junto à ANAC, ao MAPA e aos órgãos ambientais — sem risco para o contratante.</div>
+        </div>
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Frota e tecnologia</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Aeronaves novas e equipamentos modernos de aplicação, com DGPS e controle de fluxo embarcado.</div>
+        </div>
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Equipe qualificada</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Pilotos e equipe de solo com treinamento periódico e cultura de segurança operacional.</div>
+        </div>
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Modelos flexíveis</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Alternativas de contrapartida de pagamento sobre o valor agregado do serviço, conforme o perfil do parceiro.</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isOACO }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:0 0 12px; text-align:justify;">Propomos o modelo de <strong>Operador Aeroagrícola Compartilhado (OACO)</strong>: entregamos toda a nossa expertise na gestão do ambiente aeroagrícola, compartilhando a operação da sua aeronave. Assumimos, de forma legal, toda a administração que a atividade exige — tripulação, manutenção, documentação e exigências dos órgãos reguladores.</p>
+      <p style="margin:0 0 14px; text-align:justify;">A <strong>agenda de operações permanece com exclusividade a seu critério</strong>. Havendo disponibilidade operacional, a aeronave pode ser alocada para prestar serviços a terceiros por meio de empresa legalmente constituída no ramo, gerando receita sobre o ativo.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px;">
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Gestão completa do ativo</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Administração de tripulação, manutenção, seguros e documentação, dentro da legalidade plena.</div>
+        </div>
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Agenda exclusiva sua</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">A prioridade de uso da aeronave é sempre do proprietário — sem exceções.</div>
+        </div>
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Receita na ociosidade</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Disponibilidade operacional pode ser alocada a terceiros, transformando custo fixo em receita.</div>
+        </div>
+        <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+          <div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:4px;">Transparência sistematizada</div>
+          <div style="font-size:11px; color:#767C75; line-height:1.55;">Toda movimentação é acompanhada em sistema e a informação da gestão do bem é prontamente disponibilizada.</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- 3 · ESCOPO -->
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">3 ·</span> Escopo desta proposta</h2>
+    <div style="height:2px; background:#EEF0ED; margin:0 0 14px; border-radius:2px;"></div>
+    <p style="margin:0 0 10px; text-align:justify;">{{ escopoIntro }}</p>
+    <ul style="margin:0 0 24px; padding-left:20px; color:#39453A;">
+      <li style="margin-bottom:6px;">[Item de escopo 1 — ex.: área estimada, cultura, tipo de aplicação]</li>
+      <li style="margin-bottom:6px;">[Item de escopo 2 — ex.: período / janela operacional]</li>
+      <li style="margin-bottom:6px;">[Item de escopo 3 — ex.: responsabilidades do contratante]</li>
+    </ul>
+
+    <!-- 4 · INVESTIMENTO -->
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">4 ·</span> Investimento e condições comerciais</h2>
+    <div style="height:2px; background:#EEF0ED; margin:0 0 14px; border-radius:2px;"></div>
+    <div class="invest">
+    <table cellpadding="0" cellspacing="0" style="border-collapse:collapse; width:100%; margin-bottom:12px; font-size:11.5px;">
+      <thead>
+        <tr style="background:#39453A; color:#FFFFFF;">
+          <th style="text-align:left; padding:9px 14px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:0.06em; border-radius:8px 0 0 0;">Item</th>
+          <th style="text-align:left; padding:9px 14px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:0.06em;">Unidade</th>
+          <th style="text-align:right; padding:9px 14px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:0.06em; border-radius:0 8px 0 0;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #EEF0ED;"><td style="padding:9px 14px; color:#39453A;">[Serviço / item 1]</td><td style="padding:9px 14px; color:#767C75;">[ha / hora / mês]</td><td style="padding:9px 14px; text-align:right; font-weight:600; color:#39453A;">R$ 0.000,00</td></tr>
+        <tr style="border-bottom:1px solid #EEF0ED; background:#FAFBFA;"><td style="padding:9px 14px; color:#39453A;">[Serviço / item 2]</td><td style="padding:9px 14px; color:#767C75;">[ha / hora / mês]</td><td style="padding:9px 14px; text-align:right; font-weight:600; color:#39453A;">R$ 0.000,00</td></tr>
+        <tr style="border-bottom:2px solid #39453A;"><td style="padding:9px 14px; color:#39453A;">[Serviço / item 3]</td><td style="padding:9px 14px; color:#767C75;">[ha / hora / mês]</td><td style="padding:9px 14px; text-align:right; font-weight:600; color:#39453A;">R$ 0.000,00</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="font-size:11px; color:#868C85; line-height:1.55; margin:0 0 24px; padding-left:12px; border-left:2px solid #A5D6A7;">{{ notaComercial }}</div>
+
+    <!-- 5 · CONDIÇÕES GERAIS -->
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">5 ·</span> Condições gerais</h2>
+    <div style="height:2px; background:#EEF0ED; margin:0 0 14px; border-radius:2px;"></div>
+    <ul style="margin:0 0 28px; padding-left:20px; color:#39453A;">
+      <li style="margin-bottom:6px;">Proposta válida por <strong>30 dias</strong> a partir da data de emissão.</li>
+      <li style="margin-bottom:6px;">Condições de pagamento: [à vista / parcelado / contrapartida sobre valor agregado].</li>
+      
+      <li style="margin-bottom:6px;">A formalização se dá mediante contrato de prestação de serviços entre as partes.</li>
+    </ul>
+
+    <!-- 6 · ACEITE -->
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px;"><span style="color:#219653;">6 ·</span> Aceite</h2>
+    <div style="height:2px; background:#EEF0ED; margin:0 0 14px; border-radius:2px;"></div>
+    <p style="margin:0 0 40px; text-align:justify;">Mais do que uma contratação, propomos uma relação de confiança — daquelas que se constroem com trabalho bem feito, safra após safra. Estando de acordo com os termos desta proposta, basta assinar abaixo para darmos início à formalização. Ficamos à disposição para qualquer esclarecimento.</p>
+    <div class="sigblock" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:24px;">
+      <div style="border-top:1px solid #39453A; padding-top:8px;">
+        <div style="font-weight:600; color:#39453A; font-size:12px;">[Nome do responsável]</div>
+        <div style="color:#767C75; font-size:11px;">{{ legalName }}</div>
+      </div>
+      <div style="border-top:1px solid #39453A; padding-top:8px;">
+        <div style="font-weight:600; color:#39453A; font-size:12px;">[Nome do cliente]</div>
+        <div style="color:#767C75; font-size:11px;">De acordo — data: ____/____/______</div>
+      </div>
+    </div>
+
+  </div>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;servico&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;oaco&quot;,&quot;options&quot;:[&quot;sae&quot;,&quot;oaco&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proposta&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const servico = this.props.servico ?? 'sae';
+    const isSAE = servico === 'sae';
+    const data = {
+      sae: {
+        emitter: 'Opp Aviação Agrícola',
+        legal: 'Opp Aviação Agrícola Ltda',
+        titulo: 'Serviços Aeroagrícolas Especializados',
+        subtitulo: 'Aplicação aérea com precisão, conformidade e geração de valor sobre o seu investimento',
+        tituloServico: 'O serviço proposto — SAE',
+        escopoIntro: 'Esta proposta contempla a prestação de serviços de aplicação aérea conforme os parâmetros abaixo, a serem ajustados em comum acordo no planejamento operacional:',
+        nota: 'Disponibilizamos modelos alternativos de contrapartida de pagamento sobre o valor agregado resultante do serviço prestado. Podemos negociar com sua produção agrícola, insumos, etc.',
+      },
+      oaco: {
+        emitter: 'Opp Gestão de Ativos',
+        legal: 'Opp Aviação Agrícola Ltda',
+        titulo: 'Operador Aeroagrícola Compartilhado',
+        subtitulo: 'Gestão completa da sua aeronave, com agenda exclusiva sua e receita sobre a disponibilidade',
+        tituloServico: 'O serviço proposto — OACO',
+        escopoIntro: 'Esta proposta contempla a administração compartilhada da aeronave abaixo identificada, nos termos a serem detalhados em contrato:',
+        nota: 'A remuneração da gestão pode combinar taxa de administração e participação sobre a receita gerada na alocação a terceiros, conforme o modelo acordado entre as partes.',
+      },
+    };
+    const d = data[servico] || data.sae;
+    return {
+      isSAE, isOACO: !isSAE,
+      emitterName: d.emitter,
+      emitterLogo: isSAE ? 'assets/logo-opp-aviacao.png' : 'assets/logo-opp-ativos.png',
+      legalName: d.legal,
+      cnpj: '33.910.736/0001-56',
+      address: 'Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126',
+      tituloProposta: d.titulo,
+      subtituloProposta: d.subtitulo,
+      tituloServico: d.tituloServico,
+      escopoIntro: d.escopoIntro,
+      notaComercial: d.nota,
+    };
+  }
+}
+</script>
+</body>
+</html>

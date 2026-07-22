@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="90" y="150" width="220" height="12" rx="3" fill="#6FCF97"/>
+      <rect x="90" y="176" width="220" height="8" rx="3" fill="#A5D6A7" opacity="0.6"/>
+      <rect x="90" y="194" width="220" height="8" rx="3" fill="#A5D6A7" opacity="0.6"/>
+      <rect x="90" y="212" width="150" height="8" rx="3" fill="#A5D6A7" opacity="0.6"/>
+      <text x="200" y="285" font-family="Comfortaa,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">Analítico</text>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.5in" hint-size="816px,1056px">
+
+  <div slot="header" style="display:flex; align-items:center; justify-content:space-between; padding:9px 4px; border-bottom:1px solid #E6E7E4; font-family:'Montserrat',sans-serif;">
+    <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:20px; width:auto;">
+    <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8F89; font-weight:600;">Relatório Gerencial · Analítico</div>
+  </div>
+  <div slot="footer" style="display:flex; align-items:center; justify-content:space-between; padding:7px 4px; border-top:1px solid #E6E7E4; font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.06em; color:#A0A59D;">
+    <span>CONFIDENCIAL GRUPO OPP+ · Documento oficial — fonte dos dados</span>
+    <span>Junho / 2026</span>
+  </div>
+
+  <!-- CAPA -->
+  <div style="background:#39453A; border-radius:14px; padding:40px 40px 34px; margin:2px 0 22px; position:relative; overflow:hidden; font-family:'Montserrat',sans-serif;">
+    <div style="position:absolute; top:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.20), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:16px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>Opp Aviação Agrícola Ltda</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:34px; line-height:1.05; color:#FFFFFF; margin:0 0 6px;">Relatório Gerencial — Analítico</h1>
+      <div style="font-size:15px; color:#C4CAC2; font-weight:300;">Junho / 2026 · 2º Quadrimestre · Documento oficial e fonte dos dados</div>
+    </div>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div style="font-family:'Montserrat',sans-serif; margin-bottom:8px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:12px;">Índice</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 32px;">
+      <sc-for list="{{ toc }}" as="t" hint-placeholder-count="16">
+        <div style="display:flex; align-items:baseline; gap:8px; padding:5px 0; border-bottom:1px solid #F0F1EE; font-size:11px; color:#4A4F49;">
+          <span style="font-family:monospace; font-weight:700; color:#219653; min-width:20px;">{{ t.n }}</span>
+          <span style="flex:1;">{{ t.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- SEÇÕES -->
+  <sc-for list="{{ sections }}" as="s" hint-placeholder-count="15">
+    <div style="break-before:page;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin:6px 0 3px; break-after:avoid;">
+        <span style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#219653;">{{ s.n }}</span>
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin:0;">{{ s.title }}</h2>
+      </div>
+      <sc-if value="{{ s.sub }}" hint-placeholder-val="{{ true }}"><div style="font-size:10px; color:#868C85; margin-bottom:10px; font-family:'Montserrat',sans-serif;">{{ s.sub }}</div></sc-if>
+      <div style="height:2px; background:#EEF0ED; margin:4px 0 12px; border-radius:2px;"></div>
+
+      <table style="width:100%; border-collapse:collapse; font-family:'Montserrat',sans-serif; font-size:9.5px; margin-bottom:8px;">
+        <thead>
+          <tr style="background:#39453A; color:#EDEFEC;">
+            <th style="text-align:left; padding:6px 8px; font-weight:600;">{{ s.firstCol }}</th>
+            <sc-for list="{{ s.cols }}" as="c" hint-placeholder-count="3">
+              <th style="text-align:right; padding:6px 8px; font-weight:600;">{{ c }}</th>
+            </sc-for>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="6">
+            <tr style="border-bottom:1px solid #EEF0ED; background:{{ r.bg }};">
+              <td style="text-align:left; padding:5px 8px; color:#39453A; font-weight:{{ r.fw }};">{{ r.label }}</td>
+              <sc-for list="{{ r.cells }}" as="v" hint-placeholder-count="3">
+                <td style="text-align:right; padding:5px 8px; color:#4A4F49; font-weight:{{ r.fw }};">{{ v }}</td>
+              </sc-for>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+      <sc-if value="{{ s.note }}" hint-placeholder-val="{{ true }}"><div style="font-size:9px; color:#9AA097; font-style:italic; font-family:'Montserrat',sans-serif; line-height:1.5;">{{ s.note }}</div></sc-if>
+    </div>
+  </sc-for>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const H = '600', N = '400';
+    const foot = (label, cells) => ({ label, cells, fw: '700', bg: '#F0F0F0' });
+    const row = (label, cells, fw) => ({ label, cells, fw: fw || N, bg: 'transparent' });
+
+    const toc = [
+      { n: '1', label: 'Destaques e Fatos Relevantes' },
+      { n: '2', label: 'Hectares voados' },
+      { n: '3', label: 'Horas de voo' },
+      { n: '4', label: 'Investimentos' },
+      { n: '5', label: 'Estoques de Combustíveis' },
+      { n: '6', label: 'Contas a Pagar' },
+      { n: '7', label: 'Faturamento' },
+      { n: '8', label: 'Contas a Receber' },
+      { n: '9', label: 'Fluxo de Caixa' },
+      { n: '10', label: 'DRE — Demonstrativo de Resultado' },
+      { n: '11', label: 'Serviços Prestados e Aportes' },
+      { n: '12', label: 'Despesas Totais' },
+      { n: '13', label: 'Custo por Aeronave' },
+      { n: '14', label: 'Despesas por Centro de Custo' },
+      { n: '15', label: 'Disponibilidades' },
+    ];
+
+    const sections = [
+      { n: '1', title: 'Destaques e Fatos Relevantes', firstCol: 'Indicador', cols: ['Junho / 2026', 'Acumulado ano'],
+        rows: [
+          row('Receita bruta (prestação de serviços)', ['R$ 695.570,63', 'R$ 6.988.170,66']),
+          row('EBITDA', ['R$ 305.548,68', 'R$ 1.389.678,21']),
+          row('Resultado líquido', ['R$ 264.560,69', 'R$ 1.173.797,50']),
+          row('Hectares voados', ['16.867', '186.892']),
+          row('Horas de voo', ['91,1', '809,8']),
+          row('ROI (base PL R$ 9.587.550)', ['2,76%', '12,24%']),
+        ],
+        note: 'Fatos relevantes: turbina do PP-OPP em serviço na Pratt & Whitney; recebido R$ 1.497.241 (50% indenização Mapfre PP-OPP) aplicado em Tesouro Direto; aquisição do salvado PS-PDG por US$ 170.000; reajuste do Jet A-1; aguarda indenização final Mapfre (AT-502XP). Endividamento bancário: nenhum. Inadimplência de terceiros: nenhuma.' },
+
+      { n: '2', title: 'Hectares voados', sub: 'Aplicação mensal — exercício 2026', firstCol: 'Descrição', cols: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'Acum.'],
+        rows: [
+          row('Hectares voados', ['22.773', '39.192', '57.991', '39.767', '10.302', '16.867', '186.892'], '600'),
+          row('Sócios', ['22.688', '31.823', '42.746', '23.958', '9.962', '16.867', '148.044']),
+          row('Terceiros', ['85', '7.369', '15.245', '15.809', '340', '—', '38.848']),
+          foot('Variação vs. mês anterior', ['-15%', '-38%', '-26%', '-48%', '-76%', '+64%', '—']),
+        ] },
+
+      { n: '3', title: 'Horas de voo', sub: 'Horas em aplicação — exercício 2026', firstCol: 'Descrição', cols: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'Acum.'],
+        rows: [
+          row('Horas de voo', ['94,4', '166,1', '254,3', '165,8', '38,1', '91,1', '809,8'], '600'),
+          row('Sócios', ['90,8', '137,0', '193,9', '111,2', '36,2', '89,3', '658,4']),
+          row('Terceiros', ['0,4', '22,9', '56,9', '52,6', '—', '—', '132,8']),
+          row('Traslados', ['3,2', '6,2', '3,5', '2,0', '1,9', '1,8', '18,6']),
+          foot('HA/HR (média)', ['241,2', '236,0', '228,0', '239,8', '270,5', '185,1', '230,8']),
+        ] },
+
+      { n: '4', title: 'Investimentos', sub: 'Plano Anual de Investimentos 2026', firstCol: 'Categoria', cols: ['Realiz. mês', 'Realiz. ano', 'Orçam. anual', '% Realiz.'],
+        rows: [
+          row('Software (Conta Azul, site, desenvolvimento)', ['0,00', '3.599,64', '18.000,00', '20,00%']),
+          row('Equipamentos', ['0,00', '3.202,88', '50.000,00', '6,41%']),
+          row('Veículos', ['2.176,00', '4.352,00', '130.000,00', '3,35%']),
+          row('Benfeitorias em bens de terceiros', ['0,00', '0,00', '60.000,00', '0,00%']),
+          row('Aeronaves (Air Tractor 602)', ['0,00', '0,00', '5.300.000,00', '0,00%']),
+          row('Instalações (Base II)', ['0,00', '0,00', '150.000,00', '0,00%']),
+          row('Treinamentos', ['0,00', '0,00', '30.000,00', '0,00%']),
+          foot('Investimento total', ['2.176,00', '11.154,52', '5.749.000,00', '0,19%']),
+        ] },
+
+      { n: '5', title: 'Estoques de Combustíveis', sub: 'Posição em jun/26', firstCol: 'Combustível', cols: ['Litros', 'Preço compra', 'Valor total'],
+        rows: [
+          row('JET (Querosene de aviação)', ['8.597', 'R$ 8,78', 'R$ 75.463,01']),
+          row('ÁLCOOL (Etanol)', ['9.816', 'R$ 3,29', 'R$ 32.327,74']),
+          row('DIESEL', ['—', '—', 'R$ —']),
+          foot('Total em estoque', ['—', '—', 'R$ 107.790,75']),
+        ],
+        note: 'Movimentação: saldo mês anterior R$ 71.489,07 · entradas R$ 140.300,00 · saldo final R$ 107.790,75 · consumo lançado na DRE R$ 103.998,32.' },
+
+      { n: '6', title: 'Contas a Pagar', sub: 'Posição Junho/2026', firstCol: 'Categoria', cols: ['Valor original', 'Valor pago', 'Valor a pagar'],
+        rows: [
+          row('Aluguel — Base', ['52.000,00', '0,00', '52.000,00']),
+          row('Cofins sobre faturamento', ['109.034,33', '0,00', '109.034,33']),
+          row('Combustíveis (CSP)', ['470.000,00', '0,00', '470.000,00']),
+          row('Comissões (CSP)', ['238.789,16', '43.672,54', '195.116,62']),
+          row('Comissões pessoal solo', ['32.170,99', '4.216,68', '27.954,31']),
+          row('Comodato Thrush', ['63.835,08', '0,00', '63.835,08']),
+          row('ISS sobre faturamento', ['121.723,89', '0,00', '121.723,89']),
+          row('Manutenção Aeronaves', ['1.410.488,36', '0,00', '1.410.488,36']),
+          row('Manutenção PP-OPP — incidente 20/12/25', ['3.781.996,11', '0,00', '3.781.996,11']),
+          row('Seguro Aeronaves', ['325.486,02', '0,00', '325.486,02']),
+          row('Pró-labore', ['24.986,49', '7.912,86', '17.073,63']),
+          row('Salários (CSP)', ['46.658,21', '8.552,14', '38.106,07']),
+          row('Simples Nacional — DAS', ['39.740,00', '0,00', '39.740,00']),
+          row('Honorários contábeis e consultoria', ['30.468,00', '800,00', '29.668,00']),
+          row('Demais categorias (água, energia, telefonia, tributos, etc.)', ['405.767,55', '10.402,78', '395.364,77']),
+          foot('Total geral', ['7.183.344,19', '76.369,00', '7.106.975,19']),
+        ],
+        note: 'Os valores de manutenção do PP-OPP (incidente 20/12/25) e manutenção de aeronaves seguem vinculados a processos de indenização em andamento.' },
+
+      { n: '7', title: 'Faturamento', sub: 'Serviços faturados no mês, por proprietário e cultura', firstCol: 'Proprietário / cultura', cols: ['A receber (R$)'],
+        rows: [
+          row('Adenir Picinin — Feijão', ['8.568,00']),
+          row('Aluizio Oliveira — Traslado + Feijão', ['13.328,61']),
+          row('G Picinin — Traslado + Algodão', ['334.839,36']),
+          row('G Prediger — Traslado + Feijão + a definir', ['266.254,66']),
+          foot('Total geral', ['622.990,64']),
+        ] },
+
+      { n: '8', title: 'Contas a Receber', sub: 'Terceiros faturados e a faturar — jul a dez/2026', firstCol: 'Cliente', cols: ['Valor total (R$)'],
+        rows: [
+          row('Moacir Antonio Picinin', ['2.960.337,69']),
+          row('Mapfre', ['2.300.000,00']),
+          row('Dorilino Prediger e outro', ['837.489,08']),
+          row('Ivanir João Pazini e outros', ['547.817,90']),
+          row('Adenir Francisco Picinin', ['201.968,07']),
+          row('Aluizio Fernandes de Oliveira', ['170.323,71']),
+          row('Gaspar Antonio Sviech e outro', ['190.003,59']),
+          row('Demais clientes', ['457.712,24']),
+          foot('Total geral', ['7.665.652,28']),
+        ] },
+
+      { n: '9', title: 'Fluxo de Caixa', sub: 'Realizado jun/26 e previsto — 2º quadrimestre', firstCol: 'Categoria', cols: ['jun/26 (real.)', 'jul/26 (prev.)', 'ago/26 (prev.)'],
+        rows: [
+          row('Saldo do mês anterior', ['1.430.390,51', '1.583.554,43', '1.038.072,70']),
+          row('Total de recebimentos', ['520.507,29', '4.057.431,43', '29.857,90']),
+          row('Total de pagamentos', ['(355.115,69)', '(4.602.913,16)', '(1.869.800,01)']),
+          foot('Saldo final de caixa', ['1.583.554,43', '1.038.072,70', '(801.869,41)']),
+        ],
+        note: 'A forte entrada prevista para julho reflete a expectativa de recebimento de indenização e faturamento acumulado.' },
+
+      { n: '10', title: 'DRE — Demonstrativo de Resultado', sub: 'Comparativo mai/26 × jun/26 e acumulado', firstCol: 'Conta', cols: ['mai/26', 'jun/26', 'Acumulado', 'A/V'],
+        rows: [
+          row('Receita de vendas de produtos e serviços', ['390.130,33', '695.570,63', '1.085.700,96', '100,00%'], '600'),
+          row('Deduções da receita bruta', ['(90.055,36)', '(61.442,33)', '(151.497,69)', '-13,95%']),
+          row('Receita líquida de serviços', ['300.074,97', '634.128,30', '934.203,27', '86,05%']),
+          row('Custo dos serviços prestados', ['(291.864,51)', '(294.061,74)', '(585.926,25)', '-53,97%']),
+          row('Resultado bruto', ['8.210,46', '340.066,56', '348.277,02', '32,08%'], '600'),
+          row('Despesas operacionais/administrativas', ['(36.794,51)', '(34.517,88)', '(71.312,39)', '-6,57%']),
+          row('EBITDA', ['(28.584,05)', '305.548,68', '276.964,63', '25,51%'], '600'),
+          row('Receitas e despesas financeiras', ['3.771,39', '13.030,26', '16.801,65', '1,55%']),
+          row('Depreciação', ['(58.146,25)', '(58.146,25)', '(116.292,50)', '-10,71%']),
+          row('IRPJ / CSLL (estimado)', ['—', '4.128,00', '4.128,00', '0,38%']),
+          row('Resultado antes dos investimentos', ['(82.958,91)', '264.560,69', '181.601,78', '16,73%'], '600'),
+          row('Investimentos', ['(2.176,00)', '(2.186,00)', '(4.362,00)', '-0,40%']),
+          foot('Sobras / déficit do mês', ['(85.134,91)', '262.374,69', '177.239,78', '16,32%']),
+        ] },
+
+      { n: '11', title: 'Serviços Prestados e Aportes', sub: 'Por sócio — jun/26', firstCol: 'Descrição', cols: ['G Prediger', 'G Picinin', 'Adenir P.', 'Aluizio O.', 'Total'],
+        rows: [
+          row('Serviços prestados', ['266.254,66', '334.839,36', '8.568,00', '13.328,61', '622.990,64']),
+          row('Aportes dos sócios', ['(13.000,00)', '—', '—', '—', '(13.000,00)']),
+          foot('Saldo do mês — a pagar/receber', ['253.254,66', '334.839,36', '8.568,00', '13.328,61', '609.990,64']),
+        ] },
+
+      { n: '12', title: 'Despesas Totais', sub: 'Consolidado do mês por categoria', firstCol: 'Categoria de despesa', cols: ['Valor (R$)'],
+        rows: [
+          row('Combustíveis (CSP)', ['(32.300,00)']),
+          row('Comissões (CSP)', ['(81.322,08)']),
+          row('Comissões pessoal solo', ['(17.762,91)']),
+          row('Comodato Thrush', ['(40.631,67)']),
+          row('Depreciações (aeronaves, veículos, máq., móveis)', ['(58.146,25)']),
+          row('ISS sobre faturamento', ['(31.723,89)']),
+          row('Manutenção Aeronaves', ['(25.595,00)']),
+          row('Manutenção de veículos e equipamentos', ['(20.261,34)']),
+          row('Seguro Aeronaves', ['(30.276,70)']),
+          row('Aluguel — Base', ['(13.000,00)']),
+          row('Tributos federais e municipais', ['(59.442,33)']),
+          row('Rendimentos de aplicações (receita)', ['13.766,09']),
+          row('Demais categorias (pessoal, honorários, serviços…)', ['(9.884,04)']),
+          foot('Total geral', ['(433.444,55)']),
+        ] },
+
+      { n: '13', title: 'Custo por Aeronave', sub: 'Centro de custo — jun/26', firstCol: 'Aeronave / centro', cols: ['Valor (R$)'],
+        rows: [
+          row('PP-OPP (depreciação)', ['(39.000,00)']),
+          row('PT-UJQ (manut., seguro, combustível, deprec.)', ['(52.143,37)']),
+          row('PP-CPG (manut., seguro, comodato Thrush)', ['(83.326,67)']),
+          foot('Total geral', ['(174.470,04)']),
+        ] },
+
+      { n: '14', title: 'Despesas por Centro de Custo', sub: 'Distribuição do mês', firstCol: 'Centro de custo', cols: ['Valor (R$)', '%'],
+        rows: [
+          row('Administrativo', ['30.535,99', '7%']),
+          row('Base operacional', ['82.677,31', '19%']),
+          row('Comissões', ['84.318,88', '20%']),
+          row('PP-CPG', ['83.326,67', '19%']),
+          row('PP-OPP', ['39.000,00', '9%']),
+          row('PT-UJQ', ['52.143,37', '12%']),
+          row('Tributos', ['61.442,33', '14%']),
+          foot('Total geral', ['433.444,55', '100%']),
+        ] },
+
+      { n: '15', title: 'Disponibilidades', sub: 'Posição em 30/06/2026', firstCol: 'Disponibilidade', cols: ['Valor (R$)', '%'],
+        rows: [
+          row('Saldo em aplicação financeira (SICREDI FIRF DI)', ['1.108.215,71', '70,3%']),
+          row('Saldo em conta-corrente', ['406.800,55', '25,8%']),
+          row('Saldo em caixa', ['61.184,12', '3,9%']),
+          foot('Total', ['1.576.200,38', '100,0%']),
+        ],
+        note: 'Aplicação em fundo de renda fixa atrelado a títulos públicos federais. Saldo bruto em 31/05: R$ 1.300.023,66; rendimentos do período: R$ 13.766,09.' },
+    ];
+
+    return { toc, sections };
+  }
+}
+</script>
+</body>
+</html>

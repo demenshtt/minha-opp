@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:960px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <!-- HERO -->
+  <div style="position:relative; background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 52px 40px; color:#FFFFFF; overflow:hidden;">
+    <div style="position:relative; display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;">
+          <span style="width:24px; height:1.5px; background:#6FCF97; display:inline-block;"></span>Template · Atendimento
+        </div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.08; letter-spacing:-0.01em; margin:0 0 14px; color:#FFFFFF; max-width:16ch; text-wrap:balance;">WhatsApp Business</h1>
+        <p style="font-size:14.5px; line-height:1.6; color:#D6DDD5; max-width:58ch; margin:0; font-weight:400;">O canal certo para o cliente: reativo, padronizado e com a cara da marca. O produtor não fecha aplicação por post — fecha por indicação e conversa direta. Aqui estão o perfil, o catálogo e as mensagens prontas para a equipe usar sem escorregar do tom.</p>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 52px 8px;">
+
+    <!-- PERFIL COMERCIAL -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">1 · Perfil comercial</div>
+    <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:20px; margin-bottom:44px; align-items:start;">
+      <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden;">
+        <div style="background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:26px 24px; display:flex; align-items:center; gap:16px;">
+          <div style="width:58px; height:58px; border-radius:50%; background:#2C352D; display:flex; align-items:center; justify-content:center; flex:none; box-shadow:0 0 0 3px rgba(255,255,255,.12);"><img src="assets/icone-opp-grupo.png" alt="" style="width:34px; height:auto;"></div>
+          <div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#FFFFFF; display:flex; align-items:center; gap:7px;">Opp · Aviação e Gestão de Ativos <span style="color:#6FCF97; font-size:15px;"><i data-lucide="badge-check"></i></span></div>
+            <div style="font-size:11.5px; color:#B7C1B5; margin-top:3px;">Conta comercial · Sorriso/MT</div>
+          </div>
+        </div>
+        <div style="padding:8px 0;">
+          <sc-for list="{{ perfil }}" as="p" hint-placeholder-count="5">
+            <div style="display:flex; gap:14px; padding:12px 24px; border-top:1px solid #F2F3F0; align-items:flex-start;">
+              <span style="color:#219653; font-size:16px; padding-top:1px;"><i data-lucide="{{ p.icon }}"></i></span>
+              <div><div style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:2px;">{{ p.rotulo }}</div><div style="font-size:13px; color:#3E453D; line-height:1.5;">{{ p.valor }}</div></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:16px; padding:24px 26px;">
+        <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#1B7A44; margin-bottom:14px;"><i data-lucide="lightbulb"></i>Como configurar</div>
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          <sc-for list="{{ setup }}" as="s" hint-placeholder-count="4">
+            <div style="display:flex; gap:10px; font-size:12.5px; line-height:1.55; color:#3E453D;"><span style="color:#219653; flex:none; padding-top:2px;"><i data-lucide="check"></i></span><span>{{ s }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATÁLOGO -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">2 · Catálogo</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:44px;">
+      <sc-for list="{{ catalogo }}" as="c" hint-placeholder-count="2">
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span style="font-family:monospace; font-size:12px; font-weight:700; color:#219653; background:#EEF3EF; padding:4px 9px; border-radius:7px;">{{ c.sigla }}</span>
+            <span style="font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600;">{{ c.emissor }}</span>
+          </div>
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15.5px; color:#39453A; margin-bottom:8px;">{{ c.titulo }}</div>
+          <p style="font-size:13px; line-height:1.6; color:#5A5F58; margin:0;">{{ c.corpo }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- MENSAGENS AUTOMÁTICAS -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">3 · Mensagens automáticas</div>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:44px;">
+      <sc-for list="{{ automaticas }}" as="a" hint-placeholder-count="2">
+        <div style="display:flex; gap:18px; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:22px 24px; align-items:flex-start;">
+          <div style="flex:none; width:42px; height:42px; border-radius:11px; background:#EEF3EF; color:#219653; display:flex; align-items:center; justify-content:center; font-size:19px;"><i data-lucide="{{ a.icon }}"></i></div>
+          <div style="flex:1;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#39453A; margin-bottom:8px;">{{ a.titulo }}</div>
+            <div style="background:#E7F3EB; border:1px solid #CDE6D6; border-radius:4px 12px 12px 12px; padding:12px 15px; font-size:13px; line-height:1.6; color:#2E3A31;">{{ a.texto }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- RESPOSTAS RÁPIDAS -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:8px;">4 · Respostas rápidas</div>
+    <p style="font-size:13px; color:#5A5F58; line-height:1.6; margin:0 0 18px; max-width:64ch;">Cadastre cada uma como atalho no WhatsApp Business (Ferramentas → Respostas rápidas). Ao digitar a barra e o atalho, a mensagem inteira aparece pronta.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:44px;">
+      <sc-for list="{{ atalhos }}" as="q" hint-placeholder-count="6">
+        <div style="display:grid; grid-template-columns:150px 1fr; gap:20px; padding:18px 24px; border-top:1px solid #F2F3F0; align-items:start;">
+          <div><span style="font-family:monospace; font-size:12.5px; font-weight:700; color:#219653;">{{ q.atalho }}</span><div style="font-size:10.5px; color:#9AA097; margin-top:4px;">{{ q.quando }}</div></div>
+          <div style="font-size:13px; line-height:1.6; color:#3E453D;">{{ q.texto }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- PREVIEW DE CONVERSA -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">5 · Como fica na conversa</div>
+    <div style="max-width:420px; margin:0 auto 20px; background:#ECE5DD; border-radius:18px; box-shadow:0 14px 40px rgba(57,69,58,.16); overflow:hidden;">
+      <div style="background:#39453A; padding:14px 18px; display:flex; align-items:center; gap:12px;">
+        <div style="width:38px; height:38px; border-radius:50%; background:#2C352D; display:flex; align-items:center; justify-content:center;"><img src="assets/icone-opp-grupo.png" alt="" style="width:22px; height:auto;"></div>
+        <div><div style="font-size:13.5px; font-weight:600; color:#FFFFFF; font-family:'Comfortaa',sans-serif;">Cliente por indicação</div><div style="font-size:10.5px; color:#A7B0A5;">online</div></div>
+      </div>
+      <div style="padding:20px 16px; display:flex; flex-direction:column; gap:10px;">
+        <sc-for list="{{ conversa }}" as="m" hint-placeholder-count="5">
+          <div style="display:flex; justify-content:{{ m.justify }};">
+            <div style="max-width:80%; font-size:12.5px; line-height:1.5; padding:9px 12px; border-radius:{{ m.radius }}; background:{{ m.bg }}; color:#2E3A31; box-shadow:0 1px 1px rgba(0,0,0,.06);">{{ m.texto }}<span style="display:block; text-align:right; font-size:9px; color:#8FA394; margin-top:3px;">{{ m.hora }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RODAPÉ LEGAL -->
+  <div style="padding:22px 52px 30px; border-top:1px solid #EEF0ED; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+    <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT<br>"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de marketing da razão social acima.</div>
+    <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600; text-align:right;">O Norte · MDC-GDI</div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1060,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
+  renderVals() {
+    const out = 'flex-end', inc = 'flex-start';
+    return {
+      perfil: [
+        { icon: 'briefcase', rotulo: 'Categoria', valor: 'Agricultura · Serviços agrícolas' },
+        { icon: 'text', rotulo: 'Descrição', valor: 'Aplicação aérea com precisão e gestão de aeronaves para o produtor do Centro-Oeste. Trabalho bem feito, safra após safra.' },
+        { icon: 'map-pin', rotulo: 'Endereço', valor: 'Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126' },
+        { icon: 'clock', rotulo: 'Horário', valor: 'Segunda a sexta, 7h30 às 18h' },
+        { icon: 'globe', rotulo: 'Site', valor: 'www.grupooppmais.com.br' },
+      ],
+      setup: [
+        'Foto do perfil: use o ícone do Grupo Opp+ (assets/icone-opp-grupo.png), nunca uma foto pessoal.',
+        'Ative catálogo e cadastre SAE e OACO — sem preço, só descrição; valor vai na proposta.',
+        'Configure saudação e ausência com os textos ao lado, e cadastre as respostas rápidas.',
+        'Link do site na bio: é a validação de quem recebeu a indicação e vai conferir a empresa.',
+      ],
+      catalogo: [
+        { sigla: 'SAE', emissor: 'Opp Aviação Agrícola', titulo: 'Serviços Aeroagrícolas Especializados', corpo: 'Aplicação aérea de defensivos, fertilizantes e sementes, com planejamento, precisão e conformidade. Tempo é a nossa moeda de troca.' },
+        { sigla: 'OACO', emissor: 'Opp Gestão de Ativos', titulo: 'Operador Aeroagrícola Compartilhado', corpo: 'Gestão completa da sua aeronave: a agenda continua exclusivamente sua e o avião gera receita quando estiver disponível.' },
+      ],
+      automaticas: [
+        { icon: 'hand', titulo: 'Saudação (primeira mensagem do dia)', texto: 'Olá! Você chegou ao WhatsApp oficial da Opp — Aviação Agrícola e Gestão de Ativos. Obrigado pela mensagem. Me conte sua região e o que precisa que já te retornamos. Bom ter você por aqui.' },
+        { icon: 'moon', titulo: 'Ausência (fora do horário)', texto: 'Recebemos sua mensagem fora do horário de atendimento (seg a sex, 7h30 às 18h). Fica tranquilo: logo cedo respondemos. Se for urgente de safra, deixe registrado aqui que a gente prioriza.' },
+      ],
+      atalhos: [
+        { atalho: '/indicacao', quando: 'Primeiro contato por indicação', texto: 'Que bom que chegou até nós por indicação — é assim que a gente cresce. Para te atender direito: qual a sua região, a cultura e o tamanho aproximado da área? Com isso já preparo o próximo passo.' },
+        { atalho: '/aplicacao', quando: 'Interesse em aplicação aérea', texto: 'Sobre a aplicação: trabalhamos com Serviços Aeroagrícolas Especializados (SAE) — planejamento, precisão e conformidade em cada voo. Me passa a cultura, a área e a janela que você precisa cobrir que montamos uma proposta sob medida.' },
+        { atalho: '/aeronave', quando: 'Cliente tem aeronave própria', texto: 'Para quem já tem aeronave, temos o Operador Aeroagrícola Compartilhado (OACO): a agenda continua exclusivamente sua e o avião gera receita quando estiver disponível. Posso te explicar como funciona a gestão?' },
+        { atalho: '/proposta', quando: 'Fechar o próximo passo', texto: 'Vou preparar sua proposta e te envio por aqui em PDF. Me confirma o nome ou razão social e o melhor e-mail? Assim já deixo tudo certinho.' },
+        { atalho: '/site', quando: 'Cliente quer conhecer a empresa', texto: 'Você pode conhecer a Opp pelo nosso site: www.grupooppmais.com.br. Lá também fica a área do cliente, com os relatórios e documentos sempre à mão.' },
+        { atalho: '/obrigado', quando: 'Encerrar com confiança', texto: 'Obrigado pela confiança. Qualquer coisa da lavoura, é só chamar aqui — a gente resolve junto.' },
+      ],
+      conversa: [
+        { justify: inc, radius: '4px 12px 12px 12px', bg: '#FFFFFF', texto: 'Boa tarde! O João da Fazenda Boa Vista me passou o contato de vocês.', hora: '14:02' },
+        { justify: out, radius: '12px 4px 12px 12px', bg: '#E7F3EB', texto: 'Que bom que chegou até nós por indicação — é assim que a gente cresce. Qual a sua região, a cultura e o tamanho aproximado da área?', hora: '14:03' },
+        { justify: inc, radius: '4px 12px 12px 12px', bg: '#FFFFFF', texto: 'Sorriso mesmo, soja, uns 800 hectares. Preciso de aplicação ainda nesta janela.', hora: '14:05' },
+        { justify: out, radius: '12px 4px 12px 12px', bg: '#E7F3EB', texto: 'Perfeito. Trabalhamos com aplicação aérea especializada (SAE) — planejamento e precisão em cada voo. Vou preparar sua proposta e te envio em PDF por aqui. Me confirma o nome ou razão social e o melhor e-mail?', hora: '14:06' },
+        { justify: inc, radius: '4px 12px 12px 12px', bg: '#FFFFFF', texto: 'Fechado. Mando agora.', hora: '14:07' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

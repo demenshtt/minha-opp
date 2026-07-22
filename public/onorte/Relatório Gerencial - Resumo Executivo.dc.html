@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    .lucide { width: 1em; height: 1em; vertical-align: middle; stroke-width: 1.9; flex: none; }
+    a { color: #219653; }
+    .kpi, .card, .chartbox, .factrow, .compare-note { break-inside: avoid; }
+    h2, h3 { break-after: avoid; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="150" y="120" width="100" height="30" rx="4" fill="#6FCF97"/>
+      <rect x="120" y="170" width="160" height="14" rx="4" fill="#A5D6A7" opacity="0.7"/>
+      <rect x="120" y="196" width="160" height="14" rx="4" fill="#A5D6A7" opacity="0.5"/>
+      <text x="200" y="285" font-family="Comfortaa,sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">Relatório</text>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.55in" hint-size="816px,1056px">
+
+  <div slot="header" style="display:flex; align-items:center; justify-content:space-between; padding:10px 4px; border-bottom:1px solid #E6E7E4; font-family:'Montserrat',sans-serif;">
+    <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:22px; width:auto;">
+    <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8F89; font-weight:600;">Relatório Gerencial · Resumo Executivo</div>
+  </div>
+
+  <div slot="footer" style="display:flex; align-items:center; justify-content:space-between; padding:8px 4px; border-top:1px solid #E6E7E4; font-family:'Montserrat',sans-serif; font-size:8.5px; letter-spacing:0.06em; color:#A0A59D;">
+    <span>CONFIDENCIAL GRUPO OPP+ · Uso interno</span>
+    <span>Junho / 2026</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <div style="background:#39453A; border-radius:16px; padding:38px 40px; margin:2px 0 26px; position:relative; overflow:hidden; font-family:'Montserrat',sans-serif;">
+    <div style="position:absolute; top:-80px; right:-60px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.22), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:16px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>Opp Aviação Agrícola Ltda</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.05; color:#FFFFFF; margin:0 0 8px;">Relatório Gerencial</h1>
+      <div style="font-size:17px; color:#C4CAC2; font-weight:300; margin-bottom:20px;">Resumo Executivo — Junho / 2026 · 2º Quadrimestre</div>
+      <div style="display:flex; gap:26px; flex-wrap:wrap; font-size:11.5px; color:#9AA598;">
+        <span><strong style="color:#EDEFEC; font-weight:600;">7</strong> sócios</span>
+        <span><strong style="color:#EDEFEC; font-weight:600;">8</strong> colaboradores</span>
+        <span><strong style="color:#EDEFEC; font-weight:600;">2</strong> aeronaves próprias · PP-OPP / PT-UJQ</span>
+        <span><strong style="color:#EDEFEC; font-weight:600;">2</strong> em gerenciamento · PS-PDG / PP-CPG</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:11px; color:#868C85; font-family:'Montserrat',sans-serif; line-height:1.5; margin:0 0 24px; padding-left:12px; border-left:2px solid #A5D6A7;">Documento de <strong style="color:#39453A;">publicação mensal para a diretoria</strong>. Traz os grandes números e destaques do período. A versão analítica completa, com todas as tabelas, permanece como fonte oficial dos dados.</div>
+
+  <!-- 1 · GRANDES NÚMEROS -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>Grandes números do mês</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:14px; font-family:'Montserrat',sans-serif;">
+    <div class="kpi" style="background:#39453A; border-radius:13px; padding:18px 20px; color:#EDEFEC;">
+      <div style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8FA394; font-weight:600; margin-bottom:8px;">Receita Bruta</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; line-height:1; color:#FFFFFF;">R$ 695.571</div>
+      <div style="font-size:10px; color:#9AA598; margin-top:7px;">Acum. ano: R$ 6.988.171</div>
+    </div>
+    <div class="kpi" style="background:#EEF3EF; border:1px solid #D8E8DD; border-radius:13px; padding:18px 20px;">
+      <div style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#5B8A6B; font-weight:600; margin-bottom:8px;">EBITDA</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; line-height:1; color:#1B7A44;">R$ 305.549</div>
+      <div style="font-size:10px; color:#6E8574; margin-top:7px;">Acum. ano: R$ 1.389.678</div>
+    </div>
+    <div class="kpi" style="background:#EEF3EF; border:1px solid #D8E8DD; border-radius:13px; padding:18px 20px;">
+      <div style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#5B8A6B; font-weight:600; margin-bottom:8px;">Resultado Líquido</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; line-height:1; color:#1B7A44;">R$ 264.561</div>
+      <div style="font-size:10px; color:#6E8574; margin-top:7px;">Acum. ano: R$ 1.173.798</div>
+    </div>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:26px; font-family:'Montserrat',sans-serif;">
+    <div class="kpi" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+      <div style="font-size:9px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:7px;">Hectares voados</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">16.867</div>
+      <div style="font-size:9.5px; color:#219653; margin-top:5px; font-weight:600;">▲ 63,7% vs. maio</div>
+    </div>
+    <div class="kpi" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+      <div style="font-size:9px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:7px;">Horas de voo</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">91,1</div>
+      <div style="font-size:9.5px; color:#219653; margin-top:5px; font-weight:600;">▲ 139,2% vs. maio</div>
+    </div>
+    <div class="kpi" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+      <div style="font-size:9px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:7px;">Rendimento HA/HR</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">185,1</div>
+      <div style="font-size:9.5px; color:#868C85; margin-top:5px;">média ha por hora</div>
+    </div>
+    <div class="kpi" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px;">
+      <div style="font-size:9px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:7px;">ROI do mês</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">2,76%</div>
+      <div style="font-size:9.5px; color:#868C85; margin-top:5px;">Acum. ano: 12,24%</div>
+    </div>
+  </div>
+
+  <!-- 2 · DESTAQUES -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M11.5 2.3a.5.5 0 0 1 1 0l2.3 4.7a2.1 2.1 0 0 0 1.6 1.15l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.1 2.1 0 0 0-.6 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.1 2.1 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.1 2.1 0 0 0-.6-1.88L2.16 9.8a.53.53 0 0 1 .3-.9l5.16-.76A2.1 2.1 0 0 0 9.2 6.99z"/></svg></span>Destaques do período</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:26px; font-family:'Montserrat',sans-serif;">
+    <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px; display:flex; gap:12px; align-items:flex-start;">
+      <span style="color:#219653; font-size:18px; margin-top:1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+      <div><div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:3px;">Retomada operacional</div><div style="font-size:11px; color:#767C75; line-height:1.5;">Hectares e horas de voo mais que dobraram frente a maio, refletindo novas demandas de aplicação.</div></div>
+    </div>
+    <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px; display:flex; gap:12px; align-items:flex-start;">
+      <span style="color:#219653; font-size:18px; margin-top:1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></span>
+      <div><div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:3px;">Caixa reforçado</div><div style="font-size:11px; color:#767C75; line-height:1.5;">Saldo em conta-corrente saltou para R$ 406.801 (+509%), ampliando a liquidez imediata.</div></div>
+    </div>
+    <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px; display:flex; gap:12px; align-items:flex-start;">
+      <span style="color:#219653; font-size:18px; margin-top:1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <div><div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:3px;">Sem endividamento</div><div style="font-size:11px; color:#767C75; line-height:1.5;">A empresa mantém as operações sem dívidas financeiras junto a instituições bancárias.</div></div>
+    </div>
+    <div class="card" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px; display:flex; gap:12px; align-items:flex-start;">
+      <span style="color:#219653; font-size:18px; margin-top:1px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <div><div style="font-weight:600; font-size:12.5px; color:#39453A; margin-bottom:3px;">Inadimplência zero</div><div style="font-size:11px; color:#767C75; line-height:1.5;">Não há contas a receber de terceiros em atraso no encerramento do mês.</div></div>
+    </div>
+  </div>
+
+  <!-- 3 · DESEMPENHO OPERACIONAL -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>Desempenho operacional · semestre</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <div class="chartbox" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px; font-family:'Montserrat',sans-serif;">
+    <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:18px 20px;">
+      <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8A8F89; margin-bottom:16px;">Hectares voados</div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:8px; height:120px;">
+        <sc-for list="{{ hectares }}" as="b" hint-placeholder-count="6">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+            <div style="font-size:8.5px; color:#565B56; font-weight:600;">{{ b.label }}</div>
+            <div style="width:100%; height:{{ b.h }}; background:{{ b.color }}; border-radius:5px 5px 0 0;"></div>
+            <div style="font-size:8px; letter-spacing:0.06em; text-transform:uppercase; color:#A8ADA6;">{{ b.m }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:18px 20px;">
+      <div style="font-size:10.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#8A8F89; margin-bottom:16px;">Horas de voo</div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:8px; height:120px;">
+        <sc-for list="{{ horas }}" as="b" hint-placeholder-count="6">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; justify-content:flex-end;">
+            <div style="font-size:8.5px; color:#565B56; font-weight:600;">{{ b.label }}</div>
+            <div style="width:100%; height:{{ b.h }}; background:{{ b.color }}; border-radius:5px 5px 0 0;"></div>
+            <div style="font-size:8px; letter-spacing:0.06em; text-transform:uppercase; color:#A8ADA6;">{{ b.m }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 · DESEMPENHO FINANCEIRO -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>Desempenho financeiro</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <table class="card" style="width:100%; border-collapse:collapse; margin-bottom:26px; font-family:'Montserrat',sans-serif; font-size:11.5px;">
+    <thead>
+      <tr style="background:#39453A; color:#EDEFEC;">
+        <th style="text-align:left; padding:10px 14px; font-weight:600; border-radius:8px 0 0 0;">Indicador</th>
+        <th style="text-align:right; padding:10px 14px; font-weight:600;">Junho / 2026</th>
+        <th style="text-align:right; padding:10px 14px; font-weight:600; border-radius:0 8px 0 0;">Acumulado ano</th>
+      </tr>
+    </thead>
+    <tbody>
+      <sc-for list="{{ finance }}" as="r" hint-placeholder-count="6">
+        <tr style="border-bottom:1px solid #EEF0ED;">
+          <td style="padding:9px 14px; color:#4A4F49;">{{ r.label }}</td>
+          <td style="padding:9px 14px; text-align:right; font-weight:600; color:#39453A;">{{ r.month }}</td>
+          <td style="padding:9px 14px; text-align:right; color:#767C75;">{{ r.ytd }}</td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+
+  <!-- 5 · POSIÇÃO FINANCEIRA -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>Posição financeira &amp; liquidez</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:26px; font-family:'Montserrat',sans-serif;">
+    <div class="kpi" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
+      <div><div style="font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:5px;">Saldo em conta-corrente</div><div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:18px; color:#39453A;">R$ 406.801</div></div>
+      <div style="font-size:10.5px; color:#219653; font-weight:700;">▲ 509%</div>
+    </div>
+    <div class="kpi" style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:13px; padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
+      <div><div style="font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:5px;">Saldo em aplicações</div><div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:18px; color:#39453A;">R$ 1.108.216</div></div>
+      <div style="font-size:10.5px; color:#B02A2A; font-weight:700;">▼ 14,8%</div>
+    </div>
+  </div>
+
+  <!-- 6 · ANÁLISE COMPARATIVA -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></span>Análise comparativa mensal</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <table class="card" style="width:100%; border-collapse:collapse; margin-bottom:26px; font-family:'Montserrat',sans-serif; font-size:11.5px;">
+    <thead>
+      <tr style="background:#F0F0F0; color:#39453A;">
+        <th style="text-align:left; padding:9px 14px; font-weight:600;">Descrição</th>
+        <th style="text-align:right; padding:9px 14px; font-weight:600;">Mês anterior</th>
+        <th style="text-align:right; padding:9px 14px; font-weight:600;">Mês atual</th>
+        <th style="text-align:right; padding:9px 14px; font-weight:600;">Variação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <sc-for list="{{ compare }}" as="r" hint-placeholder-count="5">
+        <tr style="border-bottom:1px solid #EEF0ED;">
+          <td style="padding:9px 14px; color:#4A4F49;">{{ r.label }}</td>
+          <td style="padding:9px 14px; text-align:right; color:#767C75;">{{ r.prev }}</td>
+          <td style="padding:9px 14px; text-align:right; font-weight:600; color:#39453A;">{{ r.curr }}</td>
+          <td style="padding:9px 14px; text-align:right; font-weight:700; color:{{ r.color }};">{{ r.var }}</td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+
+  <!-- 7 · FATOS RELEVANTES -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin:0 0 4px; display:flex; align-items:center; gap:9px;"><span style="color:#219653; font-size:17px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><path d="M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><circle cx="8" cy="16" r="6"/><path d="M9.5 17.5 8 16.25V14"/></svg></span>Fatos relevantes</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 18px; border-radius:2px;"></div>
+  <div style="margin-bottom:26px; font-family:'Montserrat',sans-serif;">
+    <sc-for list="{{ facts }}" as="f" hint-placeholder-count="5">
+      <div class="factrow" style="display:flex; gap:12px; align-items:flex-start; padding:9px 0; border-top:1px solid #F0F1EE;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#219653; margin-top:6px; flex:none;"></span>
+        <div style="font-size:11.5px; color:#565B56; line-height:1.55;">{{ f }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- 8 · PERSPECTIVA -->
+  <div class="compare-note" style="background:#39453A; border-radius:14px; padding:22px 26px; font-family:'Montserrat',sans-serif; color:#EDEFEC;">
+    <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13px; color:#A5D6A7; margin-bottom:10px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;vertical-align:middle;flex:none;"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> Perspectiva para julho</div>
+    <div style="font-size:11.5px; line-height:1.6; color:#C4CAC2;">Expectativa de continuidade das aplicações pontuais, com acompanhamento do encerramento gradual da safra. A empresa segue aguardando a liberação da indenização final da Mapfre (AT-502XP / PP-OPP), necessária para a quitação dos reparos da turbina em recuperação.</div>
+  </div>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const jun = '#219653', past = '#C3E3CB';
+    return {
+      hectares: [
+        { label: '22.773', m: 'jan', h: '39%', color: past },
+        { label: '39.192', m: 'fev', h: '68%', color: past },
+        { label: '57.991', m: 'mar', h: '100%', color: past },
+        { label: '39.767', m: 'abr', h: '69%', color: past },
+        { label: '10.302', m: 'mai', h: '18%', color: past },
+        { label: '16.867', m: 'jun', h: '29%', color: jun },
+      ],
+      horas: [
+        { label: '94,4', m: 'jan', h: '37%', color: past },
+        { label: '166,1', m: 'fev', h: '65%', color: past },
+        { label: '254,3', m: 'mar', h: '100%', color: past },
+        { label: '165,8', m: 'abr', h: '65%', color: past },
+        { label: '38,1', m: 'mai', h: '15%', color: past },
+        { label: '91,1', m: 'jun', h: '36%', color: jun },
+      ],
+      finance: [
+        { label: 'Prestação de serviços', month: 'R$ 695.571', ytd: 'R$ 6.988.171' },
+        { label: 'Resultado bruto', month: 'R$ 340.067', ytd: 'R$ 1.610.096' },
+        { label: 'EBITDA', month: 'R$ 305.549', ytd: 'R$ 1.389.678' },
+        { label: 'Resultado líquido', month: 'R$ 264.561', ytd: 'R$ 1.173.798' },
+        { label: 'Investimentos', month: 'R$ 2.186', ytd: 'R$ 11.165' },
+        { label: 'ROI (base PL R$ 9.587.550)', month: '2,76%', ytd: '12,24%' },
+      ],
+      compare: [
+        { label: 'Hectares voados', prev: '10.302', curr: '16.867', var: '+63,7%', color: '#1B7A44' },
+        { label: 'Horas de voo', prev: '38,1', curr: '91,1', var: '+139,2%', color: '#1B7A44' },
+        { label: 'Saldo em conta-corrente', prev: 'R$ 66.800', curr: 'R$ 406.801', var: '+509,0%', color: '#1B7A44' },
+        { label: 'Saldo em aplicações', prev: 'R$ 1.300.024', curr: 'R$ 1.108.216', var: '−14,8%', color: '#B02A2A' },
+        { label: 'Manutenção de aeronaves', prev: 'R$ 20.902', curr: 'R$ 25.595', var: '+22,5%', color: '#B02A2A' },
+      ],
+      facts: [
+        'Serviços na turbina do PP-OPP em andamento na Pratt & Whitney.',
+        'Recebido em 24/02 o valor de R$ 1.497.241 (50% da indenização Mapfre PP-OPP), aplicado em fundo atrelado a títulos públicos federais (Tesouro Direto).',
+        'Aquisição do salvado da aeronave PS-PDG concluída, no valor de US$ 170.000, mediante capitalização dos sócios.',
+        'Reajuste no preço do combustível Jet A-1, com elevação do valor por litro no período.',
+        'Empresa aguarda a liberação da indenização final da Mapfre (AT-502XP / PP-OPP) para quitação dos reparos da turbina.',
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

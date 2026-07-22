@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#FFFFFF"/>
+      <rect x="60" y="70" width="150" height="16" rx="4" fill="#39453A"/>
+      <rect x="60" y="98" width="70" height="6" rx="3" fill="#6FCF97"/>
+      <rect x="60" y="150" width="280" height="8" rx="3" fill="#D8DAD5"/>
+      <rect x="60" y="170" width="280" height="8" rx="3" fill="#D8DAD5"/>
+      <rect x="60" y="190" width="220" height="8" rx="3" fill="#D8DAD5"/>
+      <rect x="60" y="322" width="280" height="10" rx="3" fill="#39453A"/>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.85in" hint-size="816px,1056px">
+
+  <!-- ===== CABEÇALHO ===== -->
+  <div slot="header" style="font-family:'Montserrat',sans-serif;">
+
+    <sc-if value="{{ isExterno }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; padding:6px 0 12px;">
+        <div style="display:flex; align-items:flex-end; gap:16px;">
+          <sc-if value="{{ isHolding }}" hint-placeholder-val="{{ true }}">
+            <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:40px; width:auto;">
+          </sc-if>
+          <sc-if value="{{ isUnidade }}" hint-placeholder-val="{{ true }}">
+            <sc-if value="{{ endossoLegenda }}" hint-placeholder-val="{{ true }}">
+              <div>
+                <div><sc-if value="{{ isAviacao }}" hint-placeholder-val="{{ true }}"><img src="assets/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="height:44px; width:auto; display:block;"></sc-if><sc-if value="{{ isAtivos }}" hint-placeholder-val="{{ false }}"><img src="assets/logo-opp-ativos.png" alt="Opp Gestão de Ativos" style="height:44px; width:auto; display:block;"></sc-if></div>
+                <div style="display:flex; align-items:center; gap:7px; margin-top:8px;">
+                  <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:14px; width:auto; opacity:0.55;">
+                  <span style="font-size:8.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097;">Uma empresa Grupo Opp+</span>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ endossoLogo }}" hint-placeholder-val="{{ false }}">
+              <div>
+                <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:16px; width:auto; opacity:0.6; display:block; margin-bottom:7px;">
+                <div><sc-if value="{{ isAviacao }}" hint-placeholder-val="{{ true }}"><img src="assets/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="height:44px; width:auto; display:block;"></sc-if><sc-if value="{{ isAtivos }}" hint-placeholder-val="{{ false }}"><img src="assets/logo-opp-ativos.png" alt="Opp Gestão de Ativos" style="height:44px; width:auto; display:block;"></sc-if></div>
+              </div>
+            </sc-if>
+          </sc-if>
+        </div>
+        <div style="text-align:right; font-size:9px; line-height:1.5; color:#8A8F89;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; color:#39453A; font-size:10px;">{{ legalName }}</div>
+          <div>CNPJ {{ cnpj }}</div>
+          <div>{{ address }}</div>
+        </div>
+      </div>
+      <div style="height:2.5px; background:linear-gradient(90deg, #39453A 0%, #39453A 62%, #219653 62%, #6FCF97 100%); border-radius:2px;"></div>
+    </sc-if>
+
+    <sc-if value="{{ isInterno }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding:4px 0 8px;">
+        <sc-if value="{{ isHolding }}" hint-placeholder-val="{{ true }}">
+          <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:22px; width:auto;">
+        </sc-if>
+        <sc-if value="{{ isUnidade }}" hint-placeholder-val="{{ true }}">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A;">{{ emitterName }}</div>
+        </sc-if>
+        <div style="font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase; color:#A8ADA6; font-weight:600;">Uso interno</div>
+      </div>
+      <div style="height:1.5px; background:#E1E3DF; border-radius:2px;"></div>
+    </sc-if>
+
+  </div>
+
+  <!-- ===== RODAPÉ ===== -->
+  <div slot="footer" style="font-family:'Montserrat',sans-serif;">
+    <sc-if value="{{ isExterno }}" hint-placeholder-val="{{ true }}">
+      <div style="height:1.5px; background:linear-gradient(90deg, #6FCF97 0%, #219653 38%, #39453A 38%, #39453A 100%); border-radius:2px; margin-bottom:7px;"></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; font-size:8px; letter-spacing:0.04em; color:#A0A59D;">
+        <span>{{ footerContact }}</span>
+        <span>Grupo Opp+</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isInterno }}" hint-placeholder-val="{{ true }}">
+      <div style="height:1px; background:#EEF0ED; margin-bottom:6px;"></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; font-size:8px; letter-spacing:0.04em; color:#B8BDB4;">
+        <span>Documento de circulação interna · {{ emitterShort }}</span>
+        <span>Grupo Opp+</span>
+      </div>
+    </sc-if>
+  </div>
+
+  <!-- ===== CORPO ===== -->
+  <div style="font-family:'Montserrat',sans-serif; color:#1C201C; font-size:12px; line-height:1.7;">
+
+    <div style="text-align:right; color:#565B56; margin:6px 0 26px;">Sorriso/MT, 17 de julho de 2026.</div>
+
+    <!-- INTERNO: memorando -->
+    <sc-if value="{{ isInterno }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-bottom:22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:2px;">MEMORANDO Nº 000/2026</div>
+        <div style="width:44px; height:2px; background:#219653; border-radius:2px;"></div>
+      </div>
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse; margin-bottom:24px; font-size:12px;">
+        <tr><td style="padding:3px 16px 3px 0; color:#8A8F89; font-weight:600; vertical-align:top; white-space:nowrap;">Para:</td><td style="padding:3px 0; color:#39453A;">[Destinatário / Setor]</td></tr>
+        <tr><td style="padding:3px 16px 3px 0; color:#8A8F89; font-weight:600; vertical-align:top; white-space:nowrap;">De:</td><td style="padding:3px 0; color:#39453A;">[Remetente / Setor]</td></tr>
+        <tr><td style="padding:3px 16px 3px 0; color:#8A8F89; font-weight:600; vertical-align:top; white-space:nowrap;">Assunto:</td><td style="padding:3px 0; color:#39453A; font-weight:600;">[Assunto]</td></tr>
+      </table>
+    </sc-if>
+
+    <!-- EXTERNO: ofício -->
+    <sc-if value="{{ isExterno }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-bottom:22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:2px;">OFÍCIO Nº 000/2026</div>
+        <div style="width:44px; height:2px; background:#219653; border-radius:2px;"></div>
+      </div>
+      <div style="margin-bottom:24px; color:#39453A;">
+        <div>À/Ao <strong>[Nome do destinatário]</strong></div>
+        <div style="color:#565B56;">[Empresa / Órgão]</div>
+        <div style="color:#565B56;">[Endereço]</div>
+        <div style="margin-top:14px;"><span style="color:#8A8F89; font-weight:600;">Assunto:</span> <strong>[Assunto do ofício]</strong></div>
+      </div>
+    </sc-if>
+
+    <p style="margin:0 0 16px;">Prezado(a) Senhor(a),</p>
+    <p style="margin:0 0 16px; text-align:justify;">Este é o parágrafo de abertura. Substitua pelo conteúdo desejado, mantendo o espaçamento e a formatação padrão — corpo Montserrat 12, alinhamento justificado, leitura confortável.</p>
+    <p style="margin:0 0 16px; text-align:justify;">Ao imprimir ou exportar em PDF, o cabeçalho e o rodapé se repetem automaticamente em todas as páginas. Use o verde esmeralda apenas em pontos de ênfase, preservando o texto principal em tom escuro.</p>
+
+    <p style="margin:36px 0 0;">Atenciosamente,</p>
+    <div style="margin-top:56px;">
+      <div style="width:240px; border-top:1px solid #39453A; padding-top:6px;">
+        <div style="font-weight:600; color:#39453A; font-size:12px;">[Nome do responsável]</div>
+        <div style="color:#767C75; font-size:11px;">[Cargo / Função]</div>
+        <div style="color:#767C75; font-size:11px;">{{ legalName }}</div>
+      </div>
+    </div>
+
+  </div>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;variante&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;externo&quot;,&quot;options&quot;:[&quot;interno&quot;,&quot;externo&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Documento&quot;},&quot;emissor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;aviacao&quot;,&quot;options&quot;:[&quot;holding&quot;,&quot;aviacao&quot;,&quot;ativos&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Documento&quot;},&quot;endosso&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;logo_acima&quot;,&quot;options&quot;:[&quot;legenda&quot;,&quot;logo_acima&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Documento&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const variante = this.props.variante ?? 'externo';
+    const emissor = this.props.emissor ?? 'aviacao';
+
+    const isInterno = variante === 'interno';
+    const isExterno = !isInterno;
+    const isHolding = emissor === 'holding';
+    const isUnidade = !isHolding;
+
+    const data = {
+      holding: { name: 'Grupo Opp+', short: 'Grupo Opp+', legal: 'Opp Aviação Agrícola Ltda', cnpj: '33.910.736/0001-56', address: 'Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126', logo: 'assets/logo-opp-flat.png' },
+      aviacao: { name: 'Opp Aviação Agrícola', short: 'Opp Aviação Agrícola', legal: 'Opp Aviação Agrícola Ltda', cnpj: '33.910.736/0001-56', address: 'Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126', logo: 'assets/logo-opp-aviacao.png' },
+      ativos: { name: 'Opp Gestão de Ativos', short: 'Opp Gestão de Ativos', legal: 'Opp Aviação Agrícola Ltda', cnpj: '33.910.736/0001-56', address: 'Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126', logo: 'assets/logo-opp-ativos.png' },
+    };
+    const d = data[emissor] || data.aviacao;
+
+    const endosso = this.props.endosso ?? 'legenda';
+    return {
+      isInterno, isExterno, isHolding, isUnidade,
+      endossoLegenda: endosso === 'legenda',
+      endossoLogo: endosso === 'logo_acima',
+      emitterName: d.name,
+      emitterLogo: d.logo,
+      isAviacao: emissor === 'aviacao',
+      isAtivos: emissor === 'ativos',
+      emitterShort: d.short,
+      legalName: d.legal,
+      cnpj: d.cnpj,
+      address: d.address,
+      footerContact: '+55 (41) 99947-1355 · contato@grupooppmais.com.br · www.grupooppmais.com.br',
+    };
+  }
+}
+</script>
+</body>
+</html>

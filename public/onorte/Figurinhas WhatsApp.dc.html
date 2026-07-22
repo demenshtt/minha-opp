@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>body { margin:0; background:#EDEFEA; } a { color:#219653; } a:hover { color:#1B7A44; }</style>
+</helmet>
+<div style="min-height:100vh; padding:56px 40px; font-family:'Montserrat',sans-serif; display:flex; flex-direction:column; align-items:center; gap:36px;">
+  <div style="text-align:center; max-width:640px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A;">Kit WhatsApp — Grupo Opp+</div>
+    <div style="font-size:11.5px; color:#8A8F89; margin-top:6px; line-height:1.6;">Foto de perfil + figurinhas para responder em conversas. Cada peça sai em 512 × 512 px, o formato do WhatsApp.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+    <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600;">Foto de perfil</div>
+    <div id="perfil" style="width:220px; height:220px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #43523F, #39453A 70%); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(57,69,58,.22);">
+      <img src="assets/icone-opp-grupo.png" alt="Grupo Opp+" style="width:58%; height:auto;">
+    </div>
+    <div style="font-size:10.5px; color:#9AA097;">O WhatsApp corta em círculo — o ícone já fica centrado com folga.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+    <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600;">Figurinhas</div>
+    <div style="display:grid; grid-template-columns:repeat(2, 220px); gap:22px;">
+      <div id="fig-positivo" style="width:220px; height:220px; border-radius:26px; background:#FFFFFF; border:1px solid #E3E6E1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; box-shadow:0 8px 22px rgba(57,69,58,.10); position:relative;">
+        <img src="assets/icone-opp-grupo.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto; opacity:0.85;">
+        <i data-lucide="thumbs-up" style="width:88px; height:88px; color:#219653; stroke-width:1.8;"></i>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">Positivo!</div>
+      </div>
+      <div id="fig-parabens" style="width:220px; height:220px; border-radius:26px; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; box-shadow:0 8px 22px rgba(57,69,58,.18); position:relative;">
+        <img src="assets/icone-opp-grupo.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto;">
+        <i data-lucide="party-popper" style="width:88px; height:88px; color:#6FCF97; stroke-width:1.8;"></i>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#FFFFFF;">Parabéns!</div>
+      </div>
+      <div id="fig-parceria" style="width:220px; height:220px; border-radius:26px; background:#FFFFFF; border:1px solid #E3E6E1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; box-shadow:0 8px 22px rgba(57,69,58,.10); position:relative;">
+        <img src="assets/icone-opp-grupo.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto; opacity:0.85;">
+        <i data-lucide="handshake" style="width:88px; height:88px; color:#219653; stroke-width:1.8;"></i>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">Parceria firmada</div>
+      </div>
+      <div id="fig-fe" style="width:220px; height:220px; border-radius:26px; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; box-shadow:0 8px 22px rgba(57,69,58,.18); position:relative;">
+        <img src="assets/icone-opp-grupo.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto;">
+        <svg viewBox="0 0 24 24" style="width:88px; height:88px; fill:none; stroke:#6FCF97; stroke-width:1.6; stroke-linecap:round;"><path d="M12 3v18M7 8h10"></path></svg>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#FFFFFF;">Fé no trabalho</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+    <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600;">Série 2 — círculo cheio (estilo do Matheus)</div>
+    <div style="display:grid; grid-template-columns:repeat(2, 220px); gap:22px;">
+      <div id="circ-positivo" style="width:220px; height:220px; border-radius:50%; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 22px rgba(57,69,58,.30);">
+        <i data-lucide="thumbs-up" style="width:92px; height:92px; color:#FFFFFF; stroke-width:2.4;"></i>
+        <div style="font-family:'Montserrat',sans-serif; color:#FFFFFF; line-height:1; text-align:center;"><span style="font-size:11px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:3px;">Grupo</span><span style="font-size:25px; font-weight:800; letter-spacing:0.01em;">OPP+</span></div>
+      </div>
+      <div id="circ-parabens" style="width:220px; height:220px; border-radius:50%; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 22px rgba(57,69,58,.30);">
+        <i data-lucide="party-popper" style="width:92px; height:92px; color:#FFFFFF; stroke-width:2.4;"></i>
+        <div style="font-family:'Montserrat',sans-serif; color:#FFFFFF; line-height:1; text-align:center;"><span style="font-size:11px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:3px;">Grupo</span><span style="font-size:25px; font-weight:800; letter-spacing:0.01em;">OPP+</span></div>
+      </div>
+      <div id="circ-parceria" style="width:220px; height:220px; border-radius:50%; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 22px rgba(57,69,58,.30);">
+        <i data-lucide="handshake" style="width:92px; height:92px; color:#FFFFFF; stroke-width:2.4;"></i>
+        <div style="font-family:'Montserrat',sans-serif; color:#FFFFFF; line-height:1; text-align:center;"><span style="font-size:11px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:3px;">Grupo</span><span style="font-size:25px; font-weight:800; letter-spacing:0.01em;">OPP+</span></div>
+      </div>
+      <div id="circ-fe" style="width:220px; height:220px; border-radius:50%; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 22px rgba(57,69,58,.30);">
+        <svg viewBox="0 0 24 24" style="width:92px; height:92px; fill:none; stroke:#FFFFFF; stroke-width:2.4; stroke-linecap:round;"><path d="M12 3v18M7 8h10"></path></svg>
+        <div style="font-family:'Montserrat',sans-serif; color:#FFFFFF; line-height:1; text-align:center;"><span style="font-size:11px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:3px;">Grupo</span><span style="font-size:25px; font-weight:800; letter-spacing:0.01em;">OPP+</span></div>
+      </div>
+    </div>
+    <div style="font-size:10.5px; color:#9AA097; max-width:480px; text-align:center;">Sua ideia, na identidade da casa: círculo no verde escuro acinzentado #39453A, gesto branco e lettering no peso do logo.</div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+    <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600;">Planos de fundo — entregues por você</div>
+    <div style="display:grid; grid-template-columns:repeat(2, 300px); gap:16px;">
+      <div style="border-radius:12px; overflow:hidden; border:1px solid #E3E6E1;"><img src="assets/fundo-opp-verde.png" alt="Fundo verde liso" style="width:100%; display:block;"></div>
+      <div style="border-radius:12px; overflow:hidden; border:1px solid #E3E6E1;"><img src="assets/fundo-opp-branco.png" alt="Fundo branco liso" style="width:100%; display:block;"></div>
+      <div style="border-radius:12px; overflow:hidden; border:1px solid #E3E6E1;"><img src="assets/fundo-opp-icones.png" alt="Fundo com ícones" style="width:100%; display:block;"></div>
+      <div style="border-radius:12px; overflow:hidden; border:1px solid #E3E6E1;"><img src="assets/fundo-opp-logos.png" alt="Fundo com logos" style="width:100%; display:block;"></div>
+    </div>
+    <div style="font-size:10.5px; color:#9AA097; max-width:480px; text-align:center;">Salvos na biblioteca da marca: verde liso, branco liso, com ícones e com logos — prontos para slides, capas e materiais.</div>
+  </div>
+
+  <div style="max-width:620px; text-align:center; font-size:11px; line-height:1.7; color:#8A8F89;">Duas séries: a minimalista (cartões) e a de círculo cheio, mais chamativa em conversa. Aprovando, eu gero os PNGs prontos para você salvar no celular.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 760, &quot;height&quot;: 1100}}">
+class Component extends DCLogic {
+  componentDidMount() { this.drawIcons(); }
+  componentDidUpdate() { this.drawIcons(); }
+  drawIcons() {
+    const tick = () => { if (window.lucide) window.lucide.createIcons(); else setTimeout(tick, 200); };
+    tick();
+  }
+}
+</script>
+</body>
+</html>

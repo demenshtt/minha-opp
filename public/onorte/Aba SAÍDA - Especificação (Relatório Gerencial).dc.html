@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    code { font-family:'Montserrat',monospace; }
+    tbody tr { break-inside: avoid; }
+    h2 { break-after: avoid; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="90" y="120" width="90" height="26" rx="4" fill="#6FCF97"/>
+      <rect x="200" y="120" width="110" height="26" rx="4" fill="#A5D6A7" opacity="0.7"/>
+      <rect x="90" y="158" width="90" height="20" rx="4" fill="#4A5A4C"/>
+      <rect x="200" y="158" width="110" height="20" rx="4" fill="#4A5A4C"/>
+      <rect x="90" y="186" width="90" height="20" rx="4" fill="#4A5A4C"/>
+      <rect x="200" y="186" width="110" height="20" rx="4" fill="#4A5A4C"/>
+      <text x="200" y="285" font-family="Comfortaa,sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">SAÍDA</text>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.5in" hint-size="816px,1056px">
+
+  <div slot="header" style="display:flex; align-items:center; justify-content:space-between; padding:9px 4px; border-bottom:1px solid #E6E7E4; font-family:'Montserrat',sans-serif;">
+    <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:20px; width:auto;">
+    <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8F89; font-weight:600;">Aba SAÍDA · Especificação técnica</div>
+  </div>
+  <div slot="footer" style="display:flex; align-items:center; justify-content:space-between; padding:7px 4px; border-top:1px solid #E6E7E4; font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.06em; color:#A0A59D;">
+    <span>CONFIDENCIAL GRUPO OPP+ · Uso interno</span>
+    <span>Relatório Gerencial · v1</span>
+  </div>
+
+  <!-- CAPA -->
+  <div style="background:#39453A; border-radius:14px; padding:38px 40px 32px; margin:2px 0 22px; position:relative; overflow:hidden; font-family:'Montserrat',sans-serif;">
+    <div style="position:absolute; top:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.20), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:16px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>O Norte · Automação de relatórios</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:32px; line-height:1.05; color:#FFFFFF; margin:0 0 8px;">Aba SAÍDA — Especificação</h1>
+      <div style="font-size:15px; color:#C4CAC2; font-weight:300;">O contrato de dados entre a planilha do Abner e o Relatório Gerencial padronizado</div>
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <div style="font-family:'Montserrat',sans-serif; margin-bottom:22px;">
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
+      <sc-for list="{{ flow }}" as="f" hint-placeholder-count="4">
+        <div style="background:{{ f.bg }}; border:1px solid #E6E7E4; border-radius:12px; padding:14px 16px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:{{ f.ink }}; margin-bottom:4px;">{{ f.n }}</div>
+          <div style="font-weight:600; font-size:11px; color:{{ f.ink }}; margin-bottom:4px;">{{ f.title }}</div>
+          <div style="font-size:10px; color:{{ f.sub }}; line-height:1.45;">{{ f.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- REGRAS -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin:0 0 4px;">Como montar a aba</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 12px; border-radius:2px;"></div>
+  <div style="font-family:'Montserrat',sans-serif; margin-bottom:24px;">
+    <sc-for list="{{ rules }}" as="r" hint-placeholder-count="5">
+      <div style="display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px solid #F5F6F4;">
+        <span style="width:6px; height:6px; border-radius:50%; background:#219653; margin-top:6px; flex:none;"></span>
+        <div style="font-size:11px; color:#565B56; line-height:1.55;">{{ r }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- EXEMPLO DE LAYOUT -->
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin:0 0 4px;">Aparência da aba SAÍDA no Sheets</h2>
+  <div style="height:2px; background:#EEF0ED; margin:0 0 12px; border-radius:2px;"></div>
+  <table style="width:100%; border-collapse:collapse; font-family:'Montserrat',monospace; font-size:10px; margin-bottom:24px; border:1px solid #E6E7E4;">
+    <thead>
+      <tr style="background:#F0F0F0; color:#39453A;">
+        <th style="width:36px; text-align:center; padding:6px; border:1px solid #E1E3DF; font-weight:600;"> </th>
+        <th style="text-align:left; padding:6px 10px; border:1px solid #E1E3DF; font-weight:600;">A — chave</th>
+        <th style="text-align:left; padding:6px 10px; border:1px solid #E1E3DF; font-weight:600;">B — valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <sc-for list="{{ sample }}" as="s" hint-placeholder-count="4">
+        <tr>
+          <td style="text-align:center; padding:5px; border:1px solid #E1E3DF; color:#A8ADA6; background:#FAFBFA;">{{ s.row }}</td>
+          <td style="padding:5px 10px; border:1px solid #E1E3DF; color:#219653;">{{ s.key }}</td>
+          <td style="padding:5px 10px; border:1px solid #E1E3DF; color:#39453A;">{{ s.val }}</td>
+        </tr>
+      </sc-for>
+    </tbody>
+  </table>
+
+  <!-- DICIONÁRIO DE CHAVES -->
+  <sc-for list="{{ groups }}" as="g" hint-placeholder-count="8">
+    <div style="break-inside:avoid;">
+      <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin:14px 0 3px;">{{ g.title }}</h2>
+      <div style="height:2px; background:#EEF0ED; margin:0 0 10px; border-radius:2px;"></div>
+      <table style="width:100%; border-collapse:collapse; font-family:'Montserrat',sans-serif; font-size:9.5px; margin-bottom:8px;">
+        <thead>
+          <tr style="background:#39453A; color:#EDEFEC;">
+            <th style="text-align:left; padding:6px 8px; font-weight:600; width:38%;">Chave</th>
+            <th style="text-align:left; padding:6px 8px; font-weight:600;">Descrição</th>
+            <th style="text-align:right; padding:6px 8px; font-weight:600; width:20%;">Exemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{ g.keys }}" as="k" hint-placeholder-count="6">
+            <tr style="border-bottom:1px solid #EEF0ED;">
+              <td style="padding:5px 8px; font-family:monospace; color:#1B7A44; font-weight:600;">{{ k.key }}</td>
+              <td style="padding:5px 8px; color:#565B56;">{{ k.desc }}</td>
+              <td style="padding:5px 8px; text-align:right; color:#868C85; font-family:monospace;">{{ k.ex }}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+  </sc-for>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const k = (key, desc, ex) => ({ key, desc, ex });
+    return {
+      flow: [
+        { n: '1', title: 'Excel do Abner', desc: 'As contas e planilhas-fonte, como já são hoje. Nada muda.', bg: '#FFFFFF', ink: '#39453A', sub: '#767C75' },
+        { n: '2', title: 'Google Sheets', desc: 'Importa os números do Excel via IMPORTRANGE / conexão.', bg: '#FFFFFF', ink: '#39453A', sub: '#767C75' },
+        { n: '3', title: 'Aba SAÍDA', desc: 'Tabela chave→valor. É o que este documento especifica.', bg: '#EEF3EF', ink: '#1B7A44', sub: '#6E8574' },
+        { n: '4', title: 'Relatórios', desc: 'Resumo + Analítico leem a aba e se montam sozinhos.', bg: '#39453A', ink: '#FFFFFF', sub: '#B7BEB5' },
+      ],
+      rules: [
+        'A aba chama-se exatamente SAÍDA (ou SAIDA, sem acento — desde que combinemos uma). Coluna A = chave, coluna B = valor. Uma chave por linha.',
+        'As chaves são fixas e escritas exatamente como neste documento (minúsculas, sem acento, com _). O molde procura por elas pelo nome — não pela posição da linha.',
+        'Valores numéricos: só o número, sem "R$", sem ponto de milhar. Use vírgula decimal (padrão brasileiro). Ex.: 695570,63. O molde aplica a formatação e o "R$".',
+        'Percentuais como número: 2,76 (o molde acrescenta o %). Texto (fatos relevantes, perspectiva) vai como texto normal.',
+        'Novos meses: o Abner só atualiza os valores da coluna B. As chaves permanecem. Uma linha mes_referencia define o período (ex.: 2026-06).',
+      ],
+      sample: [
+        { row: '1', key: 'chave', val: 'valor' },
+        { row: '2', key: 'mes_referencia', val: '2026-06' },
+        { row: '3', key: 'receita_bruta_mes', val: '695570,63' },
+        { row: '4', key: 'ebitda_mes', val: '305548,68' },
+      ],
+      groups: [
+        { title: 'Cabeçalho e período', keys: [
+          k('mes_referencia', 'Ano-mês do relatório (AAAA-MM).', '2026-06'),
+          k('quadrimestre', 'Quadrimestre de referência.', '2'),
+          k('qtd_socios', 'Número de sócios.', '7'),
+          k('qtd_colaboradores', 'Número de colaboradores.', '8'),
+          k('aeronaves_proprias', 'Prefixos das aeronaves próprias.', 'PP-OPP / PT-UJQ'),
+          k('aeronaves_gerenciadas', 'Prefixos em gerenciamento.', 'PS-PDG / PP-CPG'),
+        ]},
+        { title: '1 · Grandes números (mês e acumulado)', keys: [
+          k('receita_bruta_mes', 'Receita bruta do mês.', '695570,63'),
+          k('receita_bruta_ano', 'Receita bruta acumulada no ano.', '6988170,66'),
+          k('ebitda_mes', 'EBITDA do mês.', '305548,68'),
+          k('ebitda_ano', 'EBITDA acumulado.', '1389678,21'),
+          k('resultado_liquido_mes', 'Resultado líquido do mês.', '264560,69'),
+          k('resultado_liquido_ano', 'Resultado líquido acumulado.', '1173797,50'),
+          k('hectares_mes', 'Hectares voados no mês.', '16867'),
+          k('hectares_var_pct', 'Variação % vs. mês anterior.', '63,7'),
+          k('horas_mes', 'Horas de voo no mês.', '91,1'),
+          k('horas_var_pct', 'Variação % vs. mês anterior.', '139,2'),
+          k('rendimento_ha_hr', 'Rendimento médio hectare/hora.', '185,1'),
+          k('roi_mes', 'ROI do mês (%).', '2,76'),
+          k('roi_ano', 'ROI acumulado (%).', '12,24'),
+          k('patrimonio_liquido', 'Base de PL usada no ROI.', '9587550'),
+        ]},
+        { title: '2 · Séries do semestre (gráficos)', keys: [
+          k('hectares_jan … hectares_jun', 'Hectares de cada mês (6 chaves).', '22773 … 16867'),
+          k('horas_jan … horas_jun', 'Horas de voo de cada mês (6 chaves).', '94,4 … 91,1'),
+        ]},
+        { title: '3 · Desempenho financeiro (tabela)', keys: [
+          k('prestacao_servicos_mes / _ano', 'Prestação de serviços.', '695570,63'),
+          k('resultado_bruto_mes / _ano', 'Resultado bruto.', '340066,56'),
+          k('investimentos_mes / _ano', 'Investimentos.', '2186,00'),
+        ]},
+        { title: '4 · Posição financeira e liquidez', keys: [
+          k('saldo_cc', 'Saldo em conta-corrente.', '406800,55'),
+          k('saldo_cc_var_pct', 'Variação % da conta-corrente.', '509'),
+          k('saldo_aplicacoes', 'Saldo em aplicações.', '1108215,71'),
+          k('saldo_aplicacoes_var_pct', 'Variação % das aplicações.', '-14,8'),
+          k('saldo_caixa', 'Saldo em caixa.', '61184,12'),
+        ]},
+        { title: '5 · Comparativo mensal', keys: [
+          k('cmp_hectares_ant / _atual', 'Hectares mês anterior / atual.', '10302 / 16867'),
+          k('cmp_horas_ant / _atual', 'Horas mês anterior / atual.', '38,1 / 91,1'),
+          k('cmp_manutencao_ant / _atual', 'Manutenção mês anterior / atual.', '20902 / 25595'),
+        ]},
+        { title: '6 · Textos (uma célula cada)', keys: [
+          k('fato_relevante_1 … _5', 'Cada fato relevante como texto.', 'Serviços na turbina…'),
+          k('perspectiva', 'Parágrafo de perspectiva do próximo mês.', 'Expectativa de…'),
+        ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

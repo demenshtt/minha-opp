@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>body { margin:0; background:#EDEFEA; } a { color:#219653; } a:hover { color:#1B7A44; }</style>
+</helmet>
+<div style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; padding:56px 40px; font-family:'Montserrat',sans-serif;">
+  <div style="text-align:center;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A;">Cartão de Visita — {{ emitterName }}</div>
+    <div style="font-size:11.5px; color:#8A8F89; margin-top:5px;">90 × 50 mm · frente e verso · exibido em 1,6× do tamanho real</div>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:34px; justify-content:center;">
+    <div>
+      <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:9px;">Frente</div>
+      <div style="width:510px; height:283px; background:#FFFFFF; border-radius:10px; box-shadow:0 10px 30px rgba(57,69,58,.14); position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:34px 36px; box-sizing:border-box;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:7px; background:linear-gradient(180deg, #219653, #6FCF97);"></div>
+        <div style="display:flex; align-items:flex-start; justify-content:space-between;">
+          <div>
+            <sc-if value="{{ isHolding }}" hint-placeholder-val="{{ true }}"><img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:52px; width:auto; display:block;"></sc-if>
+            <sc-if value="{{ isAviacao }}" hint-placeholder-val="{{ false }}"><img src="assets/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="height:56px; width:auto; display:block;"></sc-if>
+            <sc-if value="{{ isAtivos }}" hint-placeholder-val="{{ false }}"><img src="assets/logo-opp-ativos.png" alt="Opp Gestão de Ativos" style="height:56px; width:auto; display:block;"></sc-if>
+          </div>
+          <sc-if value="{{ isUnidade }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; align-items:center; gap:7px; padding-top:4px;">
+              <img src="assets/icone-opp-grupo.png" alt="" style="height:16px; width:auto; opacity:0.75;">
+              <span style="font-size:8.5px; letter-spacing:0.08em; text-transform:uppercase; color:#9AA097;">Grupo Opp+</span>
+            </div>
+          </sc-if>
+        </div>
+        <div>
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:24px; color:#39453A; line-height:1.15;">{{ nome }}</div>
+          <div style="font-size:12.5px; font-weight:500; color:#219653; letter-spacing:0.04em; margin-top:4px;">{{ cargo }}</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:4px; font-size:11px; color:#4A4F49;">
+          <div style="display:flex; gap:9px;"><span style="color:#8A8F89; font-weight:600; width:10px;">T</span>{{ telefone }}</div>
+          <div style="display:flex; gap:9px;"><span style="color:#8A8F89; font-weight:600; width:10px;">E</span>{{ email }}</div>
+          <div style="display:flex; gap:9px;"><span style="color:#8A8F89; font-weight:600; width:10px;">W</span>www.grupooppmais.com.br</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:9px;">Verso</div>
+      <div style="width:510px; height:283px; background:#39453A; border-radius:10px; box-shadow:0 10px 30px rgba(57,69,58,.22); position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;">
+        <div style="position:absolute; top:-110px; right:-80px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.18), transparent 62%);"></div>
+        <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:230px; height:auto; position:relative;"/>
+        <div style="font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#8FA394; position:relative;">Sorriso · Mato Grosso</div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:760px; text-align:center; font-size:11px; line-height:1.7; color:#8A8F89;">Para a gráfica: arte final em 90 × 50 mm + 3 mm de sangria em cada borda, CMYK, papel couché fosco 300 g/m² com laminação fosca. A faixa em degradê da frente encosta na borda — precisa ir até a sangria.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180, &quot;height&quot;: 620}, &quot;emissor&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;holding&quot;, &quot;options&quot;: [&quot;holding&quot;, &quot;aviacao&quot;, &quot;ativos&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Emissor&quot;}, &quot;pessoa&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;abner&quot;, &quot;options&quot;: [&quot;abner&quot;, &quot;rafael&quot;, &quot;alexsandra&quot;, &quot;personalizado&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa&quot;}, &quot;nome&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Nome Completo&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}, &quot;cargo&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Cargo / Função&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}, &quot;telefone&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;+55 (41) 99947-1355&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}, &quot;email&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;contato@grupooppmais.com.br&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const emissor = this.props.emissor ?? 'holding';
+    const names = { holding: 'Grupo Opp+', aviacao: 'Opp Aviação Agrícola', ativos: 'Opp Gestão de Ativos' };
+    return {
+      isHolding: emissor === 'holding',
+      isAviacao: emissor === 'aviacao',
+      isAtivos: emissor === 'ativos',
+      isUnidade: emissor !== 'holding',
+      emitterName: names[emissor] || names.holding,
+      ...this.pessoa(),
+    };
+  }
+  pessoa() {
+    const presets = {
+      abner: { nome: 'Abner G Carvalho', cargo: 'Gestor Financeiro', telefone: '+55 (41) 99947-1355', email: 'financeiro@grupooppmais.com.br' },
+      rafael: { nome: 'Rafael A Sousa', cargo: 'Téc. Agrícola Executor', telefone: '+55 (66) 99921-8027', email: 'rafaelsousa@grupooppmais.com.br' },
+      alexsandra: { nome: 'Alexsandra C Souza', cargo: 'Gestora Administrativa', telefone: '+55 (66) 99232-0821', email: 'contato@grupooppmais.com.br' },
+    };
+    const p = presets[this.props.pessoa ?? 'abner'];
+    if (p) return p;
+    return {
+      nome: this.props.nome ?? 'Nome Completo',
+      cargo: this.props.cargo ?? 'Cargo / Função',
+      telefone: this.props.telefone ?? '+55 (41) 99947-1355',
+      email: this.props.email ?? 'contato@grupooppmais.com.br',
+    };
+  }
+}
+</script>
+</body>
+</html>

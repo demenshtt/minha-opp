@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; -webkit-font-smoothing: antialiased; }
+    .lucide { width: 1em; height: 1em; vertical-align: middle; stroke-width: 1.75; flex: none; }
+    a { color: #219653; text-decoration: none; }
+    a:hover { color: #1B7A44; }
+    .cm-nav.active { background: #EEF3EF; color: #39453A; box-shadow: inset 3px 0 0 #219653; font-weight: 600; }
+    .cm-scroll::-webkit-scrollbar { width: 10px; }
+    .cm-scroll::-webkit-scrollbar-thumb { background: #DADCD7; border-radius: 8px; border: 3px solid #F4F5F3; }
+  </style>
+</helmet>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="400" fill="#39453A"/>
+    <circle cx="310" cy="90" r="150" fill="#6FCF97" opacity="0.18"/>
+    <text x="200" y="185" font-family="Comfortaa,sans-serif" font-size="86" font-weight="700" fill="#FFFFFF" text-anchor="middle">Opp+</text>
+    <text x="200" y="240" font-family="Montserrat,sans-serif" font-size="26" font-weight="600" letter-spacing="6" fill="#A5D6A7" text-anchor="middle">O NORTE</text>
+    <text x="200" y="278" font-family="Montserrat,sans-serif" font-size="15" letter-spacing="3" fill="#8A9488" text-anchor="middle">CENTRAL DE MARCA</text>
+  </svg>
+</template>
+<div style="display:flex; min-height:100vh; background:#F4F5F3; font-family:'Montserrat',sans-serif; color:#1C201C;">
+
+  <aside style="width:264px; flex:none; background:#FFFFFF; border-right:1px solid #E6E7E4; position:sticky; top:0; height:100vh; display:flex; flex-direction:column; padding:28px 20px;">
+    <a href="#inicio" style="display:block; padding:0 8px 4px;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="width:100%; max-width:186px; height:auto; display:block;">
+    </a>
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#8A8F89; padding:0 8px 22px; font-weight:600;">Central de Marca</div>
+
+    <nav style="display:flex; flex-direction:column; gap:2px;">
+      <sc-for list="{{ nav }}" as="link" hint-placeholder-count="7">
+        <a class="cm-nav" href="{{ link.href }}" style="display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:9px; font-size:13.5px; font-weight:500; color:#565B56;" style-hover="background:#F1F3F0; color:#39453A;">
+          <span style="font-size:17px; color:#7A8079;"><i data-lucide="{{ link.icon }}"></i></span>
+          <span>{{ link.label }}</span>
+        </a>
+      </sc-for>
+    </nav>
+
+    <div style="margin-top:auto; padding:14px 12px 0; border-top:1px solid #EEF0ED; display:flex; flex-direction:column; gap:8px;">
+      <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; color:#8A8F89; font-weight:600;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#219653; box-shadow:0 0 0 3px rgba(33,150,83,.15);"></span>
+        Sistema v2 · esmeralda
+      </div>
+      <div style="font-size:10.5px; color:#A8ADA6; line-height:1.5;">MDC-GDI · Uso interno<br>Grupo Opp+</div>
+    </div>
+  </aside>
+
+  <main class="cm-scroll" style="flex:1; height:100vh; overflow-y:auto;">
+    <div style="max-width:1080px; margin:0 auto; padding:0 56px 96px;">
+
+      <!-- HERO -->
+      <section id="inicio" style="padding:72px 0 8px; scroll-margin-top:24px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#219653; font-weight:600; margin-bottom:22px;">
+          <span style="width:26px; height:1.5px; background:#219653; display:inline-block;"></span>Grupo Opp+ · Identidade Visual
+        </div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:54px; line-height:1.05; letter-spacing:-0.01em; margin:0 0 20px; color:#39453A; max-width:16ch; text-wrap:balance;">Um só padrão, em todo ponto de contato.</h1>
+        <p style="font-size:17px; line-height:1.65; color:#565B56; max-width:60ch; margin:0 0 20px; font-weight:400;">A Central de Marca reúne os fundamentos visuais, os templates oficiais e a organização de arquivos do Grupo Opp+ em um único lugar. Menos fricção para encontrar o certo — mais consistência em cada comunicação.</p>
+        <sc-if value="{{ showQuote }}" hint-placeholder-val="{{ true }}">
+          <blockquote style="margin:0 0 40px; padding:2px 0 2px 20px; border-left:2px solid #A5D6A7; font-family:'Comfortaa',sans-serif; font-style:italic; color:#6B716A; font-size:15px; max-width:58ch; line-height:1.55;">"Sua marca é o que as pessoas dizem sobre você quando você sai da sala."<span style="display:block; font-style:normal; font-size:12px; letter-spacing:0.05em; color:#9AA097; margin-top:8px; text-transform:uppercase;">Jeff Bezos</span></blockquote>
+        </sc-if>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px;">
+          <sc-for list="{{ shortcuts }}" as="s" hint-placeholder-count="3">
+            <a href="{{ s.href }}" style="display:block; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:22px; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 30px rgba(41,60,44,.10); border-color:#CBE3D2;">
+              <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:11px; background:#EEF3EF; color:#219653; font-size:20px; margin-bottom:16px;"><i data-lucide="{{ s.icon }}"></i></span>
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#39453A; margin-bottom:5px;">{{ s.title }}</div>
+              <div style="font-size:13px; color:#767C75; line-height:1.5;">{{ s.desc }}</div>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- FUNDAMENTOS / PALETA -->
+      <section id="paleta" style="padding:64px 0 0; scroll-margin-top:24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:8px;">Fundamentos</div>
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#39453A; margin:0 0 10px;">Paleta de cores</h2>
+        <p style="font-size:15px; color:#565B56; max-width:64ch; line-height:1.6; margin:0 0 32px;">Base sóbria em verde e neutros, com o esmeralda como única cor de ação. O verde vibrante antigo (#00D300) foi aposentado por reprovar em contraste e destoar do tom institucional.</p>
+
+        <sc-for list="{{ paletteGroups }}" as="group" hint-placeholder-count="3">
+          <div style="margin-bottom:30px;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">{{ group.title }}</div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:14px;">
+              <sc-for list="{{ group.colors }}" as="c" hint-placeholder-count="4">
+                <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:14px; overflow:hidden;">
+                  <div style="height:78px; background:{{ c.hex }}; border-bottom:1px solid rgba(0,0,0,.06); display:flex; align-items:flex-end; padding:10px 12px;">
+                    <span style="font-family:'Montserrat',monospace; font-size:12px; font-weight:600; letter-spacing:0.04em; color:{{ c.ink }};">{{ c.hex }}</span>
+                  </div>
+                  <div style="padding:12px 13px 14px;">
+                    <div style="font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:3px;">{{ c.name }}</div>
+                    <div style="font-size:11.5px; color:#868C85; line-height:1.45;">{{ c.role }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </section>
+
+      <!-- TIPOGRAFIA -->
+      <section id="tipografia" style="padding:56px 0 0; scroll-margin-top:24px;">
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#39453A; margin:0 0 10px;">Tipografia</h2>
+        <p style="font-size:15px; color:#565B56; max-width:64ch; line-height:1.6; margin:0 0 28px;">Duas famílias, papéis claros: <strong style="color:#39453A;">Comfortaa</strong> para títulos e marca, <strong style="color:#39453A;">Montserrat</strong> para corpo e interface.</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:28px;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#219653; margin-bottom:14px;">Títulos · Display</div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:46px; line-height:1; color:#39453A;">Comfortaa</div>
+            <div style="font-family:'Comfortaa',sans-serif; font-size:15px; color:#767C75; margin-top:14px; letter-spacing:0.01em;">Aa Bb Cc · 0123456789<br>Moderna, arredondada, confiável.</div>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:28px;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#219653; margin-bottom:14px;">Corpo · Interface</div>
+            <div style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:46px; line-height:1; color:#39453A;">Montserrat</div>
+            <div style="font-family:'Montserrat',sans-serif; font-size:15px; color:#767C75; margin-top:14px;">Aa Bb Cc · 0123456789<br>Geométrica, clara, ótima em tela.</div>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:12px 28px;">
+          <sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="6">
+            <div style="display:flex; align-items:baseline; gap:20px; padding:15px 0; border-bottom:1px solid #F0F1EE;">
+              <div style="width:150px; flex:none; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#9AA097;">{{ t.label }}</div>
+              <div style="width:56px; flex:none; font-family:monospace; font-size:12px; color:#B0B5AE;">{{ t.px }}</div>
+              <div style="font-family:{{ t.stack }}; font-weight:{{ t.weight }}; font-size:{{ t.px }}; line-height:1.1; color:#39453A; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Grupo Opp+</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- LOGOTIPO -->
+      <section id="logotipo" style="padding:56px 0 0; scroll-margin-top:24px;">
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#39453A; margin:0 0 10px;">Logotipo</h2>
+        <p style="font-size:15px; color:#565B56; max-width:64ch; line-height:1.6; margin:0 0 28px;">A versão <strong style="color:#39453A;">flat (2D)</strong> é a principal, para uso oficial e digital. A versão 3D fica reservada a destaques pontuais (capas, redes).</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:38px 28px 20px; text-align:center;">
+            <img src="assets/logo-opp-flat.png" alt="Logo flat" style="width:100%; max-width:280px; height:auto; margin-bottom:22px;">
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:600; color:#219653; background:#EEF3EF; padding:6px 12px; border-radius:20px;"><i data-lucide="check" style="font-size:14px;"></i> Principal · flat 2D</div>
+          </div>
+          <div style="background:#39453A; border:1px solid #39453A; border-radius:16px; padding:38px 28px 20px; text-align:center;">
+            <img src="assets/logo-opp-3d.png" alt="Logo 3D" style="width:100%; max-width:280px; height:auto; margin-bottom:22px; filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));">
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:600; color:#A5D6A7; background:rgba(255,255,255,.08); padding:6px 12px; border-radius:20px;"><i data-lucide="sparkles" style="font-size:14px;"></i> Especial · 3D</div>
+          </div>
+        </div>
+
+        <div style="background:#F0F0F0; border:1px solid #E6E7E4; border-radius:16px; padding:22px 26px; margin-bottom:16px; display:flex; align-items:center; gap:22px; flex-wrap:wrap;">
+          <div style="display:flex; gap:14px; flex:1; min-width:280px;">
+            <div style="flex:1; background:#39453A; border-radius:12px; padding:22px 20px; text-align:center;">
+              <img src="assets/logo-opp-flat-branco.png" alt="Logo flat branco" style="width:100%; max-width:190px; height:auto;">
+            </div>
+            <div style="flex:1; background:#000000; border-radius:12px; padding:22px 20px; text-align:center;">
+              <img src="assets/logo-opp-3d.png" alt="Logo 3D branco" style="width:100%; max-width:190px; height:auto; filter:brightness(0) invert(1);">
+            </div>
+          </div>
+          <div style="flex:1; min-width:220px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:6px;">Sobre fundo escuro</div>
+            <div style="font-size:13px; color:#565B56; line-height:1.55;">Em fundos escuros, o logotipo é sempre aplicado na <strong style="color:#39453A;">versão em branco</strong> — tanto na flat quanto na 3D — para preservar o contraste e a legibilidade.</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+            <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15px; color:#219653; margin-bottom:14px;"><i data-lucide="circle-check"></i> Pode</div>
+            <sc-for list="{{ logoDo }}" as="d" hint-placeholder-count="3">
+              <div style="display:flex; gap:10px; font-size:13.5px; color:#565B56; line-height:1.5; padding:6px 0;"><span style="color:#219653; margin-top:1px;"><i data-lucide="check" style="font-size:15px;"></i></span>{{ d }}</div>
+            </sc-for>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+            <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15px; color:#D32F2F; margin-bottom:14px;"><i data-lucide="circle-x"></i> É proibido</div>
+            <sc-for list="{{ logoDont }}" as="d" hint-placeholder-count="4">
+              <div style="display:flex; gap:10px; font-size:13.5px; color:#565B56; line-height:1.5; padding:6px 0;"><span style="color:#D32F2F; margin-top:1px;"><i data-lucide="x" style="font-size:15px;"></i></span>{{ d }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEMPLATES -->
+      <section id="templates" style="padding:64px 0 0; scroll-margin-top:24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:8px;">Biblioteca</div>
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#39453A; margin:0 0 10px;">Templates oficiais</h2>
+        <p style="font-size:15px; color:#565B56; max-width:64ch; line-height:1.6; margin:0 0 30px;">O coração do hub: cada peça de comunicação vira um modelo pronto para copiar e usar. Estamos construindo um por um — este é o roteiro.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:16px;">
+          <sc-for list="{{ templates }}" as="tpl" hint-placeholder-count="8">
+            <a href="{{ tpl.href }}" style="text-decoration:none; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:12px; transition:box-shadow .15s ease, border-color .15s ease;" style-hover="box-shadow:0 12px 26px rgba(41,60,44,.09); border-color:#CBE3D2;">
+              <div style="display:flex; align-items:flex-start; justify-content:space-between;">
+                <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:11px; background:#EEF3EF; color:#219653; font-size:19px;"><i data-lucide="{{ tpl.icon }}"></i></span>
+                <sc-if value="{{ showStatus }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-size:10.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:{{ tpl.statusInk }}; background:{{ tpl.statusBg }}; padding:4px 9px; border-radius:20px;">{{ tpl.status }}</span>
+                </sc-if>
+              </div>
+              <div>
+                <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15.5px; color:#39453A; margin-bottom:4px;">{{ tpl.title }}</div>
+                <div style="font-size:12.5px; color:#767C75; line-height:1.5;">{{ tpl.desc }}</div>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- ORGANIZAÇÃO -->
+      <section id="organizacao" style="padding:64px 0 0; scroll-margin-top:24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:8px;">Gestão documental</div>
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#39453A; margin:0 0 10px;">Organização de arquivos</h2>
+        <p style="font-size:15px; color:#565B56; max-width:66ch; line-height:1.6; margin:0 0 12px;">A estrutura de diretórios e a regra de nomes definidas no manual MDC-GDI, transformadas em referência viva. Três princípios sustentam tudo: <strong style="color:#39453A;">organizar por função</strong> (não por pessoa ou ano), <strong style="color:#39453A;">um documento, um lugar</strong> e <strong style="color:#39453A;">o nome carrega o contexto</strong>.</p>
+        <p style="font-size:13px; color:#868C85; max-width:66ch; line-height:1.55; margin:0 0 30px;">A estrutura de Nível 1 é estável — mudanças são planejadas e comunicadas. Prefixos numéricos forçam a ordem correta na listagem.</p>
+
+        <!-- 3.1 Árvore de diretórios -->
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">1 · Árvore de diretórios (Nível 1)</div>
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:6px 24px; margin-bottom:36px;">
+          <sc-for list="{{ folders }}" as="f" hint-placeholder-count="16">
+            <div style="display:flex; align-items:flex-start; gap:14px; padding:12px 0; border-top:1px solid #F0F1EE;">
+              <span style="font-family:monospace; font-size:12px; font-weight:700; color:#219653; background:#EEF3EF; padding:4px 8px; border-radius:6px; min-width:32px; text-align:center; flex:none;">{{ f.code }}</span>
+              <div style="flex:1; min-width:0;">
+                <div style="font-family:monospace; font-size:13.5px; font-weight:600; color:#39453A;">{{ f.name }}</div>
+                <sc-if value="{{ f.note }}" hint-placeholder-val="{{ true }}"><div style="font-size:12.5px; color:#868C85; line-height:1.5; margin-top:2px;">{{ f.note }}</div></sc-if>
+              </div>
+              <sc-if value="{{ f.tagUnidade }}" hint-placeholder-val="{{ true }}"><span style="font-size:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B8A6B; background:#EEF3EF; padding:4px 9px; border-radius:20px; flex:none; align-self:center;">Unidade</span></sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- 3.2 Construtor do nome de arquivo -->
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">2 · Como nomear um arquivo</div>
+        <div style="background:#39453A; border-radius:16px; padding:30px 32px; margin-bottom:16px; color:#EDEFEC;">
+          <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:22px;">
+            <sc-for list="{{ nameParts }}" as="p" hint-placeholder-count="5">
+              <span style="font-family:monospace; font-size:14px; font-weight:600; color:#39453A; background:{{ p.bg }}; padding:7px 12px; border-radius:8px;">{{ p.token }}</span>
+              <sc-if value="{{ p.sep }}" hint-placeholder-val="{{ true }}"><span style="font-family:monospace; font-size:16px; color:#6B7568; font-weight:700;">{{ p.sep }}</span></sc-if>
+            </sc-for>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px;">
+            <sc-for list="{{ nameLegend }}" as="l" hint-placeholder-count="5">
+              <div>
+                <div style="display:inline-block; width:12px; height:12px; border-radius:4px; background:{{ l.bg }}; margin-right:7px; vertical-align:middle;"></div><span style="font-family:monospace; font-size:12px; font-weight:700; color:#DDE3DC;">{{ l.token }}</span>
+                <div style="font-size:12px; color:#9AA598; line-height:1.5; margin-top:5px;">{{ l.desc }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #CBE3D2; border-radius:16px; padding:18px 24px; margin-bottom:36px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <span style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#219653;">Exemplo real</span>
+          <span style="font-family:monospace; font-size:14px; font-weight:600; color:#39453A;">FIN_REL_BalanceteAnalitico_202504_vFINAL.xlsx</span>
+        </div>
+
+        <!-- 3.3 Códigos -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:36px;">
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:4px;">Códigos de departamento <span style="font-family:monospace; color:#219653;">DEPTO</span></div>
+            <div style="font-size:12px; color:#868C85; margin-bottom:16px;">Pode ser omitido se a pasta já identifica a origem.</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <sc-for list="{{ deptCodes }}" as="d" hint-placeholder-count="10">
+                <span style="display:inline-flex; align-items:baseline; gap:6px; background:#F4F5F3; border:1px solid #EBECE9; padding:6px 11px; border-radius:8px;"><span style="font-family:monospace; font-size:12.5px; font-weight:700; color:#219653;">{{ d.code }}</span><span style="font-size:12px; color:#767C75;">{{ d.label }}</span></span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:4px;">Tipos de documento <span style="font-family:monospace; color:#219653;">TIPO</span></div>
+            <div style="font-size:12px; color:#868C85; margin-bottom:16px;">Lista expansível conforme a necessidade.</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <sc-for list="{{ docTypeCodes }}" as="d" hint-placeholder-count="12">
+                <span style="display:inline-flex; align-items:baseline; gap:6px; background:#F4F5F3; border:1px solid #EBECE9; padding:6px 11px; border-radius:8px;"><span style="font-family:monospace; font-size:12.5px; font-weight:700; color:#219653;">{{ d.code }}</span><span style="font-size:12px; color:#767C75;">{{ d.label }}</span></span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.4 Onde salvo o quê -->
+        <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">3 · Onde salvo o quê?</div>
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:36px;">
+          <sc-for list="{{ whereToSave }}" as="w" hint-placeholder-count="5">
+            <div style="display:grid; grid-template-columns:1fr 1.3fr; gap:20px; padding:16px 26px; border-top:1px solid #F0F1EE; align-items:center;">
+              <div style="font-size:13.5px; color:#4A4F49; font-weight:500;">{{ w.scenario }}</div>
+              <div style="font-family:monospace; font-size:12.5px; color:#219653; word-break:break-word;">{{ w.path }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- 3.5 Versionamento + data -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:14px;">Versionamento</div>
+            <sc-for list="{{ versions }}" as="v" hint-placeholder-count="4">
+              <div style="display:flex; gap:12px; padding:7px 0; font-size:13px; color:#565B56;"><span style="font-family:monospace; font-weight:700; color:#219653; min-width:70px;">{{ v.tag }}</span><span>{{ v.desc }}</span></div>
+            </sc-for>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:14px;">Formato de data</div>
+            <div style="display:flex; gap:12px; padding:7px 0; font-size:13px; color:#565B56;"><span style="font-family:monospace; font-weight:700; color:#219653; min-width:92px;">AAAAMMDD</span><span>Padrão. Ordena cronologicamente. Ex.: <span style="font-family:monospace;">20250514</span></span></div>
+            <div style="display:flex; gap:12px; padding:7px 0; font-size:13px; color:#565B56;"><span style="font-family:monospace; font-weight:700; color:#219653; min-width:92px;">AAAAMM</span><span>Para documentos mensais. Ex.: <span style="font-family:monospace;">202505</span></span></div>
+            <div style="display:flex; gap:12px; padding:7px 0; font-size:13px; color:#A79A6B;"><span style="font-family:monospace; font-weight:700; min-width:92px;">DD-MM-AA</span><span>Legado — evitar em arquivos novos.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer style="margin-top:72px; padding-top:24px; border-top:1px solid #E6E7E4; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div style="font-size:11.5px; color:#A0A59D; line-height:1.5; max-width:60ch;">CONFIDENCIAL GRUPO OPP+ · Documento de uso exclusivo interno. Reprodução permitida somente sob autorização por escrito da empresa.</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.08em; color:#B8BDB4; font-weight:600;">MDC-GDI · v2</div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:860},&quot;showQuote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Início&quot;},&quot;showStatus&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Templates&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.renderIcons();
+    this.initScrollSpy();
+  }
+  componentDidUpdate() { this.renderIcons(); }
+
+  renderIcons() {
+    if (window.lucide && window.lucide.createIcons) {
+      try { window.lucide.createIcons(); } catch (e) {}
+    } else {
+      setTimeout(() => this.renderIcons(), 200);
+    }
+  }
+
+  initScrollSpy() {
+    const root = this._rootEl || document;
+    setTimeout(() => {
+      const main = document.querySelector('.cm-scroll');
+      const links = Array.from(document.querySelectorAll('.cm-nav'));
+      const sections = links
+        .map(l => document.querySelector(l.getAttribute('href')))
+        .filter(Boolean);
+      if (!main || !sections.length) return;
+      const spy = () => {
+        const y = main.scrollTop + 120;
+        let current = sections[0];
+        for (const s of sections) { if (s.offsetTop <= y) current = s; }
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
+      };
+      main.addEventListener('scroll', spy, { passive: true });
+      spy();
+    }, 300);
+  }
+
+  renderVals() {
+    const ink = '#1C201C', white = '#FFFFFF';
+    return {
+      showQuote: this.props.showQuote ?? true,
+      showStatus: this.props.showStatus ?? true,
+
+      nav: [
+        { label: 'Início', href: '#inicio', icon: 'home' },
+        { label: 'Paleta', href: '#paleta', icon: 'palette' },
+        { label: 'Tipografia', href: '#tipografia', icon: 'type' },
+        { label: 'Logotipo', href: '#logotipo', icon: 'shapes' },
+        { label: 'Templates', href: '#templates', icon: 'layout-grid' },
+        { label: 'Organização', href: '#organizacao', icon: 'folder-tree' },
+      ],
+
+      shortcuts: [
+        { title: 'Fundamentos', desc: 'Cores, tipografia e uso do logotipo.', icon: 'palette', href: '#paleta' },
+        { title: 'Templates', desc: 'Modelos prontos para cada comunicação.', icon: 'layout-grid', href: '#templates' },
+        { title: 'Organização', desc: 'Estrutura de pastas e nomes de arquivo.', icon: 'folder-tree', href: '#organizacao' },
+      ],
+
+      paletteGroups: [
+        { title: 'Cores da marca', colors: [
+          { name: 'Verde Escuro Opp+', hex: '#39453A', role: 'Âncora da marca · superfícies e títulos', ink: white },
+          { name: 'Preto', hex: '#000000', role: 'Corpo de texto · máxima legibilidade', ink: white },
+          { name: 'Cinza Escuro', hex: '#333333', role: 'Texto secundário e subtítulos', ink: white },
+          { name: 'Cinza Claro', hex: '#F0F0F0', role: 'Fundos de caixas e respiro', ink: ink },
+          { name: 'Branco', hex: '#FFFFFF', role: 'Fundo principal e texto sobre escuro', ink: ink },
+        ]},
+        { title: 'Cores de ação · esmeralda', colors: [
+          { name: 'Esmeralda', hex: '#219653', role: 'Ação principal · botões, links, CTAs', ink: white },
+          { name: 'Sálvia', hex: '#6FCF97', role: 'Ação secundária e gráficos', ink: ink },
+          { name: 'Pastel', hex: '#A5D6A7', role: 'Realces suaves e fundos leves', ink: ink },
+        ]},
+        { title: 'Cores semânticas', colors: [
+          { name: 'Sucesso', hex: '#219653', role: 'Confirmações e estados positivos', ink: white },
+          { name: 'Alerta', hex: '#F2C94C', role: 'Atenção e avisos moderados', ink: ink },
+          { name: 'Erro', hex: '#D32F2F', role: 'Erros e ações destrutivas', ink: white },
+          { name: 'Info', hex: '#ACD4F1', role: 'Informações e destaques neutros', ink: ink },
+        ]},
+      ],
+
+      typeScale: [
+        { label: 'Display / Título 1', px: '48px', stack: "'Comfortaa',sans-serif", weight: 700 },
+        { label: 'Título 2', px: '32px', stack: "'Comfortaa',sans-serif", weight: 700 },
+        { label: 'Título 3', px: '24px', stack: "'Comfortaa',sans-serif", weight: 600 },
+        { label: 'Subtítulo', px: '18px', stack: "'Montserrat',sans-serif", weight: 600 },
+        { label: 'Corpo', px: '15px', stack: "'Montserrat',sans-serif", weight: 400 },
+        { label: 'Legenda / nota', px: '12px', stack: "'Montserrat',sans-serif", weight: 400 },
+      ],
+
+      logoDo: [
+        'Manter a proporção original e a área de respiro (¼ da altura).',
+        'Usar a versão flat sobre fundos claros e de bom contraste.',
+        'Sobre fundo escuro, usar sempre a versão em branco (flat ou 3D).',
+        'Usar o ícone isolado em espaços muito reduzidos (favicon, perfil).',
+      ],
+      logoDont: [
+        'Distorcer, esticar, comprimir ou rotacionar.',
+        'Alterar as cores fora das versões aprovadas.',
+        'Aplicar sombras, contornos ou efeitos não previstos.',
+        'Sobrepor a fundos poluídos ou de baixo contraste.',
+      ],
+
+      templates: [
+        { title: 'Assinatura de e-mail', desc: 'Padrão único para todas as comunicações.', icon: 'mail', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Assinatura de E-mail.dc.html' },
+        { title: 'Papel timbrado & memorando', desc: 'Cabeçalho, rodapé e área de conteúdo.', icon: 'file-text', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Papel Timbrado.dc.html' },
+        { title: 'Apresentação de slides', desc: 'Capa, seção, conteúdo e encerramento.', icon: 'presentation', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Template de Apresentação.dc.html' },
+        { title: 'Relatório Gerencial', desc: 'Resumo executivo e analítico padrão MDC.', icon: 'bar-chart-3', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Relatório Gerencial - Resumo Executivo.dc.html' },
+        { title: 'Relatório PP-CPG', desc: 'Gestão de Ativos — resumo e analítico.', icon: 'clipboard-list', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Gestão de Ativos PP-CPG - Resumo Executivo.dc.html' },
+        { title: 'Convite de diretoria', desc: 'Reuniões e eventos institucionais.', icon: 'calendar-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Convite - Reunião de Diretoria.dc.html' },
+        { title: 'Proposta comercial', desc: 'Capa e estrutura de proposta e relatório.', icon: 'file-badge', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Proposta Comercial - OACO.dc.html' },
+        { title: 'Cartão de visita', desc: 'Frente e verso, versão flat.', icon: 'contact', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Cartão de Visita.dc.html' },
+        { title: 'Figurinhas WhatsApp', desc: 'Duas séries prontas para o dia a dia.', icon: 'smile', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Figurinhas WhatsApp.dc.html' },
+        { title: 'OppOn · bot institucional', desc: 'Bot Telegram enxuto: institucional e básico do comercial.', icon: 'bot', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'OppOn - Bot Institucional.dc.html' },
+        { title: 'WhatsApp Business', desc: 'Perfil, catálogo e mensagens padronizadas.', icon: 'message-square-text', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'WhatsApp Business.dc.html' },
+        { title: 'Figuras de contato', desc: 'Recortes p/ foto de perfil do zap: logo e ícone.', icon: 'contact-round', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Figuras de Contato.dc.html' },
+        { title: 'Kit de presença digital', desc: 'WhatsApp Business e perfis oficiais.', icon: 'message-circle', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Kit de Presença Digital.dc.html' },
+        { title: 'Fundos & wallpapers', desc: 'Slides, documentos, celular e tablet.', icon: 'monitor', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Fundos de Marca.dc.html' },
+        { title: 'Protocolo de redes sociais', desc: 'Presença defensiva: onde ir e onde não se expor.', icon: 'shield-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Protocolo de Redes Sociais.dc.html' },
+        { title: 'Minha Opp+ · PWA', desc: 'Onboarding em produção; futuro hub de relacionamento.', icon: 'smartphone', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Minha Opp+.dc.html' },
+        { title: 'Template de site', desc: 'A partir do seu mockup mobile dark.', icon: 'layout', status: 'Planejado', statusInk: '#8A8F89', statusBg: '#F1F2EF' },
+      ],
+
+      folders: [
+        { code: '00', name: '00_Arquivo_Morto_Legado', note: 'Documentos históricos não mais ativos, mas que precisam ser mantidos.' },
+        { code: '01', name: '01_Administrativo_Corporativo', note: '' },
+        { code: '02', name: '02_Comercial_Marketing_Vendas', note: 'Pode desmembrar em 02_Comercial_Vendas e 03_Marketing_Comunicacao se o volume justificar.' },
+        { code: '04', name: '04_Financeiro_Controladoria', note: '' },
+        { code: '05', name: '05_Recursos_Humanos_Desenvolvimento_Organizacional', note: '' },
+        { code: '06', name: '06_Operacoes_Grupo', note: 'Operações transversais ao grupo ou que não se encaixam em uma unidade específica.' },
+        { code: '07', name: '07_Juridico_Compliance_Governanca', note: '' },
+        { code: '08', name: '08_Tecnologia_Informacao_Sistemas', note: '' },
+        { code: '09', name: '09_Projetos_Corporativos_Estrategicos', note: 'Projetos que envolvem múltiplas áreas ou de alta relevância estratégica.' },
+        { code: '10', name: '10_Documentos_Gerais_Politicas_Templates', note: 'Manuais (como o MDC-GDI), políticas gerais, templates oficiais e comunicados para toda a empresa.' },
+        { code: '11', name: '11_Opp_Aviacao_Agricola', note: 'Raiz de todos os documentos desta unidade de negócio.', tagUnidade: true },
+        { code: '12', name: '12_Opp_Gestao_Ativos', note: 'Raiz de todos os documentos desta unidade de negócio.', tagUnidade: true },
+        { code: '13', name: '13_Opp_Logistica', note: 'Raiz da unidade de negócio — quando ativa.', tagUnidade: true },
+        { code: '14', name: '14_SGI_Sistema_Gestao_Integrado', note: 'Qualidade, Segurança, Meio Ambiente e Saúde Ocupacional (QSMS).' },
+        { code: '15', name: '15_Localidades_Bases_Operacionais', note: 'Documentos específicos de cada localidade física.' },
+      ],
+
+      nameParts: [
+        { token: 'DEPTO', bg: '#A5D6A7', sep: '_' },
+        { token: 'TIPO', bg: '#6FCF97', sep: '_' },
+        { token: 'Descricao', bg: '#BFE3C6', sep: '_' },
+        { token: 'AAAAMMDD', bg: '#D6EBD9', sep: '_' },
+        { token: 'vX', bg: '#EAF6EE', sep: '.ext' },
+      ],
+      nameLegend: [
+        { token: 'DEPTO', bg: '#A5D6A7', desc: 'Origem: departamento ou unidade (3–5 letras). Opcional se a pasta já identifica.' },
+        { token: 'TIPO', bg: '#6FCF97', desc: 'Natureza do documento (relatório, política, ata…).' },
+        { token: 'Descricao', bg: '#BFE3C6', desc: 'Descrição concisa do conteúdo, sem espaços.' },
+        { token: 'AAAAMMDD', bg: '#D6EBD9', desc: 'Data no formato ano-mês-dia, para ordenar certo.' },
+        { token: 'vX', bg: '#EAF6EE', desc: 'Versão (v1, v02, vFINAL, RASCUNHO). A extensão vem do programa.' },
+      ],
+
+      deptCodes: [
+        { code: 'ADM', label: 'Administrativo' }, { code: 'COM', label: 'Comercial' },
+        { code: 'MKT', label: 'Marketing' }, { code: 'FIN', label: 'Financeiro' },
+        { code: 'RH', label: 'Recursos Humanos' }, { code: 'OPER', label: 'Operações' },
+        { code: 'JUR', label: 'Jurídico' }, { code: 'TI', label: 'Tecnologia' },
+        { code: 'PROJ', label: 'Projetos' }, { code: 'GER', label: 'Gerais/Políticas' },
+        { code: 'AVI', label: 'Opp Aviação' }, { code: 'GES', label: 'Opp Gestão Ativos' },
+        { code: 'LOG', label: 'Opp Logística' }, { code: 'SGI', label: 'Gestão Integrada' },
+        { code: 'LOC', label: 'Localidades' },
+      ],
+      docTypeCodes: [
+        { code: 'PROC', label: 'Procedimento' }, { code: 'POL', label: 'Política' },
+        { code: 'FORM', label: 'Formulário' }, { code: 'REL', label: 'Relatório' },
+        { code: 'CONTR', label: 'Contrato' }, { code: 'PROP', label: 'Proposta' },
+        { code: 'ATA', label: 'Ata' }, { code: 'MAN', label: 'Manual' },
+        { code: 'PLAN', label: 'Planejamento' }, { code: 'APRES', label: 'Apresentação' },
+        { code: 'ORCAM', label: 'Orçamento' }, { code: 'FAT', label: 'Fatura/NF' },
+        { code: 'REC', label: 'Recibo' }, { code: 'EMAIL', label: 'E-mail salvo' },
+        { code: 'CHECK', label: 'Checklist' }, { code: 'CERT', label: 'Certificado' },
+        { code: 'LIC', label: 'Licença/Alvará' }, { code: 'AUDIT', label: 'Auditoria' },
+        { code: 'ART', label: 'Artigo' }, { code: 'IMG', label: 'Imagem' },
+        { code: 'VIDEO', label: 'Vídeo' },
+      ],
+
+      whereToSave: [
+        { scenario: 'Um contrato de fornecedor assinado', path: '07_Juridico_Compliance_Governanca › JUR_CONTR_Descricao_AAAAMMDD_vFINAL.pdf' },
+        { scenario: 'O balancete mensal do financeiro', path: '04_Financeiro_Controladoria › FIN_REL_Balancete_AAAAMM_vFINAL.xlsx' },
+        { scenario: 'Uma proposta comercial enviada a cliente', path: '02_Comercial_Marketing_Vendas › COM_PROP_Cliente_AAAAMMDD_v1.pdf' },
+        { scenario: 'O template oficial de apresentação', path: '10_Documentos_Gerais_Politicas_Templates › GER_APRES_TemplatePadrao_AAAAMMDD_vFINAL.pptx' },
+        { scenario: 'Ata de reunião da Aviação Agrícola', path: '11_Opp_Aviacao_Agricola › ATA_Reuniao_AAAAMMDD_v1.docx (DEPTO omitido — a pasta já identifica)' },
+        { scenario: 'Documento antigo, sem uso, a preservar', path: '00_Arquivo_Morto_Legado › mantém o nome original' },
+      ],
+
+      versions: [
+        { tag: 'RASCUNHO', desc: 'Documento em elaboração, ainda não revisado.' },
+        { tag: 'v1 · v02', desc: 'Versões numeradas em evolução.' },
+        { tag: 'v1-1', desc: 'Revisão menor sobre uma versão existente.' },
+        { tag: 'vFINAL', desc: 'Versão fechada, aprovada e vigente.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

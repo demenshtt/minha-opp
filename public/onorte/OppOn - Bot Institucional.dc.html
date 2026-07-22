@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="image-slot.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:960px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <!-- HERO -->
+  <div style="position:relative; background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 52px 40px; color:#FFFFFF; overflow:hidden;">
+    <div style="position:relative; display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;">
+          <span style="width:24px; height:1.5px; background:#6FCF97; display:inline-block;"></span>Template · Atendimento
+        </div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.08; letter-spacing:-0.01em; margin:0 0 14px; color:#FFFFFF; max-width:16ch; text-wrap:balance;">OppOn · Bot Institucional</h1>
+        <p style="font-size:14.5px; line-height:1.6; color:#D6DDD5; max-width:60ch; margin:0; font-weight:400;">A porta de entrada institucional no Telegram: enxuta, movida a botões e sem custo. O OppOn apresenta a Opp e o básico do comercial; quando precisa de gente, entrega a conversa para o WhatsApp — o balcão humano que a empresa já opera.</p>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 52px 8px;">
+
+    <!-- DIVISÃO DE CANAIS -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:44px;">
+      <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:16px; padding:22px 24px;">
+        <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#1B7A44; margin-bottom:8px;"><i data-lucide="bot"></i>OppOn faz</div>
+        <p style="font-size:12.5px; line-height:1.6; color:#3E453D; margin:0;">Institucional + básico do comercial, automático por botões: quem é a Opp, os serviços, capta pedido de proposta e aponta o caminho. Custo zero, disponível sempre.</p>
+      </div>
+      <div style="background:#F4F5F3; border:1px solid #E1E3DE; border-radius:16px; padding:22px 24px;">
+        <div style="display:flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:8px;"><i data-lucide="user-round"></i>Humano faz (WhatsApp)</div>
+        <p style="font-size:12.5px; line-height:1.6; color:#5A5F58; margin:0;">Quando entra pessoa: negociação, proposta e relação seguem no WhatsApp, no atendimento manual que já existe. O OppOn nunca finge automação que a empresa não tem.</p>
+      </div>
+    </div>
+
+    <!-- IDENTIDADE DO BOT -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">1 · Identidade do bot</div>
+    <div style="display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:center; background:#0B1B2E; border:1px solid #16324F; border-radius:18px; padding:30px 32px; margin-bottom:16px; overflow:hidden; position:relative;">
+      <div style="position:absolute; inset:0; background:radial-gradient(circle at 18% 30%, rgba(56,189,248,.16), transparent 45%); pointer-events:none;"></div>
+      <div style="position:relative; width:132px; height:132px; border-radius:26px; overflow:hidden; box-shadow:0 0 0 1px rgba(56,189,248,.5), 0 0 34px rgba(56,189,248,.35);">
+        <image-slot id="oppon-avatar" shape="rounded" radius="26" placeholder="Ícone OppOn — neon azul hi-tech (arraste a arte final)" style="width:132px; height:132px; background:#07121F;"></image-slot>
+      </div>
+      <div style="position:relative;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#EAF6FF; letter-spacing:-0.01em; margin-bottom:4px;">OppOn <span style="font-size:15px; color:#38BDF8; vertical-align:middle;"><i data-lucide="badge-check"></i></span></div>
+        <div style="font-family:monospace; font-size:13px; color:#5FC7F5; margin-bottom:14px;">@OppOn_bot <span style="font-size:10px; color:#7C8C99;">(handle a confirmar)</span></div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <sc-for list="{{ identidade }}" as="i" hint-placeholder-count="4">
+            <div style="display:flex; gap:11px; font-size:12.5px; line-height:1.5; color:#C6D6E4;"><span style="color:#38BDF8; flex:none; padding-top:1px;"><i data-lucide="{{ i.icon }}"></i></span><span><strong style="color:#EAF6FF; font-weight:600;">{{ i.rotulo }}:</strong> {{ i.valor }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:#8A8F89; line-height:1.6; margin:0 0 44px;">O neon azul é a assinatura <em>só do OppOn</em> — um traço hi-tech que separa o assistente da identidade corporativa, que segue verde. Avatar: ícone da Opp tratado em neon azul sobre fundo escuro (arraste a arte no quadro acima).</p>
+
+    <!-- MENU /start -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">2 · Menu principal <span style="font-family:monospace; text-transform:none; letter-spacing:0; color:#219653;">/start</span></div>
+    <div style="display:flex; gap:18px; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px; margin-bottom:44px; align-items:flex-start;">
+      <div style="flex:none; width:42px; height:42px; border-radius:11px; background:#EAF6FF; color:#1B96D6; display:flex; align-items:center; justify-content:center; font-size:19px;"><i data-lucide="message-square-text"></i></div>
+      <div style="flex:1;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#39453A; margin-bottom:8px;">Saudação institucional</div>
+        <div style="background:#EAF6FF; border:1px solid #CDE9F8; border-radius:4px 12px 12px 12px; padding:12px 15px; font-size:13px; line-height:1.6; color:#243642; margin-bottom:16px;">Olá! Eu sou o OppOn, assistente do Grupo Opp+. Posso te apresentar a Opp, mostrar nossos serviços e encaminhar você à nossa equipe. Escolha uma opção:</div>
+        <div style="display:flex; flex-wrap:wrap; gap:9px;">
+          <sc-for list="{{ menu }}" as="b" hint-placeholder-count="5">
+            <span style="display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:600; color:#1B7A44; background:#EEF3EF; border:1px solid #CBE3D2; border-radius:9px; padding:9px 14px;"><i data-lucide="{{ b.icon }}"></i>{{ b.rotulo }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENSAGENS DOS BOTÕES -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">3 · Mensagem de cada botão</div>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:44px;">
+      <sc-for list="{{ respostas }}" as="r" hint-placeholder-count="5">
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:22px 24px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <span style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:700; color:#1B7A44; background:#EEF3EF; padding:5px 11px; border-radius:8px;"><i data-lucide="{{ r.icon }}"></i>{{ r.rotulo }}</span>
+            <sc-if value="{{ r.humano }}" hint-placeholder-val="{{ false }}"><span style="font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:#8A6D1F; background:#F7F0DC; padding:4px 9px; border-radius:20px;">passa pra humano</span></sc-if>
+          </div>
+          <div style="background:#F6F8F5; border:1px solid #E8EAE5; border-radius:4px 12px 12px 12px; padding:12px 15px; font-size:13px; line-height:1.6; color:#2E3A31; white-space:pre-line;">{{ r.texto }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- FLUXO CAPTURA -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">4 · Fluxo "Solicitar proposta"</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:12px;">
+      <sc-for list="{{ captura }}" as="c" hint-placeholder-count="4">
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:14px; padding:18px 16px;">
+          <div style="font-family:monospace; font-size:11px; color:#38BDF8; font-weight:700; margin-bottom:8px;">Passo {{ c.n }}</div>
+          <div style="font-size:12.5px; line-height:1.5; color:#3E453D;">{{ c.texto }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="font-size:12px; color:#8A8F89; line-height:1.6; margin:0 0 44px;">O bot só coleta e registra. Nenhum valor, nenhuma promessa — o retorno é humano, pelo WhatsApp. É a captura sem carregar a equipe.</p>
+
+    <!-- PREVIEW TELEGRAM -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">5 · Como fica no Telegram</div>
+    <div style="max-width:420px; margin:0 auto 20px; background:#0E1621; border-radius:18px; box-shadow:0 14px 40px rgba(11,27,46,.4); overflow:hidden;">
+      <div style="background:#17212B; padding:13px 18px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #0A1119;">
+        <div style="width:38px; height:38px; border-radius:50%; background:#07121F; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 1px rgba(56,189,248,.5), 0 0 14px rgba(56,189,248,.35);"><img src="assets/icone-opp-grupo.png" alt="" style="width:20px; height:auto; filter:brightness(0) saturate(100%) invert(66%) sepia(66%) saturate(2500%) hue-rotate(165deg) brightness(101%) contrast(96%);"></div>
+        <div><div style="font-size:13.5px; font-weight:600; color:#EAF6FF; font-family:'Comfortaa',sans-serif;">OppOn</div><div style="font-size:10.5px; color:#5FC7F5;">bot</div></div>
+      </div>
+      <div style="padding:18px 14px; display:flex; flex-direction:column; gap:9px;">
+        <div style="max-width:86%; font-size:12.5px; line-height:1.5; padding:9px 12px; border-radius:4px 12px 12px 12px; background:#182533; color:#DCE7F1;">Olá! Eu sou o OppOn, assistente do Grupo Opp+. Escolha uma opção:</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:2px;">
+          <sc-for list="{{ menu }}" as="b" hint-placeholder-count="5">
+            <div style="text-align:center; font-size:12px; font-weight:600; color:#8FD3F6; background:#1C3247; border:1px solid #24455F; border-radius:9px; padding:9px;">{{ b.rotulo }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RODAPÉ LEGAL -->
+  <div style="padding:22px 52px 30px; border-top:1px solid #EEF0ED; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+    <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT<br>"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de marketing da razão social acima.</div>
+    <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600; text-align:right;">O Norte · MDC-GDI</div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1060,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  componentDidMount() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
+  renderVals() {
+    return {
+      identidade: [
+        { icon: 'tag', rotulo: 'Nome', valor: 'OppOn' },
+        { icon: 'building-2', rotulo: 'Função', valor: 'Assistente institucional do Grupo Opp+ · Sorriso/MT' },
+        { icon: 'palette', rotulo: 'Assinatura', valor: 'Neon azul hi-tech sobre fundo escuro (só do bot)' },
+        { icon: 'link', rotulo: 'Leva ao humano', valor: 'WhatsApp +55 (41) 99947-1355 e site oficial' },
+      ],
+      menu: [
+        { icon: 'sprout', rotulo: 'Quem é a Opp' },
+        { icon: 'plane', rotulo: 'Nossos serviços' },
+        { icon: 'file-badge', rotulo: 'Solicitar proposta' },
+        { icon: 'globe', rotulo: 'Site' },
+        { icon: 'headset', rotulo: 'Falar com a equipe' },
+      ],
+      respostas: [
+        { icon: 'sprout', rotulo: 'Quem é a Opp', humano: false, texto: 'A Opp nasceu no campo, de famílias produtoras do Sul que se firmaram em Sorriso/MT. Hoje reunimos aplicação aérea especializada e gestão de aeronaves, com o mesmo compromisso de sempre: trabalho bem feito e parceria que dura safra após safra.' },
+        { icon: 'plane', rotulo: 'Nossos serviços', humano: false, texto: 'Aplicação aérea (SAE): aplicação de defensivos, fertilizantes e sementes, com planejamento, precisão e conformidade em cada voo.\n\nGestão de aeronaves (OACO): a gestão completa da sua aeronave — a agenda continua exclusivamente sua e o avião gera receita quando estiver disponível.' },
+        { icon: 'file-badge', rotulo: 'Solicitar proposta', humano: true, texto: 'Ótimo! Vou anotar alguns dados e nossa equipe te retorna pelo WhatsApp — é lá que a gente conversa. Vamos começar: qual a sua região?' },
+        { icon: 'globe', rotulo: 'Site', humano: false, texto: 'Você pode conhecer a Opp e acompanhar tudo pelo nosso site: www.grupooppmais.com.br. É lá que fica a nossa cara oficial.' },
+        { icon: 'headset', rotulo: 'Falar com a equipe', humano: true, texto: 'Vou te levar direto à nossa equipe no WhatsApp: +55 (41) 99947-1355. É por lá que a gente conversa, entende sua necessidade e resolve junto.' },
+      ],
+      captura: [
+        { n: '1', texto: 'Bot pergunta a região da propriedade.' },
+        { n: '2', texto: 'Bot pergunta a cultura.' },
+        { n: '3', texto: 'Bot pergunta o tamanho aproximado da área (ha).' },
+        { n: '4', texto: '"Recebemos seus dados. Nossa equipe entra em contato pelo WhatsApp em breve." — e registra o pedido.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

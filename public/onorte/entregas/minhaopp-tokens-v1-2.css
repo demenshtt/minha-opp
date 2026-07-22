@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN SYSTEM GRUPO OPP+ — tokens.css v1.2 "O Norte"
+   Drop-in replacement para public/minhaopp/css/tokens.css
+   Harmonizado com a Central de Marca (O Norte) em 2026-07.
+   Mudanças v1.1 → v1.2 marcadas com [v1.2].
+═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* TIPOGRAFIA
+     [v1.2] Papéis corrigidos conforme o Norte:
+     Comfortaa SÓ em títulos/marca; Montserrat no corpo e interface. */
+  --font-display: 'Comfortaa', sans-serif;
+  --font-body: 'Montserrat', sans-serif;   /* [v1.2] era Comfortaa */
+  --font-mono: 'Montserrat', sans-serif;   /* labels, badges, dados */
+
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 15px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ESPAÇAMENTO (grid 8px) — sem mudanças */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-12: 64px;
+  --space-16: 80px;
+
+  /* RAIOS — sem mudanças */
+  --radius-none: 0;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* SOMBRAS — sem mudanças */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+  /* TRANSIÇÕES — sem mudanças */
+  --transition-fast: 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* BREAKPOINTS — sem mudanças */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEMA ESCURO (padrão — <html> sem atributo ou data-theme="dark")
+   [v1.2] Fundos migrados do slate azulado (#0F1419…) para a
+   família do Verde Escuro âncora #39453A — escuro COM identidade.
+═══════════════════════════════════════════════════════════════ */
+:root,
+[data-theme="dark"] {
+  --color-primary: #6FCF97;            /* destaques/links (sálvia oficial) */
+  --color-primary-light: #A5D6A7;
+  --color-primary-dark: #219653;
+
+  --color-action-primary: #219653;     /* botões, progresso */
+  --color-action-secondary: #6FCF97;
+  --color-action-tertiary: #A5D6A7;
+
+  --color-success: #6FCF97;
+  --color-warning: #F2C94C;
+  --color-error: #FF6B6B;
+  --color-info: #ACD4F1;
+
+  --color-bg-primary: #141814;         /* [v1.2] era #0F1419 */
+  --color-bg-secondary: #1D231D;       /* [v1.2] era #1A1F26 */
+  --color-bg-tertiary: #272E27;        /* [v1.2] era #242A33 */
+  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+
+  --color-border-primary: #2E362E;     /* [v1.2] verde-cinza */
+  --color-border-secondary: #3A443A;
+  --color-border-focus: #6FCF97;
+
+  --color-text-primary: #ECEEEC;
+  --color-text-secondary: #B4B9B4;
+  --color-text-tertiary: #838883;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEMA CLARO (data-theme="light")
+   [v1.2] Fundos alinhados aos neutros esverdeados do Norte.
+═══════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  --color-primary: #39453A;            /* [v1.2] âncora do Norte em destaques */
+  --color-primary-light: #4A5A4B;
+  --color-primary-dark: #2D3530;
+
+  --color-action-primary: #219653;
+  --color-action-secondary: #6FCF97;
+  --color-action-tertiary: #A5D6A7;
+
+  --color-success: #219653;
+  --color-warning: #E6A817;
+  --color-error: #D32F2F;
+  --color-info: #2F80ED;
+
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F7F8F6;       /* [v1.2] era #F5F7F5 */
+  --color-bg-tertiary: #EEF3EF;        /* [v1.2] era #EAEFEA */
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+
+  --color-border-primary: #E6E7E4;     /* [v1.2] neutros do Norte */
+  --color-border-secondary: #D5D8D3;
+  --color-border-focus: #39453A;
+
+  --color-text-primary: #1C201C;       /* [v1.2] era #1A1A1A */
+  --color-text-secondary: #4A4F49;
+  --color-text-tertiary: #7A8079;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════════════════════════ */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+}
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+}

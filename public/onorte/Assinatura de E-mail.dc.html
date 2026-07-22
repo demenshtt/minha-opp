@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: #219653; }
+    input::placeholder { color: #B0B5AE; }
+    input:focus { outline: none; border-color: #219653 !important; box-shadow: 0 0 0 3px rgba(33,150,83,.12); }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="70" y="150" width="8" height="100" rx="4" fill="#6FCF97"/>
+      <rect x="96" y="158" width="150" height="16" rx="4" fill="#FFFFFF"/>
+      <rect x="96" y="186" width="120" height="11" rx="3" fill="#A5D6A7"/>
+      <rect x="96" y="206" width="180" height="9" rx="3" fill="#8A9488"/>
+      <rect x="96" y="222" width="160" height="9" rx="3" fill="#8A9488"/>
+      <text x="200" y="310" font-family="Comfortaa,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">Assinatura</text>
+    </svg>
+  </template>
+</helmet>
+
+<div style="min-height:100vh; background:#F4F5F3; font-family:'Montserrat',sans-serif; color:#1C201C; padding:40px 32px 80px;">
+  <div style="max-width:960px; margin:0 auto;">
+
+    <div style="margin-bottom:28px;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#219653; font-weight:600; margin-bottom:12px;"><span style="width:24px; height:1.5px; background:#219653;"></span>O Norte · Template</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:32px; color:#39453A; margin:0 0 8px;">Assinatura de E-mail</h1>
+      <p style="font-size:14.5px; color:#565B56; line-height:1.6; margin:0; max-width:64ch;">Preencha os campos, confira a prévia e clique em copiar. Cole no seu cliente de e-mail (Gmail: Configurações → Assinatura). O padrão visual já vem aplicado.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:340px 1fr; gap:20px; align-items:start;">
+
+      <!-- FORM -->
+      <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:18px;">Seus dados</div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <sc-for list="{{ fields }}" as="f" hint-placeholder-count="6">
+            <label style="display:block;">
+              <span style="display:block; font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#8A8F89; margin-bottom:6px;">{{ f.label }}</span>
+              <input type="text" value="{{ f.value }}" placeholder="{{ f.ph }}" onInput="{{ f.onInput }}" style="width:100%; padding:10px 12px; border:1px solid #DADCD7; border-radius:9px; font-family:'Montserrat',sans-serif; font-size:13.5px; color:#39453A; background:#FFFFFF; transition:border-color .15s, box-shadow .15s;">
+            </label>
+          </sc-for>
+        </div>
+        <div style="margin-top:18px; padding-top:16px; border-top:1px solid #EEF0ED;">
+          <label style="display:flex; align-items:center; gap:9px; cursor:pointer; margin-bottom:10px;">
+            <input type="checkbox" checked="{{ showUnit }}" onChange="{{ toggleUnit }}" style="width:16px; height:16px; accent-color:#219653;">
+            <span style="font-size:12.5px; color:#565B56;">Mostrar unidade de negócio</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; cursor:pointer;">
+            <input type="checkbox" checked="{{ showSite }}" onChange="{{ toggleSite }}" style="width:16px; height:16px; accent-color:#219653;">
+            <span style="font-size:12.5px; color:#565B56;">Mostrar site <span style="color:#A0A59D;">(em desenvolvimento)</span></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- PREVIEW + ACTIONS -->
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+          <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89;">Prévia</div>
+          <button onClick="{{ copySig }}" style="display:inline-flex; align-items:center; gap:8px; background:#219653; color:#FFFFFF; border:none; border-radius:9px; padding:10px 18px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:background .15s;" style-hover="background:#1B7A44;">
+            <span>{{ copyLabel }}</span>
+          </button>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:34px 32px;">
+          <div ref="{{ sigRef }}" style="display:inline-block;">
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; font-family:'Montserrat', Arial, Helvetica, sans-serif;">
+              <tr>
+                <td style="vertical-align:top; padding-right:20px; border-right:3px solid #219653;">
+                  <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" width="150" style="display:block; width:150px; height:auto;">
+                </td>
+                <td style="vertical-align:top; padding-left:20px;">
+                  <div style="font-family:'Montserrat', Arial, Helvetica, sans-serif; font-size:17px; font-weight:bold; color:#39453A; line-height:1.2;">{{ nome }}</div>
+                  <div style="font-family:'Montserrat', Arial, Helvetica, sans-serif; font-size:13px; color:#219653; font-weight:bold; padding-top:2px;">{{ cargo }}</div>
+                  <sc-if value="{{ showUnit }}" hint-placeholder-val="{{ true }}">
+                    <div style="font-family:'Montserrat', Arial, Helvetica, sans-serif; font-size:12px; color:#767C75; padding-top:1px;">{{ unidade }}</div>
+                  </sc-if>
+                  <div style="padding-top:10px; font-family:'Montserrat', Arial, Helvetica, sans-serif; font-size:12px; color:#4A4F49; line-height:1.7;">
+                    <div><span style="color:#8A8F89;">T</span>&nbsp;&nbsp;{{ telefone }}</div>
+                    <div><span style="color:#8A8F89;">E</span>&nbsp;&nbsp;<a href="mailto:{{ email }}" style="color:#219653; text-decoration:none;">{{ email }}</a></div>
+                    <sc-if value="{{ showSite }}" hint-placeholder-val="{{ true }}"><div><span style="color:#8A8F89;">W</span>&nbsp;&nbsp;<a href="{{ siteHref }}" style="color:#219653; text-decoration:none;">{{ site }}</a></div></sc-if>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; margin-top:16px; font-family:'Montserrat', Arial, Helvetica, sans-serif;">
+              <tr><td style="font-size:10px; color:#A0A59D; line-height:1.5; max-width:440px;">Esta mensagem e seus anexos são confidenciais e destinados exclusivamente ao(s) destinatário(s). Se você a recebeu por engano, notifique o remetente e a exclua.</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; background:#EEF3EF; border:1px solid #D8E8DD; border-radius:12px; padding:14px 18px; font-size:12px; color:#5B6E60; line-height:1.55;">
+          <strong style="color:#1B7A44;">Dica:</strong> no Gmail, cole em Configurações → Geral → Assinatura. No Outlook, em Arquivo → Opções → E-mail → Assinaturas. O logotipo aparece ao colar com formatação (Ctrl/Cmd+V).
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1000,&quot;height&quot;:720}}">
+class Component extends DCLogic {
+  state = {
+    nome: 'Nome Sobrenome',
+    cargo: 'Cargo / Função',
+    unidade: 'Opp Aviação Agrícola',
+    telefone: '+55 (41) 99947-1355',
+    email: 'nome@grupooppmais.com.br',
+    site: '',
+    showUnit: true,
+    showSite: false,
+    copied: false,
+  };
+  set(key) { return (e) => this.setState({ [key]: e.target.value }); }
+
+  copySig = () => {
+    const el = this._sig;
+    if (!el) return;
+    try {
+      const range = document.createRange();
+      range.selectNode(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+    } catch (e) {}
+    this.setState({ copied: true });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: false }), 2000);
+  };
+
+  renderVals() {
+    const s = this.state;
+    const stack = "'Montserrat', Arial, Helvetica, sans-serif";
+    const site = (s.site || '').trim();
+    const siteHref = /^https?:\/\//.test(site) ? site : 'https://' + site.replace(/^\/+/, '');
+    return {
+      nome: s.nome, cargo: s.cargo, unidade: s.unidade,
+      telefone: s.telefone, email: s.email, site: site, siteHref,
+      showUnit: s.showUnit,
+      showSite: s.showSite,
+      copyLabel: s.copied ? '✓ Copiado!' : 'Copiar assinatura',
+      sigRef: (el) => { this._sig = el; },
+      copySig: this.copySig,
+      toggleUnit: (e) => this.setState({ showUnit: e.target.checked }),
+      toggleSite: (e) => this.setState({ showSite: e.target.checked }),
+      fields: [
+        { label: 'Nome completo', value: s.nome, ph: 'Nome Sobrenome', onInput: this.set('nome') },
+        { label: 'Cargo / função', value: s.cargo, ph: 'Cargo', onInput: this.set('cargo') },
+        { label: 'Unidade de negócio', value: s.unidade, ph: 'Opp Aviação Agrícola', onInput: this.set('unidade') },
+        { label: 'Telefone', value: s.telefone, ph: '+55 (41) 99947-1355', onInput: this.set('telefone') },
+        { label: 'E-mail', value: s.email, ph: 'nome@grupooppmais.com.br', onInput: this.set('email') },
+        { label: 'Site', value: s.site, ph: 'www.grupooppmais.com.br', onInput: this.set('site') },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

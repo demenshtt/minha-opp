@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="90" y="150" width="220" height="12" rx="3" fill="#6FCF97"/>
+      <rect x="90" y="176" width="220" height="8" rx="3" fill="#A5D6A7" opacity="0.6"/>
+      <rect x="90" y="194" width="150" height="8" rx="3" fill="#A5D6A7" opacity="0.6"/>
+      <text x="200" y="285" font-family="Comfortaa,sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" text-anchor="middle">PP-CPG</text>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.5in" hint-size="816px,1056px">
+
+  <div slot="header" style="display:flex; align-items:center; justify-content:space-between; padding:9px 4px; border-bottom:1px solid #E6E7E4; font-family:'Montserrat',sans-serif;">
+    <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:20px; width:auto;">
+    <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8F89; font-weight:600;">Gestão de Ativos · PP-CPG · Analítico</div>
+  </div>
+  <div slot="footer" style="display:flex; align-items:center; justify-content:space-between; padding:7px 4px; border-top:1px solid #E6E7E4; font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.06em; color:#A0A59D;">
+    <span>CONFIDENCIAL GRUPO OPP+ · Documento oficial — fonte dos dados</span>
+    <span>Junho / 2026</span>
+  </div>
+
+  <!-- CAPA -->
+  <div style="background:#39453A; border-radius:14px; padding:40px 40px 34px; margin:2px 0 22px; position:relative; overflow:hidden; font-family:'Montserrat',sans-serif;">
+    <div style="position:absolute; top:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.20), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:16px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>Opp — Gestão de Ativos</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:32px; line-height:1.05; color:#FFFFFF; margin:0 0 6px;">Gerenciamento de Aeronave PP-CPG — Analítico</h1>
+      <div style="font-size:15px; color:#C4CAC2; font-weight:300;">Junho / 2026 · Safra 2025/2026 · Documento oficial e fonte dos dados</div>
+    </div>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div style="font-family:'Montserrat',sans-serif; margin-bottom:8px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:12px;">Índice</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0 32px;">
+      <sc-for list="{{ toc }}" as="t" hint-placeholder-count="8">
+        <div style="display:flex; align-items:baseline; gap:8px; padding:5px 0; border-bottom:1px solid #F0F1EE; font-size:11px; color:#4A4F49;">
+          <span style="font-family:monospace; font-weight:700; color:#219653; min-width:20px;">{{ t.n }}</span>
+          <span style="flex:1;">{{ t.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- SEÇÕES -->
+  <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
+    <div style="break-before:page;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin:6px 0 3px; break-after:avoid;">
+        <span style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#219653;">{{ s.n }}</span>
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin:0;">{{ s.title }}</h2>
+      </div>
+      <sc-if value="{{ s.sub }}" hint-placeholder-val="{{ true }}"><div style="font-size:10px; color:#868C85; margin-bottom:10px; font-family:'Montserrat',sans-serif;">{{ s.sub }}</div></sc-if>
+      <div style="height:2px; background:#EEF0ED; margin:4px 0 12px; border-radius:2px;"></div>
+
+      <sc-if value="{{ s.hasTable }}" hint-placeholder-val="{{ true }}">
+        <table style="width:100%; border-collapse:collapse; font-family:'Montserrat',sans-serif; font-size:9.5px; margin-bottom:8px;">
+          <thead>
+            <tr style="background:#39453A; color:#EDEFEC;">
+              <th style="text-align:left; padding:6px 8px; font-weight:600;">{{ s.firstCol }}</th>
+              <sc-for list="{{ s.cols }}" as="c" hint-placeholder-count="2">
+                <th style="text-align:right; padding:6px 8px; font-weight:600;">{{ c }}</th>
+              </sc-for>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ s.rows }}" as="r" hint-placeholder-count="6">
+              <tr style="border-bottom:1px solid #EEF0ED; background:{{ r.bg }};">
+                <td style="text-align:left; padding:5px 8px; color:#39453A; font-weight:{{ r.fw }};">{{ r.label }}</td>
+                <sc-for list="{{ r.cells }}" as="v" hint-placeholder-count="2">
+                  <td style="text-align:right; padding:5px 8px; color:#4A4F49; font-weight:{{ r.fw }};">{{ v }}</td>
+                </sc-for>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </sc-if>
+      <sc-if value="{{ s.narrative }}" hint-placeholder-val="{{ true }}">
+        <div style="font-size:11px; color:#565B56; font-family:'Montserrat',sans-serif; line-height:1.6;">{{ s.narrative }}</div>
+      </sc-if>
+      <sc-if value="{{ s.note }}" hint-placeholder-val="{{ true }}"><div style="font-size:9px; color:#9AA097; font-style:italic; font-family:'Montserrat',sans-serif; line-height:1.5; margin-top:8px;">{{ s.note }}</div></sc-if>
+    </div>
+  </sc-for>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const N = '400';
+    const foot = (label, cells) => ({ label, cells, fw: '700', bg: '#F0F0F0' });
+    const row = (label, cells, fw) => ({ label, cells, fw: fw || N, bg: 'transparent' });
+
+    const toc = [
+      { n: '1', label: 'Desempenho Operacional' },
+      { n: '2', label: 'Grandes Números' },
+      { n: '3', label: 'Aplicações por Fazenda / Cultura' },
+      { n: '4', label: 'Relatório Analítico — Gerenciamento' },
+      { n: '5', label: 'Demonstrativo Financeiro da Operação' },
+      { n: '6', label: 'Distribuição do Resultado' },
+      { n: '7', label: 'Posição Financeira do Gerenciamento' },
+    ];
+
+    const sections = [
+      { n: '1', title: 'Desempenho Operacional', sub: 'Junho de 2026', hasTable: false,
+        narrative: 'Junho apresentou recuperação do volume operacional em relação ao mês anterior, com aumento da área aplicada e das horas de voo, refletindo a continuidade de demandas pontuais nas regiões atendidas. No período foram aplicados 8.564 hectares, totalizando 28,7 horas de voo (horímetro). A operação gerou receita bruta de R$ 294.357,32, frente a custos operacionais de R$ 246.555,36, resultando em saldo operacional positivo de R$ 47.801,96. Para julho, a expectativa é de redução do volume operacional, acompanhando o encerramento gradual das aplicações da safra do algodão, mantendo-se atendimentos pontuais e demandas específicas de clientes.' },
+
+      { n: '2', title: 'Grandes Números', sub: 'Indicadores-chave — jun/26', firstCol: 'Indicador', cols: ['Valor'], hasTable: true,
+        rows: [
+          row('Hectares aplicados', ['8.564']),
+          row('Horas de voo (horímetro)', ['28,7']),
+          row('Combustível Jet (litros)', ['8.639']),
+          row('Valor de serviços (receita bruta)', ['R$ 294.357,32']),
+          row('Rendimento médio (ha/hr)', ['298,40']),
+          row('Valor por hora', ['R$ 10.256,35']),
+          row('Valor por hectare', ['R$ 34,37']),
+        ] },
+
+      { n: '3', title: 'Aplicações por Fazenda / Cultura', sub: 'Distribuição da área aplicada no mês', firstCol: 'Cultura / talhão', cols: ['Hectares', 'Horas', 'Rend. ha/hr'], hasTable: true,
+        rows: [
+          row('Algodão', ['4.038', '10,0', '403,80']),
+          row('Feijão', ['4.526', '16,6', '272,65']),
+          row('Traslado', ['2,1', '—', '—']),
+          foot('Total geral', ['8.564', '28,7', '298,40']),
+        ] },
+
+      { n: '4', title: 'Relatório Analítico — Gerenciamento', sub: 'Receita, custo e resultado — PP-CPG', firstCol: 'Descrição', cols: ['PP-CPG'], hasTable: true,
+        rows: [
+          row('Receita de serviços', ['294.357,32'], '600'),
+          row('Receita por hectare', ['34,37']),
+          row('Custo dos serviços PP-CPG', ['189.067,37']),
+          row('Tributos NF', ['57.487,98']),
+          row('Custo total', ['246.555,36'], '600'),
+          row('Custo médio hora', ['8.590,78']),
+          row('Custo médio hectare', ['28,79']),
+          row('Hectares', ['8.564,0']),
+          row('Horas', ['28,7']),
+          foot('Resultado do período (R$)', ['47.801,96']),
+          row('Rendimento médio por hectare', ['298,4']),
+          row('Resultado por hectare', ['5,58']),
+          row('Resultado por hora', ['1.665,57']),
+        ],
+        note: 'Este relatório analítico totaliza os serviços realizados no mês nas operações próprias e de terceiros. O rendimento está diretamente vinculado ao custo final por hectare.' },
+
+      { n: '5', title: 'Demonstrativo Financeiro da Operação', sub: 'Composição de custos — jun/26', firstCol: 'Custos operacionais', cols: ['Qtd / unid.', 'Custo (R$)'], hasTable: true,
+        rows: [
+          row('Combustíveis', ['8.639 litros', '47.516,70']),
+          row('Piloto', ['8.564 hectares', '40.250,80']),
+          row('Manutenção', ['—', '2.730,00']),
+          row('Provisão seguro', ['—', '18.300,00']),
+          row('Provisão manutenção', ['24.395', '21.665,00']),
+          foot('Total custo direto', ['—', '130.462,50']),
+          row('Rateio custo administrativo/operacional', ['—', '58.604,87']),
+          row('Subtotal', ['—', '189.067,37'], '600'),
+          row('Tributos', ['—', '57.487,98']),
+          foot('Total de custos', ['—', '246.555,36']),
+          row('Receita total com a aeronave', ['—', '294.357,32']),
+          row('Custo total com a aeronave', ['—', '(246.555,36)']),
+          foot('Resultado do período', ['—', '47.801,96']),
+        ] },
+
+      { n: '6', title: 'Distribuição do Resultado', sub: 'Rateio do resultado auferido — jun/26', firstCol: 'Descrição', cols: ['Valor (R$)'], hasTable: true,
+        rows: [
+          row('Resultado final do período', ['47.801,96'], '600'),
+          row('Participação Piccoli (50%)', ['23.900,98']),
+          foot('A repassar ao comodante — Gustavo Viganó Piccoli', ['23.900,98']),
+        ] },
+
+      { n: '7', title: 'Posição Financeira do Gerenciamento', sub: 'Saldo a pagar ao comodante', firstCol: 'Descrição', cols: ['Vencimento', 'Valor (R$)'], hasTable: true,
+        rows: [
+          row('Saldo anterior (1º Quadrimestre 2026)', ['—', '489.120,28']),
+          row('mai/26', ['25/09/2026', '25.202,93']),
+          row('jun/26', ['25/09/2026', '23.900,98']),
+          foot('Saldo a pagar — Gustavo Viganó Piccoli', ['a combinar', '538.224,19']),
+        ] },
+    ];
+
+    return { toc, sections };
+  }
+}
+</script>
+</body>
+</html>

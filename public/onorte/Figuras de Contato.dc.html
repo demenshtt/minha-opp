@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:900px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <div style="position:relative; background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 52px 40px; color:#FFFFFF;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;"><span style="width:24px; height:1.5px; background:#6FCF97;"></span>Kit · Presença digital</div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:36px; line-height:1.08; margin:0 0 14px; color:#FFFFFF; max-width:17ch; text-wrap:balance;">Figuras de contato</h1>
+        <p style="font-size:14.5px; line-height:1.6; color:#D6DDD5; max-width:58ch; margin:0;">Recortes quadrados prontos para foto de contato do WhatsApp, Telegram e afins. O app exibe em círculo — o logo já vem centralizado para caber na máscara.</p>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 52px 12px;">
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:26px;">
+      <sc-for list="{{ figuras }}" as="f" hint-placeholder-count="3">
+        <div style="border:1px solid #E6E7E4; border-radius:16px; padding:26px; display:flex; flex-direction:column; align-items:center; gap:16px; background:{{ f.cardBg }};">
+          <div style="width:180px; height:180px; border-radius:50%; overflow:hidden; box-shadow:0 8px 24px rgba(57,69,58,.16); border:3px solid #FFFFFF;">
+            <img src="{{ f.src }}" alt="{{ f.nome }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:15px; color:#39453A;">{{ f.nome }}</div>
+            <div style="font-family:monospace; font-size:11px; color:#9AA097; margin-top:5px;">{{ f.arquivo }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:8px 52px 30px;">
+    <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:14px; padding:18px 22px; font-size:12.5px; line-height:1.6; color:#3E453D;">
+      A quarta combinação — <strong style="color:#1B7A44;">fundo verde só com o ícone</strong> — a equipe já tem em uso; por isso não foi refeita. Todas as figuras saem em 1440 × 1440 px, prontas para subir direto como foto de perfil.
+    </div>
+  </div>
+
+  <div style="padding:0 52px 30px; border-top:1px solid #EEF0ED; padding-top:22px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+    <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT</div>
+    <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600;">O Norte · MDC-GDI</div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:760}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      figuras: [
+        { nome: 'Fundo branco · logo', arquivo: 'contato-zap-branco-logo.png', src: 'assets/contato-zap-branco-logo.png', cardBg: '#FFFFFF' },
+        { nome: 'Fundo verde · logo', arquivo: 'contato-zap-verde-logo.png', src: 'assets/contato-zap-verde-logo.png', cardBg: '#FBFCFB' },
+        { nome: 'Fundo branco · ícone', arquivo: 'contato-zap-branco-icone.png', src: 'assets/contato-zap-branco-icone.png', cardBg: '#FFFFFF' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

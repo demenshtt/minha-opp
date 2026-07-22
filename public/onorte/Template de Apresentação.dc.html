@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: #219653; }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="70" y="130" width="180" height="20" rx="5" fill="#FFFFFF"/>
+      <rect x="70" y="166" width="120" height="12" rx="4" fill="#6FCF97"/>
+      <rect x="70" y="240" width="260" height="6" rx="3" fill="#A5D6A7" opacity="0.5"/>
+      <text x="200" y="330" font-family="Comfortaa,sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">Slides Opp+</text>
+    </svg>
+  </template>
+</helmet>
+
+<x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="0,0"></x-import>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- 01 · CAPA -->
+  <section data-label="Capa" data-speaker-notes="MODELO DE CAPA — fundo verde escuro, logo em branco no topo, título grande. Único slide onde o logo é protagonista." style="width:1920px; height:1080px; background:#39453A; color:#EDEFEC; font-family:'Montserrat',sans-serif; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; padding:0 140px;">
+    <div style="position:absolute; top:-160px; right:-140px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle at 30% 30%, rgba(111,207,151,.22), transparent 62%);"></div>
+    <div style="position:relative;">
+      <sc-if value="{{ isHolding }}" hint-placeholder-val="{{ true }}">
+        <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:300px; height:auto; margin-bottom:64px;">
+      </sc-if>
+      <sc-if value="{{ isUnidade }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-bottom:64px;">
+          <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:130px; height:auto; opacity:0.8; display:block; margin-bottom:18px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:52px; color:#FFFFFF; line-height:1;">{{ emitterName }}</div>
+        </div>
+      </sc-if>
+      <div style="display:inline-flex; align-items:center; gap:14px; font-family:'Comfortaa',sans-serif; font-size:16px; letter-spacing:0.28em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:30px;"><span style="width:44px; height:2px; background:#6FCF97;"></span>[Área emissora ou período]</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:92px; line-height:1.02; letter-spacing:-0.01em; margin:0 0 28px; color:#FFFFFF; max-width:22ch;">[Título da apresentação]</h1>
+      <p style="font-size:26px; line-height:1.5; color:#C4CAC2; max-width:44ch; margin:0; font-weight:300;">[Subtítulo — contexto, período ou público em uma linha]</p>
+    </div>
+    <div style="position:absolute; bottom:64px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center; font-size:14px; letter-spacing:0.08em; color:#8A9488;">
+      <span>[Mês / Ano]</span>
+      <span>Confidencial · Uso interno</span>
+    </div>
+  </section>
+
+  <!-- 02 · AGENDA -->
+  <section data-label="Agenda" data-speaker-notes="MODELO DE AGENDA — sempre o segundo slide. Máximo 6 itens. Logo pequeno no rodapé, nunca competindo com o conteúdo." style="width:1920px; height:1080px; background:#F4F5F3; color:#1C201C; font-family:'Montserrat',sans-serif; position:relative; display:flex; flex-direction:column; padding:96px 140px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:15px; letter-spacing:0.22em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">Agenda</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:60px; line-height:1.05; color:#39453A; margin:0 0 56px;">O que veremos</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px 40px; max-width:1400px;">
+      <sc-for list="{{ agenda }}" as="a" hint-placeholder-count="6">
+        <div style="display:flex; align-items:center; gap:22px; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:26px 30px;">
+          <span style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; color:#219653; min-width:44px;">{{ a.n }}</span>
+          <span style="font-size:22px; color:#39453A; font-weight:500;">{{ a.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="position:absolute; bottom:48px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:30px; width:auto; opacity:0.5;">
+      <span style="font-size:13px; color:#B0B5AE;">02</span>
+    </div>
+  </section>
+
+  <!-- 03 · DIVISOR DE SEÇÃO -->
+  <section data-label="Divisor" data-speaker-notes="MODELO DE DIVISOR — abre cada bloco de assunto. Número gigante translúcido + título. Sem logo: o divisor é respiro." style="width:1920px; height:1080px; background:#2E3830; color:#EDEFEC; font-family:'Montserrat',sans-serif; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; padding:0 140px;">
+    <div style="position:absolute; bottom:-180px; right:-120px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(111,207,151,.16), transparent 62%);"></div>
+    <div style="font-family:'Comfortaa',sans-serif; font-size:200px; font-weight:700; color:rgba(255,255,255,.06); line-height:1; margin-bottom:-20px;">01</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:72px; color:#FFFFFF; margin:0 0 18px;">[Título da seção]</h2>
+    <p style="font-size:24px; color:#B7BEB5; max-width:60ch; font-weight:300; margin:0;">[Uma linha que resume o bloco]</p>
+  </section>
+
+  <!-- 04 · CONTEÚDO -->
+  <section data-label="Conteúdo" data-speaker-notes="MODELO DE CONTEÚDO — título + até 4 pontos em cards. Regra de ouro: máximo 4 ideias por slide, texto nunca abaixo de 24px." style="width:1920px; height:1080px; background:#F4F5F3; color:#1C201C; font-family:'Montserrat',sans-serif; position:relative; display:flex; flex-direction:column; padding:96px 140px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:15px; letter-spacing:0.22em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">[Seção]</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:60px; line-height:1.05; color:#39453A; margin:0 0 20px;">[Título do slide]</h2>
+    <p style="font-size:23px; line-height:1.55; color:#565B56; max-width:72ch; margin:0 0 50px; font-weight:300;">[Frase de apoio opcional — apague se não precisar]</p>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:22px 40px; margin-top:auto;">
+      <sc-for list="{{ pontos }}" as="p" hint-placeholder-count="4">
+        <div style="display:flex; gap:20px; align-items:flex-start; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:18px; padding:30px 34px;">
+          <span style="width:10px; height:10px; border-radius:50%; background:#219653; margin-top:12px; flex:none;"></span>
+          <div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:24px; color:#39453A; margin-bottom:8px;">{{ p.title }}</div>
+            <div style="font-size:18px; color:#767C75; line-height:1.55;">{{ p.desc }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="position:absolute; bottom:48px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:30px; width:auto; opacity:0.5;">
+      <span style="font-size:13px; color:#B0B5AE;">04</span>
+    </div>
+  </section>
+
+  <!-- 05 · CONTEÚDO + IMAGEM -->
+  <section data-label="Conteúdo + imagem" data-speaker-notes="MODELO COM IMAGEM — texto à esquerda, imagem à direita (arraste uma foto para o espaço). Imagens sempre com cantos arredondados de 24px." style="width:1920px; height:1080px; background:#F4F5F3; color:#1C201C; font-family:'Montserrat',sans-serif; position:relative; display:flex; padding:96px 140px; gap:70px; align-items:center;">
+    <div style="flex:1; min-width:0;">
+      <div style="font-family:'Comfortaa',sans-serif; font-size:15px; letter-spacing:0.22em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">[Seção]</div>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:56px; line-height:1.06; color:#39453A; margin:0 0 26px;">[Título do slide]</h2>
+      <p style="font-size:23px; line-height:1.6; color:#565B56; margin:0 0 20px; font-weight:300;">[Parágrafo principal — o argumento que a imagem sustenta.]</p>
+      <p style="font-size:19px; line-height:1.6; color:#767C75; margin:0; font-weight:300;">[Detalhe ou dado de apoio opcional.]</p>
+    </div>
+    <div style="flex:1; min-width:0; height:640px;">
+      <image-slot id="slide-img-1" shape="rounded" radius="24" placeholder="Arraste a imagem aqui"></image-slot>
+    </div>
+    <div style="position:absolute; bottom:48px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:30px; width:auto; opacity:0.5;">
+      <span style="font-size:13px; color:#B0B5AE;">05</span>
+    </div>
+  </section>
+
+  <!-- 06 · GRANDES NÚMEROS -->
+  <section data-label="Grandes números" data-speaker-notes="MODELO DE NÚMEROS — até 3 KPIs em destaque. O primeiro em card verde escuro (destaque), os demais claros." style="width:1920px; height:1080px; background:#F4F5F3; color:#1C201C; font-family:'Montserrat',sans-serif; position:relative; display:flex; flex-direction:column; padding:96px 140px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:15px; letter-spacing:0.22em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">[Seção]</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:60px; line-height:1.05; color:#39453A; margin:0 0 70px;">[Título — o que os números provam]</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:auto;">
+      <div style="background:#39453A; border-radius:24px; padding:52px 46px; color:#EDEFEC;">
+        <div style="font-size:16px; letter-spacing:0.1em; text-transform:uppercase; color:#8FA394; font-weight:600; margin-bottom:18px;">[Indicador 1]</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:76px; line-height:1; color:#FFFFFF;">[valor]</div>
+        <div style="font-size:17px; color:#9AA598; margin-top:16px;">[contexto ou comparação]</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:24px; padding:52px 46px;">
+        <div style="font-size:16px; letter-spacing:0.1em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:18px;">[Indicador 2]</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:76px; line-height:1; color:#219653;">[valor]</div>
+        <div style="font-size:17px; color:#868C85; margin-top:16px;">[contexto ou comparação]</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:24px; padding:52px 46px;">
+        <div style="font-size:16px; letter-spacing:0.1em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:18px;">[Indicador 3]</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:76px; line-height:1; color:#219653;">[valor]</div>
+        <div style="font-size:17px; color:#868C85; margin-top:16px;">[contexto ou comparação]</div>
+      </div>
+    </div>
+    <div style="position:absolute; bottom:48px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:30px; width:auto; opacity:0.5;">
+      <span style="font-size:13px; color:#B0B5AE;">06</span>
+    </div>
+  </section>
+
+  <!-- 07 · TABELA -->
+  <section data-label="Tabela" data-speaker-notes="MODELO DE TABELA — cabeçalho verde escuro, linha de total destacada. Máximo ~8 linhas por slide; mais que isso, quebre em dois slides ou remeta ao relatório analítico." style="width:1920px; height:1080px; background:#F4F5F3; color:#1C201C; font-family:'Montserrat',sans-serif; position:relative; display:flex; flex-direction:column; padding:96px 140px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:15px; letter-spacing:0.22em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">[Seção]</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:60px; line-height:1.05; color:#39453A; margin:0 0 50px;">[Título da tabela]</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:22px; background:#FFFFFF; border-radius:20px; overflow:hidden; box-shadow:0 1px 0 #E6E7E4;">
+      <thead>
+        <tr style="background:#39453A; color:#EDEFEC;">
+          <th style="text-align:left; padding:22px 30px; font-weight:600;">[Descrição]</th>
+          <th style="text-align:right; padding:22px 30px; font-weight:600;">[Coluna A]</th>
+          <th style="text-align:right; padding:22px 30px; font-weight:600;">[Coluna B]</th>
+          <th style="text-align:right; padding:22px 30px; font-weight:600;">[Variação]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ tabela }}" as="r" hint-placeholder-count="4">
+          <tr style="border-bottom:1px solid #EEF0ED; background:{{ r.bg }};">
+            <td style="padding:19px 30px; color:#39453A; font-weight:{{ r.fw }};">{{ r.label }}</td>
+            <td style="padding:19px 30px; text-align:right; color:#565B56; font-weight:{{ r.fw }};">{{ r.a }}</td>
+            <td style="padding:19px 30px; text-align:right; color:#565B56; font-weight:{{ r.fw }};">{{ r.b }}</td>
+            <td style="padding:19px 30px; text-align:right; color:#219653; font-weight:700;">{{ r.v }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+    <div style="position:absolute; bottom:48px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center;">
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="height:30px; width:auto; opacity:0.5;">
+      <span style="font-size:13px; color:#B0B5AE;">07</span>
+    </div>
+  </section>
+
+  <!-- 08 · ENCERRAMENTO -->
+  <section data-label="Encerramento" data-speaker-notes="MODELO DE ENCERRAMENTO — espelha a capa: fundo verde escuro, logo branco, mensagem final curta + contato." style="width:1920px; height:1080px; background:#39453A; color:#EDEFEC; font-family:'Montserrat',sans-serif; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; padding:0 140px;">
+    <div style="position:absolute; top:-160px; right:-140px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle at 30% 30%, rgba(111,207,151,.22), transparent 62%);"></div>
+    <div style="position:relative;">
+      <sc-if value="{{ isHolding }}" hint-placeholder-val="{{ true }}">
+        <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:240px; height:auto; margin-bottom:52px;">
+      </sc-if>
+      <sc-if value="{{ isUnidade }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-bottom:52px;">
+          <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:110px; height:auto; opacity:0.8; display:block; margin-bottom:16px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:44px; color:#FFFFFF; line-height:1;">{{ emitterName }}</div>
+        </div>
+      </sc-if>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:80px; line-height:1.02; color:#FFFFFF; margin:0 0 26px; max-width:20ch;">[Mensagem final ou chamada]</h2>
+      <p style="font-size:24px; line-height:1.55; color:#C4CAC2; max-width:56ch; font-weight:300; margin:0 0 44px;">[Próximos passos, agradecimento ou contato]</p>
+      <div style="display:inline-flex; align-items:center; gap:14px; font-family:'Comfortaa',sans-serif; font-size:16px; letter-spacing:0.06em; color:#A5D6A7; font-weight:600;"><span style="width:44px; height:2px; background:#6FCF97;"></span>[nome@grupooppmais.com.br]</div>
+    </div>
+    <div style="position:absolute; bottom:64px; left:140px; right:140px; display:flex; justify-content:space-between; align-items:center; font-size:14px; letter-spacing:0.08em; color:#8A9488;">
+      <span>Grupo Opp+</span>
+      <span>Confidencial · Uso interno</span>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;emissor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;holding&quot;,&quot;options&quot;:[&quot;holding&quot;,&quot;aviacao&quot;,&quot;ativos&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Apresentação&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const emissor = this.props.emissor ?? 'holding';
+    const names = { holding: 'Grupo Opp+', aviacao: 'Opp Aviação Agrícola', ativos: 'Opp Gestão de Ativos' };
+    return {
+      isHolding: emissor === 'holding',
+      isUnidade: emissor !== 'holding',
+      emitterName: names[emissor] || names.holding,
+      agenda: [
+        { n: '01', label: '[Assunto do bloco 1]' },
+        { n: '02', label: '[Assunto do bloco 2]' },
+        { n: '03', label: '[Assunto do bloco 3]' },
+        { n: '04', label: '[Assunto do bloco 4]' },
+        { n: '05', label: '[Assunto do bloco 5]' },
+        { n: '06', label: '[Assunto do bloco 6]' },
+      ],
+      pontos: [
+        { title: '[Ponto 1]', desc: '[Uma ou duas linhas de explicação do ponto.]' },
+        { title: '[Ponto 2]', desc: '[Uma ou duas linhas de explicação do ponto.]' },
+        { title: '[Ponto 3]', desc: '[Uma ou duas linhas de explicação do ponto.]' },
+        { title: '[Ponto 4]', desc: '[Uma ou duas linhas de explicação do ponto.]' },
+      ],
+      tabela: [
+        { label: '[Linha 1]', a: '[valor]', b: '[valor]', v: '[+0%]', fw: '400', bg: 'transparent' },
+        { label: '[Linha 2]', a: '[valor]', b: '[valor]', v: '[+0%]', fw: '400', bg: 'transparent' },
+        { label: '[Linha 3]', a: '[valor]', b: '[valor]', v: '[+0%]', fw: '400', bg: 'transparent' },
+        { label: 'Total', a: '[valor]', b: '[valor]', v: '[+0%]', fw: '700', bg: '#F0F0F0' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

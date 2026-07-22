@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 32px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+
+  <div style="max-width:1360px; margin:0 auto 36px;">
+    <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#7A8079; font-weight:600; margin-bottom:12px;">
+      <span style="width:24px; height:1.5px; background:#219653; display:inline-block;"></span>Conceito · DS v1.2 · Dual mode
+    </div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:32px; margin:0 0 10px; color:#39453A;">Minha Opp+ — a nova cara</h1>
+    <p style="font-size:14px; line-height:1.6; color:#5A5F58; max-width:70ch; margin:0;">O onboarding desce um nível: vira módulo interno, no mesmo plano que O Norte. A aplicação é dual mode — <strong style="color:#39453A;">claro como padrão</strong> (legibilidade sob sol, leitores 50+) e escuro como escolha de conforto. <a href="Minha Opp+.dc.html">Voltar à página da Minha Opp+</a></p>
+  </div>
+
+  <!-- ══ FLUXO SOLICITAR ACESSO ══ -->
+  <div style="max-width:1360px; margin:0 auto 18px; display:flex; align-items:center; gap:12px;">
+    <span style="display:inline-flex; align-items:center; gap:8px; font-family:'Comfortaa',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:#1B7A44; background:#EEF3EF; border:1px solid #CBE3D2; padding:8px 16px; border-radius:24px;"><i data-lucide="door-open"></i>Solicitar acesso · Cadastro por aprovação</span>
+    <span style="font-size:12px; color:#7A8079;">O formulário trabalha 24h; a equipe aprova em lote no horário que convém. Ninguém entra sem um sim de casa.</span>
+  </div>
+  <div style="max-width:1360px; margin:0 auto 56px; display:flex; gap:44px; justify-content:center; flex-wrap:wrap; align-items:flex-start;">
+
+    <!-- ACESSO · TELA A · FORMULÁRIO -->
+    <div style="width:390px; flex:none;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">A · Solicitar acesso</div>
+      <div style="font-size:12px; color:#7A8079; margin-bottom:14px; line-height:1.5;">4 campos, sem senha ainda. O tipo de vínculo já pré-classifica a fila.</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(247,248,246,.92), rgba(247,248,246,.92)), url('assets/fundo-opp-branco.png') center/cover; display:flex; flex-direction:column; padding:0 28px; font-family:'Montserrat',sans-serif;">
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+            <img src="assets/icone-opp-grupo.png" alt="" style="height:44px; width:auto; margin:0 auto 22px; display:block;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:20px; color:#39453A; text-align:center; margin-bottom:8px;">Quer entrar? A gente abre a porta.</div>
+            <div style="font-size:12.5px; color:#4A4F49; text-align:center; line-height:1.6; margin-bottom:28px;">Conte quem é você e nossa equipe libera seu acesso.</div>
+            <div style="display:flex; flex-direction:column; gap:11px;">
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:14px 18px; font-size:13px; color:#9AA097;">Seu nome</div>
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:14px 18px; font-size:13px; color:#9AA097;">Telefone / WhatsApp</div>
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between; font-size:13px; color:#1C201C;">Sou fornecedor<span style="color:#9AA097;"><i data-lucide="chevrons-up-down"></i></span></div>
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:14px 18px; font-size:13px; color:#9AA097;">O que você fornece / de onde nos conhece</div>
+              <div style="background:#219653; border-radius:12px; padding:15px; text-align:center; font-size:14px; font-weight:600; color:#FFFFFF; margin-top:6px;">Enviar solicitação</div>
+            </div>
+            <div style="font-size:11.5px; color:#7A8079; text-align:center; margin-top:18px; line-height:1.55;">Retornamos pelo WhatsApp informado.<br>Sem robô: quem aprova é gente da Opp.</div>
+          </div>
+          <div style="padding:0 0 34px; font-size:9.5px; color:#9AA097; text-align:center; line-height:1.5;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ACESSO · TELA B · FILA DE APROVAÇÃO -->
+    <div style="width:390px; flex:none;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">B · Fila de aprovação — visão da equipe</div>
+      <div style="font-size:12px; color:#7A8079; margin-bottom:14px; line-height:1.5;">Triagem em lote, no horário que sobrar. Aprovar dispara o convite; dispensar arquiva sem custo.</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="390px,844px">
+        <div style="height:100%; background:#F7F8F6; display:flex; flex-direction:column; font-family:'Montserrat',sans-serif;">
+          <div style="padding:62px 24px 18px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:20px; color:#39453A; margin-bottom:4px;">Solicitações</div>
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:600; color:#B8860B; background:#FBF7F0; border:1px solid #EFE6D6; padding:5px 11px; border-radius:20px;"><i data-lucide="inbox"></i>3 aguardando triagem</div>
+          </div>
+          <div style="flex:1; overflow:hidden; padding:0 24px; display:flex; flex-direction:column; gap:11px;">
+            <sc-for list="{{ solicitacoes }}" as="s" hint-placeholder-count="3">
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:16px 18px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                  <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A;">{{ s.nome }}</div>
+                  <span style="font-size:9.5px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:{{ s.corTipo }}; background:{{ s.bgTipo }}; padding:3px 9px; border-radius:20px;">{{ s.tipo }}</span>
+                </div>
+                <div style="font-size:11.5px; color:#4A4F49; line-height:1.5; margin-bottom:12px;">{{ s.detalhe }}</div>
+                <div style="display:flex; gap:8px;">
+                  <div style="flex:1; background:#219653; color:#FFFFFF; font-size:11.5px; font-weight:600; text-align:center; padding:9px; border-radius:10px;">Aprovar e convidar</div>
+                  <div style="flex:1; background:#F1F2EF; color:#7A8079; font-size:11.5px; font-weight:600; text-align:center; padding:9px; border-radius:10px;">Dispensar</div>
+                </div>
+              </div>
+            </sc-for>
+            <div style="font-size:11px; color:#9AA097; text-align:center; padding-top:4px; line-height:1.6;">Aprovou → convite por WhatsApp → a pessoa só define a senha.<br>O perfil e as permissões já nascem certos.</div>
+          </div>
+          <div style="display:flex; border-top:1px solid #E6E7E4; background:#FFFFFF; padding:12px 10px 30px;">
+            <sc-for list="{{ navEquipe }}" as="n" hint-placeholder-count="3">
+              <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; font-size:10px; font-weight:600; color:{{ n.cor }};"><span style="font-size:19px;"><i data-lucide="{{ n.icone }}"></i></span>{{ n.rotulo }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ACESSO · TELA C · ATIVAÇÃO -->
+    <div style="width:390px; flex:none;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">C · Ativação — via convite</div>
+      <div style="font-size:12px; color:#7A8079; margin-bottom:14px; line-height:1.5;">O link do convite chega pré-identificado: a pessoa só cria a senha. Zero atrito, zero telefone.</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(247,248,246,.92), rgba(247,248,246,.92)), url('assets/fundo-opp-branco.png') center/cover; display:flex; flex-direction:column; padding:0 28px; font-family:'Montserrat',sans-serif;">
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+            <div style="width:60px; height:60px; border-radius:18px; background:#EEF3EF; color:#219653; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 20px;"><i data-lucide="badge-check"></i></div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:20px; color:#39453A; text-align:center; margin-bottom:8px;">Seu acesso foi aprovado, Carlos.</div>
+            <div style="font-size:12.5px; color:#4A4F49; text-align:center; line-height:1.6; margin-bottom:28px;">Fornecedor · Peças e manutenção<br>Só falta criar sua senha.</div>
+            <div style="display:flex; flex-direction:column; gap:11px;">
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:14px 18px; display:flex; align-items:center; gap:11px;"><span style="color:#9AA097; font-size:16px;"><i data-lucide="lock"></i></span><span style="font-size:13px; color:#9AA097;">Crie uma senha</span></div>
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:14px 18px; display:flex; align-items:center; gap:11px;"><span style="color:#9AA097; font-size:16px;"><i data-lucide="lock-keyhole"></i></span><span style="font-size:13px; color:#9AA097;">Repita a senha</span></div>
+              <div style="background:#219653; border-radius:12px; padding:15px; text-align:center; font-size:14px; font-weight:600; color:#FFFFFF; margin-top:6px;">Entrar na Minha Opp+</div>
+            </div>
+          </div>
+          <div style="padding:0 0 34px; font-size:9.5px; color:#9AA097; text-align:center; line-height:1.5;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+
+  <!-- ══ MODO CLARO — PADRÃO ══ -->
+  <div style="max-width:1360px; margin:0 auto 18px; display:flex; align-items:center; gap:12px;">
+    <span style="display:inline-flex; align-items:center; gap:8px; font-family:'Comfortaa',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:#1B7A44; background:#EEF3EF; border:1px solid #CBE3D2; padding:8px 16px; border-radius:24px;"><i data-lucide="sun"></i>Modo claro · Padrão</span>
+    <span style="font-size:12px; color:#7A8079;">Ergonomia: polaridade positiva lê melhor no campo e depois dos 50.</span>
+  </div>
+  <div style="max-width:1360px; margin:0 auto 56px; display:flex; gap:44px; justify-content:center; flex-wrap:wrap; align-items:flex-start;">
+
+    <!-- CLARO · TELA 1 · ENTRADA -->
+    <div style="width:390px; flex:none;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">1 · Entrada</div>
+      <div style="font-size:12px; color:#7A8079; margin-bottom:14px; line-height:1.5;">Portal único. Conteúdo aberto mínimo; o resto se revela após o login.</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(247,248,246,.92), rgba(247,248,246,.92)), url('assets/fundo-opp-branco.png') center/cover; display:flex; flex-direction:column; padding:0 28px; font-family:'Montserrat',sans-serif;">
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+            <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="width:180px; height:auto; margin:0 auto 26px; display:block;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:21px; color:#39453A; text-align:center; margin-bottom:8px;">Que bom ter você aqui.</div>
+            <div style="font-size:13px; color:#4A4F49; text-align:center; line-height:1.6; margin-bottom:34px;">Este é o espaço de quem caminha com o Grupo Opp+ — equipe, parceiros e fornecedores.</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:15px 18px; display:flex; align-items:center; gap:11px;">
+                <span style="color:#9AA097; font-size:17px;"><i data-lucide="mail"></i></span>
+                <span style="font-size:13.5px; color:#9AA097;">Seu e-mail</span>
+              </div>
+              <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:12px; padding:15px 18px; display:flex; align-items:center; gap:11px;">
+                <span style="color:#9AA097; font-size:17px;"><i data-lucide="lock"></i></span>
+                <span style="font-size:13.5px; color:#9AA097;">Senha</span>
+              </div>
+              <div style="background:#219653; border-radius:12px; padding:16px; text-align:center; font-size:14px; font-weight:600; color:#FFFFFF; margin-top:6px;">Entrar</div>
+            </div>
+            <div style="font-size:12px; color:#219653; text-align:center; margin-top:20px; font-weight:600;">Primeiro acesso? A gente te guia.</div>
+          </div>
+          <div style="padding:0 0 34px; font-size:9.5px; color:#9AA097; text-align:center; line-height:1.5;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- CLARO · TELA 2 · HOME COLABORADOR -->
+    <div style="width:390px; flex:none;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">2 · Home — colaborador</div>
+      <div style="font-size:12px; color:#7A8079; margin-bottom:14px; line-height:1.5;">Onboarding vira módulo "Primeiros passos". O Norte aparece só para quem tem a prerrogativa.</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(247,248,246,.92), rgba(247,248,246,.92)), url('assets/fundo-opp-branco.png') center/cover; display:flex; flex-direction:column; font-family:'Montserrat',sans-serif;">
+          <div style="padding:62px 24px 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
+              <img src="assets/icone-opp-grupo.png" alt="" style="height:30px; width:auto;">
+              <span style="color:#7A8079; font-size:19px;"><i data-lucide="bell"></i></span>
+            </div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:22px; color:#39453A; margin-bottom:4px;">Boa tarde, Ana</div>
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:600; color:#1B7A44; background:#EEF3EF; border:1px solid #CBE3D2; padding:5px 11px; border-radius:20px;"><i data-lucide="id-card"></i>Equipe · Comunicação autorizada</div>
+          </div>
+          <div style="flex:1; overflow:hidden; padding:0 24px; display:flex; flex-direction:column; gap:12px;">
+            <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+                <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#39453A;"><span style="color:#219653; font-size:18px;"><i data-lucide="flag"></i></span>Primeiros passos</div>
+                <span style="font-size:10.5px; font-weight:600; color:#B8860B;">3 de 4 missões</span>
+              </div>
+              <div style="height:6px; background:#EEF3EF; border-radius:6px; overflow:hidden; margin-bottom:12px;"><div style="width:75%; height:100%; background:#219653; border-radius:6px;"></div></div>
+              <div style="font-size:12px; color:#4A4F49; line-height:1.55;">Falta pouco: conclua a missão Finalização e destrave o logo diamante.</div>
+            </div>
+            <div style="background:#39453A; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#FFFFFF;"><span style="color:#A5D6A7; font-size:18px;"><i data-lucide="compass"></i></span>O Norte</div>
+                <span style="font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#A5D6A7; background:rgba(165,214,167,.12); padding:4px 9px; border-radius:20px;">Acesso liberado</span>
+              </div>
+              <div style="font-size:12px; color:#D6DDD5; line-height:1.55;">Central de Marca: templates, logos e padrões para falar em nome do grupo.</div>
+            </div>
+            <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:12px;">
+              <span style="color:#219653; font-size:18px;"><i data-lucide="megaphone"></i></span>
+              <div style="flex:1;">
+                <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13px; color:#39453A; margin-bottom:3px;">Mural</div>
+                <div style="font-size:11.5px; color:#4A4F49; line-height:1.5;">Confraternização de julho confirmada — sábado, 18h.</div>
+              </div>
+            </div>
+            <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:12px;">
+              <span style="color:#219653; font-size:18px;"><i data-lucide="message-circle"></i></span>
+              <div style="flex:1; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13px; color:#39453A;">Falar com a equipe</div>
+              <span style="color:#9AA097; font-size:15px;"><i data-lucide="chevron-right"></i></span>
+            </div>
+          </div>
+          <div style="display:flex; border-top:1px solid #E6E7E4; background:#FFFFFF; padding:12px 10px 30px;">
+            <sc-for list="{{ navColabClaro }}" as="n" hint-placeholder-count="3">
+              <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; font-size:10px; font-weight:600; color:{{ n.cor }};"><span style="font-size:19px;"><i data-lucide="{{ n.icone }}"></i></span>{{ n.rotulo }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- CLARO · TELA 3 · HOME CLIENTE -->
+    <div style="width:390px; flex:none;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">3 · Home — cliente parceiro</div>
+      <div style="font-size:12px; color:#7A8079; margin-bottom:14px; line-height:1.5;">Sem Norte, sem onboarding. Relação, documentos e o balcão humano.</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(247,248,246,.92), rgba(247,248,246,.92)), url('assets/fundo-opp-branco.png') center/cover; display:flex; flex-direction:column; font-family:'Montserrat',sans-serif;">
+          <div style="padding:62px 24px 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
+              <img src="assets/icone-opp-grupo.png" alt="" style="height:30px; width:auto;">
+              <span style="color:#7A8079; font-size:19px;"><i data-lucide="bell"></i></span>
+            </div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:22px; color:#39453A; margin-bottom:4px;">Boa tarde, Sr. Almeida</div>
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:600; color:#1B7A44; background:#EEF3EF; border:1px solid #CBE3D2; padding:5px 11px; border-radius:20px;"><i data-lucide="handshake"></i>Parceiro · Fazenda Boa Vista</div>
+          </div>
+          <div style="flex:1; overflow:hidden; padding:0 24px; display:flex; flex-direction:column; gap:12px;">
+            <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#39453A;"><span style="color:#219653; font-size:18px;"><i data-lucide="sprout"></i></span>Sua safra com a Opp</div>
+                <span style="font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#B8860B; background:#FBF7F0; padding:4px 9px; border-radius:20px;">Em breve</span>
+              </div>
+              <div style="font-size:12px; color:#4A4F49; line-height:1.55;">Acompanhamento das operações em tempo real. Enquanto isso, sua equipe de sempre está a uma mensagem.</div>
+            </div>
+            <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#39453A; margin-bottom:10px;"><span style="color:#219653; font-size:18px;"><i data-lucide="folder-open"></i></span>Documentos</div>
+              <div style="display:flex; flex-direction:column; gap:9px;">
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:#4A4F49;"><span style="color:#9AA097; font-size:14px;"><i data-lucide="file-text"></i></span>Proposta SAE · Safra 26/27<span style="margin-left:auto; color:#219653; font-size:14px;"><i data-lucide="download"></i></span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:#4A4F49;"><span style="color:#9AA097; font-size:14px;"><i data-lucide="file-text"></i></span>Relatório de aplicação · Junho<span style="margin-left:auto; color:#219653; font-size:14px;"><i data-lucide="download"></i></span></div>
+              </div>
+            </div>
+            <div style="background:#39453A; border-radius:16px; padding:18px 20px; display:flex; align-items:center; gap:14px;">
+              <span style="flex:none; width:42px; height:42px; border-radius:12px; background:rgba(165,214,167,.14); color:#A5D6A7; display:flex; align-items:center; justify-content:center; font-size:20px;"><i data-lucide="message-circle"></i></span>
+              <div style="flex:1;">
+                <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#FFFFFF; margin-bottom:3px;">Falar com a equipe</div>
+                <div style="font-size:11.5px; color:#D6DDD5;">WhatsApp direto — gente de verdade do outro lado.</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; border-top:1px solid #E6E7E4; background:#FFFFFF; padding:12px 10px 30px;">
+            <sc-for list="{{ navClienteClaro }}" as="n" hint-placeholder-count="3">
+              <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; font-size:10px; font-weight:600; color:{{ n.cor }};"><span style="font-size:19px;"><i data-lucide="{{ n.icone }}"></i></span>{{ n.rotulo }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+
+  <!-- ══ MODO ESCURO — ALTERNATIVO ══ -->
+  <div style="max-width:1360px; margin:0 auto 18px; display:flex; align-items:center; gap:12px;">
+    <span style="display:inline-flex; align-items:center; gap:8px; font-family:'Comfortaa',sans-serif; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:#ECEEEC; background:#39453A; padding:8px 16px; border-radius:24px;"><i data-lucide="moon"></i>Modo escuro · Escolha do usuário</span>
+    <span style="font-size:12px; color:#7A8079;">Conforto noturno e preferência pessoal — toggle no perfil, persistido.</span>
+  </div>
+  <div style="max-width:1360px; margin:0 auto; display:flex; gap:44px; justify-content:center; flex-wrap:wrap; align-items:flex-start;">
+
+    <!-- ESCURO · TELA 1 · ENTRADA -->
+    <div style="width:390px; flex:none;">
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(20,24,20,.88), rgba(20,24,20,.88)), url('assets/fundo-opp-verde.png') center/cover; display:flex; flex-direction:column; padding:0 28px; font-family:'Montserrat',sans-serif;">
+          <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:0;">
+            <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:180px; height:auto; margin:0 auto 26px; display:block;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:21px; color:#ECEEEC; text-align:center; margin-bottom:8px;">Que bom ter você aqui.</div>
+            <div style="font-size:13px; color:#B4B9B4; text-align:center; line-height:1.6; margin-bottom:34px;">Este é o espaço de quem caminha com o Grupo Opp+ — equipe, parceiros e fornecedores.</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="background:#1D231D; border:1px solid #2E362E; border-radius:12px; padding:15px 18px; display:flex; align-items:center; gap:11px;">
+                <span style="color:#838883; font-size:17px;"><i data-lucide="mail"></i></span>
+                <span style="font-size:13.5px; color:#838883;">Seu e-mail</span>
+              </div>
+              <div style="background:#1D231D; border:1px solid #2E362E; border-radius:12px; padding:15px 18px; display:flex; align-items:center; gap:11px;">
+                <span style="color:#838883; font-size:17px;"><i data-lucide="lock"></i></span>
+                <span style="font-size:13.5px; color:#838883;">Senha</span>
+              </div>
+              <div style="background:#219653; border-radius:12px; padding:16px; text-align:center; font-size:14px; font-weight:600; color:#FFFFFF; margin-top:6px;">Entrar</div>
+            </div>
+            <div style="font-size:12px; color:#6FCF97; text-align:center; margin-top:20px; font-weight:500;">Primeiro acesso? A gente te guia.</div>
+          </div>
+          <div style="padding:0 0 34px; font-size:9.5px; color:#5A605A; text-align:center; line-height:1.5;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ESCURO · TELA 2 · HOME COLABORADOR -->
+    <div style="width:390px; flex:none;">
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(20,24,20,.88), rgba(20,24,20,.88)), url('assets/fundo-opp-verde.png') center/cover; display:flex; flex-direction:column; font-family:'Montserrat',sans-serif;">
+          <div style="padding:62px 24px 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
+              <img src="assets/icone-opp-grupo.png" alt="" style="height:30px; width:auto;">
+              <span style="color:#B4B9B4; font-size:19px;"><i data-lucide="bell"></i></span>
+            </div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:22px; color:#ECEEEC; margin-bottom:4px;">Boa tarde, Ana</div>
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:600; color:#6FCF97; background:#1D231D; border:1px solid #2E362E; padding:5px 11px; border-radius:20px;"><i data-lucide="id-card"></i>Equipe · Comunicação autorizada</div>
+          </div>
+          <div style="flex:1; overflow:hidden; padding:0 24px; display:flex; flex-direction:column; gap:12px;">
+            <div style="background:#1D231D; border:1px solid #2E362E; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+                <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#ECEEEC;"><span style="color:#6FCF97; font-size:18px;"><i data-lucide="flag"></i></span>Primeiros passos</div>
+                <span style="font-size:10.5px; font-weight:600; color:#F2C94C;">3 de 4 missões</span>
+              </div>
+              <div style="height:6px; background:#272E27; border-radius:6px; overflow:hidden; margin-bottom:12px;"><div style="width:75%; height:100%; background:#219653; border-radius:6px;"></div></div>
+              <div style="font-size:12px; color:#B4B9B4; line-height:1.55;">Falta pouco: conclua a missão Finalização e destrave o logo diamante.</div>
+            </div>
+            <div style="background:#39453A; border:1px solid #4A5A4B; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#FFFFFF;"><span style="color:#A5D6A7; font-size:18px;"><i data-lucide="compass"></i></span>O Norte</div>
+                <span style="font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#A5D6A7; background:rgba(165,214,167,.12); padding:4px 9px; border-radius:20px;">Acesso liberado</span>
+              </div>
+              <div style="font-size:12px; color:#D6DDD5; line-height:1.55;">Central de Marca: templates, logos e padrões para falar em nome do grupo.</div>
+            </div>
+            <div style="background:#1D231D; border:1px solid #2E362E; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:12px;">
+              <span style="color:#6FCF97; font-size:18px;"><i data-lucide="megaphone"></i></span>
+              <div style="flex:1;">
+                <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13px; color:#ECEEEC; margin-bottom:3px;">Mural</div>
+                <div style="font-size:11.5px; color:#B4B9B4; line-height:1.5;">Confraternização de julho confirmada — sábado, 18h.</div>
+              </div>
+            </div>
+            <div style="background:#1D231D; border:1px solid #2E362E; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:12px;">
+              <span style="color:#6FCF97; font-size:18px;"><i data-lucide="message-circle"></i></span>
+              <div style="flex:1; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13px; color:#ECEEEC;">Falar com a equipe</div>
+              <span style="color:#838883; font-size:15px;"><i data-lucide="chevron-right"></i></span>
+            </div>
+          </div>
+          <div style="display:flex; border-top:1px solid #2E362E; background:#1A1F1A; padding:12px 10px 30px;">
+            <sc-for list="{{ navColab }}" as="n" hint-placeholder-count="3">
+              <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; font-size:10px; font-weight:600; color:{{ n.cor }};"><span style="font-size:19px;"><i data-lucide="{{ n.icone }}"></i></span>{{ n.rotulo }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ESCURO · TELA 3 · HOME CLIENTE -->
+    <div style="width:390px; flex:none;">
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="390px,844px">
+        <div style="height:100%; background:linear-gradient(rgba(20,24,20,.88), rgba(20,24,20,.88)), url('assets/fundo-opp-verde.png') center/cover; display:flex; flex-direction:column; font-family:'Montserrat',sans-serif;">
+          <div style="padding:62px 24px 20px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
+              <img src="assets/icone-opp-grupo.png" alt="" style="height:30px; width:auto;">
+              <span style="color:#B4B9B4; font-size:19px;"><i data-lucide="bell"></i></span>
+            </div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:22px; color:#ECEEEC; margin-bottom:4px;">Boa tarde, Sr. Almeida</div>
+            <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:600; color:#6FCF97; background:#1D231D; border:1px solid #2E362E; padding:5px 11px; border-radius:20px;"><i data-lucide="handshake"></i>Parceiro · Fazenda Boa Vista</div>
+          </div>
+          <div style="flex:1; overflow:hidden; padding:0 24px; display:flex; flex-direction:column; gap:12px;">
+            <div style="background:#1D231D; border:1px solid #2E362E; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#ECEEEC;"><span style="color:#6FCF97; font-size:18px;"><i data-lucide="sprout"></i></span>Sua safra com a Opp</div>
+                <span style="font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F2C94C; background:rgba(242,201,76,.1); padding:4px 9px; border-radius:20px;">Em breve</span>
+              </div>
+              <div style="font-size:12px; color:#B4B9B4; line-height:1.55;">Acompanhamento das operações em tempo real. Enquanto isso, sua equipe de sempre está a uma mensagem.</div>
+            </div>
+            <div style="background:#1D231D; border:1px solid #2E362E; border-radius:16px; padding:18px 20px;">
+              <div style="display:flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14.5px; color:#ECEEEC; margin-bottom:10px;"><span style="color:#6FCF97; font-size:18px;"><i data-lucide="folder-open"></i></span>Documentos</div>
+              <div style="display:flex; flex-direction:column; gap:9px;">
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:#B4B9B4;"><span style="color:#838883; font-size:14px;"><i data-lucide="file-text"></i></span>Proposta SAE · Safra 26/27<span style="margin-left:auto; color:#6FCF97; font-size:14px;"><i data-lucide="download"></i></span></div>
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:#B4B9B4;"><span style="color:#838883; font-size:14px;"><i data-lucide="file-text"></i></span>Relatório de aplicação · Junho<span style="margin-left:auto; color:#6FCF97; font-size:14px;"><i data-lucide="download"></i></span></div>
+              </div>
+            </div>
+            <div style="background:#39453A; border:1px solid #4A5A4B; border-radius:16px; padding:18px 20px; display:flex; align-items:center; gap:14px;">
+              <span style="flex:none; width:42px; height:42px; border-radius:12px; background:rgba(165,214,167,.14); color:#A5D6A7; display:flex; align-items:center; justify-content:center; font-size:20px;"><i data-lucide="message-circle"></i></span>
+              <div style="flex:1;">
+                <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:13.5px; color:#FFFFFF; margin-bottom:3px;">Falar com a equipe</div>
+                <div style="font-size:11.5px; color:#D6DDD5;">WhatsApp direto — gente de verdade do outro lado.</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; border-top:1px solid #2E362E; background:#1A1F1A; padding:12px 10px 30px;">
+            <sc-for list="{{ navCliente }}" as="n" hint-placeholder-count="3">
+              <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; font-size:10px; font-weight:600; color:{{ n.cor }};"><span style="font-size:19px;"><i data-lucide="{{ n.icone }}"></i></span>{{ n.rotulo }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.renderIcons(); this._t = setInterval(() => this.renderIcons(), 700);
+    setTimeout(() => clearInterval(this._t), 6000);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+  renderIcons() { if (window.lucide) lucide.createIcons(); }
+  renderVals() {
+    return {
+      navColab: [
+        { rotulo: 'Início', icone: 'house', cor: '#6FCF97' },
+        { rotulo: 'Módulos', icone: 'layout-grid', cor: '#838883' },
+        { rotulo: 'Perfil', icone: 'circle-user', cor: '#838883' },
+      ],
+      navCliente: [
+        { rotulo: 'Início', icone: 'house', cor: '#6FCF97' },
+        { rotulo: 'Documentos', icone: 'folder', cor: '#838883' },
+        { rotulo: 'Perfil', icone: 'circle-user', cor: '#838883' },
+      ],
+      solicitacoes: [
+        { nome: 'Carlos Mendes', tipo: 'Fornecedor', corTipo: '#B8860B', bgTipo: '#FBF7F0', detalhe: 'Peças e manutenção aeronáutica · Cuiabá/MT — indicou o hangar como referência.' },
+        { nome: 'Fazenda Santa Fé', tipo: 'Cliente', corTipo: '#1B7A44', bgTipo: '#EEF3EF', detalhe: 'Produtor em Ipiranga do Norte · ~900 ha — chegou por indicação do Sr. Almeida.' },
+        { nome: 'José R. da Silva', tipo: 'Fornecedor', corTipo: '#B8860B', bgTipo: '#FBF7F0', detalhe: 'Serviços de contabilidade — sem indicação, sem histórico.' },
+      ],
+      navEquipe: [
+        { rotulo: 'Início', icone: 'house', cor: '#9AA097' },
+        { rotulo: 'Solicitações', icone: 'inbox', cor: '#219653' },
+        { rotulo: 'Perfil', icone: 'circle-user', cor: '#9AA097' },
+      ],
+      navColabClaro: [
+        { rotulo: 'Início', icone: 'house', cor: '#219653' },
+        { rotulo: 'Módulos', icone: 'layout-grid', cor: '#9AA097' },
+        { rotulo: 'Perfil', icone: 'circle-user', cor: '#9AA097' },
+      ],
+      navClienteClaro: [
+        { rotulo: 'Início', icone: 'house', cor: '#219653' },
+        { rotulo: 'Documentos', icone: 'folder', cor: '#9AA097' },
+        { rotulo: 'Perfil', icone: 'circle-user', cor: '#9AA097' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
