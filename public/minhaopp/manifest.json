@@ -5,8 +5,8 @@
   "start_url": "/minhaopp/",
   "scope": "/minhaopp/",
   "display": "standalone",
-  "background_color": "#0F1419",
-  "theme_color": "#0F1419",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "orientation": "portrait",
   "icons": [
     {

@@ -17,7 +17,7 @@ function getStoredTheme() {
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.content = theme === 'light' ? '#FFFFFF' : '#0F1419';
+  if (meta) meta.content = theme === 'light' ? '#FFFFFF' : '#141814';
   try { localStorage.setItem(THEME_KEY, theme); } catch (_) { /* noop */ }
 }
 
