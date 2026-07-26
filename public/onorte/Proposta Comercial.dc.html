@@ -33,6 +33,7 @@
 </helmet>
 
 <x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+<x-import component-from-global-scope="word-docx-button" from="./word-button.js" href="entregas/downloads/proposta-sae-modelo.docx" filename="Proposta SAE (modelo).docx" hint-size="0,0"></x-import>
 <x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.7in" hint-size="816px,1056px">
 
   <!-- CABEÇALHO -->
@@ -193,7 +194,7 @@
 
 </x-import>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;servico&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;oaco&quot;,&quot;options&quot;:[&quot;sae&quot;,&quot;oaco&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proposta&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;servico&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;sae&quot;,&quot;options&quot;:[&quot;sae&quot;,&quot;oaco&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proposta&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const servico = this.props.servico ?? 'sae';

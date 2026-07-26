@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   DESIGN SYSTEM GRUPO OPP+ — tokens.css v1.2 "O Norte"
+   DESIGN SYSTEM GRUPO OPP+ — tokens.css v1.2 "O Norte" (rev. b)
    Drop-in replacement para public/minhaopp/css/tokens.css
    Harmonizado com a Central de Marca (O Norte) em 2026-07.
    Mudanças v1.1 → v1.2 marcadas com [v1.2].
@@ -68,14 +68,26 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
+
+  /* TRILHAS POR PÚBLICO [v1.2] — só no ambiente logado (Minha Opp+),
+     aplicadas via atributo data-trilha. A cor é GUIA, não permissão. */
+  --trilha-cliente: #219653;
+  --trilha-colaborador: #39453A;
+  --trilha-fornecedor: #6FCF97;
+  --trilha-fornecedor-alt: #767C75;
+  --trilha-acento: var(--trilha-colaborador);
 }
 
+[data-trilha="cliente"]     { --trilha-acento: var(--trilha-cliente); }
+[data-trilha="colaborador"] { --trilha-acento: var(--trilha-colaborador); }
+[data-trilha="fornecedor"]  { --trilha-acento: var(--trilha-fornecedor); }
+
 /* ═══════════════════════════════════════════════════════════════
-   TEMA ESCURO (padrão — <html> sem atributo ou data-theme="dark")
+   TEMA ESCURO (data-theme="dark")
    [v1.2] Fundos migrados do slate azulado (#0F1419…) para a
    família do Verde Escuro âncora #39453A — escuro COM identidade.
+   [rev.b] Deixa de ser o padrão do :root — o padrão é o CLARO.
 ═══════════════════════════════════════════════════════════════ */
-:root,
 [data-theme="dark"] {
   --color-primary: #6FCF97;            /* destaques/links (sálvia oficial) */
   --color-primary-light: #A5D6A7;
@@ -105,9 +117,12 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   TEMA CLARO (data-theme="light")
+   TEMA CLARO — PADRÃO (:root, ou data-theme="light")
    [v1.2] Fundos alinhados aos neutros esverdeados do Norte.
+   [rev.b] Promovido a padrão: decisão ergonômica (sol do campo,
+   leitores 50+). O escuro passa a ser escolha explícita no perfil.
 ═══════════════════════════════════════════════════════════════ */
+:root,
 [data-theme="light"] {
   --color-primary: #39453A;            /* [v1.2] âncora do Norte em destaques */
   --color-primary-light: #4A5A4B;

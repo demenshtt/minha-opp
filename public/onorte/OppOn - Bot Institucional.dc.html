@@ -57,7 +57,7 @@
     <div style="display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:center; background:#0B1B2E; border:1px solid #16324F; border-radius:18px; padding:30px 32px; margin-bottom:16px; overflow:hidden; position:relative;">
       <div style="position:absolute; inset:0; background:radial-gradient(circle at 18% 30%, rgba(56,189,248,.16), transparent 45%); pointer-events:none;"></div>
       <div style="position:relative; width:132px; height:132px; border-radius:26px; overflow:hidden; box-shadow:0 0 0 1px rgba(56,189,248,.5), 0 0 34px rgba(56,189,248,.35);">
-        <image-slot id="oppon-avatar" shape="rounded" radius="26" placeholder="Ícone OppOn — neon azul hi-tech (arraste a arte final)" style="width:132px; height:132px; background:#07121F;"></image-slot>
+        <img src="assets/oppon-icone-neon.png" alt="Ícone OppOn — neon azul" style="width:132px; height:132px; object-fit:cover; display:block;">
       </div>
       <div style="position:relative;">
         <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:30px; color:#EAF6FF; letter-spacing:-0.01em; margin-bottom:4px;">OppOn <span style="font-size:15px; color:#38BDF8; vertical-align:middle;"><i data-lucide="badge-check"></i></span></div>
@@ -69,7 +69,7 @@
         </div>
       </div>
     </div>
-    <p style="font-size:12px; color:#8A8F89; line-height:1.6; margin:0 0 44px;">O neon azul é a assinatura <em>só do OppOn</em> — um traço hi-tech que separa o assistente da identidade corporativa, que segue verde. Avatar: ícone da Opp tratado em neon azul sobre fundo escuro (arraste a arte no quadro acima).</p>
+    <p style="font-size:12px; color:#8A8F89; line-height:1.6; margin:0 0 44px;">O neon azul é a assinatura <em>só do OppOn</em> — um traço hi-tech que separa o assistente da identidade corporativa, que segue verde. Avatar: o botão <em>power</em> desenhado com as duas P's da Opp e o sinal verde “ON”, em neon azul sobre fundo escuro.</p>
 
     <!-- MENU /start -->
     <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">2 · Menu principal <span style="font-family:monospace; text-transform:none; letter-spacing:0; color:#219653;">/start</span></div>
@@ -116,7 +116,7 @@
     <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">5 · Como fica no Telegram</div>
     <div style="max-width:420px; margin:0 auto 20px; background:#0E1621; border-radius:18px; box-shadow:0 14px 40px rgba(11,27,46,.4); overflow:hidden;">
       <div style="background:#17212B; padding:13px 18px; display:flex; align-items:center; gap:12px; border-bottom:1px solid #0A1119;">
-        <div style="width:38px; height:38px; border-radius:50%; background:#07121F; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 1px rgba(56,189,248,.5), 0 0 14px rgba(56,189,248,.35);"><img src="assets/icone-opp-grupo.png" alt="" style="width:20px; height:auto; filter:brightness(0) saturate(100%) invert(66%) sepia(66%) saturate(2500%) hue-rotate(165deg) brightness(101%) contrast(96%);"></div>
+        <div style="width:38px; height:38px; border-radius:50%; overflow:hidden; background:#07121F; box-shadow:0 0 0 1px rgba(56,189,248,.5), 0 0 14px rgba(56,189,248,.35);"><img src="assets/oppon-icone-neon.png" alt="" style="width:38px; height:38px; object-fit:cover; display:block;"></div>
         <div><div style="font-size:13.5px; font-weight:600; color:#EAF6FF; font-family:'Comfortaa',sans-serif;">OppOn</div><div style="font-size:10.5px; color:#5FC7F5;">bot</div></div>
       </div>
       <div style="padding:18px 14px; display:flex; flex-direction:column; gap:9px;">
@@ -128,6 +128,21 @@
         </div>
       </div>
     </div>
+
+    <!-- KIT DE ARQUIVOS -->
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin:44px 0 16px;">6 · Kit de arquivos <span style="text-transform:none; letter-spacing:0; color:#B4B9B1;">· baixe a arte</span></div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px;">
+      <sc-for list="{{ kit }}" as="k" hint-placeholder-count="7">
+        <a href="{{ k.src }}" download="{{ k.file }}" style="text-decoration:none; display:flex; flex-direction:column; border:1px solid #E6E7E4; border-radius:14px; overflow:hidden; background:#FFFFFF;">
+          <span style="display:flex; align-items:center; justify-content:center; height:120px; background:{{ k.bg }};"><img src="{{ k.src }}" alt="{{ k.rotulo }}" style="max-width:78%; max-height:82%; object-fit:contain;"></span>
+          <span style="padding:11px 13px; border-top:1px solid #EEF0ED;">
+            <span style="display:flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#39453A;"><i data-lucide="download" style="width:13px; height:13px;"></i>{{ k.rotulo }}</span>
+            <span style="display:block; font-size:10.5px; color:#9AA097; margin-top:3px;">{{ k.desc }}</span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+    <p style="font-size:12px; color:#8A8F89; line-height:1.6; margin:0 0 44px;">Para o Telegram, use o <strong style="color:#39453A;">ícone neon (color, sem nome)</strong> como foto de perfil — 512×512, centralizado no círculo. As versões com nome servem para posts e capas; as transparentes, para montagens; as flat pretas, para uso monocromático.</p>
 
   </div>
 
@@ -171,6 +186,15 @@ class Component extends DCLogic {
         { n: '2', texto: 'Bot pergunta a cultura.' },
         { n: '3', texto: 'Bot pergunta o tamanho aproximado da área (ha).' },
         { n: '4', texto: '"Recebemos seus dados. Nossa equipe entra em contato pelo WhatsApp em breve." — e registra o pedido.' },
+      ],
+      kit: [
+        { src: 'assets/oppon-logo-neon.png', file: 'OppOn-logo-neon.png', rotulo: 'Logo neon', desc: 'Com nome · fundo escuro', bg: '#07121F' },
+        { src: 'assets/oppon-icone-neon.png', file: 'OppOn-icone-neon.png', rotulo: 'Ícone neon', desc: 'Avatar Telegram · 512²', bg: '#07121F' },
+        { src: 'assets/oppon-logo-branco.png', file: 'OppOn-logo-branco.png', rotulo: 'Logo branco', desc: 'Com nome · fundo escuro', bg: '#07121F' },
+        { src: 'assets/oppon-icone-branco.png', file: 'OppOn-icone-branco.png', rotulo: 'Ícone branco', desc: 'Mono · fundo escuro', bg: '#07121F' },
+        { src: 'assets/oppon-icone-neon-transp.png', file: 'OppOn-icone-neon-transp.png', rotulo: 'Ícone neon (transp.)', desc: 'PNG transparente', bg: '#334155' },
+        { src: 'assets/oppon-icone-flat.png', file: 'OppOn-icone-flat.png', rotulo: 'Ícone flat', desc: 'Preto · fundo branco', bg: '#F0F1ED' },
+        { src: 'assets/oppon-icone-flat-transp.png', file: 'OppOn-icone-flat-transp.png', rotulo: 'Ícone flat (transp.)', desc: 'PNG transparente', bg: '#F0F1ED' },
       ],
     };
   }

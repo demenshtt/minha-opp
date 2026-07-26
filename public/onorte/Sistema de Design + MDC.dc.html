@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; font-family:'Montserrat',sans-serif; }
+  doc-page:not(:defined) { visibility:hidden; }
+  a { color:#219653; text-decoration:none; border-bottom:1px solid #A5D6A7; }
+  a:hover { color:#39453A; border-bottom-color:#39453A; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page margin="0.85in">
+
+  <div slot="footer" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:8px; border-top:1px solid #E6E7E4; font-size:8.5pt; color:#9AA097; letter-spacing:0.02em;">
+    <span>CONFIDENCIAL · GRUPO OPP+ · uso interno</span>
+    <span style="font-family:'Comfortaa',sans-serif; font-weight:600;">MDC-GDI · Adendo Técnico v0.5</span>
+  </div>
+
+  <div style="border-bottom:3px solid #39453A; padding-bottom:22px; margin-bottom:34px;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px;">
+      <div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:9.5pt; letter-spacing:0.24em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">Documento normativo · versionado</div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:27pt; line-height:1.15; color:#39453A; margin:0 0 10px; text-wrap:balance;">Sistema de Design + MDC</h1>
+        <p style="font-size:12pt; color:#565B56; line-height:1.5; margin:0; max-width:56ch;">Adendo Técnico ao Manual de Diretrizes Corporativas (MDC-GDI v0.4) e especificação vigente do Design System Grupo Opp+ v1.2 &ldquo;O Norte&rdquo;.</p>
+      </div>
+      <img src="assets/logo-opp-flat.png" alt="Grupo Opp+" style="width:132px; height:auto; flex:none; margin-top:6px;">
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid #E6E7E4; border-radius:6px; overflow:hidden; margin-bottom:38px; break-inside:avoid;">
+    <sc-for list="{{ capa }}" as="c" hint-placeholder-count="4">
+      <div style="padding:13px 15px; border-right:1px solid #E6E7E4;">
+        <div style="font-size:8pt; letter-spacing:0.14em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:5px;">{{ c.k }}</div>
+        <div style="font-size:10.5pt; color:#2D3530; font-weight:600; line-height:1.35;">{{ c.v }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16pt; color:#39453A; margin:0 0 12px; break-after:avoid;">1 · Estatuto deste documento</h2>
+  <p style="font-size:11pt; color:#3C413C; line-height:1.65; margin:0 0 12px;">O MDC-GDI v0.4 permanece válido como manual corporativo. Este adendo <strong>não o revoga</strong>: ele registra, de forma formal e rastreável, os pontos em que a prática vigente do Grupo passou a divergir do texto de v0.4, e incorpora os itens que não existiam quando o manual foi escrito.</p>
+  <p style="font-size:11pt; color:#3C413C; line-height:1.65; margin:0 0 12px;">Regra de precedência: <strong>em qualquer conflito entre o MDC-GDI v0.4 e este adendo, prevalece o adendo.</strong> A versão viva e navegável destas definições é a Central de Marca (&ldquo;O Norte&rdquo;); a versão de arquivo é este documento, imprimível e versionado.</p>
+  <div style="border-left:3px solid #219653; background:#F7F8F6; padding:14px 18px; border-radius:0 6px 6px 0; margin:0 0 34px; break-inside:avoid;">
+    <p style="font-size:10.5pt; color:#3C413C; line-height:1.6; margin:0;">Três camadas, uma verdade: <strong>MDC-GDI v0.4</strong> (manual base) → <strong>este adendo v0.5</strong> (o que mudou e o que é novo) → <strong>Central de Marca</strong> (aplicação ao vivo, com os arquivos prontos).</p>
+  </div>
+
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16pt; color:#39453A; margin:0 0 8px; break-after:avoid;">2 · Errata &mdash; divergências em relação à v0.4</h2>
+  <p style="font-size:11pt; color:#565B56; line-height:1.6; margin:0 0 18px;">Cada linha substitui a definição correspondente do manual base.</p>
+
+  <sc-for list="{{ erratas }}" as="e" hint-placeholder-count="8">
+    <div style="border:1px solid #E6E7E4; border-radius:7px; padding:16px 18px; margin-bottom:12px; break-inside:avoid;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:10px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:9pt; font-weight:700; color:#FFFFFF; background:#39453A; border-radius:4px; padding:2px 7px; flex:none;">{{ e.n }}</span>
+        <span style="font-family:'Comfortaa',sans-serif; font-size:12pt; font-weight:700; color:#2D3530;">{{ e.tema }}</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:10px;">
+        <div>
+          <div style="font-size:8pt; letter-spacing:0.14em; text-transform:uppercase; color:#B0655F; font-weight:600; margin-bottom:4px;">MDC-GDI v0.4</div>
+          <div style="font-size:10pt; color:#6B706A; line-height:1.5; text-decoration:line-through; text-decoration-color:#D8B4B1;">{{ e.antes }}</div>
+        </div>
+        <div>
+          <div style="font-size:8pt; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:600; margin-bottom:4px;">Vigente</div>
+          <div style="font-size:10pt; color:#2D3530; line-height:1.5; font-weight:500;">{{ e.agora }}</div>
+        </div>
+      </div>
+      <div style="font-size:9.5pt; color:#767C75; line-height:1.55; border-top:1px solid #F0F1EE; padding-top:9px;"><strong style="color:#565B56;">Por quê:</strong> {{ e.porque }}</div>
+    </div>
+  </sc-for>
+
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16pt; color:#39453A; margin:34px 0 8px; break-after:avoid;">3 · Itens novos, não contemplados na v0.4</h2>
+  <p style="font-size:11pt; color:#565B56; line-height:1.6; margin:0 0 18px;">Definições criadas depois do manual base. Passam a integrar o corpo normativo.</p>
+
+  <sc-for list="{{ novos }}" as="n" hint-placeholder-count="10">
+    <div style="display:grid; grid-template-columns:22px 1fr; gap:13px; padding:13px 0; border-bottom:1px solid #F0F1EE; break-inside:avoid;">
+      <div style="font-family:'Comfortaa',sans-serif; font-size:9.5pt; font-weight:700; color:#A5B0A6; padding-top:2px;">{{ n.n }}</div>
+      <div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11.5pt; font-weight:700; color:#2D3530; margin-bottom:5px;">{{ n.tema }}</div>
+        <div style="font-size:10.5pt; color:#4A4F49; line-height:1.6;">{{ n.texto }}</div>
+      </div>
+    </div>
+  </sc-for>
+
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16pt; color:#39453A; margin:34px 0 8px; break-before:page; break-after:avoid;">4 · Design System v1.2 &mdash; especificação</h2>
+  <p style="font-size:11pt; color:#565B56; line-height:1.6; margin:0 0 22px;">Tokens vigentes. Arquivo-fonte: <code style="font-size:10pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">minhaopp-tokens-v1-2.css</code> (rev. b).</p>
+
+  <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 10px; break-after:avoid;">4.1 Tipografia</h3>
+  <div style="border:1px solid #E6E7E4; border-radius:6px; overflow:hidden; margin-bottom:22px; break-inside:avoid;">
+    <sc-for list="{{ tipografia }}" as="t" hint-placeholder-count="3">
+      <div style="display:grid; grid-template-columns:1.1fr 1fr 1.4fr; gap:12px; padding:10px 15px; border-bottom:1px solid #F0F1EE; font-size:10pt; align-items:center;">
+        <code style="color:#565B56; font-size:9.5pt;">{{ t.token }}</code>
+        <div style="color:#2D3530; font-weight:600;">{{ t.valor }}</div>
+        <div style="color:#767C75;">{{ t.uso }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 10px; break-after:avoid;">4.2 Escala e pesos</h3>
+  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0 26px; margin-bottom:24px; break-inside:avoid;">
+    <sc-for list="{{ escala }}" as="s" hint-placeholder-count="10">
+      <div style="display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid #F4F5F2; font-size:10pt;">
+        <code style="color:#565B56; font-size:9.5pt;">{{ s.token }}</code>
+        <span style="color:#2D3530; font-weight:600;">{{ s.valor }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 4px; break-after:avoid;">4.3 Cores &mdash; tema claro (padrão)</h3>
+  <p style="font-size:10pt; color:#767C75; line-height:1.55; margin:0 0 12px;">Padrão do produto por decisão ergonômica: polaridade positiva para o sol do campo e para leitores acima dos 50.</p>
+  <div style="border:1px solid #E6E7E4; border-radius:6px; overflow:hidden; margin-bottom:24px;">
+    <sc-for list="{{ claro }}" as="c" hint-placeholder-count="12">
+      <div style="display:grid; grid-template-columns:20px 1.5fr 0.7fr 1.3fr; gap:12px; align-items:center; padding:8px 15px; border-bottom:1px solid #F4F5F2; font-size:9.5pt; break-inside:avoid;">
+        <div style="width:14px; height:14px; border-radius:3px; border:1px solid rgba(0,0,0,0.12); background:{{ c.hex }};"></div>
+        <code style="color:#565B56;">{{ c.token }}</code>
+        <span style="color:#2D3530; font-weight:600; letter-spacing:0.03em;">{{ c.hex }}</span>
+        <span style="color:#767C75;">{{ c.uso }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 4px; break-after:avoid;">4.4 Cores &mdash; tema escuro</h3>
+  <p style="font-size:10pt; color:#767C75; line-height:1.55; margin:0 0 12px;">Construído na família do Verde Escuro âncora <strong>#39453A</strong> &mdash; escuro com identidade, não o cinza-azulado genérico. Escolha do usuário no perfil.</p>
+  <div style="border:1px solid #E6E7E4; border-radius:6px; overflow:hidden; margin-bottom:24px;">
+    <sc-for list="{{ escuro }}" as="c" hint-placeholder-count="12">
+      <div style="display:grid; grid-template-columns:20px 1.5fr 0.7fr 1.3fr; gap:12px; align-items:center; padding:8px 15px; border-bottom:1px solid #F4F5F2; font-size:9.5pt; break-inside:avoid;">
+        <div style="width:14px; height:14px; border-radius:3px; border:1px solid rgba(0,0,0,0.12); background:{{ c.hex }};"></div>
+        <code style="color:#565B56;">{{ c.token }}</code>
+        <span style="color:#2D3530; font-weight:600; letter-spacing:0.03em;">{{ c.hex }}</span>
+        <span style="color:#767C75;">{{ c.uso }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 4px; break-after:avoid;">4.5 Trilhas por público</h3>
+  <p style="font-size:10.5pt; color:#4A4F49; line-height:1.6; margin:0 0 14px;">Camada fina de sinalização, como as faixas coloridas no chão de um corredor de hospital. A arquitetura visual é uma só; a trilha acrescenta um token de acento e um tom de voz, via atributo <code style="font-size:9.5pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">data-trilha</code>. Vale <strong>apenas no ambiente logado</strong> (Minha Opp+); na home institucional o público é misto e a faixa confunde.</p>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:14px;">
+    <sc-for list="{{ trilhas }}" as="t" hint-placeholder-count="3">
+      <div style="border:1px solid #E6E7E4; border-top:4px solid {{ t.hex }}; border-radius:0 0 6px 6px; padding:14px 16px; break-inside:avoid;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11.5pt; font-weight:700; color:#2D3530; margin-bottom:4px;">{{ t.nome }}</div>
+        <div style="font-size:9.5pt; color:#2D3530; font-weight:600; letter-spacing:0.03em; margin-bottom:8px;">{{ t.hex }}</div>
+        <div style="font-size:9.5pt; color:#767C75; line-height:1.55;">{{ t.voz }}</div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="border-left:3px solid #39453A; background:#F7F8F6; padding:13px 18px; border-radius:0 6px 6px 0; margin-bottom:26px; break-inside:avoid;">
+    <p style="font-size:10.5pt; color:#3C413C; line-height:1.6; margin:0;"><strong>Regra de ouro:</strong> a cor é guia, não permissão. Quem é cliente e fornecedor ao mesmo tempo não se resolve pela cor &mdash; permissão vem do cadastro e das prerrogativas.</p>
+  </div>
+
+  <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 10px; break-after:avoid;">4.6 Espaçamento, raios, sombras e transições</h3>
+  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0 26px; margin-bottom:26px;">
+    <sc-for list="{{ sistema }}" as="s" hint-placeholder-count="14">
+      <div style="display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px solid #F4F5F2; font-size:9.5pt; break-inside:avoid;">
+        <code style="color:#565B56;">{{ s.token }}</code>
+        <span style="color:#2D3530; font-weight:600; text-align:right;">{{ s.valor }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16pt; color:#39453A; margin:0 0 12px; break-after:avoid;">5 · Implementação</h2>
+  <ol style="font-size:11pt; color:#3C413C; line-height:1.7; margin:0 0 16px; padding-left:22px;">
+    <li>Copiar <code style="font-size:10pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">minhaopp-tokens-v1-2.css</code> para <code style="font-size:10pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">css/tokens.css</code> do projeto.</li>
+    <li>Importar Comfortaa (títulos e marca) e Montserrat (corpo e interface).</li>
+    <li>Consumir sempre as variáveis &mdash; nenhum hex solto no componente.</li>
+    <li>Tema: o padrão é claro; o escuro só entra com <code style="font-size:10pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">data-theme="dark"</code>, persistido no perfil.</li>
+    <li>Trilha: <code style="font-size:10pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">data-trilha</code> na raiz do ambiente logado; componentes leem <code style="font-size:10pt; background:#F0F1EE; padding:1px 5px; border-radius:3px;">--trilha-acento</code>.</li>
+  </ol>
+
+  <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16pt; color:#39453A; margin:30px 0 12px; break-after:avoid;">6 · Controle de versões</h2>
+  <div style="border:1px solid #E6E7E4; border-radius:6px; overflow:hidden; margin-bottom:26px;">
+    <sc-for list="{{ historico }}" as="h" hint-placeholder-count="4">
+      <div style="display:grid; grid-template-columns:0.55fr 0.5fr 2fr; gap:14px; padding:11px 15px; border-bottom:1px solid #F4F5F2; font-size:10pt; break-inside:avoid;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; color:#2D3530;">{{ h.v }}</div>
+        <div style="color:#9AA097;">{{ h.data }}</div>
+        <div style="color:#4A4F49; line-height:1.55;">{{ h.nota }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="border-top:2px solid #39453A; padding-top:16px; margin-top:34px; display:flex; justify-content:space-between; gap:20px; align-items:flex-end; break-inside:avoid;">
+    <div style="font-size:9pt; color:#767C75; line-height:1.6; max-width:62ch;">Opp Aviação Agrícola Ltda &middot; CNPJ 33.910.736/0001-56 &middot; Rua Santa Catarina de Alexandria, 2127 &middot; Parque Universitário &middot; Sorriso/MT &middot; CEP 78893-126. &ldquo;Opp Gestão de Ativos&rdquo; e &ldquo;Grupo Opp+&rdquo; são marcas de marketing, sem CNPJ próprio.</div>
+    <div style="font-family:'Comfortaa',sans-serif; font-size:8.5pt; color:#B8BDB4; font-weight:600; text-align:right; flex:none;">O Norte<br>Central de Marca</div>
+  </div>
+
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1160}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      capa: [
+        { k: 'Documento', v: 'Adendo Técnico ao MDC-GDI' },
+        { k: 'Versão', v: 'v0.5 · julho 2026' },
+        { k: 'Substitui', v: 'Trechos da v0.4' },
+        { k: 'Classificação', v: 'Interno · confidencial' }
+      ],
+      erratas: [
+        { n: '01', tema: 'Verde de ação',
+          antes: 'Neon #00D300 como verde de destaque e ação.',
+          agora: 'Esmeralda #219653. O neon fica aposentado, sem uso em nenhuma peça.',
+          porque: 'O neon queima em impressão, vibra na tela e destoa do tom de confiança que o público-alvo espera. A esmeralda mantém a energia sem o ruído.' },
+        { n: '02', tema: 'Papéis tipográficos',
+          antes: 'Comfortaa aplicada de forma ampla, inclusive em texto corrido.',
+          agora: 'Comfortaa só em títulos e marca. Montserrat no corpo e em toda a interface.',
+          porque: 'Comfortaa em bloco de texto cansa e derruba legibilidade em documentos longos e em leitores mais velhos.' },
+        { n: '03', tema: 'Tema padrão de interface',
+          antes: 'Escuro como padrão do produto.',
+          agora: 'Claro como padrão. O escuro é escolha explícita no perfil.',
+          porque: 'Polaridade positiva funciona melhor sob sol de campo e para a faixa dos 50+, que é boa parte de quem lê nossas peças.' },
+        { n: '04', tema: 'Composição do tema escuro',
+          antes: 'Fundos em cinza-azulado genérico (família #0F1419).',
+          agora: 'Fundos na família do Verde Escuro âncora #39453A (#141814 · #1D231D · #272E27).',
+          porque: 'O escuro precisa continuar sendo Opp+. Azulado é o escuro de qualquer aplicativo; o nosso tem a cor da casa.' },
+        { n: '05', tema: 'Neutros claros',
+          antes: 'Cinzas neutros puros (#F5F7F5, #1A1A1A e similares).',
+          agora: 'Neutros levemente esverdeados do Norte: #F7F8F6, #EEF3EF, borda #E6E7E4, texto #1C201C.',
+          porque: 'Harmoniza o fundo com o verde âncora e tira o aspecto de folha de escritório genérica.' },
+        { n: '06', tema: 'Versão oficial dos logos',
+          antes: 'Conjunto anterior de logos das controladas.',
+          agora: 'As versões Fable passam a ser as oficiais para todos os logos (Grupo, Aviação Agrícola, Gestão de Ativos). Versões anteriores arquivadas.',
+          porque: 'Decisão do gestor após o refino de traço e proporção. Manter dois conjuntos em circulação é o caminho mais rápido para a marca se desalinhar.' },
+        { n: '07', tema: 'Ícone da Gestão de Ativos',
+          antes: 'Quatro braços entrelaçados em abraço.',
+          agora: 'Ícone circular em degradê (roda/olho). A metáfora de parceria e administração permanece; a forma é a nova.',
+          porque: 'O desenho anterior perdia leitura em tamanho pequeno (favicon, assinatura, avatar). O símbolo mudou de forma, não de significado.' },
+        { n: '08', tema: 'Logo sobre fundo escuro',
+          antes: 'Sem regra explícita; na prática, filtros de inversão.',
+          agora: 'Usar o arquivo com fonte branca, flat ou 3D, sem nenhum filtro aplicado.',
+          porque: 'Filtro de CSS ou de editor deforma o degradê do ícone e produz um branco sujo.' }
+      ],
+      novos: [
+        { n: '01', tema: 'Trilhas por público',
+          texto: 'Cliente, Colaborador e Fornecedor recebem um acento de cor e um tom de voz dentro do ambiente logado. A cor é guia de orientação, nunca permissão. Detalhado em 4.5.' },
+        { n: '02', tema: 'Razão social em toda peça',
+          texto: 'Qualquer material emitido por "Grupo Opp+" ou "Opp Gestão de Ativos" — que são marcas sem CNPJ — cita Opp Aviação Agrícola Ltda, CNPJ 33.910.736/0001-56, no rodapé legal.' },
+        { n: '03', tema: 'Protocolo de Redes Sociais',
+          texto: 'Presença defensiva: perfis reservados e estáticos, WhatsApp como balcão humano, LinkedIn como exceção opcional. A operação de aplicação aérea não vai para vitrine pública.' },
+        { n: '04', tema: 'OppOn — exceção controlada de paleta',
+          texto: 'O bot institucional do Telegram usa assinatura neon azul, exclusiva dele. É a única exceção autorizada ao verde corporativo, e não se estende a nenhuma outra peça.' },
+        { n: '05', tema: 'Organização de arquivos',
+          texto: 'Estrutura de diretórios de Nível 1 (01 a 12) com prefixo numérico e regra de nomenclatura. O Nível 1 é estável: mudanças são planejadas e comunicadas.' },
+        { n: '06', tema: 'Central de Marca como fonte viva',
+          texto: 'Os templates oficiais deixam de circular por e-mail e passam a viver na Central de Marca, com arquivo final baixável e texto pronto copiável em cada página.' },
+        { n: '07', tema: 'Sequência de assuntos nos relatórios',
+          texto: 'Os relatórios padronizam não só formatação, mas a segmentação e a ordem dos assuntos. Quem lê encontra a mesma informação sempre no mesmo lugar.' },
+        { n: '08', tema: 'Estrutura mínima de documentos elaborados',
+          texto: 'Documento de projeto e equivalentes têm partes obrigatórias definidas (capa, sumário, introdução e desenvolvimento), sem inflar com seções supérfluas.' },
+        { n: '09', tema: 'Regras de copy',
+          texto: 'Discurso bi-geracional: o herdeiro e o patriarca leem o mesmo texto. Zero jargão corporativo — traduzir em palavra concreta do campo, sem soar esnobe nem pobre. O "+" da marca são os que chegam com gente na parceria; nunca reduzi-lo a floreio gráfico.' },
+        { n: '10', tema: 'Minha Opp+ e acesso fechado',
+          texto: 'O ambiente logado é o hub de relacionamento. Cadastro é por convite ou aprovação, nunca aberto: solicitação entra em fila de triagem e a aprovação dispara o convite.' },
+        { n: '11', tema: 'Crédito de autoria',
+          texto: 'Rodapé discreto "Desenvolvido por ΣΘ Sistere Stabilis · Soluções Integradas" nos sites do Grupo. Ferramentas de produção não aparecem no crédito público.' }
+      ],
+      tipografia: [
+        { token: '--font-display', valor: 'Comfortaa', uso: 'Títulos, marca, destaques' },
+        { token: '--font-body', valor: 'Montserrat', uso: 'Texto corrido e interface' },
+        { token: '--font-mono', valor: 'Montserrat', uso: 'Labels, badges, dados' }
+      ],
+      escala: [
+        { token: '--font-size-xs', valor: '11px' },
+        { token: '--font-weight-light', valor: '300' },
+        { token: '--font-size-sm', valor: '13px' },
+        { token: '--font-weight-regular', valor: '400' },
+        { token: '--font-size-base', valor: '15px' },
+        { token: '--font-weight-medium', valor: '500' },
+        { token: '--font-size-lg', valor: '18px' },
+        { token: '--font-weight-semibold', valor: '600' },
+        { token: '--font-size-xl', valor: '24px' },
+        { token: '--font-weight-bold', valor: '700' },
+        { token: '--font-size-2xl', valor: '32px' },
+        { token: '--line-height-tight', valor: '1.2' },
+        { token: '--font-size-3xl', valor: '48px' },
+        { token: '--line-height-normal', valor: '1.5' }
+      ],
+      claro: [
+        { token: '--color-primary', hex: '#39453A', uso: 'Âncora, links' },
+        { token: '--color-primary-light', hex: '#4A5A4B', uso: 'Destaque suave' },
+        { token: '--color-primary-dark', hex: '#2D3530', uso: 'Destaque forte' },
+        { token: '--color-action-primary', hex: '#219653', uso: 'Botões, progresso' },
+        { token: '--color-action-secondary', hex: '#6FCF97', uso: 'Ação secundária' },
+        { token: '--color-action-tertiary', hex: '#A5D6A7', uso: 'Ação terciária' },
+        { token: '--color-bg-primary', hex: '#FFFFFF', uso: 'Fundo principal' },
+        { token: '--color-bg-secondary', hex: '#F7F8F6', uso: 'Cards, header' },
+        { token: '--color-bg-tertiary', hex: '#EEF3EF', uso: 'Inputs, destaques' },
+        { token: '--color-border-primary', hex: '#E6E7E4', uso: 'Bordas' },
+        { token: '--color-border-secondary', hex: '#D5D8D3', uso: 'Bordas fortes' },
+        { token: '--color-text-primary', hex: '#1C201C', uso: 'Texto principal' },
+        { token: '--color-text-secondary', hex: '#4A4F49', uso: 'Texto auxiliar' },
+        { token: '--color-text-tertiary', hex: '#7A8079', uso: 'Labels, dicas' },
+        { token: '--color-warning', hex: '#E6A817', uso: 'Alertas' },
+        { token: '--color-error', hex: '#D32F2F', uso: 'Erros' },
+        { token: '--color-info', hex: '#2F80ED', uso: 'Informativo' }
+      ],
+      escuro: [
+        { token: '--color-primary', hex: '#6FCF97', uso: 'Destaques, links' },
+        { token: '--color-primary-light', hex: '#A5D6A7', uso: 'Destaque suave' },
+        { token: '--color-primary-dark', hex: '#219653', uso: 'Destaque forte' },
+        { token: '--color-bg-primary', hex: '#141814', uso: 'Fundo principal' },
+        { token: '--color-bg-secondary', hex: '#1D231D', uso: 'Cards, header' },
+        { token: '--color-bg-tertiary', hex: '#272E27', uso: 'Inputs, destaques' },
+        { token: '--color-border-primary', hex: '#2E362E', uso: 'Bordas' },
+        { token: '--color-border-secondary', hex: '#3A443A', uso: 'Bordas fortes' },
+        { token: '--color-text-primary', hex: '#ECEEEC', uso: 'Texto principal' },
+        { token: '--color-text-secondary', hex: '#B4B9B4', uso: 'Texto auxiliar' },
+        { token: '--color-text-tertiary', hex: '#838883', uso: 'Labels, dicas' },
+        { token: '--color-warning', hex: '#F2C94C', uso: 'Alertas' },
+        { token: '--color-error', hex: '#FF6B6B', uso: 'Erros' },
+        { token: '--color-info', hex: '#ACD4F1', uso: 'Informativo' }
+      ],
+      trilhas: [
+        { nome: 'Cliente', hex: '#219653', voz: 'Mais calorosa. Parceria, safra, legado.' },
+        { nome: 'Colaborador', hex: '#39453A', voz: 'Âncora. Tom de casa, direto.' },
+        { nome: 'Fornecedor', hex: '#6FCF97', voz: 'Sóbrio e funcional. Combina com a fila de triagem.' }
+      ],
+      sistema: [
+        { token: '--space-1 … --space-16', valor: '4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 80' },
+        { token: '--radius-xs', valor: '4px' },
+        { token: '--radius-sm', valor: '8px' },
+        { token: '--radius-md', valor: '12px' },
+        { token: '--radius-lg', valor: '20px' },
+        { token: '--radius-full', valor: '9999px' },
+        { token: '--shadow-xs', valor: '0 1px 2px rgba(0,0,0,.05)' },
+        { token: '--shadow-sm', valor: '0 1px 3px rgba(0,0,0,.1)' },
+        { token: '--shadow-md', valor: '0 4px 6px rgba(0,0,0,.1)' },
+        { token: '--shadow-lg', valor: '0 10px 15px rgba(0,0,0,.1)' },
+        { token: '--shadow-xl', valor: '0 20px 25px rgba(0,0,0,.1)' },
+        { token: '--transition-fast', valor: '100ms' },
+        { token: '--transition-base', valor: '150ms' },
+        { token: '--transition-slow', valor: '300ms' },
+        { token: 'Breakpoints', valor: '320 · 480 · 768 · 1024 · 1280' }
+      ],
+      historico: [
+        { v: 'v0.5', data: 'jul 2026', nota: 'Adendo Técnico: errata de 8 divergências em relação à v0.4 e 11 itens novos. Incorpora o DS v1.2 "O Norte" como especificação vigente.' },
+        { v: 'DS v1.2 rev. b', data: 'jul 2026', nota: 'Correção: o tema claro passa a ocupar o :root (o arquivo original mantinha o escuro como padrão de fato). Tokens --trilha-* incorporados ao CSS.' },
+        { v: 'DS v1.2', data: 'jul 2026', nota: 'Harmonização "O Norte": corpo Montserrat, tema padrão claro, escuro na família #39453A, neutros do Norte, esmeralda como ação, trilhas por cor.' },
+        { v: 'MDC-GDI v0.4', data: '—', nota: 'Manual base. Permanece válido no que este adendo não contraria.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

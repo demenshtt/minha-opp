@@ -315,9 +315,28 @@
         </div>
       </section>
 
-      <footer style="margin-top:72px; padding-top:24px; border-top:1px solid #E6E7E4; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <a href="Sistema de Design + MDC.dc.html" style="display:flex; align-items:center; gap:16px; margin-top:52px; padding:22px 26px; background:#FFFFFF; border:1px solid #D5D8D3; border-left:4px solid #219653; border-radius:16px; text-decoration:none;">
+        <span style="flex:none; color:#219653; font-size:22px;"><i data-lucide="book-marked"></i></span>
+        <span style="flex:1;">
+          <span style="display:block; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#39453A; margin-bottom:3px;">O documento normativo</span>
+          <span style="display:block; font-size:12.5px; color:#6B706A;">Sistema de Design + MDC — Adendo Técnico v0.5. O que mudou em relação ao manual v0.4, o que é novo, e a especificação completa dos tokens. Versionado e imprimível.</span>
+        </span>
+        <span style="flex:none; color:#219653; font-size:18px;"><i data-lucide="arrow-right"></i></span>
+      </a>
+
+      <a href="Códice da Marca.dc.html" style="display:flex; align-items:center; gap:16px; margin-top:52px; padding:22px 26px; background:#39453A; border-radius:16px; text-decoration:none; position:relative; overflow:hidden;">
+        <span style="position:absolute; top:-40px; right:-30px; width:160px; height:160px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.18), transparent 62%);"></span>
+        <span style="flex:none; color:#6FCF97; font-size:22px; position:relative;"><i data-lucide="book-open"></i></span>
+        <span style="flex:1; position:relative;">
+          <span style="display:block; font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#FFFFFF; margin-bottom:3px;">A marca por dentro</span>
+          <span style="display:block; font-size:12.5px; color:#B7BDB4;">O Códice da Marca — para quem tem curiosidade de saber por que a marca é assim. O nome, o “+”, a gota que sobe, o abraço.</span>
+        </span>
+        <span style="flex:none; color:#A5D6A7; font-size:18px; position:relative;"><i data-lucide="arrow-right"></i></span>
+      </a>
+
+      <footer style="margin-top:52px; padding-top:24px; border-top:1px solid #E6E7E4; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
         <div style="font-size:11.5px; color:#A0A59D; line-height:1.5; max-width:60ch;">CONFIDENCIAL GRUPO OPP+ · Documento de uso exclusivo interno. Reprodução permitida somente sob autorização por escrito da empresa.</div>
-        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.08em; color:#B8BDB4; font-weight:600;">MDC-GDI · v2</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.08em; color:#B8BDB4; font-weight:600;">MDC-GDI v0.4 + Adendo v0.5</div>
       </footer>
 
     </div>
@@ -426,12 +445,13 @@ class Component extends DCLogic {
 
       templates: [
         { title: 'Assinatura de e-mail', desc: 'Padrão único para todas as comunicações.', icon: 'mail', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Assinatura de E-mail.dc.html' },
-        { title: 'Papel timbrado & memorando', desc: 'Cabeçalho, rodapé e área de conteúdo.', icon: 'file-text', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Papel Timbrado.dc.html' },
+        { title: 'Timbrado · Ofício & Memorando', desc: 'Ofício (externo) e memorando (interno), com Word e PDF.', icon: 'file-text', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Papel Timbrado.dc.html' },
         { title: 'Apresentação de slides', desc: 'Capa, seção, conteúdo e encerramento.', icon: 'presentation', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Template de Apresentação.dc.html' },
         { title: 'Relatório Gerencial', desc: 'Resumo executivo e analítico padrão MDC.', icon: 'bar-chart-3', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Relatório Gerencial - Resumo Executivo.dc.html' },
         { title: 'Relatório PP-CPG', desc: 'Gestão de Ativos — resumo e analítico.', icon: 'clipboard-list', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Gestão de Ativos PP-CPG - Resumo Executivo.dc.html' },
         { title: 'Convite de diretoria', desc: 'Reuniões e eventos institucionais.', icon: 'calendar-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Convite - Reunião de Diretoria.dc.html' },
-        { title: 'Proposta comercial', desc: 'Capa e estrutura de proposta e relatório.', icon: 'file-badge', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Proposta Comercial - OACO.dc.html' },
+        { title: 'Proposta comercial · SAE', desc: 'Serviços Aeroagrícolas Especializados.', icon: 'file-badge', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Proposta Comercial.dc.html' },
+        { title: 'Proposta comercial · OACO', desc: 'Operador Aeroagrícola Compartilhado.', icon: 'file-badge', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Proposta Comercial - OACO.dc.html' },
         { title: 'Cartão de visita', desc: 'Frente e verso, versão flat.', icon: 'contact', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Cartão de Visita.dc.html' },
         { title: 'Cartão · arte final p/ gráfica', desc: '300 DPI com sangria + QR que salva o contato (vCard).', icon: 'qr-code', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Cartão de Visita - Arte Final.dc.html' },
         { title: 'Figurinhas WhatsApp', desc: 'Duas séries prontas para o dia a dia.', icon: 'smile', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Figurinhas WhatsApp.dc.html' },

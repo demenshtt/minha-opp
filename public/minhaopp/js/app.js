@@ -37,12 +37,7 @@ function setTheme(theme) {
 
 (function initTheme() {
   const stored = getStoredTheme();
-  if (stored) { applyTheme(stored); return; }
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    applyTheme('dark');
-    return;
-  }
-  applyTheme('light');
+  applyTheme(stored || 'light');
 })();
 
 // ═══════════════════════════════════════════════════════════════

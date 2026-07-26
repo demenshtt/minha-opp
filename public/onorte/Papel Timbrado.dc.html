@@ -32,6 +32,7 @@
 </helmet>
 
 <x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+<x-import component-from-global-scope="word-docx-button" from="./word-button.js" href="{{ docxHref }}" filename="{{ docxName }}" hint-size="0,0"></x-import>
 <x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.85in" hint-size="816px,1056px">
 
   <!-- ===== CABEÇALHO ===== -->
@@ -173,6 +174,8 @@ class Component extends DCLogic {
     const endosso = this.props.endosso ?? 'legenda';
     return {
       isInterno, isExterno, isHolding, isUnidade,
+      docxHref: isInterno ? 'entregas/downloads/memorando-modelo.docx' : 'entregas/downloads/oficio-modelo.docx',
+      docxName: isInterno ? 'Memorando (modelo).docx' : 'Oficio (modelo).docx',
       endossoLegenda: endosso === 'legenda',
       endossoLogo: endosso === 'logo_acima',
       emitterName: d.name,

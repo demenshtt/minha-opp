@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#39453A"/><g transform="translate(50 46)"><text x="0" y="6" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#6FCF97" text-anchor="middle">+</text></g><text x="50" y="82" font-family="Georgia,serif" font-size="10" fill="#A5D6A7" text-anchor="middle" letter-spacing="1">CÓDICE</text></svg>
+</template>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #2A332B; }
+    a { color: #A5D6A7; }
+    a:hover { color: #6FCF97; }
+    ::selection { background: rgba(111,207,151,.28); }
+    @keyframes codDrift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes codPulse { 0%,100% { opacity:.5; transform:scale(1);} 50% { opacity:.85; transform:scale(1.06);} }
+  </style>
+</helmet>
+
+<div style="font-family:'Montserrat',sans-serif; color:#EDEFEC; background:#39453A; overflow-x:hidden;">
+
+  <!-- fixed hairline progress -->
+  <div style="position:fixed; top:0; left:0; right:0; height:3px; z-index:50; background:rgba(255,255,255,.06);">
+    <div ref="{{ barRef }}" style="height:100%; width:0%; background:linear-gradient(90deg,#219653,#6FCF97); transition:width .1s linear;"></div>
+  </div>
+
+  <!-- ░░ ABERTURA ░░ -->
+  <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 32px; position:relative; background:radial-gradient(circle at 50% 38%, #43503F 0%, #39453A 46%, #2E382F 100%);">
+    <div style="position:absolute; inset:0; opacity:.5; background:radial-gradient(circle at 50% 40%, rgba(111,207,151,.14), transparent 55%); animation:codPulse 9s ease-in-out infinite;"></div>
+    <div data-reveal style="position:relative;">
+      <img src="assets/simbolo-opp.png" alt="Símbolo Grupo Opp+" style="height:132px; width:auto; filter:drop-shadow(0 14px 40px rgba(0,0,0,.45)); animation:codDrift 8s ease-in-out infinite;">
+    </div>
+    <div data-reveal style="position:relative; margin-top:52px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-size:13px; letter-spacing:0.42em; text-transform:uppercase; color:#8FA790; font-weight:600; margin-bottom:22px;">Grupo Opp+</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(44px,8vw,86px); line-height:1.02; margin:0; color:#FFFFFF;">Códice<br><span style="color:#6FCF97;">da Marca</span></h1>
+      <p style="max-width:30ch; margin:30px auto 0; font-size:16px; line-height:1.7; color:#C4CAC2; font-weight:300;">O livro dos porquês. Não como usar a marca — mas por que ela é assim.</p>
+    </div>
+    <div data-reveal style="position:relative; margin-top:64px; display:flex; flex-direction:column; align-items:center; gap:10px; color:#7E8F82;">
+      <span style="font-size:11px; letter-spacing:0.24em; text-transform:uppercase;">Role para começar</span>
+      <span style="animation:codDrift 2.4s ease-in-out infinite;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg></span>
+    </div>
+  </section>
+
+  <!-- ░░ I · O NOME ░░ -->
+  <section style="padding:132px 32px; display:flex; justify-content:center; border-top:1px solid rgba(255,255,255,.05);">
+    <div style="width:100%; max-width:760px;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:18px; margin-bottom:44px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; color:#6FCF97;">I</span>
+        <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(111,207,151,.5), transparent);"></span>
+        <span style="font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:#8FA790;">O nome</span>
+      </div>
+      <h2 data-reveal style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(30px,5vw,50px); line-height:1.1; margin:0 0 30px; color:#FFFFFF;">Três sobrenomes,<br>uma palavra.</h2>
+      <p data-reveal style="font-size:18px; line-height:1.85; color:#D3D8D0; font-weight:300; margin:0 0 48px; max-width:60ch;">Antes de ser uma empresa, <strong style="font-weight:500; color:#FFFFFF;">Opp</strong> foi um acordo entre gente. O nome guarda, letra por letra, quem começou.</p>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px;">
+        <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:30px 22px; text-align:center;">
+          <div style="font-family:'Comfortaa',sans-serif; font-size:52px; font-weight:700; color:#6FCF97; line-height:1;">O</div>
+          <div style="margin-top:14px; font-size:14px; color:#EDEFEC; font-weight:500;">Oliveira</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:30px 22px; text-align:center;">
+          <div style="font-family:'Comfortaa',sans-serif; font-size:52px; font-weight:700; color:#6FCF97; line-height:1;">P</div>
+          <div style="margin-top:14px; font-size:14px; color:#EDEFEC; font-weight:500;">Prediger</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:30px 22px; text-align:center;">
+          <div style="font-family:'Comfortaa',sans-serif; font-size:52px; font-weight:700; color:#6FCF97; line-height:1;">P</div>
+          <div style="margin-top:14px; font-size:14px; color:#EDEFEC; font-weight:500;">Picinin</div>
+        </div>
+      </div>
+      <p data-reveal style="font-size:16px; line-height:1.85; color:#AEB5AC; font-weight:300; margin:0; max-width:62ch;">Três famílias, uma missão: gerar vida no trato agrícola da terra. Uma parceria antiga — de trabalho e de confiança — que só depois virou papel, por exigência da lei. O nome nasceu do vínculo, não do contrato.</p>
+    </div>
+  </section>
+
+  <!-- ░░ II · O MAIS ░░ -->
+  <section style="padding:150px 32px; display:flex; justify-content:center; position:relative; background:radial-gradient(circle at 50% 30%, #414F3E 0%, #38443A 55%, #313B32 100%); border-top:1px solid rgba(255,255,255,.05);">
+    <div style="width:100%; max-width:760px; position:relative;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:18px; margin-bottom:44px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; color:#6FCF97;">II</span>
+        <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(111,207,151,.5), transparent);"></span>
+        <span style="font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:#8FA790;">O coração da marca</span>
+      </div>
+      <div data-reveal style="text-align:center; margin:10px 0 54px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:clamp(130px,26vw,240px); font-weight:700; line-height:.8; color:#6FCF97; text-shadow:0 20px 60px rgba(33,150,83,.35);">+</div>
+      </div>
+      <h2 data-reveal style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(30px,5vw,50px); line-height:1.12; margin:0 0 30px; color:#FFFFFF; text-align:center;">Trazer mais<br>para poder fazer mais.</h2>
+      <p data-reveal style="font-size:19px; line-height:1.9; color:#D3D8D0; font-weight:300; margin:0 auto 36px; max-width:56ch; text-align:center;">O <strong style="font-weight:500; color:#6FCF97;">+</strong> não é enfeite. Não é sinal de marketing, nem “mais” de quantidade. Ele nasceu de um sentimento — e talvez por isso tenha ficado tão certo.</p>
+      <div data-reveal style="max-width:60ch; margin:0 auto; padding:34px 34px; background:rgba(255,255,255,.04); border:1px solid rgba(111,207,151,.22); border-radius:22px;">
+        <p style="font-size:17px; line-height:1.85; color:#E6E9E4; font-weight:300; margin:0 0 18px;">No começo, a visão era atender só os sócios. Mas a Opp faz coisa boa — e coisa boa pede para ser dividida. A régua virou: <em style="color:#FFFFFF; font-style:italic;">se ajudamos os nossos, por que parar nos nossos?</em></p>
+        <p style="font-size:17px; line-height:1.85; color:#E6E9E4; font-weight:300; margin:0;">O <strong style="color:#6FCF97; font-weight:500;">+</strong> são os que chegam depois dos fundadores — e que também entram com gente junto. É a porta que a parceria deixou aberta.</p>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:36px;">
+        <div style="background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:26px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#A5D6A7; margin-bottom:8px;">Expansão</div>
+          <div style="font-size:14.5px; line-height:1.65; color:#B7BDB4; font-weight:300;">Mais parceiros, mais gente de dentro. A parceria cresce em número.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:26px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#A5D6A7; margin-bottom:8px;">Elevação</div>
+          <div style="font-size:14.5px; line-height:1.65; color:#B7BDB4; font-weight:300;">Um vetor para cima — que rima com a gota que sobe. Cresce também em nível.</div>
+        </div>
+      </div>
+      <p data-reveal style="font-size:16px; line-height:1.85; color:#AEB5AC; font-weight:300; margin:44px auto 0; max-width:58ch; text-align:center;">E há ainda o <strong style="font-weight:500; color:#6FCF97;">+</strong> que se soma a cada promessa — o que a marca entrega além do combinado:</p>
+      <div data-reveal style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:26px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:13.5px; color:#E6E9E4; background:rgba(255,255,255,.05); border:1px solid rgba(111,207,151,.22); padding:9px 16px; border-radius:30px;"><span style="color:#6FCF97; font-weight:600;">+</span> qualidade</span>
+        <span style="font-family:'Comfortaa',sans-serif; font-size:13.5px; color:#E6E9E4; background:rgba(255,255,255,.05); border:1px solid rgba(111,207,151,.22); padding:9px 16px; border-radius:30px;"><span style="color:#6FCF97; font-weight:600;">+</span> dedicação</span>
+        <span style="font-family:'Comfortaa',sans-serif; font-size:13.5px; color:#E6E9E4; background:rgba(255,255,255,.05); border:1px solid rgba(111,207,151,.22); padding:9px 16px; border-radius:30px;"><span style="color:#6FCF97; font-weight:600;">+</span> transparência</span>
+        <span style="font-family:'Comfortaa',sans-serif; font-size:13.5px; color:#E6E9E4; background:rgba(255,255,255,.05); border:1px solid rgba(111,207,151,.22); padding:9px 16px; border-radius:30px;"><span style="color:#6FCF97; font-weight:600;">+</span> você no controle</span>
+        <span style="font-family:'Comfortaa',sans-serif; font-size:13.5px; color:#E6E9E4; background:rgba(255,255,255,.05); border:1px solid rgba(111,207,151,.22); padding:9px 16px; border-radius:30px;"><span style="color:#6FCF97; font-weight:600;">+</span> cuidado com sua lavoura</span>
+        <span style="font-family:'Comfortaa',sans-serif; font-size:13.5px; color:#E6E9E4; background:rgba(255,255,255,.05); border:1px solid rgba(111,207,151,.22); padding:9px 16px; border-radius:30px;"><span style="color:#6FCF97; font-weight:600;">+</span> atenção à parceria</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ III · A GOTA QUE SOBE ░░ -->
+  <section style="padding:150px 32px; display:flex; justify-content:center; border-top:1px solid rgba(255,255,255,.05); position:relative; overflow:hidden;">
+    <img src="assets/logo-opp-aviacao.png" alt="" aria-hidden="true" style="position:absolute; right:-8%; top:50%; transform:translateY(-50%); width:min(1150px,125%); opacity:.05; filter:brightness(0) invert(1); pointer-events:none;">
+    <div style="width:100%; max-width:900px; position:relative;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:18px; margin-bottom:56px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; color:#6FCF97;">III</span>
+        <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(111,207,151,.5), transparent);"></span>
+        <span style="font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:#8FA790;">Aviação Agrícola</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1.1fr; gap:60px; align-items:center;">
+        <div data-reveal style="position:relative; display:flex; align-items:center; justify-content:center; aspect-ratio:1; background:radial-gradient(circle at 46% 44%, rgba(165,214,167,.18), transparent 62%); border-radius:28px;">
+          <div style="position:absolute; width:60%; height:60%; border-radius:50%; background:radial-gradient(circle, rgba(111,207,151,.24), transparent 70%); animation:codPulse 7s ease-in-out infinite;"></div>
+          <img src="assets/icone-opp-aviacao-3d.png" alt="Ícone Aviação Agrícola" style="position:relative; width:82%; height:auto; filter:drop-shadow(0 22px 44px rgba(0,0,0,.5));">
+          <span style="position:absolute; top:16%; right:9%; display:flex; align-items:center; gap:8px;">
+            <span style="width:26px; height:1px; background:rgba(165,214,167,.6);"></span>
+            <span style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#A5D6A7;">as asas</span>
+          </span>
+          <span style="position:absolute; bottom:16%; left:8%; display:flex; align-items:center; gap:8px;">
+            <span style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#A5D6A7;">a gota</span>
+            <span style="width:26px; height:1px; background:rgba(165,214,167,.6);"></span>
+          </span>
+        </div>
+        <div>
+          <h2 data-reveal style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(28px,4.4vw,46px); line-height:1.12; margin:0 0 28px; color:#FFFFFF;">A gota<br>que sobe.</h2>
+          <p data-reveal style="font-size:17px; line-height:1.85; color:#D3D8D0; font-weight:300; margin:0 0 24px;">Acima, as asas estilizadas do avião — um traço que lembra um <strong style="font-weight:500; color:#FFFFFF;">bumerangue</strong>. À primeira vista, é aviação pura: as asas que sobrevoam a lavoura.</p>
+          <p data-reveal style="font-size:17px; line-height:1.85; color:#AEB5AC; font-weight:300; margin:0 0 24px;">Mas para quem conhece o abraço do ícone do Grupo Opp+, as asas ganham outra leitura: <strong style="font-weight:500; color:#A5D6A7;">braços abertos</strong>, voltados ao cuidado da lavoura e à vida que o manejo agrícola faz nascer.</p>
+          <p data-reveal style="font-size:17px; line-height:1.85; color:#AEB5AC; font-weight:300; margin:0 0 28px;">Abaixo, a gota. Repare na direção: ela aponta para cima, nunca caindo. O alvo mais difícil da aplicação é o <strong style="font-weight:500; color:#A5D6A7;">dorso da folha</strong> — a face de baixo, escondida. A gota ascendente é essa busca: mirar no que é difícil, e acertar.</p>
+          <div data-reveal style="display:inline-flex; align-items:center; gap:10px; font-size:13px; color:#8FA790; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:10px 18px; border-radius:30px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6FCF97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+            Sempre para cima
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ IV · O ABRAÇO ░░ -->
+  <section style="padding:150px 32px; display:flex; justify-content:center; position:relative; background:radial-gradient(circle at 50% 40%, #414F3E 0%, #38443A 60%, #313B32 100%); border-top:1px solid rgba(255,255,255,.05);">
+    <div style="width:100%; max-width:900px;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:18px; margin-bottom:56px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; color:#6FCF97;">IV</span>
+        <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(111,207,151,.5), transparent);"></span>
+        <span style="font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:#8FA790;">Gestão de Ativos</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center;">
+        <div>
+          <h2 data-reveal style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(28px,4.4vw,46px); line-height:1.12; margin:0 0 28px; color:#FFFFFF;">Um abraço de<br>quatro braços.</h2>
+          <p data-reveal style="font-size:17px; line-height:1.85; color:#D3D8D0; font-weight:300; margin:0 0 24px;">Quatro braços entrelaçados, como quem se abraça. Três em <strong style="font-weight:500; color:#A5D6A7;">verde</strong> — as famílias fundadoras. E um em <strong style="font-weight:500; color:#AEB5AC;">cinza</strong>, um pouco mais recuado.</p>
+          <p data-reveal style="font-size:17px; line-height:1.85; color:#AEB5AC; font-weight:300; margin:0 0 24px;">O cinza não é submissão. É o parceiro que integra o grupo sem ser sócio — de dentro, mas com o seu próprio lugar. <strong style="font-weight:500; color:#FFFFFF;">Esse braço cinza é o “+” em forma de gesto.</strong> Ele é intencional; nunca deve ser removido nem nivelado.</p>
+          <p data-reveal style="font-size:17px; line-height:1.85; color:#AEB5AC; font-weight:300; margin:0;">No centro, a cabeça em degradê: a administração que costura tudo, o ponto onde os braços se encontram.</p>
+        </div>
+        <div data-reveal style="position:relative; display:flex; align-items:center; justify-content:center; aspect-ratio:1; background:radial-gradient(circle at 50% 50%, rgba(165,214,167,.14), transparent 64%); border-radius:28px;">
+          <div style="position:absolute; width:54%; height:54%; border-radius:50%; background:radial-gradient(circle, rgba(111,207,151,.2), transparent 70%); animation:codPulse 8s ease-in-out infinite;"></div>
+          <img src="assets/icone-opp-ativos.png" alt="Ícone Gestão de Ativos" style="position:relative; width:78%; height:auto; filter:drop-shadow(0 12px 30px rgba(0,0,0,.45));">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ V · CORES E LETRAS ░░ -->
+  <section style="padding:150px 32px; display:flex; justify-content:center; border-top:1px solid rgba(255,255,255,.05);">
+    <div style="width:100%; max-width:760px;">
+      <div data-reveal style="display:flex; align-items:baseline; gap:18px; margin-bottom:44px;">
+        <span style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; color:#6FCF97;">V</span>
+        <span style="flex:1; height:1px; background:linear-gradient(90deg, rgba(111,207,151,.5), transparent);"></span>
+        <span style="font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:#8FA790;">Cores e letras</span>
+      </div>
+      <h2 data-reveal style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(30px,5vw,50px); line-height:1.1; margin:0 0 30px; color:#FFFFFF;">A voz visual.</h2>
+      <p data-reveal style="font-size:18px; line-height:1.85; color:#D3D8D0; font-weight:300; margin:0 0 48px; max-width:60ch;">O verde não é qualquer verde. É o <strong style="font-weight:500; color:#FFFFFF;">verde escuro acinzentado</strong> da lavoura madura — sério, enraizado, sem estridência. A ele se somam os verdes de ação, para quando a marca precisa se mover.</p>
+      <div data-reveal style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:56px;">
+        <div style="text-align:center;"><div style="height:76px; border-radius:14px; background:#39453A; border:1px solid rgba(255,255,255,.12);"></div><div style="margin-top:10px; font-size:12px; color:#EDEFEC;">Verde Escuro</div><div style="font-size:10.5px; color:#8FA790; font-family:'Comfortaa',sans-serif;">#39453A</div></div>
+        <div style="text-align:center;"><div style="height:76px; border-radius:14px; background:#219653;"></div><div style="margin-top:10px; font-size:12px; color:#EDEFEC;">Esmeralda</div><div style="font-size:10.5px; color:#8FA790; font-family:'Comfortaa',sans-serif;">#219653</div></div>
+        <div style="text-align:center;"><div style="height:76px; border-radius:14px; background:#6FCF97;"></div><div style="margin-top:10px; font-size:12px; color:#EDEFEC;">Sálvia</div><div style="font-size:10.5px; color:#8FA790; font-family:'Comfortaa',sans-serif;">#6FCF97</div></div>
+        <div style="text-align:center;"><div style="height:76px; border-radius:14px; background:#A5D6A7;"></div><div style="margin-top:10px; font-size:12px; color:#EDEFEC;">Pastel</div><div style="font-size:10.5px; color:#8FA790; font-family:'Comfortaa',sans-serif;">#A5D6A7</div></div>
+      </div>
+      <div data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:32px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:40px; color:#FFFFFF; margin-bottom:14px;">Comfortaa</div>
+          <div style="font-size:14px; line-height:1.7; color:#B7BDB4; font-weight:300;">Títulos e a marca. Suas curvas arredondadas trazem o acolhimento de quem recebe em casa — sem perder a firmeza.</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:32px;">
+          <div style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:40px; color:#FFFFFF; margin-bottom:14px;">Montserrat</div>
+          <div style="font-size:14px; line-height:1.7; color:#B7BDB4; font-weight:300;">Corpo e interface. Clara, direta, legível para o herdeiro e para o patriarca — a mesma palavra, para as duas gerações.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FECHO ░░ -->
+  <section style="min-height:92vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 32px; position:relative; background:radial-gradient(circle at 50% 46%, #43503F 0%, #39453A 44%, #2A332B 100%); border-top:1px solid rgba(255,255,255,.05);">
+    <div data-reveal>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:56px; width:auto; opacity:.95; margin-bottom:50px;">
+    </div>
+    <h2 data-reveal style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:clamp(28px,5.5vw,54px); line-height:1.2; margin:0; color:#FFFFFF; max-width:16ch;">Trabalho que atravessa<br>safras e gerações.</h2>
+    <div data-reveal style="width:60px; height:2px; background:linear-gradient(90deg,#219653,#6FCF97); margin:40px auto 0; border-radius:2px;"></div>
+    <p data-reveal style="margin-top:40px; font-size:14px; line-height:1.7; color:#8FA790; font-weight:300; max-width:44ch;">Este códice não ensina a usar a marca. Ele lembra por que ela merece ser bem usada.</p>
+    <div data-reveal style="margin-top:64px;">
+      <a href="Central de Marca Opp+.dc.html" style="display:inline-flex; align-items:center; gap:10px; font-size:13.5px; font-weight:600; color:#39453A; background:#A5D6A7; padding:14px 26px; border-radius:12px; text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Voltar à Central de Marca
+      </a>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { barRef: (el) => { this._bar = el; } };
+  }
+  componentDidMount() {
+    const els = Array.from(this._root ? this._root.querySelectorAll('[data-reveal]') : document.querySelectorAll('[data-reveal]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1)';
+      el.style.willChange = 'opacity, transform';
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => io.observe(el));
+
+    this._onScroll = () => {
+      if (!this._bar) return;
+      const h = document.documentElement;
+      const max = (h.scrollHeight - h.clientHeight) || 1;
+      const p = Math.min(100, Math.max(0, (h.scrollTop || window.scrollY) / max * 100));
+      this._bar.style.width = p + '%';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>
