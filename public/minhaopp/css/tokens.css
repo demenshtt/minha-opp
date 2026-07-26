@@ -83,44 +83,12 @@
 [data-trilha="fornecedor"]  { --trilha-acento: var(--trilha-fornecedor); }
 
 /* ═══════════════════════════════════════════════════════════════
-   TEMA ESCURO (data-theme="dark")
-   [v1.2] Fundos migrados do slate azulado (#0F1419…) para a
-   família do Verde Escuro âncora #39453A — escuro COM identidade.
-   [rev.b] Deixa de ser o padrão do :root — o padrão é o CLARO.
-═══════════════════════════════════════════════════════════════ */
-[data-theme="dark"] {
-  --color-primary: #6FCF97;            /* destaques/links (sálvia oficial) */
-  --color-primary-light: #A5D6A7;
-  --color-primary-dark: #219653;
-
-  --color-action-primary: #219653;     /* botões, progresso */
-  --color-action-secondary: #6FCF97;
-  --color-action-tertiary: #A5D6A7;
-
-  --color-success: #6FCF97;
-  --color-warning: #F2C94C;
-  --color-error: #FF6B6B;
-  --color-info: #ACD4F1;
-
-  --color-bg-primary: #141814;         /* [v1.2] era #0F1419 */
-  --color-bg-secondary: #1D231D;       /* [v1.2] era #1A1F26 */
-  --color-bg-tertiary: #272E27;        /* [v1.2] era #242A33 */
-  --color-bg-overlay: rgba(0, 0, 0, 0.6);
-
-  --color-border-primary: #2E362E;     /* [v1.2] verde-cinza */
-  --color-border-secondary: #3A443A;
-  --color-border-focus: #6FCF97;
-
-  --color-text-primary: #ECEEEC;
-  --color-text-secondary: #B4B9B4;
-  --color-text-tertiary: #838883;
-}
-
-/* ═══════════════════════════════════════════════════════════════
    TEMA CLARO — PADRÃO (:root, ou data-theme="light")
    [v1.2] Fundos alinhados aos neutros esverdeados do Norte.
    [rev.b] Promovido a padrão: decisão ergonômica (sol do campo,
    leitores 50+). O escuro passa a ser escolha explícita no perfil.
+   NOTA: :root DEVE vir ANTES de [data-theme="dark"] — mesma
+   especificidade, o último na cascata vence.
 ═══════════════════════════════════════════════════════════════ */
 :root,
 [data-theme="light"] {
@@ -149,6 +117,41 @@
   --color-text-primary: #1C201C;       /* [v1.2] era #1A1A1A */
   --color-text-secondary: #4A4F49;
   --color-text-tertiary: #7A8079;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEMA ESCURO (data-theme="dark")
+   [v1.2] Fundos migrados do slate azulado (#0F1419…) para a
+   família do Verde Escuro âncora #39453A — escuro COM identidade.
+   [rev.b] Deixa de ser o padrão do :root — o padrão é o CLARO.
+   Posicionado DEPOIS do :root para vencer na cascata.
+═══════════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --color-primary: #6FCF97;            /* destaques/links (sálvia oficial) */
+  --color-primary-light: #A5D6A7;
+  --color-primary-dark: #219653;
+
+  --color-action-primary: #219653;     /* botões, progresso */
+  --color-action-secondary: #6FCF97;
+  --color-action-tertiary: #A5D6A7;
+
+  --color-success: #6FCF97;
+  --color-warning: #F2C94C;
+  --color-error: #FF6B6B;
+  --color-info: #ACD4F1;
+
+  --color-bg-primary: #141814;         /* [v1.2] era #0F1419 */
+  --color-bg-secondary: #1D231D;       /* [v1.2] era #1A1F26 */
+  --color-bg-tertiary: #272E27;        /* [v1.2] era #242A33 */
+  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+
+  --color-border-primary: #2E362E;     /* [v1.2] verde-cinza */
+  --color-border-secondary: #3A443A;
+  --color-border-focus: #6FCF97;
+
+  --color-text-primary: #ECEEEC;
+  --color-text-secondary: #B4B9B4;
+  --color-text-tertiary: #838883;
 }
 
 /* ═══════════════════════════════════════════════════════════════
