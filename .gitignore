@@ -6,3 +6,7 @@ Thumbs.db
 .env.local
 .vercel
 dist/
+
+# staging drops for O Norte releases — raw workspace dumps, not the curated archive
+releases/norte_*.zip
+entregas_old.zip

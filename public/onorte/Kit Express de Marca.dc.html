@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #F4F5F3; font-family: 'Montserrat', sans-serif; color: #1C201C; }
+    a { color: #219653; text-decoration: none; } a:hover { color: #39453A; }
+  </style>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<div style="max-width:1000px; margin:0 auto; padding:44px 40px 96px; display:flex; flex-direction:column; gap:40px;">
+
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    <a href="Central de Marca Opp+.dc.html" style="font-size:12px; color:#8A8F89; font-weight:600;">← Central de Marca</a>
+    <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#219653; font-weight:600;">
+      <span style="width:26px; height:1.5px; background:#219653; display:inline-block;"></span>Compartilhável
+    </div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.1; color:#39453A; margin:0; max-width:22ch;">Kit Express de Marca</h1>
+    <p style="font-size:16px; line-height:1.65; color:#565B56; max-width:62ch; margin:0;">Um arquivo só, para mandar a quem vai produzir algo pelo Grupo Opp+ — gráfica, fornecedor de brinde, uniforme, adesivo, banner. Leva as cores, as fontes, os logos em alta e as regras que não se negociam. Sem templates: é o enxoval visual, não o documento pronto.</p>
+  </div>
+
+  <div style="background:#39453A; border-radius:18px; padding:28px 30px; display:flex; align-items:center; gap:26px; flex-wrap:wrap; box-shadow:0 16px 40px rgba(57,69,58,.22);">
+    <span style="flex:none; width:56px; height:56px; border-radius:15px; background:rgba(165,214,167,.14); color:#A5D6A7; display:flex; align-items:center; justify-content:center; font-size:26px;"><i data-lucide="package"></i></span>
+    <div style="flex:1; min-width:240px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#FFFFFF; margin-bottom:5px;">kit-express-marca-opp.zip</div>
+      <div style="font-size:13px; color:#C9D2C8; line-height:1.55;">11,5 MB · 11 arquivos · guia de 2 páginas + 6 logos em 4000 px + 2 fundos + cores em texto. Cabe em e-mail e no WhatsApp.</div>
+    </div>
+    <a href="entregas/kit-express-marca-opp.zip" download="kit-express-marca-opp.zip" style="flex:none; display:inline-flex; align-items:center; gap:10px; background:#219653; color:#FFFFFF; font-weight:600; font-size:14.5px; padding:14px 24px; border-radius:11px; transition:transform .15s;" style-hover="transform:translateY(-2px); color:#FFFFFF;">
+      <i data-lucide="download"></i> Baixar o kit
+    </a>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:16px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; color:#39453A;">O que vai dentro</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px;">
+      <sc-for list="{{ conteudo }}" as="c" hint-placeholder-count="4">
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:14px; padding:20px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:10px; background:#EEF3EF; color:#219653; font-size:18px; margin-bottom:13px;"><i data-lucide="{{ c.icon }}"></i></span>
+          <div style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:13.5px; color:#39453A; margin-bottom:4px;">{{ c.nome }}</div>
+          <div style="font-size:12.5px; color:#767C75; line-height:1.55;">{{ c.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:14px;">
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; color:#39453A; margin-bottom:5px;">O guia que vai no kit</div>
+      <div style="font-size:14px; color:#565B56;">Duas páginas em HTML — o fornecedor abre no navegador e, se quiser, imprime em PDF. <a href="Guia Rapido da Marca.dc.html">Abrir o guia aqui</a>.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:14px; padding:18px; display:flex; gap:18px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:8px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89;">Página 1</div>
+        <div style="font-size:13px; color:#565B56; line-height:1.6;">Cores oficiais com HEX e CMYK de referência · tipografia Comfortaa + Montserrat e onde baixar · aviso do neon aposentado.</div>
+      </div>
+      <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:8px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89;">Página 2</div>
+        <div style="font-size:13px; color:#565B56; line-height:1.6;">Qual logo usar em cada fundo · as 6 regras não negociáveis · razão social e CNPJ para arte · canal de aprovação.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:14px;">
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; color:#39453A; margin-bottom:5px;">Mensagem pronta para enviar com o kit</div>
+      <div style="font-size:14px; color:#565B56;">Copie, cole no WhatsApp ou no e-mail e anexe o zip.</div>
+    </div>
+    <sc-for list="{{ mensagens }}" as="m" hint-placeholder-count="2">
+      <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:14px; overflow:hidden;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 18px; border-bottom:1px solid #EEF0ED; background:#FAFBFA;">
+          <div style="display:flex; align-items:center; gap:9px; font-size:12.5px; font-weight:600; color:#39453A;"><span style="color:#7A8079; font-size:15px;"><i data-lucide="{{ m.icon }}"></i></span>{{ m.titulo }}</div>
+          <button onClick="{{ m.copiar }}" style="border:1px solid {{ m.btnBorda }}; background:{{ m.btnBg }}; color:{{ m.btnCor }}; font-family:'Montserrat',sans-serif; font-weight:600; font-size:12px; padding:7px 15px; border-radius:8px; cursor:pointer;">{{ m.btnRotulo }}</button>
+        </div>
+        <div style="padding:16px 18px; font-size:13px; color:#333333; line-height:1.7; white-space:pre-wrap;">{{ m.texto }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:26px 28px; display:flex; flex-direction:column; gap:14px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:19px; font-weight:700; color:#39453A;">Quando <em>não</em> usar o Kit Express</div>
+    <div style="display:flex; flex-direction:column; gap:9px;">
+      <div style="display:flex; gap:11px; font-size:13.5px; color:#565B56; line-height:1.6;"><span style="flex:none; color:#C0554E; font-size:15px;"><i data-lucide="x"></i></span><span>Para documento oficial — proposta, relatório, ofício, convite. Aí o certo é o template, em <a href="O que você vai fazer.dc.html">O que você vai fazer?</a></span></div>
+      <div style="display:flex; gap:11px; font-size:13.5px; color:#565B56; line-height:1.6;"><span style="flex:none; color:#C0554E; font-size:15px;"><i data-lucide="x"></i></span><span>Para criar uma marca, submarca ou campanha nova. Isso passa pela diretoria antes de qualquer arte.</span></div>
+      <div style="display:flex; gap:11px; font-size:13.5px; color:#565B56; line-height:1.6;"><span style="flex:none; color:#C0554E; font-size:15px;"><i data-lucide="x"></i></span><span>Para publicar em rede social em nome da empresa — ver o <a href="Protocolo de Redes Sociais.dc.html">Protocolo de Redes Sociais</a>.</span></div>
+    </div>
+  </div>
+
+  <div style="font-size:12px; color:#A8ADA6; line-height:1.6;">Kit Express · versão de julho de 2026. Ao atualizar um logo ou uma cor no Norte, refazer o zip para não circular arte vencida.</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1000,&quot;height&quot;:1600}}">
+class Component extends DCLogic {
+  state = { copiado: null };
+  componentDidMount() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
+  copiar(chave, texto) {
+    return () => {
+      const done = () => {
+        this.setState({ copiado: chave });
+        clearTimeout(this._t);
+        this._t = setTimeout(() => this.setState({ copiado: null }), 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(done, done);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = texto; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done();
+      }
+    };
+  }
+  msg(chave, icon, titulo, texto) {
+    const on = this.state.copiado === chave;
+    return {
+      icon, titulo, texto,
+      copiar: this.copiar(chave, texto),
+      btnRotulo: on ? '✓ Copiado' : 'Copiar',
+      btnBg: on ? '#219653' : '#FFFFFF',
+      btnCor: on ? '#FFFFFF' : '#219653',
+      btnBorda: on ? '#219653' : '#CDE6D6',
+    };
+  }
+  renderVals() {
+    return {
+      conteudo: [
+        { icon: 'file-text', nome: 'GUIA-RAPIDO-MARCA-OPP.html', desc: 'Guia de 2 páginas: cores, fontes, qual logo usar e as regras. Abre no navegador, imprime em PDF.' },
+        { icon: 'image', nome: 'logos/ — 6 arquivos', desc: 'PNG com fundo transparente, 4000 px: Grupo (preto e branco), ícone, Aviação Agrícola e Gestão de Ativos.' },
+        { icon: 'layout-template', nome: 'fundos/ — 2 arquivos', desc: 'Planos de fundo oficiais em verde e em branco, 4000 × 2000 px.' },
+        { icon: 'palette', nome: 'cores.txt', desc: 'HEX, RGB e CMYK em texto puro, para colar em qualquer software de arte.' },
+      ],
+      mensagens: [
+        this.msg('wa', 'message-circle', 'WhatsApp — para a gráfica ou fornecedor',
+          'Boa tarde! Segue em anexo o kit de marca do Grupo Opp+ para a produção.\n\nDentro tem um guia de 2 páginas (abre no navegador) com as cores, as fontes e as regras de uso, mais os logos em alta resolução.\n\nDuas coisas importantes: usar sempre os arquivos do kit, sem recolorir nem esticar; e me mandar a prova antes de rodar a tiragem. Qualquer dúvida na aplicação, me chame aqui antes de produzir — resolvo rápido e evita refação.\n\nObrigado!'),
+        this.msg('email', 'mail', 'E-mail — envio formal com aprovação de arte',
+          'Assunto: Kit de marca Grupo Opp+ — arquivos para produção\n\nOlá,\n\nEncaminho o Kit Express de Marca do Grupo Opp+ com o material necessário para a produção contratada: guia rápido de aplicação (2 páginas), logotipos em alta resolução e planos de fundo oficiais.\n\nPedimos atenção a três pontos:\n1. Utilizar exclusivamente os arquivos do kit, sem alteração de cor, proporção ou composição.\n2. Os valores CMYK do guia são referência de conversão — solicitamos prova de cor antes da tiragem.\n3. Qualquer variação de marca não prevista no guia depende de aprovação prévia por escrito.\n\nA arte final deve ser enviada para aprovação antes da produção.\n\nAtenciosamente,\n[seu nome]\nGrupo Opp+ · Opp Aviação Agrícola Ltda\ncontato@grupooppmais.com.br · +55 (41) 99947-1355'),
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

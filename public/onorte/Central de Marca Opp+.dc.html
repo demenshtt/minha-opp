@@ -11,7 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="./busca-indice.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -22,7 +26,10 @@
     .cm-nav.active { background: #EEF3EF; color: #39453A; box-shadow: inset 3px 0 0 #219653; font-weight: 600; }
     .cm-scroll::-webkit-scrollbar { width: 10px; }
     .cm-scroll::-webkit-scrollbar-thumb { background: #DADCD7; border-radius: 8px; border: 3px solid #F4F5F3; }
+    .cm-busca-campo::placeholder { color: #A8ADA6; }
+    .cm-busca-campo:focus { outline: none; border-color: #219653; background: #FFFFFF; }
   </style>
+  <script src="carimbo.js"></script>
 </helmet>
 
 <template id="__bundler_thumbnail">
@@ -42,14 +49,26 @@
     </a>
     <div style="font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#8A8F89; padding:0 8px 22px; font-weight:600;">Central de Marca</div>
 
-    <nav style="display:flex; flex-direction:column; gap:2px;">
-      <sc-for list="{{ nav }}" as="link" hint-placeholder-count="7">
+    <div style="position:relative; margin-bottom:18px;">
+      <span style="position:absolute; left:11px; top:50%; transform:translateY(-50%); color:#A8ADA6; font-size:15px; pointer-events:none;"><i data-lucide="search"></i></span>
+      <input class="cm-busca-campo" type="text" placeholder="Buscar no Norte" value="{{ termo }}" onInput="{{ aoDigitar }}" onFocus="{{ aoFocar }}" style="width:100%; padding:9px 11px 9px 33px; border:1px solid #E0E2DE; border-radius:9px; background:#FAFBFA; font-family:'Montserrat',sans-serif; font-size:12.5px; color:#1C201C;">
+    </div>
+
+    <nav style="display:flex; flex-direction:column; gap:2px;">      <sc-for list="{{ nav }}" as="link" hint-placeholder-count="7">
         <a class="cm-nav" href="{{ link.href }}" style="display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:9px; font-size:13.5px; font-weight:500; color:#565B56;" style-hover="background:#F1F3F0; color:#39453A;">
           <span style="font-size:17px; color:#7A8079;"><i data-lucide="{{ link.icon }}"></i></span>
           <span>{{ link.label }}</span>
         </a>
       </sc-for>
     </nav>
+
+    <a href="Kit Express de Marca.dc.html" style="display:flex; align-items:center; gap:11px; margin-top:14px; padding:12px; border-radius:11px; background:#EEF3EF; border:1px solid #CBE3D2; transition:transform .15s;" style-hover="transform:translateY(-1px); background:#E4EFE7;">
+      <span style="flex:none; width:30px; height:30px; border-radius:8px; background:#219653; color:#FFFFFF; display:flex; align-items:center; justify-content:center; font-size:15px;"><i data-lucide="package"></i></span>
+      <span style="flex:1;">
+        <span style="display:block; font-size:12.5px; font-weight:600; color:#39453A;">Kit Express</span>
+        <span style="display:block; font-size:10.5px; color:#767C75; line-height:1.4;">Zip pronto para o fornecedor</span>
+      </span>
+    </a>
 
     <div style="margin-top:auto; padding:14px 12px 0; border-top:1px solid #EEF0ED; display:flex; flex-direction:column; gap:8px;">
       <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; color:#8A8F89; font-weight:600;">
@@ -160,7 +179,7 @@
             <div style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:600; color:#219653; background:#EEF3EF; padding:6px 12px; border-radius:20px;"><i data-lucide="check" style="font-size:14px;"></i> Principal · flat 2D</div>
           </div>
           <div style="background:#39453A; border:1px solid #39453A; border-radius:16px; padding:38px 28px 20px; text-align:center;">
-            <img src="assets/logo-opp-3d.png" alt="Logo 3D" style="width:100%; max-width:280px; height:auto; margin-bottom:22px; filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));">
+            <img src="assets/logo-opp-3d-branco.png" alt="Logo 3D com fonte branca" style="width:100%; max-width:280px; height:auto; margin-bottom:22px; filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));">
             <div style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:600; color:#A5D6A7; background:rgba(255,255,255,.08); padding:6px 12px; border-radius:20px;"><i data-lucide="sparkles" style="font-size:14px;"></i> Especial · 3D</div>
           </div>
         </div>
@@ -171,12 +190,47 @@
               <img src="assets/logo-opp-flat-branco.png" alt="Logo flat branco" style="width:100%; max-width:190px; height:auto;">
             </div>
             <div style="flex:1; background:#000000; border-radius:12px; padding:22px 20px; text-align:center;">
-              <img src="assets/logo-opp-3d.png" alt="Logo 3D branco" style="width:100%; max-width:190px; height:auto; filter:brightness(0) invert(1);">
+              <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+ em branco sobre preto" style="width:100%; max-width:190px; height:auto;">
             </div>
           </div>
           <div style="flex:1; min-width:220px;">
             <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:6px;">Sobre fundo escuro</div>
-            <div style="font-size:13px; color:#565B56; line-height:1.55;">Em fundos escuros, o logotipo é sempre aplicado na <strong style="color:#39453A;">versão em branco</strong> — tanto na flat quanto na 3D — para preservar o contraste e a legibilidade.</div>
+            <div style="font-size:13px; color:#565B56; line-height:1.55; margin-bottom:10px;">Em fundos escuros, o logotipo é sempre aplicado na <strong style="color:#39453A;">versão em branco</strong> — tanto na flat quanto na 3D — para preservar o contraste e a legibilidade. Nunca clarear a versão preta por filtro: o resultado achata o volume e desfigura a marca.</div>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:26px 28px; margin-bottom:16px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:14px; color:#39453A; margin-bottom:6px;">Versões monocromáticas</div>
+          <div style="font-size:13px; color:#565B56; line-height:1.55; max-width:70ch; margin-bottom:20px;">Toda marca da casa tem par em preto e em branco, de uma cor só. Não são alternativas de gosto: existem para onde a cor não chega — gravação, carimbo, serigrafia de uma tinta, documento em preto e branco, bordado. A escolha é do fundo: <strong style="color:#39453A;">preto em fundo claro, branco em fundo escuro</strong>, sempre a versão pronta e nunca um filtro.</div>
+          <div style="font-size:12.5px; color:#565B56; line-height:1.55; max-width:70ch; margin-bottom:20px; padding-left:12px; border-left:2px solid #E6E7E4;">Não confundir com as versões <strong style="color:#39453A;">de fonte branca</strong> (<code style="font-family:monospace; font-size:11.5px;">-branco</code>), que mantêm o símbolo colorido e servem a fundo escuro em peça a cores. Monocromático é <code style="font-family:monospace; font-size:11.5px;">-preto</code> e <code style="font-family:monospace; font-size:11.5px;">-mono-branco</code>: uma tinta só, sem exceção.</div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+            <div>
+              <div style="background:#F5F6F3; border:1px solid #E6E7E4; border-radius:12px; padding:20px 16px; text-align:center; margin-bottom:6px;">
+                <img src="assets/logo-opp-flat-preto.png" alt="Grupo Opp+ monocromático preto" style="width:100%; max-width:150px; height:auto;">
+              </div>
+              <div style="background:#2A332B; border-radius:12px; padding:20px 16px; text-align:center;">
+                <img src="assets/logo-opp-flat-mono-branco.png" alt="Grupo Opp+ monocromático branco" style="width:100%; max-width:150px; height:auto;">
+              </div>
+              <div style="font-size:11.5px; color:#6B706A; margin-top:8px;">Grupo Opp+</div>
+            </div>
+            <div>
+              <div style="background:#F5F6F3; border:1px solid #E6E7E4; border-radius:12px; padding:20px 16px; text-align:center; margin-bottom:6px;">
+                <img src="assets/logo-opp-aviacao-preto.png" alt="Opp Aviação Agrícola monocromático preto" style="width:100%; max-width:150px; height:auto;">
+              </div>
+              <div style="background:#2A332B; border-radius:12px; padding:20px 16px; text-align:center;">
+                <img src="assets/logo-opp-aviacao-mono-branco.png" alt="Opp Aviação Agrícola monocromático branco" style="width:100%; max-width:150px; height:auto;">
+              </div>
+              <div style="font-size:11.5px; color:#6B706A; margin-top:8px;">Opp Aviação Agrícola</div>
+            </div>
+            <div>
+              <div style="background:#F5F6F3; border:1px solid #E6E7E4; border-radius:12px; padding:20px 16px; text-align:center; margin-bottom:6px;">
+                <img src="assets/logo-opp-ativos-preto.png" alt="Opp Gestão de Ativos monocromático preto" style="width:100%; max-width:150px; height:auto;">
+              </div>
+              <div style="background:#2A332B; border-radius:12px; padding:20px 16px; text-align:center;">
+                <img src="assets/logo-opp-ativos-mono-branco.png" alt="Opp Gestão de Ativos monocromático branco" style="width:100%; max-width:150px; height:auto;">
+              </div>
+              <div style="font-size:11.5px; color:#6B706A; margin-top:8px;">Opp Gestão de Ativos</div>
+            </div>
           </div>
         </div>
 
@@ -227,10 +281,14 @@
         <p style="font-size:15px; color:#565B56; max-width:66ch; line-height:1.6; margin:0 0 12px;">A estrutura de diretórios e a regra de nomes definidas no manual MDC-GDI, transformadas em referência viva. Três princípios sustentam tudo: <strong style="color:#39453A;">organizar por função</strong> (não por pessoa ou ano), <strong style="color:#39453A;">um documento, um lugar</strong> e <strong style="color:#39453A;">o nome carrega o contexto</strong>.</p>
         <p style="font-size:13px; color:#868C85; max-width:66ch; line-height:1.55; margin:0 0 30px;">A estrutura de Nível 1 é estável — mudanças são planejadas e comunicadas. Prefixos numéricos forçam a ordem correta na listagem.</p>
 
-        <!-- 3.1 Árvore de diretórios -->
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">1 · Árvore de diretórios (Nível 1)</div>
-        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:6px 24px; margin-bottom:36px;">
-          <sc-for list="{{ folders }}" as="f" hint-placeholder-count="16">
+        <div style="background:#FFFFFF; border:1px dashed #D2D6D0; border-radius:16px; padding:34px 28px; margin-bottom:36px; text-align:center;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#8A8F89; margin-bottom:6px;">Em breve</div>
+          <div style="font-size:13px; color:#A0A59D; line-height:1.55; max-width:52ch; margin:0 auto;">Conteúdo em revisão. Volta ao ar quando a nova versão estiver fechada — até lá, vale o que está no manual MDC-GDI.</div>
+        </div>
+
+        <div style="display:none;">
+          <sc-for list="{{ folders }}" as="f" hint-placeholder-count="0">
             <div style="display:flex; align-items:flex-start; gap:14px; padding:12px 0; border-top:1px solid #F0F1EE;">
               <span style="font-family:monospace; font-size:12px; font-weight:700; color:#219653; background:#EEF3EF; padding:4px 8px; border-radius:6px; min-width:32px; text-align:center; flex:none;">{{ f.code }}</span>
               <div style="flex:1; min-width:0;">
@@ -242,9 +300,13 @@
           </sc-for>
         </div>
 
-        <!-- 3.2 Construtor do nome de arquivo -->
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">2 · Como nomear um arquivo</div>
-        <div style="background:#39453A; border-radius:16px; padding:30px 32px; margin-bottom:16px; color:#EDEFEC;">
+        <div style="background:#FFFFFF; border:1px dashed #D2D6D0; border-radius:16px; padding:34px 28px; margin-bottom:36px; text-align:center;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#8A8F89; margin-bottom:6px;">Em breve</div>
+          <div style="font-size:13px; color:#A0A59D; line-height:1.55; max-width:52ch; margin:0 auto;">Conteúdo em revisão. Volta ao ar quando a nova versão estiver fechada — até lá, vale o que está no manual MDC-GDI.</div>
+        </div>
+
+        <div style="display:none; background:#39453A; border-radius:16px; padding:30px 32px; margin-bottom:16px; color:#EDEFEC;">
           <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:22px;">
             <sc-for list="{{ nameParts }}" as="p" hint-placeholder-count="5">
               <span style="font-family:monospace; font-size:14px; font-weight:600; color:#39453A; background:{{ p.bg }}; padding:7px 12px; border-radius:8px;">{{ p.token }}</span>
@@ -287,10 +349,14 @@
           </div>
         </div>
 
-        <!-- 3.4 Onde salvo o quê -->
         <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; margin-bottom:14px;">3 · Onde salvo o quê?</div>
-        <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:36px;">
-          <sc-for list="{{ whereToSave }}" as="w" hint-placeholder-count="5">
+        <div style="background:#FFFFFF; border:1px dashed #D2D6D0; border-radius:16px; padding:34px 28px; margin-bottom:36px; text-align:center;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#8A8F89; margin-bottom:6px;">Em breve</div>
+          <div style="font-size:13px; color:#A0A59D; line-height:1.55; max-width:52ch; margin:0 auto;">Conteúdo em revisão. Volta ao ar quando a nova versão estiver fechada — até lá, vale o que está no manual MDC-GDI.</div>
+        </div>
+
+        <div style="display:none; overflow:hidden;">
+          <sc-for list="{{ whereToSave }}" as="w" hint-placeholder-count="0">
             <div style="display:grid; grid-template-columns:1fr 1.3fr; gap:20px; padding:16px 26px; border-top:1px solid #F0F1EE; align-items:center;">
               <div style="font-size:13.5px; color:#4A4F49; font-weight:500;">{{ w.scenario }}</div>
               <div style="font-family:monospace; font-size:12.5px; color:#219653; word-break:break-word;">{{ w.path }}</div>
@@ -336,18 +402,154 @@
 
       <footer style="margin-top:52px; padding-top:24px; border-top:1px solid #E6E7E4; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
         <div style="font-size:11.5px; color:#A0A59D; line-height:1.5; max-width:60ch;">CONFIDENCIAL GRUPO OPP+ · Documento de uso exclusivo interno. Reprodução permitida somente sob autorização por escrito da empresa.</div>
-        <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.08em; color:#B8BDB4; font-weight:600;">MDC-GDI v0.4 + Adendo v0.5</div>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.08em; color:#B8BDB4; font-weight:600;">MDC-GDI v0.4 + Adendo v0.5</div>
+          <span data-carimbo></span>
+        </div>
       </footer>
 
     </div>
   </main>
+
+  <sc-if value="{{ buscaAberta }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:60; background:rgba(28,32,28,.34); display:flex; align-items:flex-start; justify-content:center; padding:76px 24px 40px;" onClick="{{ fecharBusca }}">
+      <div onClick="{{ pararClique }}" style="width:100%; max-width:680px; background:#FFFFFF; border-radius:16px; box-shadow:0 28px 70px rgba(28,32,28,.30); overflow:hidden; display:flex; flex-direction:column; max-height:100%;">
+        <div style="display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid #EEF0ED;">
+          <span style="color:#219653; font-size:18px;"><i data-lucide="search"></i></span>
+          <input class="cm-busca-campo" type="text" placeholder="Digite o que você precisa: carta, proposta, logo, cor, relatório…" value="{{ termo }}" onInput="{{ aoDigitar }}" style="flex:1; border:none; background:transparent; font-family:'Montserrat',sans-serif; font-size:15px; color:#1C201C; padding:4px 0;">
+          <button onClick="{{ fecharBusca }}" style="flex:none; border:1px solid #E0E2DE; background:#FAFBFA; color:#767C75; font-family:'Montserrat',sans-serif; font-size:10.5px; font-weight:600; padding:5px 10px; border-radius:7px; cursor:pointer;">ESC</button>
+        </div>
+
+        <div class="cm-scroll" style="overflow-y:auto; padding:8px;">
+          <sc-if value="{{ temResultado }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; flex-direction:column; gap:2px;">
+              <sc-for list="{{ resultados }}" as="r" hint-placeholder-count="5">
+                <a href="{{ r.href }}" target="_blank" rel="noopener" download="{{ r.download }}" onClick="{{ fecharBusca }}" style="display:flex; align-items:center; gap:14px; padding:12px 14px; border-radius:11px;" style-hover="background:#F1F3F0;">
+                  <span style="flex:none; width:34px; height:34px; border-radius:9px; background:#EEF3EF; color:#219653; display:flex; align-items:center; justify-content:center;">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="{{ r.iconePath }}"></path><path d="{{ r.iconePath2 }}"></path></svg>
+                  </span>
+                  <span style="flex:1;">
+                    <span style="display:block; font-size:13.5px; font-weight:600; color:#39453A; margin-bottom:2px;">{{ r.titulo }}</span>
+                    <span style="display:block; font-size:11.5px; color:#767C75; line-height:1.45;">{{ r.desc }}</span>
+                  </span>
+                  <span style="flex:none; font-size:9.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#8A8F89; background:#F4F5F3; padding:4px 8px; border-radius:20px;">{{ r.tipo }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ semResultado }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:26px 20px 24px; text-align:center;">
+              <div style="font-family:'Comfortaa',sans-serif; font-size:16px; font-weight:700; color:#39453A; margin-bottom:7px;">Nada encontrado para "{{ termo }}"</div>
+              <div style="font-size:13px; color:#767C75; line-height:1.6; max-width:44ch; margin:0 auto 18px;">Tente outra palavra — ou vá pelo caminho da tarefa, que costuma achar mais rápido do que pelo nome do arquivo.</div>
+              <a href="O que você vai fazer.dc.html" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:#219653; color:#FFFFFF; font-size:13px; font-weight:600; padding:11px 20px; border-radius:10px;" style-hover="color:#FFFFFF;">
+                <i data-lucide="compass"></i> O que você vai fazer?
+              </a>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ buscaVazia }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:18px 16px 20px;">
+              <div style="font-size:10.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8F89; margin-bottom:12px;">Mais procurados</div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <sc-for list="{{ sugestoes }}" as="s" hint-placeholder-count="6">
+                  <button onClick="{{ s.usar }}" style="border:1px solid #E0E2DE; background:#FAFBFA; color:#39453A; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:500; padding:7px 13px; border-radius:20px; cursor:pointer;" style-hover="background:#EEF3EF; border-color:#CBE3D2;">{{ s.rotulo }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="padding:11px 20px; border-top:1px solid #EEF0ED; background:#FAFBFA; display:flex; justify-content:space-between; gap:16px; font-size:10.5px; color:#8A8F89;">
+          <div>Página abre em aba nova · arquivo baixa direto</div>
+          <div>{{ contagem }}</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:860},&quot;showQuote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Início&quot;},&quot;showStatus&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Templates&quot;}}">
 class Component extends DCLogic {
+  state = { termo: '', buscaAberta: false, carimbo: 'conferindo…' };
+
+  verificarVersao() {}
+
   componentDidMount() {
+    this.verificarVersao();
+    this._onKey = (e) => {
+      if (e.key === 'Escape' && this.state.buscaAberta) { e.preventDefault(); this.fechar(); return; }
+      const digitando = /^(input|textarea|select)$/i.test((e.target && e.target.tagName) || '');
+      if (!this.state.buscaAberta && !digitando && (e.key === '/' || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'))) {
+        e.preventDefault(); this.abrir();
+      }
+    };
+    document.addEventListener('keydown', this._onKey);
     this.renderIcons();
     this.initScrollSpy();
+  }
+  componentWillUnmount() { document.removeEventListener('keydown', this._onKey); }
+
+  abrir(termo) {
+    this.setState({ buscaAberta: true, termo: termo !== undefined ? termo : this.state.termo });
+    setTimeout(() => {
+      const campos = Array.prototype.slice.call(document.querySelectorAll('.cm-busca-campo'));
+      const c = campos[campos.length - 1];
+      if (c) { c.focus(); if (c.setSelectionRange) c.setSelectionRange(c.value.length, c.value.length); }
+    }, 60);
+  }
+  fechar() { this.setState({ buscaAberta: false }); }
+
+  normalizar(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  buscar(termo) {
+    const base = window.NORTE_INDICE || [];
+    const vazias = ['de','da','do','das','dos','em','no','na','nos','nas','para','pra','por','com','um','uma','o','a','os','as','e','ao','aos','que','meu','minha','sobre'];
+    let palavras = this.normalizar(termo).split(/\s+/).filter(Boolean);
+    const uteis = palavras.filter(p => vazias.indexOf(p) === -1 && p.length > 1);
+    palavras = uteis.length ? uteis : palavras;
+    if (!palavras.length) return [];
+
+    const pesoPalavra = (item, p) => {
+      const titulo = this.normalizar(item.titulo);
+      const desc = this.normalizar(item.desc);
+      const tags = this.normalizar(item.tags);
+      if (titulo.startsWith(p)) return 60;
+      if (titulo.includes(p)) return 40;
+      if (tags.split(/\s+/).some(t => t === p)) return 30;
+      if (tags.includes(p)) return 18;
+      if (desc.includes(p)) return 10;
+      return 0;
+    };
+    const avaliar = (item) => {
+      let total = 0, casadas = 0;
+      for (const p of palavras) {
+        const s = pesoPalavra(item, p);
+        if (s) { total += s; casadas++; }
+      }
+      return { total, casadas };
+    };
+
+    const avaliados = base.map(item => Object.assign({ item }, avaliar(item)));
+    // 1ª tentativa: todas as palavras casam (AND). Sem nada, cai para OR ordenado por peso.
+    let lista = avaliados.filter(r => r.casadas === palavras.length);
+    if (!lista.length) lista = avaliados.filter(r => r.casadas > 0);
+
+    return lista
+      .sort((a, b) => (b.casadas - a.casadas) || (b.total - a.total))
+      .slice(0, 12)
+      .map(r => {
+        // SVG inline (path) em vez de data-lucide: a lista troca de conteúdo a cada
+        // tecla e o lucide não reprocessa nó reaproveitado pelo React.
+        const arte = r.item.download
+          ? { p: 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4', p2: 'M7 10l5 5 5-5M12 15V3' }
+          : (r.item.tipo === 'Seção'
+            ? { p: 'M4 9h16M4 15h16', p2: 'M10 3 8 21M16 3l-2 18' }
+            : { p: 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6', p2: 'M15 3h6v6M10 14 21 3' });
+        return Object.assign({}, r.item, { iconePath: arte.p, iconePath2: arte.p2 });
+      });
   }
   componentDidUpdate() { this.renderIcons(); }
 
@@ -381,7 +583,23 @@ class Component extends DCLogic {
 
   renderVals() {
     const ink = '#1C201C', white = '#FFFFFF';
+    const termo = this.state.termo;
+    const resultados = this.state.buscaAberta ? this.buscar(termo) : [];
+    const temTermo = this.normalizar(termo).trim().length > 0;
+    const sugestoesRotulos = ['papel timbrado', 'proposta', 'assinatura de e-mail', 'nota executiva', 'logo em alta', 'cores', 'relatório do mês', 'apresentação'];
     return {
+      termo,
+      buscaAberta: this.state.buscaAberta,
+      resultados,
+      temResultado: temTermo && resultados.length > 0,
+      semResultado: temTermo && resultados.length === 0,
+      buscaVazia: !temTermo,
+      contagem: temTermo ? (resultados.length === 1 ? '1 resultado' : resultados.length + ' resultados') : (window.NORTE_INDICE || []).length + ' itens indexados',
+      aoDigitar: (e) => this.setState({ termo: e.target.value, buscaAberta: true }),
+      aoFocar: () => this.abrir(),
+      fecharBusca: () => this.fechar(),
+      pararClique: (e) => e.stopPropagation(),
+      sugestoes: sugestoesRotulos.map(r => ({ rotulo: r, usar: () => this.abrir(r) })),
       showQuote: this.props.showQuote ?? true,
       showStatus: this.props.showStatus ?? true,
 
@@ -458,7 +676,19 @@ class Component extends DCLogic {
         { title: 'OppOn · bot institucional', desc: 'Bot Telegram enxuto: institucional e básico do comercial.', icon: 'bot', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'OppOn - Bot Institucional.dc.html' },
         { title: 'WhatsApp Business', desc: 'Perfil, catálogo e mensagens padronizadas.', icon: 'message-square-text', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'WhatsApp Business.dc.html' },
         { title: 'Figuras de contato', desc: 'Recortes p/ foto de perfil do zap: logo e ícone.', icon: 'contact-round', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Figuras de Contato.dc.html' },
+        { title: 'Adesivagem de frota', desc: 'Caminhões e caminhonete: onde vai cada logo, em cm.', icon: 'truck', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Adesivagem de Frota.dc.html' },
+        { title: 'Arquitetura de marcas', desc: 'Quem assina cada peça: unidade na frente, Grupo endossando no topo a 45%.', icon: 'git-branch', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Arquitetura de Marcas.dc.html' },
+        { title: 'Sinalização de ambiente', desc: 'Fachadas, alvenaria, placas de unidade e identificação interna.', icon: 'building-2', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Sinalização de Ambiente.dc.html' },
+        { title: 'Padrão de publicação', desc: 'Como saber se a página que você abriu é a versão vigente.', icon: 'badge-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Padrão de Publicação.dc.html' },
         { title: 'Kit de presença digital', desc: 'WhatsApp Business e perfis oficiais.', icon: 'message-circle', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Kit de Presença Digital.dc.html' },
+        { title: 'Documento de projeto', desc: 'Capa, sumário, introdução, proposta, riscos e conclusão — com instruções de conteúdo.', icon: 'file-badge', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Documento de Projeto.dc.html' },
+        { title: 'Contrato de gestão operacional', desc: 'Minuta padronizada de gestão de aeronave: 15 cláusulas, sempre na mesma ordem, com checklist antes de assinar.', icon: 'file-signature', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Contrato de Gestão Operacional.dc.html' },
+        { title: 'Contrato PS-DKA · via Prediger', desc: 'A minuta recebida, com conteúdo fiel, numerada e formatada no padrão da Central.', icon: 'file-text', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Contrato PS-DKA - Dorilino Prediger.dc.html' },
+        { title: 'Análise jurídica · contrato PS-DKA', desc: '11 pontos de atenção por grau, cláusulas ausentes e as 5 perguntas para o advogado.', icon: 'scale', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Análise Jurídica - Contrato PS-DKA.dc.html' },
+        { title: 'MERA · especificação de emissão', desc: 'Instruções para o sistema emitir o MERA: campos, origem, formato e validações.', icon: 'file-cog', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'MERA - Especificacao (sistema).dc.html' },
+        { title: 'Ata de reunião', desc: 'Decisões e encaminhamentos com responsável e prazo — em uma página.', icon: 'clipboard-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Ata de Reuniao.dc.html' },
+        { title: 'Nota executiva (1 página)', desc: 'Começa pela recomendação: situação, pontos-chave, implicação e decisão pedida.', icon: 'file-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Nota Executiva.dc.html' },
+        { title: 'Kit Express de marca', desc: 'Zip com guia, logos em alta e cores — para mandar a quem vai produzir.', icon: 'package', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Kit Express de Marca.dc.html' },
         { title: 'Fundos & wallpapers', desc: 'Slides, documentos, celular e tablet.', icon: 'monitor', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Fundos de Marca.dc.html' },
         { title: 'Protocolo de redes sociais', desc: 'Presença defensiva: onde ir e onde não se expor.', icon: 'shield-check', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Protocolo de Redes Sociais.dc.html' },
         { title: 'Contato digital (vCard)', desc: 'Arquivo .vcf com foto da marca — salva na agenda em um toque.', icon: 'contact', status: 'Pronto', statusInk: '#219653', statusBg: '#EEF3EF', href: 'Contato Digital (vCard).dc.html' },
@@ -531,6 +761,9 @@ class Component extends DCLogic {
         { scenario: 'Ata de reunião da Aviação Agrícola', path: '11_Opp_Aviacao_Agricola › ATA_Reuniao_AAAAMMDD_v1.docx (DEPTO omitido — a pasta já identifica)' },
         { scenario: 'Documento antigo, sem uso, a preservar', path: '00_Arquivo_Morto_Legado › mantém o nome original' },
       ],
+
+      carimboEstado: this.state.carimbo,
+      carimboCor: this.state.carimbo === 'em dia' ? '#219653' : (this.state.carimbo === 'conferindo…' ? '#C9CEC7' : '#C08A2E'),
 
       versions: [
         { tag: 'RASCUNHO', desc: 'Documento em elaboração, ainda não revisado.' },

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; } a:hover { color: #39453A; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="120" y="120" width="70" height="70" rx="10" fill="#219653"/>
+      <rect x="210" y="120" width="70" height="70" rx="10" fill="#6FCF97"/>
+      <rect x="120" y="210" width="70" height="70" rx="10" fill="#A5D6A7"/>
+      <rect x="210" y="210" width="70" height="70" rx="10" fill="#F0F0F0"/>
+    </svg>
+  </template>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.7in" hint-size="816px,1056px">
+
+  <section class="page" style="font-family:'Montserrat',sans-serif; color:#1C201C; display:flex; flex-direction:column; gap:22px;">
+
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; border-bottom:2px solid #39453A; padding-bottom:14px;">
+      <div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase; color:#767C75; font-weight:600; margin-bottom:8px;">Grupo Opp+ · Identidade Visual</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:25px; font-weight:700; color:#39453A; line-height:1.15;">Guia rápido de aplicação</div>
+        <div style="font-size:11.5px; color:#565B56; margin-top:5px;">Documento de referência para fornecedores, gráficas e parceiros de produção.</div>
+      </div>
+      <img src="assets/preview/logo-opp-flat.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none;">
+    </div>
+
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:14.5px; font-weight:700; color:#39453A; margin-bottom:4px;">1 · Cores</div>
+      <div style="font-size:10.5px; color:#767C75; margin-bottom:12px;">O hexadecimal é o valor oficial. Os CMYK abaixo são referência de conversão — <strong>sempre pedir prova de cor</strong> antes de tiragem.</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="height:48px; background:#39453A;"></div>
+          <div style="padding:8px 10px 10px;">
+            <div style="font-size:11.5px; font-weight:700; color:#39453A;">Verde Escuro</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">HEX #39453A<br>CMYK 17 · 0 · 16 · 73</div>
+            <div style="font-size:9.5px; color:#8A8F89; margin-top:5px;">Cor âncora. Fundos, títulos.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="height:48px; background:#219653;"></div>
+          <div style="padding:8px 10px 10px;">
+            <div style="font-size:11.5px; font-weight:700; color:#39453A;">Esmeralda</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">HEX #219653<br>CMYK 78 · 0 · 45 · 41</div>
+            <div style="font-size:9.5px; color:#8A8F89; margin-top:5px;">Única cor de destaque/ação.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="height:48px; background:#6FCF97;"></div>
+          <div style="padding:8px 10px 10px;">
+            <div style="font-size:11.5px; font-weight:700; color:#39453A;">Sálvia</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">HEX #6FCF97<br>CMYK 46 · 0 · 27 · 19</div>
+            <div style="font-size:9.5px; color:#8A8F89; margin-top:5px;">Apoio, detalhes, linhas.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="height:48px; background:#A5D6A7;"></div>
+          <div style="padding:8px 10px 10px;">
+            <div style="font-size:11.5px; font-weight:700; color:#39453A;">Verde Pastel</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">HEX #A5D6A7<br>CMYK 23 · 0 · 22 · 16</div>
+            <div style="font-size:9.5px; color:#8A8F89; margin-top:5px;">Fundos suaves sobre escuro.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="height:48px; background:#333333;"></div>
+          <div style="padding:8px 10px 10px;">
+            <div style="font-size:11.5px; font-weight:700; color:#39453A;">Cinza Texto</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">HEX #333333<br>CMYK 0 · 0 · 0 · 80</div>
+            <div style="font-size:9.5px; color:#8A8F89; margin-top:5px;">Corpo de texto impresso.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="height:48px; background:#F0F0F0; border-bottom:1px solid #E0E2DE;"></div>
+          <div style="padding:8px 10px 10px;">
+            <div style="font-size:11.5px; font-weight:700; color:#39453A;">Cinza Claro</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">HEX #F0F0F0<br>CMYK 0 · 0 · 0 · 6</div>
+            <div style="font-size:9.5px; color:#8A8F89; margin-top:5px;">Fundo de área, tabelas.</div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:10px; color:#565B56; margin-top:10px; background:#F0F0F0; border-left:2px solid #219653; padding:8px 12px;">Verde neon (#00D300) está <strong>aposentado</strong>. Se aparecer em arte antiga, substituir pelo esmeralda #219653.</div>
+    </div>
+
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:14.5px; font-weight:700; color:#39453A; margin-bottom:10px;">2 · Tipografia</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div style="border:1px solid #E0E2DE; border-radius:8px; padding:14px 16px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-size:26px; font-weight:700; color:#39453A; line-height:1;">Comfortaa</div>
+          <div style="font-size:10.5px; color:#565B56; margin-top:8px;">Títulos, nome da marca e destaques. Pesos 400 a 700.</div>
+          <div style="font-size:9.5px; color:#8A8F89; margin-top:6px;">fonts.google.com/specimen/Comfortaa</div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; padding:14px 16px;">
+          <div style="font-size:26px; font-weight:600; color:#39453A; line-height:1;">Montserrat</div>
+          <div style="font-size:10.5px; color:#565B56; margin-top:8px;">Corpo de texto, legendas, tabelas e interface. Pesos 300 a 700.</div>
+          <div style="font-size:9.5px; color:#8A8F89; margin-top:6px;">fonts.google.com/specimen/Montserrat</div>
+        </div>
+      </div>
+      <div style="font-size:10px; color:#565B56; margin-top:10px;">Ambas são gratuitas (Google Fonts / SIL Open Font License) e podem ser instaladas pelo fornecedor. Na falta delas: qualquer sans-serif neutra de traço geométrico — nunca serif, nunca fonte condensada.</div>
+    </div>
+
+    <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid #E0E2DE; padding-top:10px; font-size:9px; color:#8A8F89;">
+      <div>Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT</div>
+      <div>Página 1 de 2</div>
+    </div>
+  </section>
+
+  <section class="page" style="font-family:'Montserrat',sans-serif; color:#1C201C; display:flex; flex-direction:column; gap:22px;">
+
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:14.5px; font-weight:700; color:#39453A; margin-bottom:10px;">3 · Qual logo usar</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="background:#FFFFFF; height:86px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid #E0E2DE;">
+            <img src="assets/preview/logo-opp-flat.png" alt="Grupo Opp+" style="max-width:74%; max-height:60px; width:auto; height:auto;">
+          </div>
+          <div style="padding:9px 12px 11px;">
+            <div style="font-size:11px; font-weight:700; color:#39453A;">logo-opp-flat.png</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">Padrão. Sempre que o fundo for claro.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="background:#39453A; height:86px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid #E0E2DE;">
+            <img src="assets/preview/logo-opp-flat-branco.png" alt="Grupo Opp+ branco" style="max-width:74%; max-height:60px; width:auto; height:auto;">
+          </div>
+          <div style="padding:9px 12px 11px;">
+            <div style="font-size:11px; font-weight:700; color:#39453A;">logo-opp-flat-branco.png</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">Fundo escuro ou foto. Não usar a versão preta com filtro.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="background:#FFFFFF; height:86px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid #E0E2DE;">
+            <img src="assets/preview/icone-opp-grupo.png" alt="Ícone" style="max-width:40%; max-height:64px; width:auto; height:auto;">
+          </div>
+          <div style="padding:9px 12px 11px;">
+            <div style="font-size:11px; font-weight:700; color:#39453A;">icone-opp-grupo.png</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">Só onde a marca já foi apresentada: brinde pequeno, adesivo, avatar.</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E0E2DE; border-radius:8px; overflow:hidden;">
+          <div style="background:#FFFFFF; height:86px; display:flex; align-items:center; justify-content:center; gap:14px; border-bottom:1px solid #E0E2DE; padding:0 10px;">
+            <img src="assets/preview/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="max-width:44%; max-height:50px; width:auto; height:auto;">
+            <img src="assets/preview/logo-opp-ativos.png" alt="Opp Gestão de Ativos" style="max-width:44%; max-height:50px; width:auto; height:auto;">
+          </div>
+          <div style="padding:9px 12px 11px;">
+            <div style="font-size:11px; font-weight:700; color:#39453A;">Controladas</div>
+            <div style="font-size:10px; color:#565B56; margin-top:3px;">Aviação Agrícola e Gestão de Ativos. Usar só quando a peça é da controlada.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:14.5px; font-weight:700; color:#39453A; margin-bottom:10px;">4 · Regras que não se negociam</div>
+      <div style="display:flex; flex-direction:column; gap:7px;">
+        <div style="display:flex; gap:10px; font-size:10.5px; color:#333333; line-height:1.5;"><span style="flex:none; width:16px; height:16px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">1</span><span><strong>Respiro:</strong> deixar em volta do logo, livre de qualquer elemento, no mínimo a altura da letra "O" da palavra OPP.</span></div>
+        <div style="display:flex; gap:10px; font-size:10.5px; color:#333333; line-height:1.5;"><span style="flex:none; width:16px; height:16px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">2</span><span><strong>Proporção:</strong> redimensionar sempre travando largura e altura juntas. Nunca esticar, inclinar, girar ou arredondar.</span></div>
+        <div style="display:flex; gap:10px; font-size:10.5px; color:#333333; line-height:1.5;"><span style="flex:none; width:16px; height:16px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">3</span><span><strong>Cor do logo:</strong> preto, branco ou verde escuro #39453A. Não recolorir, não aplicar sombra, contorno, brilho ou degradê.</span></div>
+        <div style="display:flex; gap:10px; font-size:10.5px; color:#333333; line-height:1.5;"><span style="flex:none; width:16px; height:16px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">4</span><span><strong>Tamanho mínimo:</strong> 20&nbsp;mm de largura no impresso e 80&nbsp;px na tela para o logo completo; 8&nbsp;mm para o ícone.</span></div>
+        <div style="display:flex; gap:10px; font-size:10.5px; color:#333333; line-height:1.5;"><span style="flex:none; width:16px; height:16px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">5</span><span><strong>Símbolo:</strong> o "+" e a gota do avião fazem parte do desenho e têm significado — não remover, não substituir, não reposicionar.</span></div>
+        <div style="display:flex; gap:10px; font-size:10.5px; color:#333333; line-height:1.5;"><span style="flex:none; width:16px; height:16px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9px; font-weight:700; display:flex; align-items:center; justify-content:center;">6</span><span><strong>Nenhuma variação nova</strong> da marca — versão, cor, lockup ou aplicação fora deste guia — pode ser produzida sem aprovação por escrito do Grupo Opp+.</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:14.5px; font-weight:700; color:#39453A; margin-bottom:10px;">5 · Dados legais para arte</div>
+      <div style="background:#F0F0F0; border-radius:8px; padding:14px 16px; font-size:10.5px; color:#333333; line-height:1.7;">
+        <div><strong>Razão social:</strong> Opp Aviação Agrícola Ltda — CNPJ 33.910.736/0001-56</div>
+        <div><strong>Endereço:</strong> Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126</div>
+        <div><strong>Contato:</strong> contato@grupooppmais.com.br · +55 (41) 99947-1355 · grupooppmais.com.br</div>
+      </div>
+      <div style="font-size:10px; color:#565B56; margin-top:9px;">"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de comunicação, sem CNPJ próprio. Toda peça impressa que traga dados cadastrais deve citar a razão social acima.</div>
+    </div>
+
+    <div style="border:1px solid #A5D6A7; background:#EEF3EF; border-radius:8px; padding:14px 16px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:4px;">Dúvida na aplicação? Pergunte antes de produzir.</div>
+      <div style="font-size:10.5px; color:#333333; line-height:1.6;">Uma mensagem no WhatsApp +55 (41) 99947-1355 resolve em minutos e evita refação. Arquivos originais, outros formatos e aprovação de arte: contato@grupooppmais.com.br</div>
+    </div>
+
+    <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid #E0E2DE; padding-top:10px; font-size:9px; color:#8A8F89;">
+      <div>Guia rápido de aplicação da marca · versão de {{ dataVersao }} · uso autorizado apenas para produção contratada pelo Grupo Opp+</div>
+      <div>Página 2 de 2</div>
+    </div>
+  </section>
+
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { dataVersao: 'julho de 2026' };
+  }
+}
+
+</script>
+</body>
+</html>

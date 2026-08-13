@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:920px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <div style="background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 52px 40px; color:#FFFFFF;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;"><span style="width:24px; height:1.5px; background:#6FCF97;"></span>Operação · Norte</div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:36px; line-height:1.08; margin:0 0 14px; color:#FFFFFF; max-width:18ch;">Padrão de publicação</h1>
+        <p style="font-size:14.5px; line-height:1.6; color:#D6DDD5; max-width:62ch; margin:0;">Estrutura viva se perde sozinha. Toda publicação do Norte carrega um número de versão visível e um índice conferível — para qualquer pessoa, em qualquer aparelho, saber em dois segundos se está vendo o conteúdo atual ou uma cópia velha em cache.</p>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 52px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">01 · O problema</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; margin:0 0 12px; color:#39453A;">Publicar não é o mesmo que estar no ar</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:66ch; margin:0 0 16px;">Página estática fica guardada em cache — no navegador, no celular, no servidor de borda. Você publica uma correção e continua vendo a versão antiga, sem nenhum sinal de que está vendo a antiga. Pior: outra pessoa vê a nova. Os dois discutem a mesma página achando que falam da mesma coisa.</p>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:66ch; margin:0 0 26px;">A solução não é técnica, é de método: <strong style="color:#39453A;">a versão precisa estar visível na própria página</strong>, e precisa haver um lugar único que diga qual é a versão correta. Se os dois números batem, você está em dia. Se não batem, a página avisa.</p>
+  </div>
+
+  <div style="padding:0 52px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">02 · Como funciona</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; margin:0 0 20px; color:#39453A;">O carimbo e o índice</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:22px;">
+      <div style="border:1px solid #E6E7E4; border-radius:16px; padding:22px 24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:8px;">O carimbo</div>
+        <p style="font-size:12.5px; line-height:1.65; color:#5A615A; margin:0 0 14px;">Fica no rodapé de toda página do Norte, servido por um arquivo único — <code style="font-family:monospace; background:#F4F6F3; padding:1px 5px; border-radius:4px;">carimbo.js</code>. Traz o número da versão que subiu com aquela publicação: é o que <em>aquela cópia</em> é, não o que deveria ser.</p>
+        <div style="display:inline-flex; align-items:center; gap:7px; background:#F4F6F3; border:1px solid #E6E7E4; border-radius:999px; padding:6px 13px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#219653;"></span>
+          <span style="font-family:monospace; font-size:11px; color:#5A615A;">Norte v2026.08.12-5</span>
+          <span style="font-size:11px; color:#9AA097;">em dia</span>
+        </div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:16px; padding:22px 24px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:8px;">O índice</div>
+        <p style="font-size:12.5px; line-height:1.65; color:#5A615A; margin:0 0 14px;">Um arquivo <code style="font-family:monospace; background:#F4F6F3; padding:1px 5px; border-radius:4px;">versao.json</code> na raiz, sempre buscado sem cache. É a fonte da verdade: diz qual versão é a vigente e quando cada página mudou.</p>
+        <div style="font-family:monospace; font-size:10.5px; line-height:1.7; color:#5A615A; background:#F7F8F5; border-radius:8px; padding:10px 12px;">versao: "2026.08.11-1"<br>data: "2026-08-11"<br>paginas: [ … ]</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:26px;">
+      <div style="background:#39453A; padding:14px 24px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF;">O que o carimbo diz</div>
+      <div style="padding:6px 24px 18px;">
+        <sc-for list="{{ estados }}" as="e" hint-placeholder-count="4">
+          <div style="display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #F0F1EE;">
+            <span style="flex:none; width:9px; height:9px; border-radius:50%; background:{{ e.cor }}; margin-top:5px;"></span>
+            <div style="flex:none; width:150px; font-family:monospace; font-size:12px; color:#2C332C; font-weight:600;">{{ e.rotulo }}</div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ e.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 52px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">03 · Rotina</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; margin:0 0 8px; color:#39453A;">Toda publicação segue estes passos</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:66ch; margin:0 0 20px;">Sem exceção, mesmo para correção de uma palavra. Publicação sem versão nova é publicação que ninguém consegue rastrear depois.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:8px 26px 20px; margin-bottom:26px;">
+      <sc-for list="{{ passos }}" as="p" hint-placeholder-count="5">
+        <div style="display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #F0F1EE;">
+          <div style="flex:none; width:26px; height:26px; border-radius:50%; background:#F1F7F2; color:#1B7A44; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;">{{ p.n }}</div>
+          <div>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:3px;">{{ p.titulo }}</div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ p.desc }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:0 52px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">04 · Numeração</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; margin:0 0 16px; color:#39453A;">Data mais sequência</h2>
+    <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:22px; margin-bottom:26px; align-items:start;">
+      <div>
+        <div style="font-family:monospace; font-size:22px; color:#39453A; font-weight:700; margin-bottom:12px; letter-spacing:0.02em;">2026.08.11-1</div>
+        <p style="font-size:13px; line-height:1.7; color:#5A615A; margin:0 0 12px;">Ano, mês, dia e a sequência daquele dia. Publicou duas vezes no mesmo dia, a segunda é <code style="font-family:monospace; background:#F4F6F3; padding:1px 5px; border-radius:4px;">-2</code>.</p>
+        <p style="font-size:13px; line-height:1.7; color:#5A615A; margin:0;">Ordena sozinha, não exige combinar significado de "maior" ou "menor", e a data já responde a pergunta que a equipe faz de verdade: <em>isso é de quando?</em></p>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:16px; padding:20px 22px;">
+        <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">Não confundir</div>
+        <p style="font-size:12.5px; line-height:1.65; color:#5A615A; margin:0 0 10px;">Esta numeração é da <strong style="color:#39453A;">publicação do Norte</strong> — o site inteiro, numa data.</p>
+        <p style="font-size:12.5px; line-height:1.65; color:#5A615A; margin:0;">O <code style="font-family:monospace; background:#F4F6F3; padding:1px 5px; border-radius:4px;">v1 · v1-1 · vFINAL</code> da organização de arquivos é outra coisa: versão de <strong style="color:#39453A;">um documento</strong> na pasta. As duas convivem sem se misturar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 52px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">05 · Acervo</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:25px; margin:0 0 14px; color:#39453A;">A pasta releases</h2>
+    <p style="font-size:13.5px; line-height:1.75; color:#4A514A; max-width:68ch; margin:0 0 12px;">Publicar é atualizar o que está no ar. Guardar é outra coisa — e sem lugar definido, cada entrega vira um arquivo perdido no computador de quem publicou. Toda publicação é arquivada em <code style="font-family:monospace; background:#F4F6F3; padding:1px 5px; border-radius:4px;">releases/</code>, na raiz do repositório, espelhada no Drive.</p>
+    <p style="font-size:13.5px; line-height:1.75; color:#4A514A; max-width:68ch; margin:0 0 22px;">O nome do diretório foi escolhido por acomodar todos os tamanhos de mudança sem prometer nada sobre eles. Uma correção de vírgula e uma página nova inteira entram na mesma pasta, com o mesmo tipo de nome — e é exatamente isso que se quer: um lugar só, que não obrigue a classificar o tamanho da alteração antes de guardá-la.</p>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:24px 26px; background:#F7F8F5; margin-bottom:18px;">
+      <div style="font-family:monospace; font-size:16px; color:#39453A; font-weight:700; margin-bottom:16px; word-break:break-all;">onorte_v2026.08.12-11_20260812-1840.zip</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="border-top:2px solid #D8DED6; padding-top:10px;">
+          <div style="font-family:monospace; font-size:11.5px; color:#219653; font-weight:700; margin-bottom:5px;">v2026.08.12-11</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">A versão do carimbo, idêntica à que a página mostra no rodapé. Diz <strong style="color:#39453A;">o que</strong> é aquele pacote.</div>
+        </div>
+        <div style="border-top:2px solid #D8DED6; padding-top:10px;">
+          <div style="font-family:monospace; font-size:11.5px; color:#39453A; font-weight:700; margin-bottom:5px;">20260812-1840</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">Data e hora da entrega, hora de Cuiabá. Diz <strong style="color:#39453A;">quando</strong> saiu — e separa duas entregas da mesma versão.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:12px;">
+      <sc-for list="{{ acervo }}" as="a" hint-placeholder-count="4">
+        <div style="border:1px solid #E6E7E4; border-radius:14px; padding:17px 19px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#39453A; margin-bottom:5px;">{{ a.titulo }}</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ a.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="font-size:11.5px; line-height:1.6; color:#8A8F89; margin-bottom:34px;">Não confundir com a numeração de documento na pasta de trabalho (<code style="font-family:monospace; background:#F4F6F3; padding:1px 5px; border-radius:4px;">v1 · v1-1 · vFINAL</code>). Ali versiona-se um arquivo em elaboração; aqui arquiva-se o Norte inteiro, publicado.</div>
+  </div>
+
+  <div style="padding:0 52px 0;">
+    <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:16px; padding:22px 26px; margin-bottom:8px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#1B7A44; margin-bottom:10px;">Quando a página disser "desatualizada"</div>
+      <p style="font-size:12.5px; line-height:1.7; color:#3E453D; margin:0 0 12px;">Não é erro — é o aviso funcionando. Significa que existe publicação mais nova do que a cópia que seu aparelho guardou.</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <sc-for list="{{ recarga }}" as="r" hint-placeholder-count="3">
+          <div style="border-top:2px solid #D6E8DB; padding-top:9px;">
+            <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#7FA98C; font-weight:600; margin-bottom:3px;">{{ r.onde }}</div>
+            <div style="font-size:12.5px; line-height:1.55; color:#3E453D;">{{ r.como }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:26px 52px 30px; margin-top:14px; border-top:1px solid #EEF0ED; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+    <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT</div>
+    <span data-carimbo></span>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:920,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { carimbo: 'conferindo…' };
+
+  renderVals() {
+    const c = this.state.carimbo;
+    return {
+      carimboEstado: c,
+      carimboCor: c === 'em dia' ? '#219653' : (c === 'conferindo…' ? '#C9CEC7' : '#C08A2E'),
+      estados: [
+        { rotulo: 'em dia', cor: '#219653', desc: 'A cópia aberta é a publicação vigente. Pode confiar no que está lendo.' },
+        { rotulo: 'desatualizada', cor: '#C08A2E', desc: 'Existe publicação mais nova. Recarregue antes de usar o conteúdo — principalmente antes de mandar arquivo para fornecedor.' },
+        { rotulo: 'offline', cor: '#9AA097', desc: 'Sem conexão para conferir. O conteúdo continua utilizável, mas não há como garantir que é o mais recente.' },
+        { rotulo: 'sem índice', cor: '#C0564C', desc: 'O arquivo de índice não subiu junto com a publicação. Falha de publicação — avisar quem publicou.' },
+      ],
+      passos: [
+        { n: '1', titulo: 'Fechar o conteúdo', desc: 'Todas as alterações da rodada aprovadas e revisadas. Publicação não é rascunho.' },
+        { n: '2', titulo: 'Subir o número da versão', desc: 'Data de hoje mais a sequência do dia, em dois arquivos e só dois: a constante VERSAO no carimbo.js e o versao.json. Sempre juntos.' },
+        { n: '3', titulo: 'Atualizar o índice', desc: 'No versao.json, registrar a data de cada página que mudou e uma linha dizendo o que mudou.' },
+        { n: '4', titulo: 'Publicar tudo de uma vez', desc: 'Páginas, assets e índice na mesma subida. Índice velho com página nova é pior que não ter índice.' },
+        { n: '5', titulo: 'Conferir no celular', desc: 'Abrir o Norte no aparelho, olhar o rodapé. Tem que dizer o número novo e "em dia". Se disser outra coisa, a publicação não chegou.' },
+      ],
+      acervo: [
+        { titulo: 'Não se publica o acervo', desc: 'releases/ mora no repositório e no Drive, nunca dentro do site. Publicar o acervo faria cada entrega carregar todas as anteriores.' },
+        { titulo: 'Não se sobrescreve release', desc: 'Entrega errada não se corrige: sobe outra, com hora nova. O histórico não se conserta, se acrescenta.' },
+        { titulo: 'Só vira release o que foi ao ar', desc: 'Pacote montado e não publicado não entra. O acervo é registro do que a equipe viu, não de tentativa.' },
+        { titulo: 'O pacote é o que subiu', desc: 'Mesmo recorte publicado, sem pasta de trabalho nem arquivo morto — assim o release serve para restaurar, não só para lembrar.' },
+      ],
+      recarga: [
+        { onde: 'Celular', como: 'Fechar a aba e reabrir. Persistindo, limpar os dados do site nas configurações do navegador.' },
+        { onde: 'Computador', como: 'Ctrl+F5 no Windows, Cmd+Shift+R no Mac. Recarrega ignorando o cache.' },
+        { onde: 'Não resolveu', como: 'A publicação provavelmente não chegou ao servidor. Avisar quem publicou — não é problema do seu aparelho.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

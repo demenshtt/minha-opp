@@ -8,6 +8,9 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -18,6 +21,7 @@
     .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
     a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
   </style>
+  <script src="carimbo.js"></script>
 </helmet>
 
 <div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
@@ -88,6 +92,18 @@ class Component extends DCLogic {
         { tarefa: 'Apresentar em reunião', icone: 'presentation', dica: 'O PPTX abre direto no PowerPoint; no Workspace, suba no Drive que ele vira Google Slides sozinho. 8 modelos de slide com instruções nas notas.', itens: [
           { rotulo: 'Modelo de apresentação (.pptx)', href: 'entregas/downloads/Apresentacao Grupo Opp+ (modelo).pptx', download: 'Apresentacao Grupo Opp+ (modelo).pptx', icone: 'download', ...baixar },
           { rotulo: 'Convite de diretoria (peça digital)', href: 'Convite - Reunião de Diretoria.dc.html', icone: 'calendar-check', ...abrir },
+          { rotulo: 'Ata de reunião (registrar as decisões)', href: 'Ata de Reuniao.dc.html', icone: 'clipboard-check', ...pdf },
+          { rotulo: 'Ata de reunião em Word (.docx)', href: 'entregas/downloads/ata-modelo.docx', download: 'Ata de Reuniao (modelo).docx', icone: 'download', ...baixar },
+        ]},
+        { tarefa: 'Escrever um projeto ou estudo', icone: 'file-badge', dica: 'Estrutura mínima já montada: capa, sumário, introdução, diagnóstico, proposta, riscos e conclusão com a decisão que você está pedindo. Cada parte traz a instrução do que escrever — desligue o modo guia antes de imprimir.', itens: [
+          { rotulo: 'Documento de projeto (modelo com instruções)', href: 'Documento de Projeto.dc.html', icone: 'file-badge', ...pdf },
+          { rotulo: 'Documento de projeto em Word (.docx)', href: 'entregas/downloads/projeto-modelo.docx', download: 'Documento de Projeto (modelo).docx', icone: 'download', ...baixar },
+          { rotulo: 'Nota executiva — 1 página, começa pela conclusão', href: 'Nota Executiva.dc.html', icone: 'file-check', ...pdf },
+          { rotulo: 'Nota executiva em Word (.docx)', href: 'entregas/downloads/nota-executiva-modelo.docx', download: 'Nota Executiva (modelo).docx', icone: 'download', ...baixar },
+          { rotulo: 'Papel timbrado (para documento curto)', href: 'Papel Timbrado.dc.html', icone: 'file-text', ...pdf },
+        ]},
+        { tarefa: 'Passar arquivos de marca para um fornecedor', icone: 'package', dica: 'Um zip só, com guia de aplicação, logos em alta e cores. Tem mensagem pronta de WhatsApp e de e-mail para enviar junto.', itens: [
+          { rotulo: 'Kit Express de Marca (baixar o zip)', href: 'Kit Express de Marca.dc.html', icone: 'package', ...abrir },
         ]},
         { tarefa: 'Fechar o relatório do mês', icone: 'clipboard-list', dica: 'Resumo executivo pra diretoria, analítico pro detalhe. Cada um com botão Baixar PDF na página.', itens: [
           { rotulo: 'Gerencial — Resumo Executivo', href: 'Relatório Gerencial - Resumo Executivo.dc.html', icone: 'file-chart-column', ...pdf },

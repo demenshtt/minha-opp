@@ -1,0 +1,233 @@
+{
+  "versao": "2026.08.12-12",
+  "data": "2026-08-12",
+  "rotulo": "Norte v2026.08.12-12",
+  "nota": "Padrão de Publicação ganhou a seção do acervo releases/. Logos das Controladas lê as artes de origem de assets/.",
+  "paginas": [
+    {
+      "titulo": "Central de Marca Opp+",
+      "arquivo": "Central de Marca Opp+.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "O que você vai fazer",
+      "arquivo": "O que você vai fazer.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Padrão de Publicação",
+      "arquivo": "Padrão de Publicação.dc.html",
+      "atualizado": "2026-08-13"
+    },
+    {
+      "titulo": "Guia Rápido da Marca",
+      "arquivo": "Guia Rapido da Marca.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Códice da Marca",
+      "arquivo": "Códice da Marca.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Sistema de Design + MDC",
+      "arquivo": "Sistema de Design + MDC.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Arquitetura de Marcas",
+      "arquivo": "Arquitetura de Marcas.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Logos das Controladas",
+      "arquivo": "Logos das Controladas.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Fundos de Marca",
+      "arquivo": "Fundos de Marca.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Kit Express de Marca",
+      "arquivo": "Kit Express de Marca.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Central de Marca · Registro Histórico",
+      "arquivo": "Central de Marca - Registro Histórico.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "O Norte · Apresentação",
+      "arquivo": "O Norte - Apresentação.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Assinatura de E-mail",
+      "arquivo": "Assinatura de E-mail.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Papel Timbrado",
+      "arquivo": "Papel Timbrado.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Cartão de Visita",
+      "arquivo": "Cartão de Visita.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Cartão de Visita · Arte Final",
+      "arquivo": "Cartão de Visita - Arte Final.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Contato Digital (vCard)",
+      "arquivo": "Contato Digital (vCard).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Template de Apresentação",
+      "arquivo": "Template de Apresentação.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Documento de Projeto",
+      "arquivo": "Documento de Projeto.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Nota Executiva",
+      "arquivo": "Nota Executiva.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Ata de Reunião",
+      "arquivo": "Ata de Reuniao.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Convite · Reunião de Diretoria",
+      "arquivo": "Convite - Reunião de Diretoria.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Proposta Comercial",
+      "arquivo": "Proposta Comercial.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Proposta Comercial · OACO",
+      "arquivo": "Proposta Comercial - OACO.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Contrato de Gestão Operacional",
+      "arquivo": "Contrato de Gestão Operacional.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Contrato PS-DKA · via Prediger",
+      "arquivo": "Contrato PS-DKA - Dorilino Prediger.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Análise Jurídica · Contrato PS-DKA",
+      "arquivo": "Análise Jurídica - Contrato PS-DKA.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Relatório Gerencial · Resumo Executivo",
+      "arquivo": "Relatório Gerencial - Resumo Executivo.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Relatório Gerencial · Analítico",
+      "arquivo": "Relatório Gerencial - Analítico (padrão MDC).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Aba SAÍDA · Especificação",
+      "arquivo": "Aba SAÍDA - Especificação (Relatório Gerencial).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Gestão de Ativos PP-CPG · Resumo Executivo",
+      "arquivo": "Gestão de Ativos PP-CPG - Resumo Executivo.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Gestão de Ativos PP-CPG · Analítico",
+      "arquivo": "Gestão de Ativos PP-CPG - Analítico (padrão MDC).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Kit de Presença Digital",
+      "arquivo": "Kit de Presença Digital.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "WhatsApp Business",
+      "arquivo": "WhatsApp Business.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Figuras de Contato",
+      "arquivo": "Figuras de Contato.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Figurinhas WhatsApp",
+      "arquivo": "Figurinhas WhatsApp.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Protocolo de Redes Sociais",
+      "arquivo": "Protocolo de Redes Sociais.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "OppOn · Bot Institucional",
+      "arquivo": "OppOn - Bot Institucional.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Adesivagem de Frota",
+      "arquivo": "Adesivagem de Frota.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Sinalização de Ambiente",
+      "arquivo": "Sinalização de Ambiente.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Minha Opp+",
+      "arquivo": "Minha Opp+.dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Minha Opp+ · Portal (conceito)",
+      "arquivo": "Minha Opp+ - Portal (conceito).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Site Institucional · chamada Minha Opp+",
+      "arquivo": "Site Institucional - chamada Minha Opp+ (conceito).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "MERA · Especificação",
+      "arquivo": "MERA - Especificacao (sistema).dc.html",
+      "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "MERA · Mapa de Execução",
+      "arquivo": "MERA - Mapa de Execucao.dc.html",
+      "atualizado": "2026-08-12"
+    }
+  ]
+}

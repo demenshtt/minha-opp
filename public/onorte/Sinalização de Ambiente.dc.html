@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:1000px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <div style="background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:46px 54px 42px; color:#FFFFFF;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;"><span style="width:24px; height:1.5px; background:#6FCF97;"></span>Marca aplicada · Ambiente</div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.08; margin:0 0 14px; color:#FFFFFF; max-width:16ch;">Sinalização de ambiente</h1>
+        <p style="font-size:14.5px; line-height:1.65; color:#D6DDD5; max-width:64ch; margin:0;">Fachadas, alvenaria, placas de unidade e identificação interna. Aqui o público já está dentro — não há flanco a expor, e a marca pode aparecer com clareza. O padrão não foi inventado: foi lido do que já está construído na Base 1 e organizado em regra.</p>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:46px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">01 · Ponto de partida</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 12px; color:#39453A;">O padrão já existe</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 24px;">Parede branca com barra baixa verde escuro, em altura constante, por fora e por dentro. Logo pintado direto na parede, em uma cor só, com o COA e o Grupo Opp+ menores abaixo. Isso é sistema, não improviso — e o trabalho aqui é documentá-lo para que a próxima base nasça igual, não redesenhá-lo.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:14px;">
+      <figure style="margin:0;">
+        <img src="assets/base-fachada-externa.jpg" alt="Fachada externa do hangar" style="width:100%; height:200px; object-fit:cover; border-radius:14px; display:block;">
+        <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Fachada da Base 1 — branco com barra verde contínua, cerca de um terço da altura da parede.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="assets/base-hangar-interno.jpg" alt="Interior do hangar" style="width:100%; height:200px; object-fit:cover; border-radius:14px; display:block;">
+        <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Interior de operação — mesma barra, mesma altura. O logo pintado com COA e Grupo Opp+ abaixo.</figcaption>
+      </figure>
+    </div>
+    <div style="display:flex; gap:9px; align-items:flex-start; background:#FDF8F0; border:1px solid #F0DCC0; border-radius:10px; padding:11px 14px; margin-bottom:34px;">
+      <span style="flex:none; color:#C08A2E; font-size:13px; line-height:1.4;">!</span>
+      <span style="font-size:11.5px; line-height:1.55; color:#6B5426;">As fotos trazem logotipos <strong>anteriores à versão atual</strong>. Servem como referência de aplicação — proporção, altura, posição — nunca como referência de arte. Toda peça nova sai com os arquivos vigentes.</span>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">02 · Cor</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">Branco manda, verde assina</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 22px;">Uma cor principal e uma secundária, sem terceira. O branco domina a superfície e resolve calor e manutenção; o verde marca a base da parede e assina o conjunto.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+      <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden;">
+        <div style="height:88px; background:#FFFFFF; border-bottom:1px solid #EEF0ED;"></div>
+        <div style="padding:16px 20px 18px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">Principal · branco</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A; margin-top:5px;">Toda a superfície de parede, interna e externa. Acabamento fosco ou acetinado — brilhante denuncia imperfeição e reflete sol.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden;">
+        <div style="height:88px; background:#1C3323;"></div>
+        <div style="padding:16px 20px 18px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">Secundária · verde escuro</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A; margin-top:5px;">O verde do ícone da Aviação Agrícola, referência <code style="font-family:monospace; font-size:11.5px;">#1C3323</code>. Barra de rodapé e logo pintado.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#F4F6F3; border-radius:16px; padding:22px 26px; margin-bottom:20px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A; margin-bottom:8px;">A regra que separa externo de interno</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="border-left:3px solid #1C3323; padding-left:14px;">
+          <div style="font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#7E857D; font-weight:600; margin-bottom:5px;">Externo · sempre verde</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#4A514A;">Hangar, operação ou administrativo: por fora, a leitura é uma só. Quem chega à unidade vê o mesmo conjunto, não importa qual prédio esteja olhando.</div>
+        </div>
+        <div style="border-left:3px solid #767C75; padding-left:14px;">
+          <div style="font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#7E857D; font-weight:600; margin-bottom:5px;">Interno administrativo · cinza</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#4A514A;">Escritório usa cinza no lugar do verde — ambiente de trabalho sentado, luz artificial, outra escala. Interno de hangar e operação continua verde.</div>
+        </div>
+      </div>
+      <div style="font-size:12px; line-height:1.6; color:#6B706A; margin-top:16px; padding-top:14px; border-top:1px solid #E2E5E0;">Em uma frase: <strong style="color:#39453A;">a cor secundária muda por ambiente interno, nunca por fachada.</strong></div>
+    </div>
+
+    <div style="display:flex; gap:9px; align-items:flex-start; background:#FDF8F0; border:1px solid #F0DCC0; border-radius:10px; padding:11px 14px; margin-bottom:34px;">
+      <span style="flex:none; color:#C08A2E; font-size:13px; line-height:1.4;">!</span>
+      <span style="font-size:11.5px; line-height:1.55; color:#6B5426;">Cor de parede <strong>não se especifica por foto nem por tela</strong>. A referência digital serve para escolher o caminho; a aprovação é em amostra física pintada, vista na luz do local — de dia e sob a iluminação noturna do galpão.</span>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">03 · Alvenaria</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">A barra de rodapé</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 22px;">Nasceu de necessidade prática — a base da parede é onde bate bota, mangueira, carrinho e pneu — e virou traço de marca. Mantê-la constante é o que faz o conjunto parecer um sistema em vez de uma pintura qualquer.</p>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:22px;">
+      <div style="background:#39453A; padding:13px 24px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF;">Como executar</div>
+      <div style="padding:6px 24px 16px;">
+        <sc-for list="{{ alvenaria }}" as="a" hint-placeholder-count="5">
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:13px 0; border-bottom:1px solid #F0F1EE;">
+            <div style="flex:none; width:160px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#39453A;">{{ a.item }}</div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ a.regra }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:18px; margin-bottom:34px; align-items:start;">
+      <figure style="margin:0;">
+        <img src="assets/base-escritorio.jpg" alt="Escritório administrativo" style="width:100%; height:190px; object-fit:cover; border-radius:14px; display:block;">
+        <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Administrativo da Base 1 — o cinza no lugar do verde, com a silhueta da aeronave sobre o bandô. É a variação legítima de interior de escritório.</figcaption>
+      </figure>
+      <div style="background:#F7F8F5; border-radius:14px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:8px;">Silhueta da aeronave</div>
+        <div style="font-size:12.5px; line-height:1.65; color:#5A615A;">Recurso decorativo de interior administrativo, não elemento de marca. Pode existir onde couber, sempre em uma cor só e nunca disputando com o logotipo na mesma parede.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">04 · Logo na parede</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">Uma marca por parede</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 22px;">A parede branca acima da barra é o campo do logotipo. Ele aparece sozinho, em verde escuro, com o COA e o Grupo Opp+ discretos abaixo — hierarquia que já está executada na Base 1 e funciona.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:34px;">
+      <sc-for list="{{ logoParede }}" as="l" hint-placeholder-count="3">
+        <div style="border:1px solid #E6E7E4; border-radius:14px; padding:20px 20px 18px;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:7px;">{{ l.titulo }}</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ l.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">05 · Placas de unidade</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">A placa de entrada é o padrão</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 20px;">A placa já instalada na Base 1 resolve a questão: fundo branco, Grupo Opp+ pequeno no topo, Aviação Agrícola dominante, COA à esquerda e telefone à direita no rodapé. Toda placa de unidade, hangar ou pista segue essa estrutura.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:22px;">
+      <figure style="margin:0;">
+        <img src="assets/base-placa-entrada.jpg" alt="Placa de entrada da pista" style="width:100%; height:210px; object-fit:cover; border-radius:14px; display:block;">
+        <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Placa de identificação da pista — a estrutura a herdar.</figcaption>
+      </figure>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:10px;">Ordem fixa dos elementos</div>
+        <sc-for list="{{ placaOrdem }}" as="p" hint-placeholder-count="4">
+          <div style="display:flex; gap:11px; align-items:baseline; padding:6px 0; border-bottom:1px solid #F2F3F0;">
+            <span style="flex:none; font-family:monospace; font-size:11px; color:#9AA097;">{{ p.n }}</span>
+            <span style="font-size:12.5px; line-height:1.55; color:#5A615A;">{{ p.txt }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="background:#F4F6F3; border-radius:14px; padding:18px 22px; margin-bottom:24px;">
+      <div style="font-size:12.5px; line-height:1.65; color:#4A514A;"><strong style="color:#39453A;">Em via pública ou calçada</strong>, a placa identifica a unidade e nada mais: nome, COA e telefone. Não leva serviço, não leva chamada, não leva imagem de operação. Quem precisa achar o lugar, acha; quem passa, lê uma empresa identificada — que é exatamente o que se quer.</div>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin-bottom:12px;">Três tamanhos, três funções</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px;">
+      <sc-for list="{{ tiposPlaca }}" as="t" hint-placeholder-count="3">
+        <div style="border:1px solid #E6E7E4; border-radius:14px; padding:20px 20px 18px;">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:7px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A;">{{ t.titulo }}</div>
+            <div style="font-family:monospace; font-size:10.5px; color:#9AA097; flex:none;">{{ t.leitura }}</div>
+          </div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ t.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <figure style="margin:0 0 34px;">
+      <img src="assets/base-pista-remota.jpg" alt="Área de apoio em pista remota" style="width:100%; height:230px; object-fit:cover; object-position:center 42%; border-radius:14px; display:block;">
+      <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Apoio de pista remota — a placa de emergência está na parede do fundo, longe de onde se trabalha. Informação de socorro precisa estar ao alcance de quem opera, não onde sobrou parede.</figcaption>
+    </figure>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">06 · Locação e peças internas</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">Onde a placa fica é metade da placa</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 20px;">Placa bem desenhada no lugar errado não informa ninguém — é o caso da placa de emergência na parede do fundo. Aqui a locação não é escolha de quem instala: é regra, e a maior parte dela vem da norma de acessibilidade, não do gosto da marca.</p>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:24px;">
+      <div style="background:#39453A; padding:13px 24px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF;">Onde instalar cada peça</div>
+      <div style="padding:6px 24px 16px;">
+        <sc-for list="{{ locacao }}" as="l" hint-placeholder-count="5">
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:13px 0; border-bottom:1px solid #F0F1EE;">
+            <div style="flex:none; width:150px;">
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#39453A;">{{ l.peca }}</div>
+              <div style="font-family:monospace; font-size:10.5px; color:#9AA097; margin-top:2px;">{{ l.altura }}</div>
+            </div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ l.onde }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 20px;">As peças em si são pequenas, feitas uma vez e repetidas para sempre. Todas partem do mesmo par — branco de fundo, verde escuro de tinta, Montserrat no texto — e as de porta e vidro seguem a NBR 9050, que é obrigação legal em ambiente de uso coletivo, não recomendação.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px;">
+      <sc-for list="{{ internas }}" as="i" hint-placeholder-count="4">
+        <div style="border:1px solid #E6E7E4; border-radius:14px; padding:20px 22px;">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:7px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A;">{{ i.titulo }}</div>
+            <div style="font-family:monospace; font-size:11px; color:#9AA097; flex:none;">{{ i.medida }}</div>
+          </div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ i.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="font-size:11.5px; line-height:1.55; color:#8A8F89; margin-bottom:24px;">Onde a norma dá faixa, adotamos o meio dela e fixamos um número só para toda a empresa — placa igual em toda porta vale mais que placa ótima em uma.</div>
+
+    <div style="display:grid; grid-template-columns:1fr 1.05fr; gap:18px; margin-bottom:34px; align-items:start;">
+      <div style="background:#F7F8F5; border-radius:14px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:8px;">Placa de condomínio de escritórios</div>
+        <div style="font-size:12.5px; line-height:1.65; color:#5A615A; margin-bottom:10px;">O formato é do condomínio, não nosso — tamanho, material e posição vêm de quem administra o prédio. O que levamos é o conteúdo: logotipo do Grupo Opp+ e o nome da unidade, nada mais.</div>
+        <div style="font-size:12.5px; line-height:1.65; color:#5A615A;">Em placa coletiva a marca aparece <strong style="color:#39453A;">colorida</strong>. É a única linha de uma lista onde só o logo distingue a empresa das outras; monocromático ali some.</div>
+      </div>
+      <figure style="margin:0;">
+        <img src="assets/base-obra-nova.jpg" alt="Construção nova com o padrão aplicado" style="width:100%; height:250px; object-fit:cover; object-position:center 60%; border-radius:14px; display:block;">
+        <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Obra nova já nascendo no padrão: barra verde na mesma altura da base existente, antes mesmo do acabamento. É assim que o sistema se mantém — decidido na obra, não corrigido depois.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">07 · Assinatura em placa técnica</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">A marca assina, não decora</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 8px;">Uma placa de PARE funciona porque é igual em todo lugar do país. Quem chega ao cruzamento do pátio não lê a placa: reconhece a forma e a cor antes de ler. Logotipo dentro desse campo cobra um instante de leitura que o motorista ia gastar frenando — e transforma ordem em anúncio.</p>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 22px;">Mas a placa é nossa, está na nossa área, e existe uma forma consagrada de dizer isso: a <strong>tarja de responsável</strong> no pé da peça — a mesma faixa onde a fabricante costuma assinar. Fora do símbolo, monocromática, sem telefone e sem serviço. Assim a marca aparece para quem já parou, nunca para quem ainda está parando.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+      <div style="border:1px solid #E8D6D3; border-radius:14px; overflow:hidden;">
+        <div style="background:#FBF3F2; padding:11px 20px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#A8443A;">Não fazer</div>
+        <div style="padding:22px; display:flex; align-items:center; justify-content:center; background:#F7F8F5;">
+          <div style="width:150px; height:150px; background:#C0392B; border:7px solid #FFFFFF; box-shadow:0 2px 10px rgba(0,0,0,.14); clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;">
+            <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:30px; color:#FFFFFF; letter-spacing:0.04em;">PARE</div>
+            <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:34px; height:auto; display:block; opacity:.85;">
+          </div>
+        </div>
+        <div style="padding:14px 20px 18px; font-size:12.5px; line-height:1.6; color:#5A615A;">Marca dentro do octógono. Disputa espaço com a palavra, quebra o padrão que dá autoridade à peça e faz a ordem parecer propaganda.</div>
+      </div>
+      <div style="border:1px solid #CBE3D2; border-radius:14px; overflow:hidden;">
+        <div style="background:#F1F7F2; padding:11px 20px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#1B7A44;">Fazer</div>
+        <div style="padding:22px; display:flex; align-items:center; justify-content:center; background:#F7F8F5;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:7px;">
+            <div style="width:150px; height:150px; background:#C0392B; border:7px solid #FFFFFF; box-shadow:0 2px 10px rgba(0,0,0,.14); clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%); display:flex; align-items:center; justify-content:center;">
+              <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:34px; color:#FFFFFF; letter-spacing:0.04em;">PARE</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; opacity:.75;">
+              <img src="assets/icone-opp-grupo-bbox.png" alt="" style="width:13px; height:auto; display:block; filter:grayscale(1) brightness(.45);">
+              <span style="font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.13em; color:#5A615A; font-weight:600;">OPP AVIAÇÃO AGRÍCOLA · BASE I</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding:14px 20px 18px; font-size:12.5px; line-height:1.6; color:#5A615A;">Tarja de responsável abaixo da face, monocromática e miúda. Diz de quem é a placa sem tocar no símbolo que precisa ser lido a 15 m.</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:14px;">
+      <div style="background:#39453A; padding:13px 24px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF;">Três níveis, uma decisão só</div>
+      <div style="padding:6px 24px 16px;">
+        <sc-for list="{{ niveisMarca }}" as="n" hint-placeholder-count="3">
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #F0F1EE;">
+            <div style="flex:none; width:34px; height:34px; border-radius:9px; background:{{ n.cor }}; display:flex; align-items:center; justify-content:center; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF;">{{ n.n }}</div>
+            <div style="flex:none; width:172px;">
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#39453A;">{{ n.tipo }}</div>
+              <div style="font-size:10.5px; color:#9AA097; margin-top:2px;">{{ n.exemplo }}</div>
+            </div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ n.regra }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="font-size:11.5px; line-height:1.55; color:#8A8F89; margin-bottom:34px;">Regra de bolso: se a placa existisse igual em qualquer outra empresa, a marca vai no pé. Se a placa só faz sentido aqui, a marca é parte dela.</div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">08 · Placa interna de sala</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">Uma peça, quatro tamanhos</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 22px;">Nenhum exemplar foi impresso ainda — então o padrão nasce inteiro, sem herança para corrigir. Uma anatomia só, esticada em quatro tamanhos: porta, setor suspenso, mesa e faixa de vidro. Quem confecciona recebe a mesma arte com a medida trocada.</p>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:26px 24px 20px; background:#F7F8F5; margin-bottom:18px;">
+      <div style="display:flex; justify-content:center; margin-bottom:22px;">
+        <div style="width:420px; height:168px; background:#FFFFFF; border-radius:6px; box-shadow:0 4px 16px rgba(57,69,58,.16); display:flex; overflow:hidden;">
+          <div style="flex:none; width:100px; background:#1C3323; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:46px; height:auto; display:block;">
+          </div>
+          <div style="flex:1; padding:24px 24px 18px; display:flex; flex-direction:column; justify-content:center; gap:12px;">
+            <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:26px; letter-spacing:0.03em; color:#1C3323; line-height:1.05;">SUPORTE<br>OPERACIONAL</div>
+            <div style="display:flex; gap:9px;">
+              <sc-for list="{{ braile }}" as="b" hint-placeholder-count="10">
+                <div style="display:grid; grid-template-columns:5px 5px; gap:3px;">
+                  <sc-for list="{{ b.p }}" as="d" hint-placeholder-count="6">
+                    <span style="width:5px; height:5px; border-radius:50%; background:{{ d.c }};"></span>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+        <sc-for list="{{ anatomia }}" as="a" hint-placeholder-count="4">
+          <div style="border-top:2px solid #D8DED6; padding-top:9px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12px; color:#39453A; margin-bottom:3px;">{{ a.parte }}</div>
+            <div style="font-size:11.5px; line-height:1.55; color:#5A615A;">{{ a.spec }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:18px;">
+      <div style="background:#39453A; padding:13px 24px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF;">A família e as medidas de corte</div>
+      <div style="padding:6px 24px 16px;">
+        <sc-for list="{{ familia }}" as="f" hint-placeholder-count="4">
+          <div style="display:flex; gap:16px; align-items:flex-start; padding:13px 0; border-bottom:1px solid #F0F1EE;">
+            <div style="flex:none; width:158px;">
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#39453A;">{{ f.peca }}</div>
+              <div style="font-family:monospace; font-size:10.5px; color:#9AA097; margin-top:2px;">{{ f.medida }}</div>
+            </div>
+            <div style="flex:none; width:132px; font-size:11.5px; line-height:1.5; color:#8A8F89;">{{ f.material }}</div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ f.uso }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:34px;">
+      <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:14px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#1B7A44; margin-bottom:9px;">O nome é da função</div>
+        <div style="font-size:12.5px; line-height:1.65; color:#3E453D; margin-bottom:10px;">Mesma regra da linha de WhatsApp: a placa nomeia o que se faz na sala, nunca quem senta nela. Pessoa muda de sala, sala não muda de função — e placa com nome próprio vira lixo na primeira mudança.</div>
+        <div style="font-size:12.5px; line-height:1.65; color:#3E453D;">Placa de mesa é a única exceção: leva nome e função, e por isso é a única feita em suporte trocável, com o papel deslizando para fora.</div>
+      </div>
+      <div style="background:#F7F8F5; border-radius:14px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:9px;">Nomes já existentes na Base I</div>
+        <div style="display:flex; flex-wrap:wrap; gap:7px;">
+          <sc-for list="{{ nomesBase }}" as="n" hint-placeholder-count="5">
+            <span style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.05em; color:#3E453D; background:#FFFFFF; border:1px solid #E2E5DF; border-radius:7px; padding:6px 11px;">{{ n }}</span>
+          </sc-for>
+        </div>
+        <div style="font-size:11.5px; line-height:1.55; color:#8A8F89; margin-top:12px;">Vêm do projeto de sinalização da base. "Merenda &amp; Alegria" fica como está — é nome da casa, e nome de casa não se corporativiza.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:10px;">09 · Limite</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; margin:0 0 8px; color:#39453A;">O que a marca não governa</h2>
+    <p style="font-size:14px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 20px;">Peça de segurança obedece a norma, não a paleta. Vermelho, amarelo, faixa zebrada e pictograma de risco existem para serem vistos por quem está com pressa ou com medo — e não se submetem ao verde da casa.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:18px; margin-bottom:30px; align-items:start;">
+      <figure style="margin:0;">
+        <img src="assets/base-placa-emergencia.jpg" alt="Placa de telefones de emergência" style="width:100%; height:180px; object-fit:cover; border-radius:14px; display:block;">
+        <figcaption style="font-size:11.5px; color:#8A8F89; margin-top:8px; line-height:1.5;">Telefones de emergência — peça normativa.</figcaption>
+      </figure>
+      <div style="background:#F7F8F5; border-radius:14px; padding:20px 22px;">
+        <div style="font-size:12.5px; line-height:1.65; color:#5A615A; margin-bottom:12px;">Nessas peças a marca entra só no cabeçalho e no rodapé — logotipo, COA e razão social. O miolo é da norma e de quem responde por segurança do trabalho.</div>
+        <div style="font-size:12.5px; line-height:1.65; color:#5A615A;">Saída, extintor, proibição de fumar e sinalização de risco seguem a legislação e a orientação técnica, sem passar pela marca.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 54px 0;">
+    <div style="background:#F1F7F2; border:1px solid #CBE3D2; border-radius:16px; padding:22px 26px; margin-bottom:8px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#1B7A44; margin-bottom:9px;">Ao construir ou reformar uma base</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <sc-for list="{{ checklist }}" as="c" hint-placeholder-count="3">
+          <div style="border-top:2px solid #D6E8DB; padding-top:9px;">
+            <div style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#7FA98C; font-weight:600; margin-bottom:4px;">{{ c.fase }}</div>
+            <div style="font-size:12.5px; line-height:1.55; color:#3E453D;">{{ c.txt }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:26px 54px 30px; margin-top:14px; border-top:1px solid #EEF0ED; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+    <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT</div>
+    <span data-carimbo></span>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1000,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { carimbo: 'conferindo…' };
+
+  renderVals() {
+    const c = this.state.carimbo;
+    return {
+      carimboEstado: c,
+      carimboCor: c === 'em dia' ? '#219653' : (c === 'conferindo…' ? '#C9CEC7' : '#C08A2E'),
+      niveisMarca: [
+        { n: '1', cor: '#C0392B', tipo: 'Regulamentar e de segurança', exemplo: 'PARE, proibido fumar, saída, extintor, risco', regra: 'Marca só na tarja de responsável no pé, monocromática, altura no máximo um oitavo da placa. Dentro do campo do símbolo, nunca — a forma e a cor precisam ser as mesmas do resto do mundo.' },
+        { n: '2', cor: '#C08A2E', tipo: 'Orientação e advertência', exemplo: 'velocidade no pátio, sentido, atenção aeronaves', regra: 'Tarja de responsável no pé, igual ao nível 1. Aqui cabe também o nome da base na tarja, porque orientar já pressupõe saber onde se está.' },
+        { n: '3', cor: '#219653', tipo: 'Identificação nossa', exemplo: 'HANGAR I, SUPORTE OPERACIONAL, estacionamento', regra: 'A marca é parte da peça, no cabeçalho, colorida ou em verde chapado. Esta placa não existiria em outra empresa — é a Opp falando, e deve parecer.' },
+      ],
+      braile: [
+        { p: [1,0,1,1,0,0] }, { p: [1,1,0,1,0,0] }, { p: [1,0,1,0,1,0] }, { p: [1,1,1,0,0,0] },
+        { p: [1,0,0,1,1,0] }, { p: [1,1,0,0,1,0] }, { p: [0,1,1,1,0,0] }, { p: [1,0,1,1,1,0] },
+        { p: [1,1,0,1,1,0] }, { p: [1,0,0,1,0,0] },
+      ].map((b) => ({ p: b.p.map((v) => ({ c: v ? '#1C3323' : '#E4E8E2' })) })),
+      anatomia: [
+        { parte: 'Tarja do símbolo', spec: 'Faixa vertical à esquerda, verde #1C3323, ocupando um quarto da largura. Símbolo do Grupo em branco, centralizado. É o que se reconhece de longe no corredor.' },
+        { parte: 'Texto', spec: 'Montserrat Bold, caixa alta, altura de letra 20 mm, verde #1C3323 sobre branco. Relevo de 1 mm — a norma exige que se leia com o dedo, não só com o olho.' },
+        { parte: 'Braille', spec: 'Abaixo do texto, na mesma peça, ponto de 1,5 mm de diâmetro. Nunca em plaquinha separada colada depois.' },
+        { parte: 'Corpo', spec: 'ACM branco 3 mm ou alumínio 1,5 mm anodizado, cantos arredondados 4 mm. Fixação com fita dupla-face estrutural, sem furo na alvenaria.' },
+      ],
+      familia: [
+        { peca: 'Porta de sala', medida: '15 × 6 cm · 1,40 m do piso', material: 'ACM 3 mm + relevo e Braille', uso: 'Na parede ao lado da maçaneta, a cerca de 15 cm do batente — nunca na folha da porta, que se abre e leva a informação embora. Uma por ambiente.' },
+        { peca: 'Setor suspenso', medida: '30 × 10 cm · acima de 2,00 m', material: 'ACM 3 mm, dupla face', uso: 'Perpendicular à parede, lida ao longo do corredor. Sem relevo nem Braille: fora do alcance da mão, a norma não pede.' },
+        { peca: 'Mesa', medida: '21 × 6 cm · sobre o tampo', material: 'Suporte em acrílico + inserto trocável', uso: 'Nome e função, impressos em papel couché que desliza para fora. A única peça que muda quando a pessoa muda.' },
+        { peca: 'Faixa de porta de vidro', medida: 'faixa contínua ≥ 5 cm · 0,95 m', material: 'Vinil jateado + símbolo vazado', uso: 'Segunda faixa a 1,35 m onde houver painel largo. O símbolo aparece vazado a cada 60 cm, discreto: a faixa existe para ninguém bater a testa, não para marcar presença.' },
+      ],
+      nomesBase: ['SUPORTE OPERACIONAL', 'MERENDA & ALEGRIA', 'HANGAR I', 'HANGAR II', 'ÁREA RESTRITA', 'ARMAZENAMENTO DE COMBUSTÍVEL'],
+      alvenaria: [
+        { item: 'Altura da barra', regra: 'Cerca de um terço da parede, entre 1,10 m e 1,20 m do piso. A medida exata se define na primeira parede e se repete em todas — o que importa é ser a mesma, não ser um número específico.' },
+        { item: 'Linha de corte', regra: 'Reta, contínua e nivelada, atravessando portas e quinas sem interrupção. Barra que sobe e desce a cada vão desmancha o efeito.' },
+        { item: 'Acabamento', regra: 'Tinta lavável na barra — é a faixa que apanha. Fosca ou acetinada; brilhante marca cada retoque.' },
+        { item: 'Continuidade', regra: 'A barra dá a volta no ambiente. Parar em uma parede e não seguir na outra faz parecer serviço inacabado.' },
+        { item: 'Onde não vai', regra: 'Parede de escritório com mobília baixa encostada, e qualquer superfície que já tenha revestimento próprio. Barra atrás de armário é tinta jogada fora.' },
+      ],
+      logoParede: [
+        { titulo: 'Fica no branco', desc: 'Sempre na área branca, acima da barra. Nunca sobre a barra verde nem atravessando a linha de corte.' },
+        { titulo: 'Uma cor só', desc: 'Verde escuro, chapado, sem sombra nem contorno. Parede não é papel: relevo e degradê não sobrevivem à pintura.' },
+        { titulo: 'COA e Grupo abaixo', desc: 'Bem menores, discretos, na base do conjunto — a Aviação Agrícola é quem identifica o prédio.' },
+      ],
+      placaOrdem: [
+        { n: '1', txt: 'Grupo Opp+ pequeno, no topo' },
+        { n: '2', txt: 'Opp Aviação Agrícola, dominante, no centro' },
+        { n: '3', txt: 'COA no rodapé, à esquerda' },
+        { n: '4', txt: 'Telefone no rodapé, à direita' },
+      ],
+      tiposPlaca: [
+        { titulo: 'Unidade / base', leitura: '10–15 m', desc: 'A maior. Na entrada, perpendicular à via, para ser lida de dentro do veículo em movimento. Grupo Opp+, Aviação dominante, COA e telefone.' },
+        { titulo: 'Pista remota', leitura: '5–10 m', desc: 'Menor. Identifica pista fora da base sob responsabilidade da empresa. Nome da pista, COA e telefone — quem chega ali já sabe o que é o lugar.' },
+        { titulo: 'Condomínio de escritórios', leitura: '2–3 m', desc: 'A menor. Formato imposto pelo prédio; levamos só o logotipo e o nome da unidade.' },
+      ],
+      locacao: [
+        { peca: 'Emergência', altura: '1,40–1,60 m', onde: 'No ponto de trabalho, à altura do olhar e a poucos passos de quem opera — junto ao misturador, à bomba, à bancada. Nunca na parede do fundo: em emergência ninguém atravessa o galpão para ler telefone.' },
+        { peca: 'Placa de sala', altura: '1,20–1,60 m', onde: 'Na parede ao lado da maçaneta, a cerca de 15 cm do batente — nunca na folha da porta, que se move e leva a informação embora. Sempre do mesmo lado em todas as portas.' },
+        { peca: 'Setor', altura: 'acima de 2,00 m', onde: 'Suspensa ou alta na parede, legível do começo do corredor. Fica acima da linha das pessoas, para não sumir quando o corredor enche.' },
+        { peca: 'Faixa de vidro', altura: '0,90–1,00 m', onde: 'Faixa contínua de 5 cm no mínimo, atravessando todo o vidro. Recomendável uma segunda entre 1,30 m e 1,40 m — a primeira protege criança e cadeirante, a segunda o adulto em pé.' },
+        { peca: 'Placa de mesa', altura: 'sobre a mesa', onde: 'Na quina voltada para quem chega, do mesmo lado em todas as estações. Fileira de placas desalinhadas suja mais o ambiente do que organiza.' },
+      ],
+      internas: [
+        { titulo: 'Placa de sala', medida: '15 × 6 cm', desc: 'Nome do ambiente em relevo com Braille abaixo, na mesma peça — diretoria, almoxarifado, sala de reunião. Letra entre 16 mm e 50 mm, relevo em torno de 1 mm, ponto Braille de 1,5 mm de diâmetro. Verde escuro sobre branco, contraste que a norma exige e a marca já entrega.' },
+        { titulo: 'Identificação de setor', medida: '40 × 12 cm', desc: 'Só o nome do setor, em corpo grande. Quem procura uma sala procura o setor primeiro — esta é a placa que faz a pessoa virar no corredor certo.' },
+        { titulo: 'Placa de mesa', medida: '21 × 6 cm', desc: 'Nome do colaborador acima, função abaixo em corpo menor. Sem foto e sem cargo inflado: identifica quem senta ali, não a importância de quem senta ali.' },
+        { titulo: 'Faixa de porta de vidro', medida: 'faixa de 5 cm', desc: 'Antes de ser marca, é segurança: existe para ninguém andar no vidro. O ícone repetido em translúcido cumpre a função e assina o ambiente de graça. Em parede envidraçada de passagem, a faixa emoldura o vão inteiro.' },
+      ],
+      checklist: [
+        { fase: 'Antes de pintar', txt: 'Aprovar amostra física do verde na luz do local. Definir a altura da barra e anotá-la para as próximas paredes.' },
+        { fase: 'Na pintura', txt: 'Barra contínua e nivelada; logo só na área branca, em uma cor, com COA e Grupo Opp+ abaixo.' },
+        { fase: 'Depois', txt: 'Fotografar fachada, interior e placa. A primeira base bem executada vira a referência das seguintes.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

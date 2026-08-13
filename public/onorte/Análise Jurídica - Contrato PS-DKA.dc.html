@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; } a:hover { color: #39453A; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="112" y="86" width="176" height="228" rx="8" fill="#FFFFFF"/>
+      <rect x="134" y="112" width="88" height="9" rx="4" fill="#39453A"/>
+      <rect x="134" y="132" width="44" height="5" rx="2" fill="#6FCF97"/>
+      <rect x="134" y="164" width="132" height="5" rx="2" fill="#D8DAD5"/>
+      <rect x="134" y="178" width="104" height="5" rx="2" fill="#D8DAD5"/>
+      <rect x="134" y="206" width="16" height="16" rx="4" fill="#A5423A"/>
+      <rect x="160" y="211" width="106" height="6" rx="3" fill="#D8DAD5"/>
+      <rect x="134" y="234" width="16" height="16" rx="4" fill="#8A6516"/>
+      <rect x="160" y="239" width="90" height="6" rx="3" fill="#D8DAD5"/>
+      <rect x="134" y="262" width="16" height="16" rx="4" fill="#219653"/>
+      <rect x="160" y="267" width="98" height="6" rx="3" fill="#D8DAD5"/>
+    </svg>
+  </template>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" hint-size="816px,1056px">
+
+  <div slot="header" style="font-family:'Montserrat',sans-serif; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid #E0E2DE; padding-bottom:7px; margin-bottom:22px;">
+    <div style="font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#8A8F89; font-weight:600;">Análise de contrato · gestão operacional PS-DKA</div>
+    <img src="assets/preview/logo-opp-flat.png" alt="" style="height:17px; width:auto; opacity:.85;">
+  </div>
+
+  <div slot="footer" style="font-family:'Montserrat',sans-serif; display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E0E2DE; padding-top:6px; margin-top:20px; font-size:8.5px; color:#8A8F89;">
+    <div>Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT</div>
+    <div>Documento de apoio interno · não é parecer jurídico</div>
+  </div>
+
+  <div style="font-family:'Montserrat',sans-serif; color:#333333; font-size:11.5px; line-height:1.68; text-wrap:pretty;">
+
+    <div style="width:56px; height:3px; background:#219653; margin-bottom:20px;"></div>
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#767C75; font-weight:600; margin-bottom:12px;">Leitura crítica de contrato</div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-size:25px; font-weight:700; line-height:1.25; color:#39453A; margin:0 0 8px;">Análise do Contrato de Gestão Operacional — PS-DKA</h1>
+    <p style="font-size:13px; color:#565B56; margin:0 0 20px; max-width:62ch;">O que a minuta protege bem, onde ela deixa a Opp exposta e quais decisões precisam ser tomadas antes de levá-la ao advogado.</p>
+
+    <div style="border:1px solid #E8C9C4; background:#FBF3F2; border-radius:9px; padding:13px 16px; margin-bottom:22px;">
+      <div style="font-size:9.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#A5423A; margin-bottom:6px;">Antes de tudo</div>
+      <div style="font-size:11px; line-height:1.65; color:#565B56;">Este documento <strong>não é parecer jurídico e não substitui advogado</strong>. É uma leitura crítica de gestão: aponta onde o texto pode gerar disputa, prejuízo ou exposição regulatória, para que a conversa com o advogado comece já com as perguntas certas. As referências legais citadas precisam ser confirmadas por quem tem inscrição na OAB.</div>
+    </div>
+
+    <div style="display:flex; align-items:baseline; gap:9px; margin:0 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">1</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Veredito</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:14px;"></div>
+
+    <p style="margin:0 0 10px;">A minuta é <strong>boa e acima da média do setor</strong> no que se refere à divisão de tarefas: quem programa o voo, quem opera, quem paga o quê e quem responde perante ANAC, MAPA e CREA está dito com clareza, e a cláusula 10.3 — nenhuma ordem do proprietário obriga a voar em condição insegura — é a melhor cláusula do contrato. Ela protege piloto, empresa e proprietário ao mesmo tempo.</p>
+    <p style="margin:0 0 10px;">A fragilidade está concentrada em <strong>três frentes</strong>. Primeira: o contrato afirma não ser cessão de uso, mas manda averbar no RAB — e o RAB averba figuras que ele reconhece. Segunda: a divisão de responsabilidade por quem pediu o voo funciona entre as partes, <strong>não funciona contra a vítima</strong> de um acidente. Terceira: o contrato descreve muito bem as obrigações e quase nada sobre <strong>o que acontece quando alguém não cumpre</strong> — não há mora, multa, juros, prazo para contestar conta, nem direito de suspender serviço por falta de pagamento.</p>
+    <div style="border:1px solid #A5D6A7; background:#EEF3EF; border-radius:9px; padding:13px 16px; margin:0 0 8px;">
+      <div style="font-size:11px; line-height:1.7; color:#333333;"><strong style="color:#39453A;">Em uma frase:</strong> assinável, mas não como está — os pontos de grau alto abaixo (1 a 4) devem ser resolvidos antes da assinatura; os demais podem entrar em adendo depois, sem travar a operação.</div>
+    </div>
+
+    <div style="display:flex; align-items:baseline; gap:9px; margin:26px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">2</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Pontos de atenção</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:14px;"></div>
+
+    <div style="display:flex; flex-direction:column; gap:11px;">
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#F6E7E5; color:#A5423A;">Grau alto</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusulas 1.2 · considerandos · 9</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">01</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">O contrato nega ser cessão de uso, mas depende de averbação no RAB</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O que diz.</strong> Os considerandos afirmam que a relação não é comodato, arrendamento nem locação; a cláusula 9 manda averbar o contrato e a identificação da OPERADORA no Registro Aeronáutico Brasileiro.</p>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> O RAB averba os institutos que a legislação aeronáutica reconhece. Uma figura batizada de “gestão operacional” que expressamente recusa ser cessão de uso pode ser <strong>recusada na averbação</strong> — e sem averbação o explorador registrado continua sendo o proprietário, o que desmonta justamente o arranjo que o contrato quis criar (inclusive a divisão de responsabilidade da cláusula 5).</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Antes de assinar, confirmar com o RAB/ANAC qual instituto suporta a operação aeroagrícola por operadora distinta do proprietário e nomear o contrato conforme essa resposta, preservando a economia do negócio. Se a resposta for “arrendamento operacional”, não há problema em usar esse nome: o que importa é o conteúdo — a propriedade não se transfere de qualquer modo (cláusula 1.2).</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#F6E7E5; color:#A5423A;">Grau alto</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 5.2</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">02</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Dividir responsabilidade “por quem pediu o voo” não vale contra terceiros</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O que diz.</strong> O proprietário responde quando a aeronave voa a seu pedido; a operadora responde quando o voo é para terceiros.</p>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> Essa divisão é válida <strong>entre as partes</strong>. Ela não impede que um vizinho que alegue deriva, um trabalhador ferido ou a família de uma vítima acione o proprietário, a operadora, o piloto — ou os três juntos. Quem sofre dano não é parte do contrato e não está limitado por ele; a lei aeronáutica atribui responsabilidade ao explorador da aeronave, e o proprietário tende a ser presumido explorador enquanto não houver instrumento averbado. Na prática, hoje a cláusula 5.2 é uma promessa de rateio interno sem o mecanismo que a torna exigível.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Manter a divisão e acrescentar o que falta: <strong>obrigação recíproca de indenizar e direito de regresso</strong> (quem foi acionado indevidamente cobra de quem era o responsável, com prazo e correção), obrigação de comunicar a outra parte em 48 horas de qualquer citação ou notificação, e condução conjunta da defesa. Sem cláusula de regresso, a divisão de responsabilidade não tem dente.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#F6E7E5; color:#A5423A;">Grau alto</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 6</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">03</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Seguro sem limite mínimo, sem a Opp como segurada e sem consequência se a apólice cair</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O que diz.</strong> O proprietário contrata e paga o seguro obrigatório e o casco; a operadora apoia e colabora em sinistro.</p>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> Três lacunas que só aparecem no dia do acidente. Não há <strong>valor mínimo de cobertura</strong> — o proprietário cumpre o contrato com uma apólice barata e insuficiente. A operadora <strong>não figura como segurada adicional</strong>, embora seja ela quem opera e quem será acionada nos voos a terceiros. E, se a apólice vencer ou for cancelada, o contrato <strong>não autoriza a operadora a parar de voar</strong> — ela seguiria obrigada a operar uma aeronave descoberta, com risco de responder sozinha por um sinistro milionário.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Fixar limites mínimos por cobertura (RETA, responsabilidade civil perante terceiros na superfície e casco) em anexo revisável a cada renovação; incluir a operadora como segurada adicional e beneficiária nas coberturas de responsabilidade civil; obrigar o proprietário a entregar a apólice vigente e o comprovante de pagamento; e prever <strong>suspensão automática da operação, sem ônus para a operadora</strong>, enquanto não houver cobertura válida.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#F6E7E5; color:#A5423A;">Grau alto</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Contrato inteiro · cláusulas 3 e 7</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">04</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Não há mora, multa, juros nem direito de suspender serviço por falta de pagamento</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O que diz.</strong> Nada. É uma ausência, e é a mais custosa do contrato.</p>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> A operadora paga combustível, folha, oficina e peças, fecha a conta a cada quadrimestre e cobra depois. Se o proprietário atrasar, o contrato não prevê correção, juros nem multa — e a cláusula 7.4 permite a ele rescindir de imediato por inadimplemento <strong>sem multa rescisória</strong>. O desenho atual torna o atraso barato e a saída gratuita, exatamente para quem já recebeu o serviço. Somando ao ciclo de quatro meses, a exposição de caixa da Opp é grande e desprotegida.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Acrescentar cláusula de mora: correção pelo IPCA (ou índice a combinar), juros de 1% ao mês e multa de 2% sobre o valor em atraso; <strong>direito de suspender a operação</strong> após aviso e prazo de cura (10 dias, por exemplo), sem que a suspensão configure inadimplemento da operadora; e ressarcimento dos custos já assumidos em caso de rescisão. Isso não é desconfiança do proprietário — é o que permite à Opp adiantar recursos sem colocar a folha de pagamento em risco.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#FBF1DF; color:#8A6516;">Grau médio</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 3.3</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">05</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">O critério de rateio é definido pela própria operadora</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> “Observado o critério de rateio adotado pela OPERADORA” entrega a uma das partes o poder de definir a conta da outra. Ainda que a Opp seja impecável, é a redação que abre a primeira briga da terceira safra — e o filho do proprietário, formado em administração, vai perguntar exatamente isso na primeira leitura.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Anexo com a <strong>fórmula do rateio</strong> e a lista do que é custo direto, despesa administrativa e despesa de base; direito de o proprietário auditar os lançamentos com aviso prévio; prazo de <strong>15 dias</strong> para contestar a prestação de contas, após o que ela se considera aceita. Prazo de contestação protege a Opp tanto quanto o proprietário: encerra a conta.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#FBF1DF; color:#8A6516;">Grau médio</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusulas 2.1 · 2.2 · 2.6</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">06</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">A Opp emprega os pilotos, mas não escolhe sozinha — e não há cláusula trabalhista</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> A operadora contrata, dirige e responde pela equipe, porém cada piloto depende de autorização expressa do proprietário. Duas consequências: se o proprietário vetar os pilotos disponíveis, a operadora fica em falta por não voar; e, do outro lado, um piloto que ajuíze reclamação trabalhista pode tentar puxar o proprietário como tomador de serviço — sem cláusula que organize isso, a discussão nasce sem defesa escrita.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Registrar que os pilotos e a equipe são <strong>exclusivamente empregados ou contratados da operadora</strong>, sem vínculo com o proprietário, com obrigação recíproca de indenizar em caso de condenação; e prever que a recusa de piloto habilitado <strong>suspende a obrigação de voar</strong> sem caracterizar inadimplemento, até que haja piloto autorizado.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#FBF1DF; color:#8A6516;">Grau médio</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 3.5</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">07</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Margem de 65/35 sem definir quem assume o cliente que não paga</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> A margem é apurada sobre “a receita obtida com o serviço”. Se o terceiro atrasar ou nunca pagar, a operadora — que emitiu a nota, pagou o custo e recolheu o tributo — pode acabar repassando 65% de uma receita que não entrou. Há ainda um efeito fiscal a checar: o proprietário é pessoa física, produtor rural, recebendo participação em receita de serviço faturado pela Opp.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Trocar “receita obtida” por <strong>“valores efetivamente recebidos”</strong>, com repasse após a liquidação; definir se a inadimplência do terceiro é rateada na mesma proporção; e submeter o desenho ao contador antes de assinar — esta é uma pergunta de contabilidade, não de direito.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#FBF1DF; color:#8A6516;">Grau médio</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 4</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">08</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">“Compartilhamento” com dois usos — TPP e SAE-AG — contradiz os considerandos</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> A cláusula 4 chama o arranjo de compartilhamento e prevê uso privado pelo proprietário (TPP) e uso aeroagrícola pela operadora (SAE-AG). Isso convive mal com o considerando que nega cessão de uso, e o duplo enquadramento operacional na mesma aeronave é assunto de conformidade com a ANAC — não de acordo entre as partes. É também o tipo de detalhe que aparece numa fiscalização, não numa negociação.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Confirmar com a assessoria de aeronavegabilidade se a aeronave arrolada na operadora agrícola pode operar em uso privado pelo proprietário e sob quais condições. Depois, escrever a cláusula 4 de acordo com a resposta — e usar uma só palavra em todo o contrato para o arranjo, em vez de três.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#FBF1DF; color:#8A6516;">Grau médio</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 7.2</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">09</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Aviso prévio de 90 dias pode cair no meio da safra</div>
+          <p style="margin:0 0 7px;"><strong style="color:#767C75;">O risco.</strong> Noventa dias é razoável no calendário, não na lavoura: uma rescisão que produz efeito em fevereiro deixa aplicação programada sem aeronave, ou a Opp com equipe contratada e base custeada sem receita. O contrato trata prazo como número de dias e ignora a janela agrícola.</p>
+          <p style="margin:0;"><strong style="color:#219653;">O que fazer.</strong> Manter os 90 dias e acrescentar que o efeito da rescisão <strong>se desloca para o fim da safra em curso</strong> quando o prazo terminar dentro de janela de aplicação já programada, salvo acordo entre as partes. Cláusula curta, evita a única briga que ninguém antecipa.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#EEF3EF; color:#219653;">Grau baixo</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusulas 3.2 · 3.8</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">10</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Informação mensal e conta quadrimestral podem ser lidas como contradição</div>
+          <p style="margin:0;">A 3.2 fala em prestação de contas quadrimestral; a 3.8, em informação mensal com pagamento acumulado. A intenção é clara, mas convém escrever que o relatório mensal é <strong>informativo</strong> e que o documento que fecha a conta é o quadrimestral — para não abrir discussão sobre qual deles vale como prestação de contas.</p>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden; break-inside:avoid;">
+        <div style="display:flex; align-items:center; gap:10px; background:#FAFBFA; border-bottom:1px solid #EEF0ED; padding:9px 14px;">
+          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:20px; background:#EEF3EF; color:#219653;">Grau baixo</span>
+          <span style="font-size:9.5px; color:#8A8F89; font-weight:600;">Cláusula 11.3</span>
+          <span style="margin-left:auto; font-family:'Comfortaa',sans-serif; font-size:12px; font-weight:700; color:#39453A;">11</span>
+        </div>
+        <div style="padding:12px 14px;">
+          <div style="font-size:12.5px; font-weight:700; color:#39453A; margin-bottom:6px;">Contratar “em nome do proprietário” sem procuração e sem teto de valor</div>
+          <p style="margin:0;">A operadora pode contratar oficinas e comprar peças em nome próprio ou do proprietário. Falta o instrumento que autoriza agir em nome dele — <strong>procuração com poderes e limites</strong> — e falta um <strong>valor a partir do qual a autorização passa a ser prévia e escrita</strong>. Hoje o limite é “sempre que possível submeterá os orçamentos de maior relevância”, que não é limite. Sugestão: procuração anexa e teto em reais definido pelas partes, com exceção expressa para urgência de segurança de voo, que já está bem redigida em 11.6.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:flex; align-items:baseline; gap:9px; margin:26px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">3</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusulas que faltam</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:14px;"></div>
+
+    <div style="border:1px solid #E0E2DE; border-radius:10px; overflow:hidden;">
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; background:#39453A; color:#FFFFFF; font-size:10px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;">
+        <div style="padding:8px 13px;">Cláusula ausente</div><div style="padding:8px 13px;">Por que ela importa aqui</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; border-bottom:1px solid #EEF0ED; font-size:11px;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Mora, juros e multa</div><div style="padding:9px 13px; line-height:1.55;">Sem ela, atrasar o pagamento não custa nada a quem atrasa.</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; border-bottom:1px solid #EEF0ED; font-size:11px; background:#FAFBFA;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Indenização e regresso</div><div style="padding:9px 13px; line-height:1.55;">É o que transforma a divisão de responsabilidade da cláusula 5 em algo exigível.</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; border-bottom:1px solid #EEF0ED; font-size:11px;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Notificações</div><div style="padding:9px 13px; line-height:1.55;">O aviso prévio de 90 dias exige endereço, e-mail e forma válida de comunicar. Não há.</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; border-bottom:1px solid #EEF0ED; font-size:11px; background:#FAFBFA;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Não vínculo trabalhista</div><div style="padding:9px 13px; line-height:1.55;">A operadora emprega pilotos que voam a aeronave de um produtor rural. Precisa estar escrito.</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; border-bottom:1px solid #EEF0ED; font-size:11px;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Anexos</div><div style="padding:9px 13px; line-height:1.55;">Fórmula de rateio, limites de seguro, procuração de manutenção e lista de pilotos mudam com o tempo — devem viver em anexo, não no corpo do contrato.</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; border-bottom:1px solid #EEF0ED; font-size:11px; background:#FAFBFA;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Ambiental e defensivos</div><div style="padding:9px 13px; line-height:1.55;">Aplicação aérea tem exposição ambiental e de vizinhança. Quem responde por receituário agronômico, produto fornecido e área indicada precisa estar definido — hoje não está em nenhuma cláusula.</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.1fr 1.9fr; font-size:11px;">
+        <div style="padding:9px 13px; font-weight:600; color:#39453A;">Dados e registros</div><div style="padding:9px 13px; line-height:1.55;">Os registros operacionais e de manutenção têm valor patrimonial. Definir a quem pertencem, em que formato são entregues e por quanto tempo são guardados evita disputa no encerramento.</div>
+      </div>
+    </div>
+
+    <div style="display:flex; align-items:baseline; gap:9px; margin:26px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">4</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">O que levar ao advogado</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:14px;"></div>
+
+    <p style="margin:0 0 12px;">Cinco perguntas objetivas resolvem quase tudo. Levá-las escritas encurta a reunião e reduz honorário.</p>
+    <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+      <div style="display:flex; gap:12px; align-items:flex-start; border:1px solid #E0E2DE; border-radius:9px; padding:10px 13px;">
+        <span style="flex:none; width:22px; height:22px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">1</span>
+        <span style="font-size:11.5px; line-height:1.6;">Qual instituto o RAB averba para operação aeroagrícola por operadora distinta do proprietário — e o nome que demos ao contrato serve?</span>
+      </div>
+      <div style="display:flex; gap:12px; align-items:flex-start; border:1px solid #E0E2DE; border-radius:9px; padding:10px 13px;">
+        <span style="flex:none; width:22px; height:22px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">2</span>
+        <span style="font-size:11.5px; line-height:1.6;">Como redigir indenização e regresso para que a divisão da cláusula 5 funcione depois de um acidente com terceiro?</span>
+      </div>
+      <div style="display:flex; gap:12px; align-items:flex-start; border:1px solid #E0E2DE; border-radius:9px; padding:10px 13px;">
+        <span style="flex:none; width:22px; height:22px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">3</span>
+        <span style="font-size:11.5px; line-height:1.6;">Que limites mínimos de seguro são adequados para um AT-502B em aplicação, e como incluir a Opp como segurada adicional?</span>
+      </div>
+      <div style="display:flex; gap:12px; align-items:flex-start; border:1px solid #E0E2DE; border-radius:9px; padding:10px 13px;">
+        <span style="flex:none; width:22px; height:22px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">4</span>
+        <span style="font-size:11.5px; line-height:1.6;">A suspensão da operação por falta de pagamento ou de seguro pode ser prevista sem configurar retenção indevida da aeronave?</span>
+      </div>
+      <div style="display:flex; gap:12px; align-items:flex-start; border:1px solid #E0E2DE; border-radius:9px; padding:10px 13px;">
+        <span style="flex:none; width:22px; height:22px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;">5</span>
+        <span style="font-size:11.5px; line-height:1.6;">Participação do proprietário pessoa física na margem de serviços faturados pela Opp: qual o tratamento fiscal correto? (pergunta para o contador, confirmada pelo advogado)</span>
+      </div>
+    </div>
+
+    <div style="border:1px solid #A5D6A7; background:#EEF3EF; border-radius:10px; padding:14px 17px;">
+      <div style="font-size:9.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#219653; margin-bottom:7px;">Recomendação</div>
+      <div style="font-size:11.5px; line-height:1.7; color:#333333;">Resolver os pontos 1 a 4 no texto antes da assinatura e deixar os demais para um <strong>primeiro adendo</strong>, já com data marcada — assim a operação começa e o contrato amadurece sem travar a safra. Tudo que for número negociável (rateio, limites de seguro, tetos de manutenção, pilotos) deve nascer em anexo: anexo se troca com assinatura de duas páginas, cláusula se troca com contrato novo.</div>
+    </div>
+
+  </div>
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056}}"></script>
+</body>
+</html>

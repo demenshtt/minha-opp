@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; } a:hover { color: #39453A; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="112" y="86" width="176" height="228" rx="8" fill="#FFFFFF"/>
+      <rect x="134" y="114" width="84" height="9" rx="4" fill="#39453A"/>
+      <rect x="134" y="134" width="46" height="5" rx="2" fill="#6FCF97"/>
+      <rect x="134" y="170" width="132" height="5" rx="2" fill="#D8DAD5"/>
+      <rect x="134" y="184" width="132" height="5" rx="2" fill="#D8DAD5"/>
+      <rect x="134" y="198" width="96" height="5" rx="2" fill="#D8DAD5"/>
+      <rect x="134" y="228" width="132" height="5" rx="2" fill="#D8DAD5"/>
+      <rect x="134" y="242" width="110" height="5" rx="2" fill="#D8DAD5"/>
+      <path d="M134 282h72" stroke="#219653" stroke-width="3"/>
+      <path d="M140 276c8-8 14 6 22-2s14 4 22-4" stroke="#39453A" stroke-width="3" fill="none"/>
+    </svg>
+  </template>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+<x-import component-from-global-scope="word-docx-button" from="./word-button.js" href="entregas/downloads/contrato-ps-dka-prediger.docx" filename="Contrato PS-DKA - Dorilino Prediger.docx" hint-size="0,0"></x-import>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" hint-size="816px,1056px">
+
+  <div slot="header" style="font-family:'Montserrat',sans-serif; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid #E0E2DE; padding-bottom:7px; margin-bottom:22px;">
+    <div style="font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:#8A8F89; font-weight:600;">Contrato de gestão operacional · {{ prefixo }}</div>
+    <img src="assets/preview/logo-opp-flat.png" alt="" style="height:17px; width:auto; opacity:.85;">
+  </div>
+
+  <div slot="footer" style="font-family:'Montserrat',sans-serif; display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E0E2DE; padding-top:6px; margin-top:20px; font-size:8.5px; color:#8A8F89;">
+    <div>Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT</div>
+    <div>Documento contratual · uso restrito às PARTES</div>
+  </div>
+
+  <div style="font-family:'Montserrat',sans-serif; color:#333333; font-size:11.5px; line-height:1.68; text-align:justify; text-wrap:pretty;">
+
+    <div style="width:56px; height:3px; background:#219653; margin-bottom:20px;"></div>
+    <div style="font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#767C75; font-weight:600; margin-bottom:12px;">Instrumento particular · gestão de ativos</div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-size:25px; font-weight:700; line-height:1.25; color:#39453A; margin:0 0 8px; text-align:left;">Contrato de Gestão Operacional de Aeronave Agrícola</h1>
+    <div style="font-family:'Comfortaa',sans-serif; font-size:16px; font-weight:600; color:#219653; margin-bottom:22px; text-align:left;">{{ prefixo }}</div>
+
+    <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+      <div class="no-print" style="background:#F3F6F3; border-left:3px solid #6FCF97; padding:12px 15px; font-size:10.5px; color:#565B56; line-height:1.6; margin-bottom:22px; text-align:left;">
+        <strong style="color:#39453A;">Esta é a via do PS-DKA.</strong> Conteúdo idêntico à minuta recebida — apenas a numeração das cláusulas e a formatação da Central foram aplicadas. Antes de colher assinaturas, leia a <strong>análise jurídica</strong> desta mesma minuta: há pontos que dependem de decisão de vocês e de parecer do advogado. Desligue o <em>modo conferência</em> nos ajustes para ver o documento limpo.
+      </div>
+    </sc-if>
+
+    <p style="margin:0 0 12px;">Pelo presente instrumento particular e na melhor forma de direito, celebram as partes:</p>
+
+    <div style="border:1px solid #E0E2DE; border-radius:9px; overflow:hidden; margin-bottom:14px; text-align:left;">
+      <div style="padding:11px 14px; border-bottom:1px solid #EEF0ED;">
+        <div style="font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8A8F89; margin-bottom:5px;">Proprietário</div>
+        <div style="font-size:11.5px; line-height:1.65; color:#333333;">{{ propTexto }}</div>
+      </div>
+      <div style="padding:11px 14px; background:#FAFBFA;">
+        <div style="font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8A8F89; margin-bottom:5px;">Operadora</div>
+        <div style="font-size:11.5px; line-height:1.65; color:#333333;"><strong style="color:#39453A;">OPP AVIAÇÃO AGRÍCOLA LTDA.</strong>, pessoa jurídica de direito privado, inscrita no CNPJ sob nº 33.910.736/0001-56, com sede na Rua Santa Catarina de Alexandria, nº 2127, Parque Universitário, CEP 78.893-126, na cidade de Sorriso-MT, neste ato representada por seus administradores, Luciano Fernandes de Oliveira e Abner Gomes Carvalho.</div>
+      </div>
+    </div>
+
+    <p style="margin:0 0 14px;">O PROPRIETÁRIO e a OPERADORA serão doravante denominados, em conjunto, “PARTES” e, individualmente, “PARTE”.</p>
+
+    <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8A8F89; margin-bottom:8px;">Considerando que</div>
+    <ul style="margin:0 0 14px; padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+      <li>o PROPRIETÁRIO é titular da aeronave agrícola de fabricação {{ fabricante }}, prefixo {{ prefixo }}, modelo {{ modelo }}, ano {{ anoAeronave }}, número de série {{ numSerie }};</li>
+      <li>a OPERADORA possui experiência, estrutura administrativa e operacional para a gestão e a operação de aeronaves agrícolas;</li>
+      <li>as PARTES desejam regular a gestão operacional da aeronave, preservando a prioridade de atendimento das áreas agrícolas do PROPRIETÁRIO e permitindo, quando houver disponibilidade e autorização, a realização de serviços a terceiros;</li>
+      <li>a relação ora ajustada possui natureza de prestação de serviços de gestão operacional, não se caracterizando como comodato, arrendamento ou locação da aeronave.</li>
+    </ul>
+
+    <p style="margin:0 0 6px;">As PARTES ajustam entre si o presente Contrato de Gestão Operacional de Aeronave Agrícola, mediante as cláusulas e condições seguintes:</p>
+
+    <!-- ===== 1 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">1</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Primeira — Do objeto</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>1.1.</strong> O presente contrato tem por objeto a prestação, pela OPERADORA, de serviços de gestão operacional da aeronave agrícola de fabricação {{ fabricante }}, prefixo {{ prefixo }}, modelo {{ modelo }}, ano {{ anoAeronave }}, número de série {{ numSerie }}, doravante denominada “AERONAVE”.</p>
+    <p style="margin:0 0 9px;"><strong>1.2.</strong> A AERONAVE permanece de exclusiva propriedade do PROPRIETÁRIO, não havendo transferência de propriedade, domínio ou qualquer direito real à OPERADORA.</p>
+    <p style="margin:0 0 9px;"><strong>1.3.</strong> A gestão operacional compreenderá a organização e execução das atividades necessárias à operação aeroagrícola, incluindo a coordenação de pilotos e equipe de apoio, controle operacional, planejamento técnico, gestão documental, acompanhamento de manutenção e cumprimento das obrigações aplicáveis perante os órgãos de fiscalização.</p>
+    <p style="margin:0 0 9px;"><strong>1.4.</strong> A AERONAVE {{ estadoAeronave }} e está em condições de funcionamento, conservação e voo, com a documentação aeronáutica pertinente, tendo a OPERADORA vistoriado a mesma, analisado sua documentação e considerado o equipamento apto à realização de serviços de aviação agrícola, ressalvadas as limitações técnicas, operacionais e regulamentares aplicáveis.</p>
+    <p style="margin:0 0 9px;"><strong>1.5.</strong> A OPERADORA declara receber a AERONAVE para fins exclusivos de gestão e operação nos termos deste contrato, reconhecendo seu estado e sua regular apresentação material e documental, sem que isso implique assunção dos custos de propriedade, seguro ou manutenção, que permanecerão sob responsabilidade financeira do PROPRIETÁRIO, conforme previsto neste instrumento.</p>
+
+    <!-- ===== 2 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">2</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Segunda — Da utilização, programação e pilotos</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>2.1.</strong> A operação da AERONAVE deverá ser realizada exclusivamente por pilotos previamente autorizados pelas PARTES e regularmente habilitados para a atividade. Ficam desde já autorizados os seguintes profissionais:</p>
+    <ul style="margin:0 0 10px; padding-left:20px; display:flex; flex-direction:column; gap:5px;">
+      <sc-for list="{{ pilotos }}" as="pl" hint-placeholder-count="2">
+        <li>{{ pl }}</li>
+      </sc-for>
+    </ul>
+    <p style="margin:0 0 9px;"><strong>2.2.</strong> A substituição ou inclusão de novos pilotos dependerá de autorização expressa do PROPRIETÁRIO, sem prejuízo da verificação, pela OPERADORA, das habilitações, treinamentos e demais requisitos regulamentares aplicáveis.</p>
+    <p style="margin:0 0 9px;"><strong>2.3.</strong> A definição da programação da AERONAVE será de responsabilidade do PROPRIETÁRIO, que manterá o controle sobre as prioridades de utilização. A OPERADORA realizará a gestão operacional da agenda, a coordenação da equipe, a avaliação das condições técnicas, meteorológicas e de segurança e a execução dos voos, sempre respeitando a programação definida pelo PROPRIETÁRIO.</p>
+    <p style="margin:0 0 9px;"><strong>2.4.</strong> A utilização da AERONAVE para prestação de serviços a terceiros dependerá de disponibilidade operacional e de prévia autorização do PROPRIETÁRIO.</p>
+    <p style="margin:0 0 9px;"><strong>2.5.</strong> A AERONAVE será operada pela OPERADORA em atividades aeroagrícolas remuneradas ou em proveito de terceiros, observadas as autorizações, cadastros, registros e requisitos exigidos pela ANAC, pelo Ministério da Agricultura e Pecuária, pelo CREA e pelos demais órgãos competentes.</p>
+    <p style="margin:0 0 8px;"><strong>2.6.</strong> A OPERADORA compromete-se a observar toda a legislação aplicável, as normas técnicas pertinentes e os critérios de proteção e conservação da AERONAVE, assumindo as seguintes responsabilidades operacionais:</p>
+    <ul style="margin:0 0 9px; padding-left:20px; display:flex; flex-direction:column; gap:5px;">
+      <li>contratação, direção e gerenciamento dos pilotos e da equipe operacional;</li>
+      <li>coordenação das operações de voo, da base operacional e dos procedimentos de segurança;</li>
+      <li>acompanhamento dos vencimentos técnicos, inspeções, revisões e demais eventos de manutenção;</li>
+      <li>cumprimento das obrigações operacionais perante ANAC, Ministério da Agricultura e Pecuária, CREA e demais órgãos de fiscalização, dentro das atribuições da OPERADORA.</li>
+    </ul>
+
+    <!-- ===== 3 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">3</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Terceira — Da gestão operacional, onerosidade e contraprestação</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+
+    <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+      <div class="no-print" style="background:#F3F6F3; border-left:3px solid #6FCF97; padding:11px 14px; font-size:10.5px; color:#565B56; line-height:1.6; margin-bottom:12px; text-align:left;">
+        <strong style="color:#39453A;">Atenção — é aqui que os contratos diferem.</strong> Três números precisam ser conferidos um por um com o que foi combinado: a <strong>periodicidade da prestação de contas</strong>, a <strong>divisão da margem</strong> em serviços a terceiros e a <strong>taxa de gestão</strong>. Todos são ajustáveis nos controles ao lado.
+      </div>
+    </sc-if>
+
+    <p style="margin:0 0 9px;"><strong>3.1.</strong> A OPERADORA se compromete a obedecer à legislação e às normas técnicas aplicáveis à atividade, além de observar todas as medidas de proteção e conservação da AERONAVE. A partir da assinatura deste contrato, a OPERADORA será responsável pela condução da gestão operacional, pelo gerenciamento dos pilotos contratados e pelas obrigações operacionais perante os órgãos de fiscalização, sem prejuízo das obrigações financeiras atribuídas ao PROPRIETÁRIO.</p>
+    <p style="margin:0 0 9px;"><strong>3.2.</strong> A OPERADORA prestará serviços aeroagrícolas ao PROPRIETÁRIO, utilizando a AERONAVE objeto deste contrato, conforme as diretrizes e a programação por ele definidas. Os custos relacionados serão repassados ao PROPRIETÁRIO em prestações de contas {{ periodicidadeAdj }}, apurando-se os custos diretos, acrescidos do rateio das despesas administrativas e da base operacional e dos tributos incidentes.</p>
+    <p style="margin:0 0 9px;"><strong>3.3.</strong> O rateio será feito de forma proporcional ao total de horas de voo, ponderadas pelo rendimento da AERONAVE do PROPRIETÁRIO em relação às demais aeronaves administradas ou operadas pela OPERADORA, observado o critério de rateio adotado pela OPERADORA para as aeronaves sob sua gestão.</p>
+
+    <div style="font-size:9.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8F89; margin:14px 0 7px;">Adiantamento de recursos</div>
+    <p style="margin:0 0 9px;"><strong>3.4.</strong> A OPERADORA poderá, a qualquer tempo, solicitar ao PROPRIETÁRIO adiantamento de recursos para cobrir os custos diretos de operação e manutenção da AERONAVE, bem como para o pagamento das despesas administrativas e de custeio da base operacional, mediante apresentação de justificativa. O PROPRIETÁRIO avaliará a solicitação e, em caso de concordância, realizará o repasse dos valores de forma antecipada, os quais serão compensados nas prestações de contas subsequentes.</p>
+
+    <div style="font-size:9.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8F89; margin:14px 0 7px;">Serviços prestados a terceiros</div>
+    <p style="margin:0 0 9px;"><strong>3.5.</strong> Nos casos em que a AERONAVE for utilizada para a prestação de serviços a terceiros, com prévia autorização do PROPRIETÁRIO e desde que não haja prejuízo à prioridade de suas áreas agrícolas, a margem líquida apurada — correspondente ao resultado da receita obtida com o serviço, deduzidos os custos diretos, as despesas administrativas, as despesas da base operacional e os tributos incidentes — será dividida entre a OPERADORA e o PROPRIETÁRIO na seguinte proporção:</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:0 0 11px; text-align:left;">
+      <div style="border:1px solid #A5D6A7; background:#EEF3EF; border-radius:9px; padding:12px 14px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; color:#219653; line-height:1;">{{ pctProprietario }}%</div>
+        <div style="font-size:10.5px; color:#565B56; margin-top:5px;">para o PROPRIETÁRIO</div>
+      </div>
+      <div style="border:1px solid #E0E2DE; border-radius:9px; padding:12px 14px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; color:#39453A; line-height:1;">{{ pctOperadora }}%</div>
+        <div style="font-size:10.5px; color:#565B56; margin-top:5px;">para a OPERADORA</div>
+      </div>
+    </div>
+
+    <p style="margin:0 0 9px;"><strong>3.6.</strong> A OPERADORA será remunerada pelo PROPRIETÁRIO nas operações realizadas à sua ordem em {{ taxaGestao }}% sobre o montante dos custos diretos, despesas administrativas, despesas da base operacional e tributos incidentes, sendo o valor apurado ao final de cada {{ periodicidadeSub }}.</p>
+    <p style="margin:0 0 9px;"><strong>3.7.</strong> A taxa de gestão operacional de {{ taxaGestao }}% será faturada separadamente dos serviços de aplicação aérea, de modo a permitir a adequada identificação contábil e financeira de cada natureza de serviço.</p>
+    <p style="margin:0 0 9px;"><strong>3.8.</strong> Mensalmente, a OPERADORA informará ao PROPRIETÁRIO o montante dos serviços prestados, os valores dos gastos relacionados à operação, a taxa de gestão e o saldo a pagar, o qual será acumulado para pagamento {{ periodicidadeAdjSing }}, abatidos os adiantamentos recebidos do PROPRIETÁRIO.</p>
+
+    <!-- ===== 4 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">4</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Quarta — Do compartilhamento</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>4.1.</strong> A AERONAVE será compartilhada entre o PROPRIETÁRIO e a OPERADORA, permanecendo o PROPRIETÁRIO como titular do bem e a OPERADORA como responsável por sua gestão operacional, sendo sua utilização organizada conforme a necessidade de ambos. O PROPRIETÁRIO usará a aeronave para uso privado TPP, e a OPERADORA para uso aeroagrícola SAE-AG.</p>
+
+    <!-- ===== 5 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">5</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Quinta — Da responsabilidade</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>5.1.</strong> Este contrato reger-se-á pelas leis em vigor, sendo seus efeitos extensíveis aos herdeiros e sucessores das PARTES.</p>
+    <p style="margin:0 0 8px;"><strong>5.2.</strong> A responsabilidade por danos materiais ou morais sofridos, seja pelas PARTES ou por terceiros, decorrentes de acidente ou do uso normal da AERONAVE, será atribuída conforme a finalidade da operação:</p>
+    <ul style="margin:0 0 9px; padding-left:20px; display:flex; flex-direction:column; gap:5px;">
+      <li>o PROPRIETÁRIO será exclusivamente responsável quando a AERONAVE for operada a seu pedido;</li>
+      <li>a OPERADORA será exclusivamente responsável quando a AERONAVE for utilizada na prestação de serviços a terceiros.</li>
+    </ul>
+    <p style="margin:0 0 9px;"><strong>5.3. Parágrafo único.</strong> Fica expressamente proibido o arrendamento, a cessão da gestão operacional ou qualquer outra espécie de cessão de posse ou uso da AERONAVE, a qualquer título, sem a prévia, expressa e escrita concordância do PROPRIETÁRIO.</p>
+
+    <!-- ===== 6 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">6</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Sexta — Do seguro aeronáutico</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>6.1.</strong> A contratação, renovação, pagamento e manutenção do seguro aeronáutico obrigatório e do seguro de casco da AERONAVE serão de responsabilidade do PROPRIETÁRIO durante toda a vigência deste contrato.</p>
+    <p style="margin:0 0 9px;"><strong>6.2.</strong> O PROPRIETÁRIO deverá manter as coberturas compatíveis com a utilização aeroagrícola da AERONAVE e comunicar à OPERADORA a contratação, renovação ou alteração das apólices, fornecendo os documentos necessários à operação.</p>
+    <p style="margin:0 0 9px;"><strong>6.3.</strong> A OPERADORA prestará apoio operacional e documental ao PROPRIETÁRIO na contratação ou renovação do seguro e, em eventual sinistro, colaborará com a comunicação da ocorrência, preservação de documentos, fornecimento de relatórios e demais providências que estejam dentro de suas atribuições.</p>
+    <p style="margin:0 0 9px;"><strong>6.4.</strong> Franquias, prêmios, adicionais, diferenças de cobertura e demais valores decorrentes do seguro permanecerão de responsabilidade do PROPRIETÁRIO, ressalvado o direito de regresso caso o evento tenha sido causado por culpa ou dolo comprovado da OPERADORA ou de seus prepostos.</p>
+
+    <!-- ===== 7 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">7</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Sétima — Dos prazos</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>7.1.</strong> A vigência do presente contrato será de {{ vigencia }}, contado a partir da data de sua assinatura. Caso não haja manifestação de qualquer das PARTES até o término do prazo, o contrato ficará automaticamente prorrogado por tempo indeterminado.</p>
+    <p style="margin:0 0 9px;"><strong>7.2. Parágrafo primeiro.</strong> O contrato poderá ser rescindido por qualquer das PARTES mediante aviso formal, com antecedência mínima de {{ avisoPrevio }} dias, devendo ser providenciada a comunicação ou atualização perante a ANAC e o Registro Aeronáutico Brasileiro — RAB, quando aplicável.</p>
+    <p style="margin:0 0 9px;"><strong>7.3. Parágrafo segundo.</strong> As PARTES poderão, de comum acordo, dispensar o aviso prévio, desobrigando-se do pagamento de indenização, desde que tal acordo conste expressamente em Termo de Distrato.</p>
+    <p style="margin:0 0 9px;"><strong>7.4. Parágrafo terceiro.</strong> Qualquer uma das PARTES poderá rescindir o contrato imediatamente em caso de inadimplemento das condições contratuais. Se uma das PARTES der motivo justo, descumprindo parcial ou integralmente suas obrigações, a outra PARTE poderá notificá-la da rescisão imediata, sem obrigação de pagamento de multa rescisória.</p>
+    <p style="margin:0 0 9px;"><strong>7.5. Parágrafo quarto.</strong> O encerramento do contrato não prejudicará a apuração e a liquidação dos valores, adiantamentos, despesas, receitas de terceiros e demais obrigações constituídas durante sua vigência.</p>
+
+    <!-- ===== 8 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">8</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Oitava — Do pagamento de taxas e multas</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>8.1.</strong> A OPERADORA arcará com as taxas aeroportuárias, de telecomunicações aeronáuticas e multas decorrentes de atos diretamente relacionados à sua operação ou de infrações imputáveis à sua conduta, ainda que cobradas após o término do contrato.</p>
+    <p style="margin:0 0 9px;"><strong>8.2.</strong> As taxas, emolumentos e despesas vinculadas à propriedade, ao registro, à documentação da AERONAVE ou a obrigações financeiras do PROPRIETÁRIO serão por ele suportadas, ainda que operacionalmente providenciadas pela OPERADORA.</p>
+    <p style="margin:0 0 9px;"><strong>8.3.</strong> Quando uma despesa for inicialmente paga pela OPERADORA por conveniência operacional, mas for de responsabilidade do PROPRIETÁRIO, o respectivo valor será incluído na prestação de contas e reembolsado integralmente.</p>
+
+    <!-- ===== 9 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">9</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Nona — Do registro no RAB</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>9.1.</strong> A inscrição, averbação ou anotação deste contrato, da condição de utilização da AERONAVE e da identificação da OPERADORA perante o Registro Aeronáutico Brasileiro — RAB será de responsabilidade conjunta das PARTES, quando exigida pela legislação ou necessária à regularidade da operação.</p>
+    <p style="margin:0 0 9px;"><strong>9.2.</strong> As PARTES fornecerão os documentos, assinaturas e informações necessárias aos procedimentos perante a ANAC, sendo os custos de registro divididos igualmente entre o PROPRIETÁRIO e a OPERADORA, salvo ajuste escrito diverso.</p>
+    <p style="margin:0 0 9px;"><strong>9.3.</strong> Eventuais alterações relevantes na condição de propriedade, operação, seguro ou utilização da AERONAVE deverão ser comunicadas entre as PARTES para adoção das providências regulatórias cabíveis.</p>
+
+    <!-- ===== 10 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">10</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Décima — Condições gerais</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 8px;"><strong>10.1.</strong> A OPERADORA compromete-se a:</p>
+    <ul style="margin:0 0 9px; padding-left:20px; display:flex; flex-direction:column; gap:5px;">
+      <li>não modificar a AERONAVE sem prévia autorização do PROPRIETÁRIO e sem as aprovações técnicas ou regulamentares aplicáveis;</li>
+      <li>permitir inspeções da AERONAVE por pessoa credenciada ou indicada pelo PROPRIETÁRIO, desde que observados os procedimentos de segurança e sem interferência indevida na operação;</li>
+      <li>operar a AERONAVE dentro das especificações dos manuais do fabricante e das limitações aprovadas;</li>
+      <li>observar rigorosamente as normas de segurança de voo e suspender a operação quando as condições técnicas, meteorológicas, operacionais ou regulamentares não permitirem a realização segura do voo;</li>
+      <li>manter registros e controles operacionais compatíveis com a atividade e fornecer ao PROPRIETÁRIO informações e relatórios relativos à AERONAVE;</li>
+      <li>ao término do contrato, cessar a gestão e a operação da AERONAVE, entregar os documentos e registros sob sua guarda e cooperar com a atualização dos registros aplicáveis.</li>
+    </ul>
+    <p style="margin:0 0 9px;"><strong>10.2.</strong> O PROPRIETÁRIO compromete-se a fornecer à OPERADORA os documentos, autorizações, recursos e informações necessários à regular gestão da AERONAVE, bem como a não determinar operações que contrariem limitações técnicas, regulamentares ou critérios de segurança de voo.</p>
+    <p style="margin:0 0 9px;"><strong>10.3.</strong> Nenhuma instrução de programação do PROPRIETÁRIO obrigará a OPERADORA ou o piloto a realizar voo considerado tecnicamente inseguro ou contrário à legislação, aos manuais, aos limites da AERONAVE ou às condições meteorológicas e operacionais existentes.</p>
+
+    <!-- ===== 11 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">11</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Décima Primeira — Da manutenção e da contratação de fornecedores</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>11.1.</strong> A responsabilidade financeira pela manutenção preventiva e corretiva da AERONAVE, incluindo inspeções, revisões, reparos, peças, componentes, mão de obra, transporte, remoção, serviços especializados e demais despesas necessárias à preservação da aeronavegabilidade, permanecerá integralmente com o PROPRIETÁRIO.</p>
+    <p style="margin:0 0 9px;"><strong>11.2.</strong> A OPERADORA realizará a gestão operacional da manutenção, acompanhando vencimentos, horas de voo, ciclos, inspeções, boletins, diretrizes de aeronavegabilidade, recomendações do fabricante e demais controles aplicáveis.</p>
+    <p style="margin:0 0 9px;"><strong>11.3.</strong> Para execução da manutenção, a OPERADORA poderá solicitar orçamentos, contratar oficinas e prestadores, adquirir peças e componentes, autorizar serviços e praticar os atos administrativos necessários, em nome próprio ou em nome do PROPRIETÁRIO, conforme a conveniência operacional e a documentação exigida pelo fornecedor.</p>
+    <p style="margin:0 0 9px;"><strong>11.4.</strong> Todos os valores decorrentes das contratações realizadas para a AERONAVE serão de responsabilidade do PROPRIETÁRIO e integrarão a prestação de contas, ainda que o documento fiscal ou o contrato com o fornecedor seja emitido em nome da OPERADORA.</p>
+    <p style="margin:0 0 9px;"><strong>11.5.</strong> Grandes manutenções, revisões gerais, reparos de elevado valor, substituição de componentes principais ou serviços extraordinários poderão depender de adiantamento de recursos pelo PROPRIETÁRIO, mediante solicitação justificada da OPERADORA.</p>
+    <p style="margin:0 0 9px;"><strong>11.6.</strong> Sempre que possível, a OPERADORA submeterá previamente ao PROPRIETÁRIO os orçamentos de maior relevância. Medidas urgentes e indispensáveis à segurança, à preservação da AERONAVE ou ao cumprimento de exigência de aeronavegabilidade poderão ser adotadas pela OPERADORA, com comunicação ao PROPRIETÁRIO tão logo seja razoavelmente possível.</p>
+    <p style="margin:0 0 9px;"><strong>11.7.</strong> A gestão da manutenção pela OPERADORA não implica garantia própria dos serviços executados por oficinas ou fornecedores, permanecendo preservados os direitos de garantia e reclamação perante os respectivos responsáveis técnicos e comerciais.</p>
+
+    <!-- ===== 12 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">12</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Décima Segunda — Da confidencialidade</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>12.1.</strong> As PARTES se comprometem a manter sigilo absoluto sobre todas as informações comerciais, técnicas, operacionais ou de qualquer outra natureza relacionadas ao presente contrato, às operações da AERONAVE, aos serviços prestados ou aos negócios das PARTES, não podendo divulgá-las a terceiros sem o consentimento prévio e por escrito da outra PARTE.</p>
+    <p style="margin:0 0 9px;"><strong>12.2.</strong> A obrigação de confidencialidade não se aplica às informações exigidas por lei, autoridade pública, seguradora, auditoria, instituição financeira, oficina, fornecedor ou profissional contratado, desde que a divulgação seja limitada ao necessário para a finalidade correspondente.</p>
+
+    <!-- ===== 13 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">13</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Décima Terceira — Da força maior</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>13.1.</strong> Nenhuma das PARTES será considerada inadimplente ou responsável por atrasos ou falhas no cumprimento de suas obrigações contratuais caso tais atrasos ou falhas sejam decorrentes de eventos de força maior, tais como, mas não se limitando a: desastres naturais, guerras, atos de terrorismo, pandemias, greves, atos governamentais, alterações regulatórias, falhas de infraestrutura ou quaisquer outros eventos imprevisíveis, inevitáveis e fora do controle razoável das PARTES.</p>
+    <p style="margin:0 0 9px;"><strong>13.2. Parágrafo primeiro.</strong> Durante a vigência do evento de força maior, as obrigações das PARTES ficarão suspensas na medida do impacto causado, sendo retomadas imediatamente após o término do evento, salvo acordo diverso entre as PARTES.</p>
+    <p style="margin:0 0 9px;"><strong>13.3. Parágrafo segundo.</strong> Caso o evento de força maior perdure por mais de {{ prazoForcaMaior }} dias consecutivos, qualquer uma das PARTES poderá optar por rescindir o contrato sem aplicação de penalidades, mediante notificação por escrito à outra PARTE.</p>
+
+    <!-- ===== 14 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">14</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Décima Quarta — Do foro</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>14.1.</strong> Fica eleito o foro da comarca de {{ foro }} para dirimir quaisquer questões decorrentes deste contrato, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+
+    <!-- ===== 15 ===== -->
+    <div style="display:flex; align-items:baseline; gap:9px; margin:24px 0 4px;">
+      <span style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#219653;">15</span>
+      <h2 style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; margin:0; letter-spacing:0.04em; text-transform:uppercase;">Cláusula Décima Quinta — Dos casos omissos</h2>
+    </div>
+    <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:12px;"></div>
+    <p style="margin:0 0 9px;"><strong>15.1.</strong> Os casos omissos serão resolvidos com base na legislação aplicável, podendo as PARTES, de comum acordo, nomear mediador, conciliador ou árbitro para auxiliar na solução de eventuais pendências, sem prejuízo do foro eleito na cláusula anterior quando não houver convenção específica de arbitragem.</p>
+    <p style="margin:0 0 9px;"><strong>15.2.</strong> Qualquer alteração deste contrato somente será válida se formalizada por escrito e assinada pelas PARTES.</p>
+    <p style="margin:0 0 9px;"><strong>15.3.</strong> Estando justas e contratadas, as PARTES comprometem-se ao cumprimento das obrigações assumidas e, após lido e achado conforme, assinam o presente contrato, juntamente com 02 (duas) testemunhas, admitida a assinatura física ou eletrônica.</p>
+
+    <!-- ===== ASSINATURAS ===== -->
+    <div style="break-before:page; page-break-before:always; padding-top:6px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px;">Assinaturas</div>
+      <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:20px;"></div>
+      <p style="margin:0 0 46px; text-align:left;">{{ localData }}</p>
+
+      <div style="display:flex; flex-direction:column; gap:40px; text-align:left;">
+        <div>
+          <div style="border-top:1px solid #39453A; width:340px; margin-bottom:7px;"></div>
+          <div style="font-size:11.5px; font-weight:700; color:#39453A;">{{ nomeProprietario }}</div>
+          <div style="font-size:10px; color:#767C75; margin-top:2px;">PROPRIETÁRIO</div>
+        </div>
+        <div>
+          <div style="border-top:1px solid #39453A; width:340px; margin-bottom:7px;"></div>
+          <div style="font-size:11.5px; font-weight:700; color:#39453A;">OPP AVIAÇÃO AGRÍCOLA LTDA.</div>
+          <div style="font-size:11px; color:#333333; margin-top:1px;">Luciano Fernandes de Oliveira</div>
+          <div style="font-size:10px; color:#767C75; margin-top:2px;">Representante da OPERADORA</div>
+        </div>
+        <div>
+          <div style="border-top:1px solid #39453A; width:340px; margin-bottom:7px;"></div>
+          <div style="font-size:11.5px; font-weight:700; color:#39453A;">OPP AVIAÇÃO AGRÍCOLA LTDA.</div>
+          <div style="font-size:11px; color:#333333; margin-top:1px;">Abner Gomes Carvalho</div>
+          <div style="font-size:10px; color:#767C75; margin-top:2px;">Representante da OPERADORA</div>
+        </div>
+      </div>
+
+      <div style="font-size:9.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8A8F89; margin:40px 0 18px;">Testemunhas</div>
+      <div style="display:flex; flex-direction:column; gap:30px; text-align:left;">
+        <div>
+          <div style="border-top:1px solid #C9CDC7; width:400px; margin-bottom:6px;"></div>
+          <div style="font-size:10.5px; color:#565B56;">1. Nome: ____________________________________  ·  CPF: __________________</div>
+        </div>
+        <div>
+          <div style="border-top:1px solid #C9CDC7; width:400px; margin-bottom:6px;"></div>
+          <div style="font-size:10.5px; color:#565B56;">2. Nome: ____________________________________  ·  CPF: __________________</div>
+        </div>
+      </div>
+    </div>
+
+    <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+      <div class="no-print" style="break-before:page; page-break-before:always; text-align:left;">
+        <div style="font-family:'Comfortaa',sans-serif; font-size:13px; font-weight:700; color:#39453A; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px;">Checklist antes de assinar</div>
+        <div style="width:38px; height:2px; background:#6FCF97; margin-bottom:18px;"></div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <sc-for list="{{ checklist }}" as="c" hint-placeholder-count="8">
+            <div style="display:flex; gap:11px; align-items:flex-start; border:1px solid #E0E2DE; border-radius:8px; padding:10px 13px;">
+              <span style="flex:none; width:14px; height:14px; border:1.5px solid #A5D6A7; border-radius:3px; margin-top:2px;"></span>
+              <span style="font-size:11.5px; line-height:1.6; color:#333333;">{{ c }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:20px; background:#F3F6F3; border-left:3px solid #6FCF97; padding:12px 15px; font-size:10.5px; color:#565B56; line-height:1.6;">
+          Esta página é apoio interno e <strong>não é impressa</strong> — some no PDF e no Word. Desligue o modo guia para conferir o documento como o PROPRIETÁRIO vai receber.
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;modoGuia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Uso&quot;},&quot;tipoProprietario&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Pessoa física&quot;,&quot;Pessoa jurídica&quot;],&quot;default&quot;:&quot;Pessoa física&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proprietário&quot;},&quot;nomeProprietario&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Sr. Dorilino Prediger&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proprietário&quot;},&quot;docProprietario&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;320.429.731-49&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proprietário&quot;},&quot;enderecoProprietario&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Av. Natalino João Brescansin, nº 3002, Edifício Costa do Sol, Apto. 401, Bairro Alphaville, Sorriso-MT&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Proprietário&quot;},&quot;fabricante&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;AIR TRACTOR&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aeronave&quot;},&quot;prefixo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PS-DKA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aeronave&quot;},&quot;modelo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;AT-502B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aeronave&quot;},&quot;anoAeronave&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aeronave&quot;},&quot;numSerie&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;502B-3619&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aeronave&quot;},&quot;estadoAeronave&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Nova&quot;,&quot;Em uso&quot;],&quot;default&quot;:&quot;Nova&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aeronave&quot;},&quot;pilotos&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Luciano Fernandes de Oliveira | 023.584.499-38 | 126258\nAldo Vicente Silva | 020.391.531-36 | 159986&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pilotos&quot;},&quot;periodicidade&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Mensal&quot;,&quot;Trimestral&quot;,&quot;Quadrimestral&quot;,&quot;Semestral&quot;],&quot;default&quot;:&quot;Quadrimestral&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Condições financeiras&quot;},&quot;pctProprietario&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:65,&quot;min&quot;:0,&quot;max&quot;:100,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Condições financeiras&quot;},&quot;taxaGestao&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:7,&quot;min&quot;:0,&quot;max&quot;:30,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Condições financeiras&quot;},&quot;vigencia&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;01 (um) ano&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prazos&quot;},&quot;avisoPrevio&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:90,&quot;min&quot;:15,&quot;max&quot;:365,&quot;unit&quot;:&quot;dias&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Prazos&quot;},&quot;prazoForcaMaior&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:60,&quot;min&quot;:15,&quot;max&quot;:365,&quot;unit&quot;:&quot;dias&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Prazos&quot;},&quot;foro&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Sorriso-MT&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assinatura&quot;},&quot;localAssinatura&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Sorriso-MT&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assinatura&quot;},&quot;anoAssinatura&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assinatura&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const per = p.periodicidade ?? 'Quadrimestral';
+    const mapa = {
+      'Mensal':        { adj: 'mensais',        adjSing: 'mensal',        sub: 'mês' },
+      'Trimestral':    { adj: 'trimestrais',    adjSing: 'trimestral',    sub: 'trimestre' },
+      'Quadrimestral': { adj: 'quadrimestrais', adjSing: 'quadrimestral', sub: 'quadrimestre' },
+      'Semestral':     { adj: 'semestrais',     adjSing: 'semestral',     sub: 'semestre' },
+    };
+    const m = mapa[per] || mapa['Quadrimestral'];
+    const pctP = p.pctProprietario ?? 65;
+    const nome = p.nomeProprietario ?? 'Sr. Dorilino Prediger';
+    const pj = (p.tipoProprietario ?? 'Pessoa física') === 'Pessoa jurídica';
+
+    return {
+      modoGuia: p.modoGuia ?? false,
+      nomeProprietario: nome,
+      propTexto: nome.toUpperCase() + (pj
+        ? ', pessoa jurídica de direito privado, inscrita no CNPJ sob o nº ' + (p.docProprietario ?? '[00.000.000/0000-00]') + ', com sede à ' + (p.enderecoProprietario ?? '[ENDEREÇO COMPLETO, BAIRRO, CEP, CIDADE-UF]') + ', neste ato representada por [REPRESENTANTE LEGAL].'
+        : ', pessoa física, produtor rural, inscrito no CPF sob o nº ' + (p.docProprietario ?? '320.429.731-49') + ', residente à ' + (p.enderecoProprietario ?? 'Av. Natalino João Brescansin, nº 3002, Edifício Costa do Sol, Apto. 401, Bairro Alphaville, Sorriso-MT') + '.'),
+      fabricante: p.fabricante ?? 'AIR TRACTOR',
+      prefixo: p.prefixo ?? 'PS-DKA',
+      modelo: p.modelo ?? 'AT-502B',
+      anoAeronave: p.anoAeronave ?? '2026',
+      numSerie: p.numSerie ?? '502B-3619',
+      estadoAeronave: (p.estadoAeronave ?? 'Nova') === 'Nova'
+        ? 'é nova, encontrando-se em perfeitas condições'
+        : 'encontra-se em uso, em condições adequadas',
+
+      pilotos: (p.pilotos ?? 'Luciano Fernandes de Oliveira | 023.584.499-38 | 126258\nAldo Vicente Silva | 020.391.531-36 | 159986')
+        .split('\n').map(l => l.trim()).filter(Boolean).map((l, i, arr) => {
+          const [n, cpf, canac] = l.split('|').map(s => (s || '').trim());
+          return n + ', CPF nº ' + (cpf || '[CPF]') + ', CANAC nº ' + (canac || '[CANAC]') + (i === arr.length - 1 ? '.' : ';');
+        }),
+
+      periodicidadeAdj: m.adj,
+      periodicidadeAdjSing: m.adjSing,
+      periodicidadeSub: m.sub,
+      pctProprietario: pctP,
+      pctOperadora: 100 - pctP,
+      taxaGestao: p.taxaGestao ?? 7,
+      vigencia: p.vigencia ?? '01 (um) ano',
+      avisoPrevio: p.avisoPrevio ?? 90,
+      prazoForcaMaior: p.prazoForcaMaior ?? 60,
+      foro: p.foro ?? 'Sorriso-MT',
+      localData: (p.localAssinatura ?? 'Sorriso-MT') + ', ____ de ____________________ de ' + (p.anoAssinatura ?? '2026') + '.',
+
+      checklist: [
+        'Nome, documento e endereço do PROPRIETÁRIO conferidos contra o documento oficial (não contra memória nem contra contrato anterior).',
+        'Dados da AERONAVE — fabricante, prefixo, modelo, ano e número de série — batendo com o Certificado de Matrícula.',
+        'Lista de pilotos autorizados atualizada, com CPF e CANAC de cada um verificados e habilitações válidas na data da assinatura.',
+        'Cláusula Terceira revisada com quem negociou: periodicidade da prestação de contas, divisão da margem e taxa de gestão.',
+        'Seguro: apólice vigente e cobertura compatível com uso aeroagrícola confirmadas com o PROPRIETÁRIO antes do primeiro voo.',
+        'Prazos preenchidos: vigência, aviso prévio de rescisão e limite de força maior.',
+        'Texto final revisado pelo advogado do Grupo — inclusive quando a alteração pareceu pequena.',
+        'Averbação no RAB providenciada ou agendada, e a via assinada arquivada na pasta da aeronave.',
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

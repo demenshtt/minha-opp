@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    code { font-family:'Montserrat',monospace; background:#F0F1EE; padding:1px 5px; border-radius:3px; font-size:10pt; }
+    tbody tr { break-inside: avoid; }
+    h2, h3 { break-after: avoid; }
+    a { color:#219653; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <rect x="80" y="130" width="240" height="22" rx="4" fill="#6FCF97"/>
+      <rect x="80" y="162" width="240" height="16" rx="4" fill="#4A5A4C"/>
+      <rect x="80" y="186" width="240" height="16" rx="4" fill="#4A5A4C"/>
+      <rect x="80" y="210" width="240" height="16" rx="4" fill="#4A5A4C"/>
+      <text x="200" y="290" font-family="Comfortaa,sans-serif" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">MERA</text>
+    </svg>
+  </template>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.55in" hint-size="816px,1056px">
+
+  <div slot="header" style="display:flex; align-items:center; justify-content:space-between; padding:9px 4px; border-bottom:1px solid #E6E7E4; font-family:'Montserrat',sans-serif;">
+    <img src="assets/preview/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="height:20px; width:auto;">
+    <div style="font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:#8A8F89; font-weight:600;">MERA · Especificação para o sistema</div>
+  </div>
+  <div slot="footer" style="display:flex; align-items:center; justify-content:space-between; padding:7px 4px; border-top:1px solid #E6E7E4; font-family:'Montserrat',sans-serif; font-size:8px; letter-spacing:0.06em; color:#A0A59D;">
+    <span>CONFIDENCIAL GRUPO OPP+ · Uso interno</span>
+    <span>MERA · especificação v1 · julho/2026</span>
+  </div>
+
+  <div style="background:#39453A; border-radius:14px; padding:36px 38px 30px; margin:2px 0 22px; position:relative; overflow:hidden; font-family:'Montserrat',sans-serif;">
+    <div style="position:absolute; top:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.20), transparent 62%);"></div>
+    <div style="position:relative;">
+      <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#6FCF97; font-weight:600; margin-bottom:16px;"><span style="width:26px; height:1.5px; background:#6FCF97;"></span>O Norte · Documento emitido por sistema</div>
+      <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:31px; line-height:1.06; color:#FFFFFF; margin:0 0 8px;">MERA — Especificação de emissão</h1>
+      <div style="font-size:14.5px; color:#C4CAC2; font-weight:300; max-width:52ch;">Mapa de Execução de Recomendação de Aplicação. O que o sistema deve imprimir, com que dado, em que formato e em que ordem.</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Montserrat',sans-serif; color:#3C413C; font-size:11pt; line-height:1.62;">
+
+    <div style="background:#F0F1EE; border-left:3px solid #219653; padding:13px 16px; margin:0 0 22px; font-size:10.5pt; line-height:1.55;">
+      <strong style="color:#39453A;">Para quem é este documento.</strong> Para quem for programar a emissão do MERA no sistema da empresa. O MERA <strong>não é um template preenchido à mão</strong> — a personalização vive na base do sistema. Este documento é o contrato: campos, origem, formato e regras. O desenho da folha está no anexo visual (seção 8).
+    </div>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:0 0 8px;">1 · O que é o MERA e o que ele não é</h2>
+    <p style="margin:0 0 10px;">O MERA é o documento de <strong>formato próprio da empresa</strong> que registra e comunica ao produtor a execução de uma recomendação de aplicação: o que foi recomendado, o que foi aplicado, por quem, quando e em que condições.</p>
+    <p style="margin:0 0 10px;">Não substitui e não se confunde com o <strong>Relatório Operacional</strong>, cujo formato é definido pela ANAC e não passa por padronização interna. Onde houver divergência de nomenclatura entre os dois, o Relatório Operacional prevalece por ser peça regulatória — o MERA se adapta a ele, nunca o contrário.</p>
+    <p style="margin:0 0 20px;">Regra de escopo: <strong>um MERA por recomendação</strong>. Uma recomendação aplicada em dias diferentes gera linhas de execução distintas no mesmo MERA, não dois documentos.</p>
+
+    <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 6px;">1.1 O MERA é documento digital</h3>
+    <p style="margin:0 0 10px;">Vale para o MERA a <strong>medida de não ação</strong> da Opp: não se imprime o que a lei não exige. Papel não fica na nuvem, não é consultado a 200 km de distância, molha, rasga e some. O MERA nasce e permanece em PDF digital — a Opp não emite via impressa. Se o produtor quiser papel, ele imprime; a folha continua projetada para isso, mas a impressão é escolha dele, não etapa nossa.</p>
+    <p style="margin:0 0 20px;">Consequência para o sistema: o PDF precisa ser <strong>legível em tela de celular</strong> sem zoom desconfortável, ter o texto pesquisável (nunca imagem rasterizada da folha) e nome de arquivo que se explique sozinho na lista do drive.</p>
+
+    <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5pt; color:#39453A; margin:0 0 6px;">1.2 Entrega: o cliente busca, a Opp não empurra</h3>
+    <p style="margin:0 0 10px;">Vale também a <strong>medida de comportamento</strong>: concluído o cadastro do cliente e criada a estrutura de pastas dele, a Opp <strong>não envia</strong> documento, solicitação ou lembrete por iniciativa própria. Todo documento é <strong>disponibilizado</strong> na pasta em nuvem do cliente, dentro da Minha Opp+, nos horários e prazos previstos em contrato. Quem tem interesse vai lá e baixa quando quiser — inclusive quem ele delegar acesso.</p>
+    <p style="margin:0 0 20px;">Única exceção prevista: as <strong>informações de estado do serviço enviadas pelo Áylos</strong>, e só se o cliente quiser recebê-las. Fora disso, o sistema não dispara MERA por e-mail, WhatsApp ou qualquer canal — publica no lugar certo e registra a data da publicação.</p>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">2 · Estrutura obrigatória, nesta ordem</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:10pt; margin:0 0 20px;">
+      <thead><tr style="background:#39453A; color:#FFFFFF;">
+        <th style="text-align:left; padding:7px 10px; font-weight:600; width:34px;">#</th>
+        <th style="text-align:left; padding:7px 10px; font-weight:600;">Bloco</th>
+        <th style="text-align:left; padding:7px 10px; font-weight:600;">Papel no documento</th>
+      </tr></thead>
+      <tbody>
+        <sc-for list="{{ blocos }}" as="b" hint-placeholder-count="6">
+          <tr style="border-bottom:1px solid #E6E7E4;">
+            <td style="padding:7px 10px; color:#219653; font-weight:700;">{{ b.n }}</td>
+            <td style="padding:7px 10px; font-weight:600; color:#39453A;">{{ b.nome }}</td>
+            <td style="padding:7px 10px; color:#565B56;">{{ b.papel }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">3 · Campos, origem e formato</h2>
+    <p style="margin:0 0 12px; font-size:10.5pt;">Coluna <strong>Origem</strong> = de onde o sistema tira o dado. Coluna <strong>Obrig.</strong> = se o documento pode ser emitido sem ele.</p>
+    <table style="width:100%; border-collapse:collapse; font-size:9.5pt; margin:0 0 14px;">
+      <thead><tr style="background:#F0F1EE; color:#39453A;">
+        <th style="text-align:left; padding:6px 9px; font-weight:700; border-bottom:1px solid #DDE0DB;">Campo</th>
+        <th style="text-align:left; padding:6px 9px; font-weight:700; border-bottom:1px solid #DDE0DB;">Origem</th>
+        <th style="text-align:left; padding:6px 9px; font-weight:700; border-bottom:1px solid #DDE0DB;">Formato de saída</th>
+        <th style="text-align:center; padding:6px 9px; font-weight:700; border-bottom:1px solid #DDE0DB; width:52px;">Obrig.</th>
+      </tr></thead>
+      <tbody>
+        <sc-for list="{{ campos }}" as="c" hint-placeholder-count="10">
+          <tr style="border-bottom:1px solid #EEF0ED;">
+            <td style="padding:5px 9px; font-weight:600; color:#39453A;">{{ c.campo }}</td>
+            <td style="padding:5px 9px; color:#565B56;">{{ c.origem }}</td>
+            <td style="padding:5px 9px; color:#565B56;">{{ c.formato }}</td>
+            <td style="padding:5px 9px; text-align:center; color:{{ c.cor }}; font-weight:700;">{{ c.obrig }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">4 · Regras de formatação (valem para todo campo)</h2>
+    <div style="margin:0 0 20px;">
+      <sc-for list="{{ regras }}" as="r" hint-placeholder-count="8">
+        <div style="display:flex; gap:11px; padding:4px 0; font-size:10.5pt; line-height:1.55;">
+          <span style="flex:none; width:18px; height:18px; border-radius:50%; background:#EEF3EF; color:#219653; font-size:9pt; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px;">{{ r.n }}</span>
+          <span>{{ r.texto }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">5 · Validações antes de emitir</h2>
+    <p style="margin:0 0 10px; font-size:10.5pt;">O sistema não deve emitir o MERA se qualquer uma destas falhar — melhor barrar do que entregar documento com furo ao produtor.</p>
+    <table style="width:100%; border-collapse:collapse; font-size:10pt; margin:0 0 20px;">
+      <tbody>
+        <sc-for list="{{ validacoes }}" as="v" hint-placeholder-count="6">
+          <tr style="border-bottom:1px solid #EEF0ED;">
+            <td style="padding:6px 10px; width:120px; font-weight:700; color:#219653; vertical-align:top;">{{ v.id }}</td>
+            <td style="padding:6px 10px; color:#3C413C;">{{ v.regra }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">6 · O que NÃO entra no MERA</h2>
+    <div style="background:#F7F7F6; border-radius:8px; padding:14px 18px; margin:0 0 20px;">
+      <sc-for list="{{ naoEntra }}" as="x" hint-placeholder-count="5">
+        <div style="display:flex; gap:10px; padding:3px 0; font-size:10.5pt; line-height:1.5;">
+          <span style="flex:none; color:#A5423A; font-weight:700;">×</span><span>{{ x }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">7 · Identidade visual da emissão</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:10pt; margin:0 0 12px;">
+      <tbody>
+        <sc-for list="{{ visual }}" as="v" hint-placeholder-count="8">
+          <tr style="border-bottom:1px solid #EEF0ED;">
+            <td style="padding:6px 10px; width:150px; font-weight:600; color:#39453A; vertical-align:top;">{{ v.item }}</td>
+            <td style="padding:6px 10px; color:#565B56;">{{ v.valor }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+    <p style="margin:0 0 20px; font-size:10.5pt;">Marca da emissão: <strong>Opp Aviação Agrícola</strong> (não o Grupo Opp+), porque o serviço e a responsabilidade legal são da controlada. Rodapé sempre com a razão social completa e o CNPJ.</p>
+
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15.5pt; color:#39453A; margin:22px 0 8px;">8 · Anexo visual e arquivamento</h2>
+    <p style="margin:0 0 10px;">O desenho aprovado da folha está em <a href="MERA - Mapa de Execucao.dc.html">MERA — modelo visual</a>, na Central. Ele serve como referência de layout para a implementação: hierarquia, ordem dos blocos, pesos de fonte e rodapé. Não é peça de preenchimento manual.</p>
+    <p style="margin:0 0 10px;">Nome do arquivo gerado: <code>AVI_MERA_{{ padraoNome }}</code> — exemplo: <code>AVI_MERA_39001_Pampeiro_20260217_v1.pdf</code>.</p>
+    <p style="margin:0 0 6px;">Arquivamento interno conforme a estrutura do MDC-GDI: <code>11_Opp_Aviacao_Agricola</code>, na pasta do cliente/safra. O mesmo arquivo — sem segunda versão e sem marca d'água — é o publicado na pasta em nuvem do cliente na Minha Opp+. Um arquivo, dois lugares, nenhuma cópia divergente.</p>
+    <div style="background:#EEF3EF; border:1px solid #A5D6A7; border-radius:8px; padding:13px 16px; margin:16px 0 0; font-size:10.5pt;">
+      <strong style="color:#39453A;">Pendência de decisão registrada:</strong> confirmar quais telefones entram no rodapé. O arquivo antigo traz (66) 9 9232 0821 e (66) 3212 9559; o contato institucional registrado no Norte é (41) 99947-1355. Enquanto não houver decisão, o sistema deve usar os números da base operacional, que são os que atendem o produtor.
+    </div>
+  </div>
+
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056}}">
+class Component extends DCLogic {
+  renderVals() {
+    const sim = { obrig: 'Sim', cor: '#219653' };
+    const nao = { obrig: 'Não', cor: '#8A8F89' };
+    return {
+      padraoNome: '<recomendacao>_<fazenda>_<AAAAMMDD>_v1.pdf',
+
+      blocos: [
+        { n: '0', nome: 'Cabeçalho', papel: 'Marca da Opp Aviação Agrícola, título do documento, número da recomendação e data de emissão.' },
+        { n: '1', nome: 'Identificação', papel: 'Cliente, fazenda, cultura, talhões, área aplicada e data da recomendação.' },
+        { n: '2', nome: 'Recomendação de aplicação', papel: 'Produtos com quantidade e unidade, taxa de aplicação e faixa.' },
+        { n: '3', nome: 'Execução do serviço', papel: 'Data, piloto, prefixo da aeronave, equipamento, horário de início e término.' },
+        { n: '4', nome: 'Condições da aplicação', papel: 'Temperatura, umidade relativa e vento no início e no término; pH da calda; referência do registro de voo.' },
+        { n: '5', nome: 'Observações da operação', papel: 'Texto livre curto, incluindo a declaração da fonte das medições meteorológicas.' },
+        { n: '6', nome: 'Rodapé institucional', papel: 'Razão social, CNPJ, endereço, contatos e base operacional.' },
+      ],
+
+      campos: [
+        Object.assign({ campo: 'Nº da recomendação', origem: 'Cadastro da recomendação (chave)', formato: 'Inteiro, sem zeros à esquerda' }, sim),
+        Object.assign({ campo: 'Data de emissão', origem: 'Data em que o PDF foi gerado', formato: 'dd/mm/aa' }, sim),
+        Object.assign({ campo: 'Cliente', origem: 'Cadastro do cliente — nome como no contrato', formato: 'Texto, capitalização normal' }, sim),
+        Object.assign({ campo: 'Fazenda', origem: 'Cadastro de propriedade vinculada ao cliente', formato: 'Texto' }, sim),
+        Object.assign({ campo: 'Cultura', origem: 'Recomendação', formato: 'Texto' }, sim),
+        Object.assign({ campo: 'Talhões', origem: 'Recomendação (lista)', formato: 'Números separados por "e" ou vírgula: 3 e 4' }, sim),
+        Object.assign({ campo: 'Área aplicada', origem: 'Execução (não a área contratada)', formato: 'Decimal com 1 casa + " ha": 378,0 ha' }, sim),
+        Object.assign({ campo: 'Data da recomendação', origem: 'Recomendação', formato: 'dd/mm/aa' }, sim),
+        Object.assign({ campo: 'Produtos (lista)', origem: 'Composição da calda na recomendação', formato: 'Quantidade decimal 2 casas + unidade (L, kg) + nome comercial' }, sim),
+        Object.assign({ campo: 'Taxa de aplicação', origem: 'Execução', formato: 'Decimal 1 casa, rótulo "L/kg por ha"' }, sim),
+        Object.assign({ campo: 'Faixa de aplicação', origem: 'Execução', formato: 'Inteiro + " m"' }, sim),
+        Object.assign({ campo: 'Data da aplicação', origem: 'Execução / log do voo', formato: 'dd/mm/aa' }, sim),
+        Object.assign({ campo: 'Piloto agrícola', origem: 'Escala de voo', formato: 'Primeiro nome + sobrenome' }, sim),
+        Object.assign({ campo: 'Prefixo da aeronave', origem: 'Frota', formato: 'Maiúsculas com hífen: PP-CPG' }, sim),
+        Object.assign({ campo: 'Equipamento agrícola', origem: 'Configuração da aeronave no serviço', formato: 'Texto' }, sim),
+        Object.assign({ campo: 'Horário início / término', origem: 'Log do voo (DGPS)', formato: '00h00' }, sim),
+        Object.assign({ campo: 'Temperatura, UR e vento', origem: 'Estação da base mais próxima — leitura no início e no término', formato: 'Inteiro; unidades °C, %, km/h' }, sim),
+        Object.assign({ campo: 'pH da calda', origem: 'Registro de preparo', formato: 'Decimal 1 casa' }, nao),
+        Object.assign({ campo: 'Referência do log DGPS', origem: 'Sistema de registro de voo', formato: 'Mesmo número da recomendação' }, nao),
+        Object.assign({ campo: 'Observações', origem: 'Campo livre do operador + texto fixo da fonte meteorológica', formato: 'Até 3 linhas' }, nao),
+      ],
+
+      regras: [
+        { n: '1', texto: 'Decimal com vírgula, milhar com ponto (378,0 · 1.250,5). Nunca notação com ponto decimal.' },
+        { n: '2', texto: 'Data sempre dd/mm/aa no corpo do documento; AAAAMMDD apenas no nome do arquivo.' },
+        { n: '3', texto: 'Hora no formato 00h00, sem segundos.' },
+        { n: '4', texto: 'Unidade sempre à direita do número, em corpo menor e cinza — nunca dentro do rótulo.' },
+        { n: '5', texto: 'Campo sem dado imprime "não se aplica", nunca vazio, nunca "-" nem "0".' },
+        { n: '6', texto: 'Nenhuma abreviação inventada. "Umidade relativa", não "UR"; "Temperatura", não "Temp".' },
+        { n: '7', texto: 'Uma folha, orientação paisagem, tamanho carta. Se o conteúdo não couber, reduzir a lista de produtos em continuação numerada — nunca cortar informação.' },
+        { n: '8', texto: 'Corpo mínimo de 11,5 px (≈8,6 pt) nos valores; rótulos e unidades no mínimo 10,5 px; rodapé institucional no mínimo 10 px. Medidas em px porque o documento é digital — na dúvida, aumente.' },
+        { n: '9', texto: 'Zero jargão e zero sigla nova: o produtor lê este documento sem intérprete.' },
+        { n: '10', texto: 'PDF com texto selecionável e pesquisável — nunca a folha exportada como imagem.' },
+        { n: '11', texto: 'Sem marca d\'água, sem senha e sem restrição de cópia: o documento é do cliente.' },
+      ],
+
+      validacoes: [
+        { id: 'V1', regra: 'A recomendação existe, está fechada e tem pelo menos uma execução registrada.' },
+        { id: 'V2', regra: 'Área aplicada maior que zero e menor ou igual à área da recomendação; se maior, bloquear e pedir revisão.' },
+        { id: 'V3', regra: 'Horário de término posterior ao de início, no mesmo dia da data de aplicação.' },
+        { id: 'V4', regra: 'Leituras meteorológicas presentes nos dois momentos (início e término).' },
+        { id: 'V5', regra: 'Piloto, prefixo e equipamento preenchidos — são os campos que sustentam a rastreabilidade.' },
+        { id: 'V6', regra: 'Todos os produtos da recomendação listados, com unidade compatível com o cadastro do produto.' },
+        { id: 'V7', regra: 'Cliente e fazenda vinculados entre si no cadastro; divergência bloqueia a emissão.' },
+        { id: 'V8', regra: 'A pasta em nuvem do cliente existe e está acessível antes de publicar; sem pasta, não há entrega — e não se substitui a publicação por envio.' },
+      ],
+
+      naoEntra: [
+        'Preço, valor de serviço, condição de pagamento ou qualquer dado comercial.',
+        'Link de loja de aplicativo, banner, chamada de rede social ou peça de divulgação.',
+        'Lista de setores e ramais da empresa — o canal de contato do produtor é o rodapé e o WhatsApp.',
+        'Dado de terceiro não envolvido no serviço (outro cliente, outra fazenda, outra recomendação).',
+        'Frase de efeito ou slogan no corpo do documento; a assinatura institucional fica no rodapé.',
+        'Marca d\'água de rascunho, senha ou bloqueio de cópia no arquivo publicado.',
+        'Disparo automático por e-mail ou WhatsApp anexando o MERA — o documento é publicado na pasta do cliente, não empurrado.',
+      ],
+
+      visual: [
+        { item: 'Página', valor: 'Carta, paisagem, uma folha. Margem de 0,42 pol.' },
+        { item: 'Marca', valor: 'Opp Aviação Agrícola, versão flat, altura ~34 px (0,35 pol) no cabeçalho.' },
+        { item: 'Títulos de bloco', valor: 'Faixa em Verde Escuro #39453A, texto branco, caixa alta, 10 px, peso 700.' },
+        { item: 'Rótulos de campo', valor: 'Caixa alta, 10,5 px, cinza #8A8F89, peso 700.' },
+        { item: 'Valores', valor: 'Montserrat 11,5 px, peso 600, cor #39453A. Unidades 10,5 px em cinza.' },
+        { item: 'Destaques', valor: 'Esmeralda #219653 apenas no número da recomendação e nos rótulos "início/término".' },
+        { item: 'Fontes', valor: 'Comfortaa nos títulos; Montserrat em todo o resto.' },
+        { item: 'Bordas e fundos', valor: 'Borda #E0E2DE, linha interna #EEF0ED, cabeçalho de tabela #F7F8F6. Sem sombra, sem degradê.' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -8,6 +8,9 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
@@ -29,6 +32,7 @@
       <rect x="60" y="322" width="280" height="10" rx="3" fill="#39453A"/>
     </svg>
   </template>
+  <script src="carimbo.js"></script>
 </helmet>
 
 <x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>

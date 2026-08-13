@@ -8,9 +8,29 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <meta name="omelette-owns-print" content="1">
+  <style>
+    @page { size: A4 portrait; margin: 14mm 12mm; }
+    @media print {
+      html, body { background: #FFFFFF !important; }
+      #dc-root > div > div { max-width: none !important; border-radius: 0 !important; box-shadow: none !important; }
+      #dc-root > div { padding: 0 !important; min-height: 0 !important; }
+      [data-export] { display: none !important; }
+      button { display: none !important; }
+      a { text-decoration: none !important; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      #dc-root > div > div > div > div[style*="border-radius"] { break-inside: avoid; }
+      h1, h2, h3 { break-after: avoid; }
+      img { break-inside: avoid; }
+      p, li { orphans: 3; widows: 3; }
+    }
+  </style>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -18,6 +38,7 @@
     .lucide { width:1em; height:1em; vertical-align:middle; stroke-width:1.75; flex:none; }
     a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
   </style>
+  <script src="carimbo.js"></script>
 </helmet>
 
 <div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
@@ -44,7 +65,7 @@
     <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:20px; margin-bottom:44px; align-items:start;">
       <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden;">
         <div style="background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:26px 24px; display:flex; align-items:center; gap:16px;">
-          <div style="width:58px; height:58px; border-radius:50%; background:#2C352D; display:flex; align-items:center; justify-content:center; flex:none; box-shadow:0 0 0 3px rgba(255,255,255,.12);"><img src="assets/icone-opp-grupo.png" alt="" style="width:34px; height:auto;"></div>
+          <div style="width:58px; height:58px; border-radius:50%; background:#2C352D; display:flex; align-items:center; justify-content:center; flex:none; box-shadow:0 0 0 3px rgba(255,255,255,.12);"><img src="assets/icone-opp-grupo-bbox.png" alt="" style="width:30px; height:auto;"></div>
           <div>
             <div style="font-family:'Comfortaa',sans-serif; font-weight:600; font-size:16px; color:#FFFFFF; display:flex; align-items:center; gap:7px;">Opp · Aviação e Gestão de Ativos <span style="color:#6FCF97; font-size:15px;"><i data-lucide="badge-check"></i></span></div>
             <div style="font-size:11.5px; color:#B7C1B5; margin-top:3px;">Conta comercial · Sorriso/MT</div>
@@ -118,7 +139,7 @@
     <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">5 · Como fica na conversa</div>
     <div style="max-width:420px; margin:0 auto 20px; background:#ECE5DD; border-radius:18px; box-shadow:0 14px 40px rgba(57,69,58,.16); overflow:hidden;">
       <div style="background:#39453A; padding:14px 18px; display:flex; align-items:center; gap:12px;">
-        <div style="width:38px; height:38px; border-radius:50%; background:#2C352D; display:flex; align-items:center; justify-content:center;"><img src="assets/icone-opp-grupo.png" alt="" style="width:22px; height:auto;"></div>
+        <div style="width:38px; height:38px; border-radius:50%; background:#2C352D; display:flex; align-items:center; justify-content:center; flex:none;"><img src="assets/icone-opp-grupo-bbox.png" alt="" style="width:20px; height:auto;"></div>
         <div><div style="font-size:13.5px; font-weight:600; color:#FFFFFF; font-family:'Comfortaa',sans-serif;">Cliente por indicação</div><div style="font-size:10.5px; color:#A7B0A5;">online</div></div>
       </div>
       <div style="padding:20px 16px; display:flex; flex-direction:column; gap:10px;">
@@ -130,6 +151,137 @@
       </div>
     </div>
 
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin:44px 0 16px;">6 · Linha por função</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:34px; align-items:start;">
+      <div>
+        <h3 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; margin:0 0 10px; color:#39453A;">O número é do cargo, não da pessoa</h3>
+        <p style="font-size:13.5px; line-height:1.7; color:#4A514A; margin:0 0 12px;">O cliente salva um número e ele continua valendo depois de qualquer troca de equipe. Some o "manda no particular do fulano", some o cliente órfão quando alguém sai, e o histórico da conversa fica na empresa — onde deve estar.</p>
+        <p style="font-size:13.5px; line-height:1.7; color:#4A514A; margin:0;">Em troca, exige disciplina: quem assume a função assume a linha, com o mesmo perfil e as mesmas respostas prontas. O avatar identifica o setor, nunca quem está com o aparelho.</p>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:16px; padding:6px 22px 14px;">
+        <sc-for list="{{ linhaFuncao }}" as="l" hint-placeholder-count="4">
+          <div style="padding:13px 0; border-bottom:1px solid #F2F3F0;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13px; color:#39453A; margin-bottom:3px;">{{ l.titulo }}</div>
+            <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ l.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin:0 0 16px;">7 · Avatar por setor</div>
+    <p style="font-size:13.5px; line-height:1.7; color:#4A514A; max-width:66ch; margin:0 0 22px;">Mesma marca, setor gravado. Na lista de conversas o cliente distingue de longe qual linha da Opp está falando — e a equipe encontra o contato certo sem abrir três fichas.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:16px;">
+      <div style="text-align:center;">
+        <div id="avatar-principal" style="container-type:inline-size; width:100%; aspect-ratio:1; border-radius:50%; background:#FFFFFF; border:1.8cqw solid #219653; display:grid; place-content:center; justify-items:center; overflow:hidden; box-shadow:0 0 0 1px #E6E7E4;">
+          <img src="assets/icone-opp-grupo-bbox.png" alt="" style="width:45%; height:auto; display:block;">
+        </div>
+        <div style="font-size:12px; color:#6B706A; margin-top:10px;">Comercial · a casa</div>
+      </div>
+      <div style="text-align:center;">
+        <div id="avatar-operacoes" style="container-type:inline-size; width:100%; aspect-ratio:1; border-radius:50%; background:#39453A; display:grid; place-content:center; justify-items:center; gap:0; overflow:hidden;">
+          <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:30%; height:auto; display:block; margin-bottom:5.2cqw;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:11.2cqw; color:#FFFFFF; line-height:1; margin-bottom:2.4cqw;">OPERAÇÕES</div>
+          <div style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:5.8cqw; letter-spacing:0.2em; color:#A5D6A7; line-height:1;">BASE I</div>
+        </div>
+        <div style="font-size:12px; color:#6B706A; margin-top:10px;">Operações · Base I</div>
+      </div>
+      <div style="text-align:center;">
+        <div id="avatar-financeiro" style="container-type:inline-size; width:100%; aspect-ratio:1; border-radius:50%; background:#333333; display:grid; place-content:center; justify-items:center; gap:0; overflow:hidden;">
+          <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:30%; height:auto; display:block; margin-bottom:6cqw;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:10.4cqw; color:#FFFFFF; line-height:1; white-space:nowrap;">FINANCEIRO</div>
+        </div>
+        <div style="font-size:12px; color:#6B706A; margin-top:10px;">Financeiro</div>
+      </div>
+      <div style="text-align:center;">
+        <div id="avatar-administrativo" style="container-type:inline-size; width:100%; aspect-ratio:1; border-radius:50%; background:#219653; display:grid; place-content:center; justify-items:center; gap:0; overflow:hidden; opacity:.42;">
+          <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:30%; height:auto; display:block; margin-bottom:6cqw;">
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:7.8cqw; color:#FFFFFF; line-height:1; white-space:nowrap;">ADMINISTRATIVO</div>
+        </div>
+        <div style="font-size:12px; color:#9AA097; margin-top:10px;">Administrativo · em reserva</div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:6px 24px 14px; margin-bottom:12px;">
+      <sc-for list="{{ regraAvatar }}" as="r" hint-placeholder-count="4">
+        <div style="display:flex; gap:16px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #F2F3F0;">
+          <div style="flex:none; width:130px; font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12.5px; color:#39453A;">{{ r.item }}</div>
+          <div style="font-size:12.5px; line-height:1.6; color:#5A615A;">{{ r.regra }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex; gap:9px; align-items:flex-start; background:#FDF8F0; border:1px solid #F0DCC0; border-radius:10px; padding:11px 14px; margin-bottom:18px;">
+      <span style="flex:none; color:#C08A2E; font-size:13px; line-height:1.4;">!</span>
+      <span style="font-size:11.5px; line-height:1.55; color:#6B5426;">Em miniatura de lista, o que separa as linhas é <strong>a cor e o símbolo</strong> — o texto só se lê ao abrir a conversa ou na busca. Por isso cada setor tem sua cor da paleta; o nome gravado é reforço, não a única pista.</span>
+    </div>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:34px;">
+      <button onClick="{{ baixarOperacoes }}" style="display:inline-flex; align-items:center; gap:8px; background:#39453A; color:#FFFFFF; border:none; border-radius:10px; padding:11px 18px; font-size:12.5px; font-weight:600; font-family:'Montserrat',sans-serif; cursor:pointer;" style-hover="background:#2C352D">Baixar avatar · Operações Base I</button>
+      <button onClick="{{ baixarFinanceiro }}" style="display:inline-flex; align-items:center; gap:8px; background:#333333; color:#FFFFFF; border:none; border-radius:10px; padding:11px 18px; font-size:12.5px; font-weight:600; font-family:'Montserrat',sans-serif; cursor:pointer;" style-hover="background:#1F1F1F">Baixar avatar · Financeiro</button>
+      <button onClick="{{ baixarPrincipal }}" style="display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; color:#219653; border:1px solid #CDE6D6; border-radius:10px; padding:11px 18px; font-size:12.5px; font-weight:600; font-family:'Montserrat',sans-serif; cursor:pointer;" style-hover="background:#F1F7F2">Baixar avatar · Comercial</button>
+      <button onClick="{{ baixarAdministrativo }}" style="display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; color:#8A8F89; border:1px solid #E6E7E4; border-radius:10px; padding:11px 18px; font-size:12.5px; font-weight:600; font-family:'Montserrat',sans-serif; cursor:pointer;" style-hover="background:#F5F6F4">Administrativo (reserva)</button>
+      <span style="font-size:11.5px; color:#8A8F89; align-self:center;">PNG 1000 × 1000 px, prontos para o perfil</span>
+    </div>
+
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin:0 0 16px;">8 · Descrição de cada linha</div>
+    <p style="font-size:13.5px; line-height:1.7; color:#4A514A; max-width:68ch; margin:0 0 10px;">Cada número diz, com as próprias palavras, o que a pessoa encontra ali — e para onde ir se o assunto for de outro setor. Assim ninguém fica preso na linha errada esperando resposta que não vem.</p>
+    <div style="display:flex; gap:9px; align-items:flex-start; background:#F1F7F2; border:1px solid #CBE3D2; border-radius:10px; padding:11px 14px; margin-bottom:22px;">
+      <span style="flex:none; color:#219653; font-size:13px; line-height:1.4;"><i data-lucide="info"></i></span>
+      <span style="font-size:11.5px; line-height:1.55; color:#2F5C41;">O campo <strong>Descrição</strong> do perfil aceita 139 caracteres — cabe o que a linha faz, não o roteiro inteiro. Por isso a apresentação dos outros contatos vai na <strong>saudação</strong>, que é a primeira coisa que o cliente lê.</span>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:18px; margin-bottom:20px;">
+      <sc-for list="{{ linhas }}" as="l" hint-placeholder-count="3">
+        <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden;">
+          <div style="display:flex; align-items:center; gap:12px; padding:14px 22px; background:#FAFBF9; border-bottom:1px solid #EEF0ED;">
+            <span style="flex:none; width:26px; height:26px; border-radius:50%; background:{{ l.cor }}; border:1px solid #E0E3DE;"></span>
+            <div style="flex:1;">
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14.5px; color:#39453A;">{{ l.nome }}</div>
+              <div style="font-size:11px; color:#8A8F89; margin-top:1px;">{{ l.sub }}</div>
+            </div>
+            <span style="font-family:monospace; font-size:11.5px; color:#6B706A; background:#F0F2EE; padding:4px 9px; border-radius:7px;">{{ l.numero }}</span>
+          </div>
+          <div style="padding:18px 22px 20px; display:flex; flex-direction:column; gap:16px;">
+            <div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:7px;">
+                <div style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#9AA097; font-weight:600;">Descrição do perfil · {{ l.descChars }}/139</div>
+                <button onClick="{{ l.desc.copiar }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; background:{{ l.desc.btnBg }}; color:{{ l.desc.btnCor }}; border:1px solid {{ l.desc.btnBorda }}; border-radius:8px; padding:5px 12px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; cursor:pointer;">{{ l.desc.btnRotulo }}</button>
+              </div>
+              <div style="background:#F7F8F6; border:1px solid #EAECE8; border-radius:10px; padding:11px 14px; font-size:13px; line-height:1.6; color:#3E453D;">{{ l.descricao }}</div>
+            </div>
+            <div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:7px;">
+                <div style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#9AA097; font-weight:600;">Saudação · apresenta os outros contatos</div>
+                <button onClick="{{ l.saud.copiar }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; background:{{ l.saud.btnBg }}; color:{{ l.saud.btnCor }}; border:1px solid {{ l.saud.btnBorda }}; border-radius:8px; padding:5px 12px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; cursor:pointer;">{{ l.saud.btnRotulo }}</button>
+              </div>
+              <div style="background:#E7F3EB; border:1px solid #CDE6D6; border-radius:4px 12px 12px 12px; padding:12px 15px; font-size:13px; line-height:1.65; color:#2E3A31; white-space:pre-line;">{{ l.saudacao }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex; gap:9px; align-items:flex-start; background:#FDF8F0; border:1px solid #F0DCC0; border-radius:10px; padding:11px 14px; margin-bottom:44px;">
+      <span style="flex:none; color:#C08A2E; font-size:13px; line-height:1.4;">!</span>
+      <span style="font-size:11.5px; line-height:1.55; color:#6B5426;">Os três números estão escritos dentro das saudações umas das outras. Se alguma linha mudar de número, <strong>as três saudações mudam junto</strong> — senão o cliente é mandado para um número que não atende mais.</span>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin:0 0 8px;">9 · Respostas rápidas · Financeiro</div>
+    <p style="font-size:13px; color:#5A5F58; line-height:1.6; margin:0 0 18px; max-width:66ch;">A linha do financeiro fala de dinheiro, então fala devagar e por escrito. Estas são as únicas mensagens que tratam de valor, dado bancário e prazo — em qualquer outra linha, o assunto se encaminha para cá.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; overflow:hidden; margin-bottom:14px;">
+      <sc-for list="{{ atalhosFin }}" as="q" hint-placeholder-count="6">
+        <div style="display:grid; grid-template-columns:150px 1fr auto; gap:20px; padding:18px 24px; border-top:1px solid #F2F3F0; align-items:start;">
+          <div><span style="font-family:monospace; font-size:12.5px; font-weight:700; color:#333333;">{{ q.atalho }}</span><div style="font-size:10.5px; color:#9AA097; margin-top:4px;">{{ q.quando }}</div></div>
+          <div style="font-size:13px; line-height:1.6; color:#3E453D;">{{ q.texto }}</div>
+          <button onClick="{{ q.copiar }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; background:{{ q.btnBg }}; color:{{ q.btnCor }}; border:1px solid {{ q.btnBorda }}; border-radius:8px; padding:6px 13px; font-family:'Montserrat',sans-serif; font-size:11.5px; font-weight:600; cursor:pointer;">{{ q.btnRotulo }}</button>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex; gap:9px; align-items:flex-start; background:#FDF8F0; border:1px solid #F0DCC0; border-radius:10px; padding:11px 14px; margin-bottom:44px;">
+      <span style="flex:none; color:#C08A2E; font-size:13px; line-height:1.4;">!</span>
+      <span style="font-size:11.5px; line-height:1.55; color:#6B5426;">Dado bancário só sai por esta linha e nunca muda por mensagem. Se algum cliente receber pedido de pagamento em outra conta, é golpe — e a resposta pronta <strong>/dados</strong> existe justamente para dizer isso antes que aconteça.</span>
+    </div>
+
   </div>
 
   <!-- RODAPÉ LEGAL -->
@@ -138,16 +290,42 @@
       <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT<br>"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de marketing da razão social acima.</div>
       <button onClick="{{ copiarRodape }}" style="flex:none; display:inline-flex; align-items:center; gap:6px; background:{{ rodapeBtnBg }}; color:{{ rodapeBtnCor }}; border:1px solid {{ rodapeBtnBorda }}; border-radius:8px; padding:6px 13px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; cursor:pointer;">{{ rodapeBtnRotulo }}</button>
     </div>
-    <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600; text-align:right;">O Norte · MDC-GDI</div>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end;">
+      <span data-carimbo></span>
+      <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600; text-align:right;">O Norte · MDC-GDI</div>
+    </div>
   </div>
 
 </div>
 </div>
+
+<div style="position:fixed; left:-3000px; top:0; width:500px; height:500px; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px;" data-export="op">
+  <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:150px; height:auto; display:block;">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:56px; color:#FFFFFF; line-height:1;">OPERAÇÕES</div>
+    <div style="font-family:'Montserrat',sans-serif; font-weight:600; font-size:29px; letter-spacing:0.2em; color:#A5D6A7; line-height:1;">BASE I</div>
+  </div>
+</div>
+<div style="position:fixed; left:-2200px; top:0; width:500px; height:500px; background:#333333; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;" data-export="fin">
+  <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:150px; height:auto; display:block;">
+  <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:52px; color:#FFFFFF; line-height:1; white-space:nowrap;">FINANCEIRO</div>
+</div>
+<div style="position:fixed; left:-700px; top:0; width:500px; height:500px; background:#FFFFFF; display:flex; align-items:center; justify-content:center;" data-export="pri">
+  <div style="width:430px; height:430px; border-radius:50%; border:9px solid #219653; box-sizing:border-box; display:flex; align-items:center; justify-content:center;">
+    <img src="assets/icone-opp-grupo-bbox.png" alt="" style="width:225px; height:auto; display:block;">
+  </div>
+</div>
+<div style="position:fixed; left:-1400px; top:0; width:500px; height:500px; background:#219653; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;" data-export="adm">
+  <img src="assets/icone-opp-grupo-branco.png" alt="" style="width:150px; height:auto; display:block;">
+  <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:39px; color:#FFFFFF; line-height:1; white-space:nowrap;">ADMINISTRATIVO</div>
+</div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1060,&quot;height&quot;:1500}}">
 class Component extends DCLogic {
-  state = { copiado: null };
-  componentDidMount() { if (window.lucide) window.lucide.createIcons(); }
+  state = { copiado: null, carimbo: 'conferindo…' };
+  componentDidMount() {
+    if (window.lucide) window.lucide.createIcons();
+  }
   componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
   copiar(chave, texto) {
     return () => {
@@ -176,6 +354,22 @@ class Component extends DCLogic {
       btnBorda: on ? '#219653' : '#CDE6D6',
     };
   }
+  baixar(arquivo) {
+    fetch(arquivo)
+      .then((r) => (r.ok ? r.blob() : Promise.reject()))
+      .then((b) => {
+        const u = URL.createObjectURL(b);
+        const a = document.createElement('a');
+        a.href = u;
+        a.download = arquivo.split('/').pop();
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(u), 4000);
+      })
+      .catch(() => window.open(arquivo, '_blank'));
+  }
+
   renderVals() {
     const out = 'flex-end', inc = 'flex-start';
     const rodapeTexto = 'Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT\n"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de marketing da razão social acima.';
@@ -186,6 +380,65 @@ class Component extends DCLogic {
       rodapeBtnBg: rodapeOn ? '#219653' : '#FFFFFF',
       rodapeBtnCor: rodapeOn ? '#FFFFFF' : '#219653',
       rodapeBtnBorda: rodapeOn ? '#219653' : '#E6E7E4',
+      carimboEstado: this.state.carimbo,
+      carimboCor: this.state.carimbo === 'em dia' ? '#219653' : (this.state.carimbo === 'conferindo…' ? '#C9CEC7' : '#C08A2E'),
+      baixarOperacoes: () => this.baixar('assets/avatar-wab-operacoes-base1.png'),
+      baixarFinanceiro: () => this.baixar('assets/avatar-wab-financeiro.png'),
+      baixarPrincipal: () => this.baixar('assets/avatar-wab-principal.png'),
+      baixarAdministrativo: () => this.baixar('assets/avatar-wab-administrativo.png'),
+      linhas: [
+        {
+          nome: 'Comercial · a casa',
+          sub: 'O número que os clientes já têm salvo há anos',
+          numero: '(66) 99232-0821',
+          cor: '#FFFFFF',
+          descricao: 'Aplicação aérea e gestão de aeronaves para o produtor do Centro-Oeste. Primeiro contato, dúvidas e pedidos de proposta.',
+          saudacao: 'Olá! Você chegou ao WhatsApp oficial da Opp — Aviação Agrícola e Gestão de Ativos.\nAqui atendemos primeiro contato, dúvida sobre serviço e pedido de proposta.\n\nSe o seu assunto já for de um setor, temos linha direta:\n• Operações · Base I — agenda de voo, área e andamento da aplicação: (66) 99245-6863\n• Financeiro — boleto, nota fiscal e comprovante: (66) 99245-7097\n\nSite: www.grupooppmais.com.br\nE-mail: contato@grupooppmais.com.br\n\nMe conte sua região e o que precisa que já te retornamos.',
+        },
+        {
+          nome: 'Operações · Base I',
+          sub: 'A linha de quem está com o serviço em andamento',
+          numero: '(66) 99245-6863',
+          cor: '#39453A',
+          descricao: 'Linha de Operações · Base I: agenda de voo, área a aplicar, janela de aplicação e andamento do serviço. Sorriso/MT.',
+          saudacao: 'Olá! Aqui é a linha de Operações da Opp — Base I.\nNeste número tratamos agenda de voo, área a aplicar, janela de aplicação e andamento do serviço.\n\nSe o seu assunto for outro, a linha certa é:\n• Financeiro — boleto, nota fiscal e comprovante: (66) 99245-7097\n• Comercial — atendimento geral e proposta: (66) 99232-0821\n\nSite: www.grupooppmais.com.br\nE-mail: contato@grupooppmais.com.br\n\nPode mandar sua fazenda e o talhão que já verificamos.',
+        },
+        {
+          nome: 'Financeiro',
+          sub: 'Boleto, nota fiscal, comprovante e prazo',
+          numero: '(66) 99245-7097',
+          cor: '#333333',
+          descricao: 'Linha do Financeiro da Opp: boleto e 2ª via, nota fiscal, comprovante de pagamento e prazos. Seg a sex, 7h30 às 18h.',
+          saudacao: 'Olá! Aqui é o Financeiro da Opp.\nNeste número tratamos boleto e 2ª via, nota fiscal, comprovante de pagamento e prazos.\n\nSe o seu assunto for outro, a linha certa é:\n• Operações · Base I — agenda de voo e andamento da aplicação: (66) 99245-6863\n• Comercial — atendimento geral e proposta: (66) 99232-0821\n\nSite: www.grupooppmais.com.br\nE-mail: contato@grupooppmais.com.br\n\nPode mandar o nome ou CNPJ do cadastro que já localizamos.',
+        },
+      ].map((l, i) => ({
+        ...l,
+        descChars: l.descricao.length,
+        desc: this.botao('desc' + i, l.descricao),
+        saud: this.botao('saud' + i, l.saudacao),
+      })),
+      atalhosFin: [
+        { atalho: '/boleto', quando: 'Envio ou 2ª via', texto: 'Segue o boleto referente ao serviço. Vencimento e valor estão no próprio documento. Se precisar de 2ª via ou de outra data, me avise que emitimos aqui mesmo.' },
+        { atalho: '/dados', quando: 'Dados bancários oficiais', texto: 'Nossos dados bancários são sempre estes, em nome de Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56. Eles não mudam por mensagem: se receber pedido de pagamento em outra conta, não pague e confirme conosco por este número.' },
+        { atalho: '/nota', quando: 'Solicitação de nota fiscal', texto: 'Sobre a nota fiscal: me confirma razão social, CNPJ e o e-mail para envio? Assim que emitida eu te mando o XML e o PDF por aqui e por e-mail.' },
+        { atalho: '/recebido', quando: 'Confirmação de pagamento', texto: 'Pagamento localizado e baixado no sistema, obrigado. Qualquer documento que precisar dessa competência, é só pedir por aqui.' },
+        { atalho: '/prazo', quando: 'Cobrança cordial em atraso', texto: 'Passando para conferir o boleto com vencimento em [data], que consta em aberto por aqui. Pode ser só o comprovante que não chegou até nós. Se preferir, emitimos uma nova data — é só me dizer o que fica melhor.' },
+        { atalho: '/operacao', quando: 'Assunto não é financeiro', texto: 'Esse assunto é da Operação e eles resolvem mais rápido que eu. A linha da Base I é (66) 99245-6863 — pode chamar direto, já estão avisados por aqui.' },
+      ].map((q) => ({ ...q, ...this.botao('fin' + q.atalho, q.texto) })),
+      linhaFuncao: [
+        { titulo: 'Um número por setor', desc: 'Operações da Base I e Financeiro têm cada um sua linha, além do número principal da casa. Não se cria número novo para pessoa nova.' },
+        { titulo: 'O aparelho troca, a linha fica', desc: 'Na passagem de função, o chip e a conta migram com o perfil intacto: mesmo nome, mesmo avatar, mesmas respostas rápidas.' },
+        { titulo: 'Nome do perfil sem pessoa', desc: 'O perfil se chama pelo setor. Nome de colaborador no perfil transforma linha da empresa em linha particular.' },
+        { titulo: 'Nada de conta pessoal em paralelo', desc: 'Assunto de trabalho no WhatsApp pessoal quebra a regra inteira: o cliente volta a depender de quem atendeu, não da empresa.' },
+      ],
+      regraAvatar: [
+        { item: 'Formato', regra: 'Quadrado exportado em 1000 × 1000 px; o WhatsApp recorta em círculo. Todo o conteúdo dentro do círculo, com folga nas beiradas.' },
+        { item: 'Composição', regra: 'Símbolo do Grupo Opp+ no topo, nome do setor abaixo em Comfortaa. Sem foto, sem aeronave, sem moldura.' },
+        { item: 'Cor por setor', regra: 'Operações em verde escuro #39453A, Financeiro em cinza #333333 — as duas da paleta oficial. Setor novo recebe a próxima cor da paleta, nunca uma cor inventada.' },
+        { item: 'O número comercial', regra: 'É a casa, não um setor: fundo branco com o símbolo colorido e sem nome gravado. Os setores são portas internas; ele é a porta da frente, e por isso não se rotula.' },
+        { item: 'Administrativo', regra: 'Avatar pronto e guardado. O setor não tem linha própria hoje — quando tiver, entra sem redesenho, na cor esmeralda #219653 já reservada.' },
+        { item: 'Nome do setor', regra: 'Curto e sem cargo: "Operações · Base I", "Financeiro". Se não couber em duas linhas, o nome está longo demais.' },
+      ],
       perfil: [
         { icon: 'briefcase', rotulo: 'Categoria', valor: 'Agricultura · Serviços agrícolas' },
         { icon: 'text', rotulo: 'Descrição', valor: 'Aplicação aérea com precisão e gestão de aeronaves para o produtor do Centro-Oeste. Trabalho bem feito, safra após safra.' },
@@ -194,7 +447,7 @@ class Component extends DCLogic {
         { icon: 'globe', rotulo: 'Site', valor: 'www.grupooppmais.com.br' },
       ],
       setup: [
-        'Foto do perfil: use o ícone do Grupo Opp+ (assets/icone-opp-grupo.png), nunca uma foto pessoal.',
+        'Foto do perfil: use o avatar do setor (seção 7 desta página), nunca uma foto pessoal nem o logotipo solto.',
         'Ative catálogo e cadastre SAE e OACO — sem preço, só descrição; valor vai na proposta.',
         'Configure saudação e ausência com os textos ao lado, e cadastre as respostas rápidas.',
         'Link do site na bio: é a validação de quem recebeu a indicação e vai conferir a empresa.',

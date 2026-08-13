@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; } a:hover { color: #39453A; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#EEF3EF"/>
+      <rect x="100" y="80" width="200" height="240" rx="8" fill="#FFFFFF"/>
+      <rect x="124" y="110" width="90" height="9" rx="4" fill="#39453A"/>
+      <rect x="124" y="140" width="152" height="34" rx="6" fill="#219653"/>
+      <rect x="124" y="196" width="152" height="6" rx="3" fill="#D8DAD5"/>
+      <rect x="124" y="212" width="152" height="6" rx="3" fill="#D8DAD5"/>
+      <rect x="124" y="228" width="110" height="6" rx="3" fill="#D8DAD5"/>
+      <rect x="124" y="266" width="152" height="24" rx="6" fill="#A5D6A7"/>
+    </svg>
+  </template>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+<x-import component-from-global-scope="word-docx-button" from="./word-button.js" href="entregas/downloads/nota-executiva-modelo.docx" filename="Nota Executiva (modelo).docx" hint-size="0,0"></x-import>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0" hint-size="816px,1056px">
+
+  <section class="page" style="font-family:'Montserrat',sans-serif; color:#1C201C; display:flex; flex-direction:column; padding:0.62in;">
+
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; border-bottom:2px solid #39453A; padding-bottom:11px; margin-bottom:13px;">
+      <div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#767C75; font-weight:600; margin-bottom:7px;">Nota executiva</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:23px; font-weight:700; color:#39453A; line-height:1.2; max-width:26ch;">{{ assunto }}</div>
+      </div>
+      <img src="assets/preview/logo-opp-flat.png" alt="Grupo Opp+" style="height:34px; width:auto; flex:none;">
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4,auto); justify-content:start; gap:3px 36px; font-size:10.5px; margin-bottom:13px;">
+      <div style="color:#8A8F89;">Para</div>
+      <div style="color:#8A8F89;">De</div>
+      <div style="color:#8A8F89;">Data</div>
+      <div style="color:#8A8F89;">Referência</div>
+      <div style="font-weight:600; color:#333333;">{{ destinatario }}</div>
+      <div style="font-weight:600; color:#333333;">{{ autor }}</div>
+      <div style="font-weight:600; color:#333333;">{{ dataDoc }}</div>
+      <div style="font-weight:600; color:#333333;">{{ referencia }}</div>
+    </div>
+
+    <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+      <div class="no-print" style="background:#F3F6F3; border-left:3px solid #6FCF97; padding:9px 13px; font-size:10px; color:#565B56; line-height:1.55; margin-bottom:12px;">
+        <strong style="color:#39453A;">Regra da nota executiva.</strong> Uma página, sempre, e a conclusão vem primeiro. Se precisou de duas páginas, o que você tem é um documento de projeto. As orientações em verde somem na impressão.
+      </div>
+    </sc-if>
+
+    <div style="background:#39453A; border-radius:10px; padding:13px 18px; margin-bottom:14px;">
+      <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:9px;">Recomendação</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:15.5px; font-weight:600; color:#FFFFFF; line-height:1.5;">{{ recomendacao }}</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:13px;">
+
+      <div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8F89; margin-bottom:8px;">1 · Situação</div>
+        <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+          <div class="no-print" style="font-size:10px; color:#8A8F89; line-height:1.5; margin-bottom:6px; font-style:italic;">Três a cinco linhas: o que está acontecendo e desde quando. Nada de histórico longo.</div>
+        </sc-if>
+        <p style="font-size:13px; line-height:1.6; color:#333333; margin:0; text-wrap:pretty;">{{ textoSituacao }}</p>
+      </div>
+
+      <div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8F89; margin-bottom:8px;">2 · Pontos-chave</div>
+        <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+          <div class="no-print" style="font-size:10px; color:#8A8F89; line-height:1.5; margin-bottom:6px; font-style:italic;">Três a cinco pontos, um por linha, com número sempre que existir. Ponto sem número vira opinião.</div>
+        </sc-if>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <sc-for list="{{ pontos }}" as="p" hint-placeholder-count="4">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <span style="flex:none; width:6px; height:6px; border-radius:50%; background:#219653; margin-top:8px;"></span>
+              <span style="flex:1; font-size:13px; line-height:1.55; color:#333333;">{{ p.texto }}</span>
+              <span style="flex:none; font-family:'Comfortaa',sans-serif; font-size:14px; font-weight:700; color:#39453A; white-space:nowrap;">{{ p.dado }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A8F89; margin-bottom:8px;">3 · Implicação</div>
+        <sc-if value="{{ modoGuia }}" hint-placeholder-val="{{ true }}">
+          <div class="no-print" style="font-size:10px; color:#8A8F89; line-height:1.5; margin-bottom:6px; font-style:italic;">O que muda se decidir — e o que custa não decidir. Essa segunda parte quase sempre é esquecida.</div>
+        </sc-if>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="border:1px solid #E0E2DE; border-radius:9px; padding:11px 14px;">
+            <div style="font-size:10.5px; font-weight:700; color:#219653; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;">Se seguirmos adiante</div>
+            <div style="font-size:12.5px; line-height:1.55; color:#333333;">{{ implicacaoSim }}</div>
+          </div>
+          <div style="border:1px solid #E0E2DE; border-radius:9px; padding:11px 14px; background:#F7F7F6;">
+            <div style="font-size:10.5px; font-weight:700; color:#8A6516; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;">Se nada mudar</div>
+            <div style="font-size:12.5px; line-height:1.55; color:#333333;">{{ implicacaoNao }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #A5D6A7; background:#EEF3EF; border-radius:10px; padding:13px 17px;">
+        <div style="font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:8px;">4 · Decisão solicitada</div>
+        <div style="font-size:13px; color:#333333; line-height:1.6;">{{ decisaoSolicitada }}</div>
+        <div style="display:flex; gap:28px; margin-top:10px; padding-top:9px; border-top:1px solid #CBE3D2; font-size:11.5px; color:#565B56;">
+          <div><strong style="color:#39453A;">Prazo para retorno:</strong> {{ prazoRetorno }}</div>
+          <div><strong style="color:#39453A;">Responsável:</strong> {{ autor }}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; gap:24px; border-top:1px solid #E0E2DE; padding-top:10px; font-size:9.5px; color:#8A8F89; line-height:1.6;">
+      <div>Detalhamento em: {{ ondeEstaODetalhe }}</div>
+      <div style="text-align:right;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56<br>Sorriso/MT · contato@grupooppmais.com.br</div>
+    </div>
+  </section>
+
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:816,&quot;height&quot;:1056},&quot;modoGuia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Uso&quot;},&quot;assunto&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Assunto da nota em uma linha&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identificação&quot;},&quot;destinatario&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Diretoria&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identificação&quot;},&quot;autor&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Nome · Cargo&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identificação&quot;},&quot;dataDoc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;27/07/2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identificação&quot;},&quot;referencia&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;NE-001/2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identificação&quot;},&quot;recomendacao&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Escreva aqui, em uma ou duas frases, o que você recomenda que seja feito.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Conteúdo&quot;},&quot;prazoRetorno&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;dd/mm/aaaa&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      modoGuia: p.modoGuia ?? true,
+      assunto: p.assunto ?? 'Assunto da nota em uma linha',
+      destinatario: p.destinatario ?? 'Diretoria',
+      autor: p.autor ?? 'Nome · Cargo',
+      dataDoc: p.dataDoc ?? '27/07/2026',
+      referencia: p.referencia ?? 'NE-001/2026',
+      recomendacao: p.recomendacao ?? 'Escreva aqui, em uma ou duas frases, o que você recomenda que seja feito. Comece pelo verbo: aprovar, contratar, adiar, suspender, iniciar o piloto.',
+      textoSituacao: p.textoSituacao ?? 'Em três a cinco linhas: o que está acontecendo, desde quando e por que virou assunto agora. O leitor precisa reconhecer a situação sem precisar de anexo.',
+      pontos: [
+        { texto: 'Primeiro fato que sustenta a recomendação.', dado: '00 un.' },
+        { texto: 'Segundo fato — de preferência comparativo (antes e depois, nós e o mercado).', dado: 'R$ 0' },
+        { texto: 'Terceiro fato — prazo, frequência ou volume envolvido.', dado: '0 dias' },
+        { texto: 'Quarto ponto, se houver. Acima de cinco, o documento deixou de ser uma nota.', dado: '—' },
+      ],
+      implicacaoSim: p.implicacaoSim ?? 'O ganho concreto esperado, com prazo. Se não couber número, diga o que passa a ser possível fazer.',
+      implicacaoNao: p.implicacaoNao ?? 'O custo de manter como está: perda, retrabalho, risco ou oportunidade que se fecha em determinada data.',
+      decisaoSolicitada: p.decisaoSolicitada ?? 'O que exatamente você precisa da diretoria: aprovar, liberar valor, designar responsável, autorizar o teste. Um pedido por nota.',
+      prazoRetorno: p.prazoRetorno ?? 'dd/mm/aaaa',
+      ondeEstaODetalhe: p.ondeEstaODetalhe ?? 'documento de projeto completo · planilha de apoio · contrato em anexo',
+    };
+  }
+}
+
+</script>
+</body>
+</html>
