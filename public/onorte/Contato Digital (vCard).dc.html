@@ -11,9 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fontes.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; background:#F4F5F3; }
@@ -33,7 +31,7 @@
       <p style="font-size:14.5px; color:#565B56; line-height:1.6; margin:0; max-width:64ch;">Preencha seus dados e baixe o arquivo .vcf — o formato universal de contato. Quem receber toca no arquivo e salva você na agenda com nome, empresa, endereço e a foto oficial da marca, tudo de uma vez.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:340px 1fr; gap:20px; align-items:start;">
+    <div style="display:grid; grid-template-columns:340px minmax(0, 1fr); gap:20px; align-items:start;">
 
       <!-- FORM -->
       <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px;">
@@ -64,12 +62,14 @@
         </div>
 
         <div style="background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:30px 32px; display:flex; align-items:center; gap:22px;">
-          <img src="{{ fotoSrc }}" alt="" style="width:84px; height:84px; border-radius:50%; object-fit:cover; flex:none; border:3px solid #EEF3EF;">
+          <sc-if value="{{ fotoVerde }}" hint-placeholder-val="{{ true }}"><img src="assets/contato-zap-verde-logo.png" alt="" style="width:84px; height:84px; border-radius:50%; object-fit:cover; flex:none; border:3px solid #EEF3EF;"></sc-if>
+          <sc-if value="{{ fotoBranca }}" hint-placeholder-val="{{ false }}"><img src="assets/contato-zap-branco-logo.png" alt="" style="width:84px; height:84px; border-radius:50%; object-fit:cover; flex:none; border:3px solid #EEF3EF;"></sc-if>
           <div style="min-width:0;">
             <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">{{ nome }}</div>
             <div style="font-size:13.5px; color:#219653; font-weight:600; margin-top:2px;">{{ cargo }} · {{ unidadeNome }}</div>
             <div style="font-size:12.5px; color:#4A4F49; line-height:1.8; margin-top:10px;">
               <div>📱 {{ celular }}</div>
+              <sc-if value="{{ temCelular2 }}" hint-placeholder-val="{{ false }}"><div>📞 {{ celular2 }}</div></sc-if>
               <div>✉️ {{ email }}</div>
               <div>🌐 www.grupooppmais.com.br</div>
               <div>📍 Rua Santa Catarina de Alexandria, 2127 · Sorriso/MT</div>
@@ -78,7 +78,40 @@
         </div>
 
         <div style="margin-top:14px; background:#EEF3EF; border:1px solid #D8E8DD; border-radius:12px; padding:14px 18px; font-size:12px; color:#5B6E60; line-height:1.55;">
+          <div style="margin-bottom:10px; overflow-wrap:anywhere;">Arquivo: <code style="font-family:'Montserrat',sans-serif; font-weight:600; color:#1B7A44;">{{ nomeArquivoVcf }}</code></div>
           <strong style="color:#1B7A44;">Como usar:</strong> baixe o .vcf e guarde no celular. Quando pedirem seu contato, compartilhe o arquivo pelo WhatsApp — a pessoa toca e salva tudo de uma vez, já com a foto da marca. Funciona em iPhone, Android, Gmail e Outlook.
+        </div>
+
+        <div style="margin-top:24px; background:#FFFFFF; border:1px solid #E6E7E4; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:22px;">
+          <div style="display:flex; flex-wrap:wrap; gap:22px; align-items:center;">
+          <canvas ref="{{ postRef }}" width="1080" height="1080" style="flex:0 1 260px; max-width:300px; width:100%; display:block; border-radius:12px; border:1px solid #E6E7E4; background:#39453A;"></canvas>
+          <div style="flex:1 1 260px; min-width:0;">
+              <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:16px; color:#39453A; margin-bottom:8px;">Cartão para mensageiro</div>
+            <div style="display:flex; gap:8px; margin-bottom:14px;">
+              <sc-for list="{{ temas }}" as="t" hint-placeholder-count="2">
+                <button onClick="{{ t.onClick }}" style="background:{{ t.bg }}; color:{{ t.cor }}; border:1px solid {{ t.borda }}; border-radius:8px; padding:8px 16px; font-family:'Montserrat',sans-serif; font-size:12.5px; font-weight:600; cursor:pointer;">{{ t.rotulo }}</button>
+              </sc-for>
+            </div>
+            <p style="font-size:13px; color:#565B56; line-height:1.65; margin:0 0 16px;">A mesma informação em imagem quadrada 1080 × 1080 — a medida de post do Instagram, que o WhatsApp e o Telegram exibem inteira sem cortar. Serve para quando a pessoa não vai salvar o contato agora, só quer ler e guardar na conversa.</p>
+            <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-start;">
+              <button onClick="{{ baixarPost }}" style="display:inline-flex; align-items:center; gap:8px; background:#39453A; color:#FFFFFF; border:none; border-radius:9px; padding:11px 20px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer;" style-hover="background:#2D3530;">Baixar imagem (1080 × 1080)</button>
+              <span style="font-size:11.5px; color:#8A8F89;">Mande junto com o .vcf: a imagem se lê na hora, o arquivo salva na agenda.</span>
+              <span style="font-size:11.5px; color:#6B7169; overflow-wrap:anywhere; min-width:0;">Arquivo: <code style="font-family:'Montserrat',sans-serif; font-weight:600; color:#39453A;">{{ nomeArquivo }}</code></span>
+            </div>
+          </div>
+          </div>
+
+          <div style="border-top:1px solid #EEEFEC; padding-top:22px;">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:11px;">
+              <div style="font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#8A8F89;">Mensagem pronta</div>
+              <button onClick="{{ copiarMensagem }}" style="background:#219653; color:#FFFFFF; border:none; border-radius:9px; padding:10px 18px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap;" style-hover="background:#1B7A44;">{{ copiarRotulo }}</button>
+            </div>
+            <div ref="{{ mensagemRef }}" style="background:#F7F8F6; border:1px solid #E6E7E4; border-radius:10px; padding:15px 17px; font-size:12px; line-height:1.75; color:#3A403A; white-space:pre-wrap; overflow-wrap:anywhere; cursor:text; user-select:all; -webkit-user-select:all;">{{ mensagem }}</div>
+            <sc-if value="{{ temAvisoCopia }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size:11.5px; color:#8A6B22; background:#FDF6E6; border:1px solid #F0E2BE; border-radius:8px; padding:9px 12px; line-height:1.6; margin:11px 0 0;">{{ avisoCopia }}</p>
+            </sc-if>
+            <p style="font-size:11.5px; color:#8A8F89; line-height:1.65; margin:11px 0 0;">Imagem não carrega link. Cole este texto junto dela — é o que dá à pessoa algo para tocar. O link aponta hoje para a empresa no Google; quando o portal Grupo Opp+ entrar no ar, muda num só ponto desta página.</p>
+          </div>
         </div>
       </div>
 
@@ -98,16 +131,241 @@ class Component extends DCLogic {
     nome: 'Nome Sobrenome',
     cargo: 'Cargo / Função',
     celular: '+55 (41) 99947-1355',
+    celular2: '',
     email: 'nome@grupooppmais.com.br',
     unidade: 'grupo',
+    tema: 'escuro',
     gerando: false,
+    copia: '',
   };
+  mensagemRef = React.createRef();
+
+  /* Link institucional da mensagem pronta. Enquanto o portal Grupo Opp+ não
+     estiver no ar, aponta para a empresa no Google. Quando entrar, troque SÓ
+     esta linha — nada mais na página depende dela. */
+  LINK_INSTITUCIONAL = 'https://www.google.com/search?q=Opp+Avia%C3%A7%C3%A3o+Agr%C3%ADcola+Sorriso+MT';
+  postRef = React.createRef();
   set(key) { return (e) => this.setState({ [key]: e.target.value }); }
 
   unidades = {
-    grupo: { nome: 'Grupo Opp+', org: 'Grupo Opp+ (Opp Aviação Agrícola Ltda)', foto: 'assets/contato-zap-verde-logo.png' },
-    aviacao: { nome: 'Opp Aviação Agrícola', org: 'Opp Aviação Agrícola Ltda', foto: 'assets/contato-zap-verde-logo.png' },
-    ativos: { nome: 'Opp Gestão de Ativos', org: 'Opp Gestão de Ativos (Opp Aviação Agrícola Ltda)', foto: 'assets/contato-zap-branco-logo.png' },
+    grupo: { nome: 'Grupo Opp+', org: 'Grupo Opp+ (Opp Aviação Agrícola Ltda)', foto: 'assets/contato-zap-verde-logo.png',
+      logoEscuro: 'assets/logo-opp-flat-branco.png', logoClaro: 'assets/logo-opp-flat.png', par: false },
+    aviacao: { nome: 'Opp Aviação Agrícola', org: 'Opp Aviação Agrícola Ltda', foto: 'assets/contato-zap-verde-logo.png',
+      logoEscuro: 'assets/logo-opp-aviacao-branco.png', logoClaro: 'assets/logo-opp-aviacao.png', par: true },
+    ativos: { nome: 'Opp Gestão de Ativos', org: 'Opp Gestão de Ativos (Opp Aviação Agrícola Ltda)', foto: 'assets/contato-zap-branco-logo.png',
+      logoEscuro: 'assets/logo-opp-ativos-branco.png', logoClaro: 'assets/logo-opp-ativos.png', par: true },
+  };
+
+  temas = {
+    escuro: {
+      base: '#39453A', fundo: 'assets/fundo-opp-verde.png',
+      veu: 'rgba(45,53,46,.46)', veuGrad: 'rgba(30,36,31,.62)', veuGradFim: 'rgba(30,36,31,0)',
+      nome: '#FFFFFF', cargo: '#A5D6A7', unidade: '#8FA292',
+      linha: 'rgba(255,255,255,.16)', separador: 'rgba(255,255,255,.30)',
+      contato: '#EDF1EC', rodape: '#A9B6AB',
+      logoUnidade: 'logoEscuro', logoGrupo: 'assets/logo-opp-grupo-branco.png',
+    },
+    claro: {
+      base: '#FFFFFF', fundo: 'assets/fundo-opp-branco.png',
+      veu: 'rgba(255,255,255,.50)', veuGrad: 'rgba(255,255,255,.80)', veuGradFim: 'rgba(255,255,255,0)',
+      nome: '#1C201C', cargo: '#1B7A44', unidade: '#6B7169',
+      linha: 'rgba(0,0,0,.12)', separador: 'rgba(0,0,0,.20)',
+      contato: '#3A403A', rodape: '#5E645D',
+      logoUnidade: 'logoClaro', logoGrupo: 'assets/logo-opp-grupo-preto.png',
+    },
+  };
+
+  componentDidMount() {
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.desenharPost());
+    this.desenharPost();
+  }
+  componentDidUpdate() { this.desenharPost(); }
+
+  // bbox da tinta visível — os PNGs têm respiro transparente em quantidades diferentes,
+  // então escalar pela caixa compararia molduras, não marcas
+  tintaCache = {};
+  medirTinta(img, src) {
+    if (this.tintaCache[src]) return this.tintaCache[src];
+    const W = 260, H = Math.max(1, Math.round(img.height * (260 / img.width)));
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const cx = c.getContext('2d');
+    cx.drawImage(img, 0, 0, W, H);
+    const d = cx.getImageData(0, 0, W, H).data;
+    let x0 = W, y0 = H, x1 = -1, y1 = -1;
+    for (let i = 0; i < W * H; i++) {
+      if (d[i * 4 + 3] > 20) {
+        const x = i % W, y = (i - x) / W;
+        if (x < x0) x0 = x; if (x > x1) x1 = x;
+        if (y < y0) y0 = y; if (y > y1) y1 = y;
+      }
+    }
+    const r = x1 < 0
+      ? { fx: 0, fy: 0, fw: 1, fh: 1 }
+      : { fx: x0 / W, fy: y0 / H, fw: (x1 - x0 + 1) / W, fh: (y1 - y0 + 1) / H };
+    this.tintaCache[src] = r;
+    return r;
+  }
+
+  carregar(src) {
+    return new Promise((ok, err) => {
+      const img = new Image();
+      img.onload = () => ok(img);
+      img.onerror = err;
+      img.src = src;
+    });
+  }
+
+  async desenharPost() {
+    const cv = this.postRef.current;
+    if (!cv) return;
+    const s = this.state, u = this.unidades[s.unidade];
+    const ctx = cv.getContext('2d');
+    const W = 1080;
+
+    const T = this.temas[s.tema] || this.temas.escuro;
+
+    ctx.fillStyle = T.base;
+    ctx.fillRect(0, 0, W, W);
+
+    try {
+      const fundo = await this.carregar(T.fundo);
+      const escala = Math.max(W / fundo.width, W / fundo.height);
+      const fw = fundo.width * escala, fh = fundo.height * escala;
+      ctx.drawImage(fundo, (W - fw) / 2, (W - fh) / 2, fw, fh);
+      // véu para o texto ler sobre o padrão, mantendo os riscos visíveis
+      ctx.fillStyle = T.veu;
+      ctx.fillRect(0, 0, W, W);
+      const veu = ctx.createLinearGradient(0, 0, W * 0.78, W);
+      veu.addColorStop(0, T.veuGrad);
+      veu.addColorStop(1, T.veuGradFim);
+      ctx.fillStyle = veu;
+      ctx.fillRect(0, 0, W, W);
+    } catch (e) {}
+
+    const filete = ctx.createLinearGradient(0, 0, 0, W);
+    filete.addColorStop(0, '#219653');
+    filete.addColorStop(1, '#6FCF97');
+    ctx.fillStyle = filete;
+    ctx.fillRect(0, 0, 16, W);
+
+    const M = 104;
+    // hierarquia do lockup, medida na TINTA: unidade dominante, Grupo Opp+ a 45% da altura visível
+    const TINTA_UNIDADE = 96, TINTA_GRUPO = Math.round(TINTA_UNIDADE * 0.45), TOPO = 104;
+    try {
+      const srcU = u[T.logoUnidade];
+      const logo = await this.carregar(srcU);
+      const bU = this.medirTinta(logo, srcU);
+      const tintaU = u.par ? TINTA_UNIDADE : 116;
+      const escU = tintaU / (logo.height * bU.fh);
+      const dwU = logo.width * escU, dhU = logo.height * escU;
+      ctx.drawImage(logo, M - dwU * bU.fx, TOPO - dhU * bU.fy, dwU, dhU);
+      if (u.par) {
+        const grupo = await this.carregar(T.logoGrupo);
+        const bG = this.medirTinta(grupo, T.logoGrupo);
+        const escG = TINTA_GRUPO / (grupo.height * bG.fh);
+        const dwG = grupo.width * escG, dhG = grupo.height * escG;
+        const xSep = M + dwU * bU.fw + 34;
+        const hSep = Math.round(tintaU * 0.78);
+        ctx.fillStyle = T.separador;
+        ctx.fillRect(xSep, TOPO + (tintaU - hSep) / 2, 2, hSep);
+        const xG = xSep + 34;
+        ctx.drawImage(grupo, xG - dwG * bG.fx, TOPO + (tintaU - TINTA_GRUPO) / 2 - dhG * bG.fy, dwG, dhG);
+      }
+    } catch (e) {}
+
+    const maxW = W - M * 2;
+    ctx.textBaseline = 'alphabetic';
+
+    // nome: reduz o corpo até caber; se ainda não couber, quebra em duas linhas
+    const nome = (s.nome || 'Nome Sobrenome').trim();
+    let corpoNome = 68, linhasNome = [nome];
+    for (let corpo = 68; corpo >= 44; corpo -= 2) {
+      ctx.font = '700 ' + corpo + 'px Comfortaa, sans-serif';
+      if (ctx.measureText(nome).width <= maxW) { corpoNome = corpo; linhasNome = [nome]; break; }
+      const palavras = nome.split(/\s+/);
+      let melhor = null;
+      for (let corte = palavras.length - 1; corte >= 1; corte--) {
+        const a = palavras.slice(0, corte).join(' '), b = palavras.slice(corte).join(' ');
+        if (ctx.measureText(a).width <= maxW && ctx.measureText(b).width <= maxW) { melhor = [a, b]; break; }
+      }
+      if (melhor) { corpoNome = corpo; linhasNome = melhor; break; }
+      corpoNome = corpo; linhasNome = [nome];
+    }
+
+    // o bloco sobe conforme cresce, para não empurrar os contatos sobre o rodapé
+    let y = 500 - (linhasNome.length - 1) * Math.round(corpoNome * 1.04);
+    ctx.fillStyle = T.nome;
+    ctx.font = '700 ' + corpoNome + 'px Comfortaa, sans-serif';
+    for (const linha of linhasNome) {
+      ctx.fillText(linha, M, y);
+      y += Math.round(corpoNome * 1.04);
+    }
+    y -= Math.round(corpoNome * 1.04);
+
+    y += 52;
+    const cargo = (s.cargo || 'Cargo / Função').trim();
+    let corpoCargo = 34;
+    for (let corpo = 34; corpo >= 24; corpo -= 1) {
+      ctx.font = '600 ' + corpo + 'px Montserrat, sans-serif';
+      corpoCargo = corpo;
+      if (ctx.measureText(cargo).width <= maxW) break;
+    }
+    ctx.fillStyle = T.cargo;
+    ctx.font = '600 ' + corpoCargo + 'px Montserrat, sans-serif';
+    ctx.fillText(cargo, M, y);
+
+    y += 44;
+    ctx.fillStyle = T.unidade;
+    ctx.font = '500 30px Montserrat, sans-serif';
+    ctx.fillText(u.nome, M, y);
+
+    y += 46;
+    ctx.fillStyle = T.linha;
+    ctx.fillRect(M, y, W - M * 2, 1);
+
+    y += 62;
+    const contatos = [s.celular, s.celular2, s.email, 'www.grupooppmais.com.br'].filter(Boolean);
+    for (const linha of contatos) {
+      let corpo = 32;
+      while (corpo > 24) {
+        ctx.font = '400 ' + corpo + 'px Montserrat, sans-serif';
+        if (ctx.measureText(linha).width <= maxW) break;
+        corpo -= 1;
+      }
+      ctx.font = '400 ' + corpo + 'px Montserrat, sans-serif';
+      ctx.fillStyle = T.contato;
+      ctx.fillText(linha, M, y);
+      y += 50;
+    }
+
+    ctx.fillStyle = T.rodape;
+    ctx.font = '400 25px Montserrat, sans-serif';
+    ctx.fillText('Sorriso · Mato Grosso', M, 940);
+    ctx.font = '400 21px Montserrat, sans-serif';
+    ctx.fillText('Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56', M, 980);
+  }
+
+  // Empresa_Funcao_Nome — sem acento, sem espaço, primeiro nome só
+  limpar(t) {
+    return (t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^A-Za-z0-9]+/g, ' ').trim().split(/\s+/).join('_');
+  }
+  nomeArquivo() {
+    const s = this.state;
+    const empresas = { grupo: 'Opp', aviacao: 'OppAviacao', ativos: 'OppAtivos' };
+    const primeiro = this.limpar((s.nome || '').trim().split(/\s+/)[0]);
+    return [empresas[s.unidade] || 'Opp', this.limpar(s.cargo), primeiro].filter(Boolean).join('_');
+  }
+
+  baixarPost = async () => {
+    await this.desenharPost();
+    const cv = this.postRef.current;
+    if (!cv) return;
+    const a = document.createElement('a');
+    a.href = cv.toDataURL('image/png');
+    a.download = this.nomeArquivo() + '.png';
+    a.click();
   };
 
   async fotoBase64(src) {
@@ -136,34 +394,116 @@ class Component extends DCLogic {
       'ORG:' + u.org,
       'TITLE:' + s.cargo,
       'TEL;TYPE=CELL:' + tel,
+    ];
+    if (s.celular2.trim()) linhas.push('TEL;TYPE=WORK,VOICE:' + s.celular2.replace(/[^\d+]/g, ''));
+    linhas.push(
       'EMAIL;TYPE=WORK:' + s.email,
       'URL:https://www.grupooppmais.com.br',
       'ADR;TYPE=WORK:;;Rua Santa Catarina de Alexandria\\, 2127 - Parque Universitário;Sorriso;MT;78893-126;Brasil',
-      'NOTE:Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56',
-    ];
+      'NOTE:Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56'
+    );
     if (foto) linhas.push('PHOTO;ENCODING=b;TYPE=JPEG:' + foto);
     linhas.push('END:VCARD');
     const blob = new Blob([linhas.join('\r\n')], { type: 'text/vcard;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = s.nome.trim().replace(/\s+/g, '-') + '-opp.vcf';
+    a.download = this.nomeArquivo() + '.vcf';
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     this.setState({ gerando: false });
   };
 
+  mensagem() {
+    const s = this.state, u = this.unidades[s.unidade];
+    const linhas = [
+      (s.nome || '').trim(),
+      [(s.cargo || '').trim(), u.nome].filter(Boolean).join(' · '),
+      '',
+      'WhatsApp: ' + (s.celular || '').trim(),
+    ];
+    if (s.celular2.trim()) linhas.push('Telefone: ' + s.celular2.trim());
+    linhas.push(
+      'E-mail: ' + (s.email || '').trim(),
+      'Site: www.grupooppmais.com.br',
+      '',
+      'Sorriso · Mato Grosso',
+      'Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56',
+      '',
+      'Saiba mais: ' + this.LINK_INSTITUCIONAL
+    );
+    return linhas.join('\n');
+  }
+
+  sinal(estado) {
+    this.setState({ copia: estado });
+    clearTimeout(this._copiaTimer);
+    this._copiaTimer = setTimeout(() => this.setState({ copia: '' }), estado === 'ok' ? 2200 : 7000);
+  }
+
+  /* deixa o texto selecionado na tela: último recurso quando o navegador
+     nega as duas vias de cópia (acontece dentro de quadro/pré-visualização) */
+  selecionar() {
+    const el = this.mensagemRef.current, sel = window.getSelection();
+    if (!el || !sel) return false;
+    const r = document.createRange();
+    r.selectNodeContents(el);
+    sel.removeAllRanges();
+    sel.addRange(r);
+    return true;
+  }
+
+  copiarMensagem = async () => {
+    const texto = this.mensagem();
+    try {
+      await navigator.clipboard.writeText(texto);
+      return this.sinal('ok');
+    } catch (e) {}
+    const ta = document.createElement('textarea');
+    ta.value = texto;
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e2) {}
+    ta.remove();
+    if (ok) return this.sinal('ok');
+    this.sinal(this.selecionar() ? 'selecionado' : 'negado');
+  };
+
+  componentWillUnmount() { clearTimeout(this._copiaTimer); }
+
   renderVals() {
     const s = this.state, u = this.unidades[s.unidade];
     return {
+      mensagem: this.mensagem(),
+      mensagemRef: this.mensagemRef,
+      copiarMensagem: this.copiarMensagem,
+      copiarRotulo: { ok: 'Copiado ✓', selecionado: 'Selecionado — Ctrl+C', negado: 'Selecione o texto e copie' }[s.copia] || 'Copiar mensagem',
+      avisoCopia: { selecionado: 'O navegador não deixou copiar sozinho aqui. O texto já está selecionado — aperte Ctrl+C (ou ⌘+C).', negado: 'O navegador bloqueou a cópia nesta janela. Selecione o texto acima e copie pelo teclado.' }[s.copia] || '',
+      temAvisoCopia: s.copia === 'selecionado' || s.copia === 'negado',
       nome: s.nome, cargo: s.cargo, celular: s.celular, email: s.email,
-      unidadeNome: u.nome, fotoSrc: u.foto,
-      baixar: this.baixar,
+      celular2: s.celular2, temCelular2: !!s.celular2.trim(),
+      unidadeNome: u.nome,
+      fotoVerde: u.foto.indexOf('verde') !== -1,
+      fotoBranca: u.foto.indexOf('branco') !== -1,
+      postRef: this.postRef,
+      baixar: this.baixar, baixarPost: this.baixarPost,
+      nomeArquivo: this.nomeArquivo() + '.png',
+      nomeArquivoVcf: this.nomeArquivo() + '.vcf',
+      temas: ['escuro', 'claro'].map((t) => ({
+        rotulo: t === 'escuro' ? 'Verde escuro' : 'Claro',
+        bg: s.tema === t ? '#39453A' : '#FFFFFF',
+        cor: s.tema === t ? '#FFFFFF' : '#6B7169',
+        borda: s.tema === t ? '#39453A' : '#DADCD7',
+        onClick: () => this.setState({ tema: t }),
+      })),
       baixarRotulo: s.gerando ? 'Gerando…' : 'Baixar contato (.vcf)',
       setUnidade: (e) => this.setState({ unidade: e.target.value }),
       fields: [
         { label: 'Nome completo', value: s.nome, ph: 'Nome Sobrenome', onInput: this.set('nome') },
         { label: 'Cargo / função', value: s.cargo, ph: 'Cargo', onInput: this.set('cargo') },
         { label: 'Celular / WhatsApp', value: s.celular, ph: '+55 (41) 99947-1355', onInput: this.set('celular') },
+        { label: 'Segundo telefone (opcional)', value: s.celular2, ph: 'deixe vazio se não tiver', onInput: this.set('celular2') },
         { label: 'E-mail', value: s.email, ph: 'nome@grupooppmais.com.br', onInput: this.set('email') },
       ],
     };

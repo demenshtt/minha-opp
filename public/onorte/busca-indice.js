@@ -18,6 +18,9 @@ window.NORTE_INDICE = [
   // ---------- Fundamentos ----------
   { titulo: 'Paleta de cores', tipo: 'Seção', desc: 'Verde escuro, esmeralda, sálvia, pastel e neutros — com os códigos.', tags: 'cor cores hex paleta verde esmeralda salvia pastel cinza codigo rgb cmyk neon aposentado', href: 'Central de Marca Opp+.dc.html#paleta' },
   { titulo: 'Tipografia', tipo: 'Seção', desc: 'Comfortaa nos títulos, Montserrat no corpo — pesos e uso.', tags: 'fonte fontes tipografia letra comfortaa montserrat tamanho peso', href: 'Central de Marca Opp+.dc.html#tipografia' },
+  { titulo: 'Fontes da Marca', tipo: 'Página', desc: 'Comfortaa e Montserrat para baixar e instalar no computador — kit já filtrado.', tags: 'fonte fontes tipografia baixar instalar comfortaa montserrat ttf office word powerpoint google docs licenca ofl kit', href: 'Fontes da Marca.dc.html' },
+  { titulo: 'Comfortaa (.zip)', tipo: 'Arquivo', desc: 'Os cinco pesos de título, prontos para instalar.', tags: 'comfortaa fonte titulo baixar instalar zip ttf peso light regular medium semibold bold', href: 'assets/fontes/Comfortaa-Opp.zip', download: 'Comfortaa-Opp.zip' },
+  { titulo: 'Montserrat (.zip)', tipo: 'Arquivo', desc: 'A fonte de corpo com itálicos, pronta para instalar.', tags: 'montserrat fonte corpo texto baixar instalar zip ttf italico peso', href: 'assets/fontes/Montserrat-Opp.zip', download: 'Montserrat-Opp.zip' },
   { titulo: 'Uso do logotipo', tipo: 'Seção', desc: 'Versões, respiro, fundo claro e escuro, o que não fazer.', tags: 'logo logotipo logomarca marca simbolo icone respiro proporcao fundo escuro branco', href: 'Central de Marca Opp+.dc.html#logotipo' },
   { titulo: 'Organização de arquivos', tipo: 'Seção', desc: 'Estrutura de pastas e regra de nomenclatura.', tags: 'pasta pastas arquivo nome nomenclatura organizacao drive salvar onde guardar', href: 'Central de Marca Opp+.dc.html#organizacao' },
   { titulo: 'Códice da Marca', tipo: 'Página', desc: 'A história, o simbolismo e o significado do "+" e da gota.', tags: 'codice historia simbolismo significado oliveira prediger picinin fundadores gota asa abraco mais', href: 'Códice da Marca.dc.html' },
@@ -60,6 +63,8 @@ window.NORTE_INDICE = [
   { titulo: 'Ata de reunião (.docx)', tipo: 'Arquivo', desc: 'Modelo de ata para escrever no Word.', tags: 'ata reuniao word docx baixar modelo', href: 'entregas/downloads/ata-modelo.docx', download: 'Ata de Reuniao (modelo).docx' },
   { titulo: 'Convite de reunião de diretoria', tipo: 'Página', desc: 'Peça digital para convocar a reunião.', tags: 'convite reuniao diretoria convocacao pauta data agenda', href: 'Convite - Reunião de Diretoria.dc.html' },
 
+  { titulo: 'Ficha cadastral da empresa', tipo: 'Página', desc: 'Dados da Opp para cadastro em fornecedor — copiar em texto ou baixar em PDF.', tags: 'ficha cadastral cadastro fornecedor dados empresa cnpj razao social inscricao estadual im cnae banco pix nota fiscal xml certidao contrato social anexo abrir conta credenciamento', href: 'Ficha Cadastral da Empresa.dc.html' },
+
   // ---------- E-mail e contato ----------
   { titulo: 'Assinatura de e-mail', tipo: 'Página', desc: 'Preencha seus dados e copie a assinatura pronta.', tags: 'assinatura email e-mail rodape copiar gmail outlook contato cargo', href: 'Assinatura de E-mail.dc.html' },
   { titulo: 'Contato digital (vCard)', tipo: 'Página', desc: 'Arquivo .vcf que salva a Opp na agenda em um toque.', tags: 'vcard vcf contato agenda telefone celular salvar cartao digital', href: 'Contato Digital (vCard).dc.html' },
@@ -85,5 +90,6 @@ window.NORTE_INDICE = [
   // ---------- Navegação e apoio ----------
   { titulo: 'O que você vai fazer?', tipo: 'Página', desc: 'Escolha a tarefa e receba o kit certo, já pronto.', tags: 'ajuda comecar tarefa nao sei por onde comecar kit guia rapido atalho', href: 'O que você vai fazer.dc.html' },
   { titulo: 'Minha Opp+', tipo: 'Página', desc: 'O portal de relacionamento e o onboarding da equipe.', tags: 'minha opp pwa portal app aplicativo onboarding equipe login', href: 'Minha Opp+.dc.html' },
+  { titulo: 'Laudo de revisão do Minha Opp+', tipo: 'Página', desc: 'Os 29 achados da varredura do app: integridade, telas quebradas, sequência e dívida técnica.', tags: 'laudo revisao auditoria achado erro bug minha opp pwa app diagnostico integridade privacidade senha smtp', href: 'Minha Opp+ - Laudo de Revisão.dc.html' },
   { titulo: 'Registro histórico da Central', tipo: 'Página', desc: 'O que foi decidido, quando e por quê.', tags: 'historico registro decisao mudanca versao historia central', href: 'Central de Marca - Registro Histórico.dc.html' },
 ];

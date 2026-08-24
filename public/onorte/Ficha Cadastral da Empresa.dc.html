@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="fontes.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    doc-page:not(:defined) { visibility: hidden; }
+    a { color: #219653; } a:hover { color: #39453A; }
+    @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .no-print { display: none !important; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#EEF3EF"/>
+      <rect x="104" y="76" width="192" height="248" rx="8" fill="#FFFFFF"/>
+      <rect x="126" y="104" width="104" height="10" rx="5" fill="#39453A"/>
+      <rect x="126" y="132" width="148" height="8" rx="4" fill="#D8DAD5"/>
+      <rect x="126" y="152" width="148" height="8" rx="4" fill="#D8DAD5"/>
+      <rect x="126" y="180" width="70" height="26" rx="6" fill="#219653"/>
+      <rect x="204" y="180" width="70" height="26" rx="6" fill="#A5D6A7"/>
+      <rect x="126" y="224" width="148" height="8" rx="4" fill="#D8DAD5"/>
+      <rect x="126" y="244" width="112" height="8" rx="4" fill="#D8DAD5"/>
+      <rect x="126" y="278" width="148" height="20" rx="6" fill="#EEF3EF"/>
+    </svg>
+  </template>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<x-import component-from-global-scope="print-pdf-button" from="./print-button.js" hint-size="0,0"></x-import>
+
+<div class="no-print" style="font-family:'Montserrat',sans-serif; background:#39453A; color:#E7EBE6; padding:20px 26px 22px;">
+  <div style="max-width:816px; margin:0 auto;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:14px;">
+      <div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:6px;">O Norte · atendimento a fornecedor</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:21px; font-weight:700; color:#FFFFFF;">Ficha cadastral da empresa</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; white-space:nowrap;">
+        <span data-carimbo style="font-size:11px;"></span>
+        <a href="o-norte.dc.html" style="font-size:12.5px; color:#A5D6A7; text-decoration:none;">← voltar ao Norte</a>
+      </div>
+    </div>
+    <p style="font-size:13px; line-height:1.65; color:#D6DDD5; margin:0 0 12px; max-width:64ch;">Quando um fornecedor pede “manda os dados da empresa para eu cadastrar”, a resposta é esta página. Copie o bloco de texto para colar em e-mail ou formulário — ou baixe o PDF assinado abaixo e anexe junto com os documentos da lista. Clique em qualquer campo da ficha para copiar só aquele valor.</p>
+    <p style="font-size:12.5px; line-height:1.6; color:#A5D6A7; margin:0 0 16px; max-width:64ch;"><strong style="color:#FFFFFF;">Quem se cadastra é a Opp Aviação Agrícola Ltda.</strong> “Grupo Opp+” e “Opp Gestão de Ativos” são marcas de comunicação e não têm CNPJ — nunca vão no campo de razão social.</p>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button onClick="{{ copiarBloco }}" style="display:inline-flex; align-items:center; gap:8px; background:#219653; color:#FFFFFF; border:none; border-radius:10px; padding:11px 18px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer;" style-hover="background:#1B7A44">{{ rotuloBloco }}</button>
+      <button onClick="{{ copiarEmail }}" style="display:inline-flex; align-items:center; gap:8px; background:transparent; color:#E7EBE6; border:1.5px solid #6A7569; border-radius:10px; padding:11px 18px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer;" style-hover="border-color:#A5D6A7; color:#FFFFFF">{{ rotuloEmail }}</button>
+      <button onClick="{{ baixarPdf }}" style="display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; color:#39453A; border:none; border-radius:10px; padding:11px 18px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; cursor:pointer;" style-hover="background:#EEF3EF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"></path><path d="m7 10 5 5 5-5"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg>
+        Baixar PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0" hint-size="816px,1056px">
+
+  <section class="page" data-screen-label="Ficha" style="font-family:'Montserrat',sans-serif; color:#1C201C; display:flex; flex-direction:column; padding:0.6in;">
+
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; border-bottom:2px solid #39453A; padding-bottom:11px; margin-bottom:14px;">
+      <div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:9.5px; letter-spacing:0.2em; text-transform:uppercase; color:#767C75; font-weight:600; margin-bottom:6px;">Ficha cadastral</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-size:21px; font-weight:700; color:#39453A; line-height:1.2;">Opp Aviação Agrícola Ltda</div>
+        <div style="font-size:11px; color:#767C75; margin-top:4px;">Documento para cadastro de cliente junto a fornecedores e prestadores.</div>
+      </div>
+      <img src="assets/logo-opp-aviacao.png" alt="Opp Aviação Agrícola" style="height:44px; width:auto; flex:none;">
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <sc-for list="{{ grupos }}" as="g" hint-placeholder-count="5">
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:5px;">
+            <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8A8F89; white-space:nowrap;">{{ g.titulo }}</span>
+            <span style="flex:1; height:1px; background:#E4E7E3;"></span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <sc-for list="{{ g.linhas }}" as="l" hint-placeholder-count="2">
+              <div style="display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:8px;">
+                <sc-for list="{{ l.campos }}" as="c" hint-placeholder-count="3">
+                  <div onClick="{{ copiarCampo }}" data-v="{{ c.v }}" style="border:1px solid #E4E7E3; border-radius:7px; padding:5px 10px; cursor:pointer; min-width:0;" style-hover="border-color:#6FCF97; background:#FAFBFA">
+                    <div style="font-size:8.5px; letter-spacing:0.09em; text-transform:uppercase; color:#9AA098; font-weight:600; margin-bottom:2px;">{{ c.r }}</div>
+                    <div style="font-size:11.5px; font-weight:600; color:#333333; line-height:1.35; word-break:break-word;">{{ c.v }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:auto; padding-top:12px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:end; margin-bottom:10px;">
+        <div>
+          <div style="border-bottom:1px solid #B9BEB7; height:30px;"></div>
+          <div style="font-size:9.5px; color:#767C75; margin-top:5px;">Assinatura do representante legal</div>
+        </div>
+        <div>
+          <div style="border-bottom:1px solid #B9BEB7; height:30px;"></div>
+          <div style="font-size:9.5px; color:#767C75; margin-top:5px;">Local e data</div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #E4E7E3; padding-top:8px; font-size:8.5px; color:#8A8F89; line-height:1.5;">
+        Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Rua Santa Catarina de Alexandria, 2127 · Parque Universitário · Sorriso/MT · CEP 78893-126 · contato@grupooppmais.com.br · página 1 de 2
+      </div>
+    </div>
+  </section>
+
+  <section class="page" data-screen-label="Anexos" style="font-family:'Montserrat',sans-serif; color:#1C201C; display:flex; flex-direction:column; padding:0.6in;">
+
+    <div style="border-bottom:2px solid #39453A; padding-bottom:10px; margin-bottom:15px;">
+      <div style="font-family:'Comfortaa',sans-serif; font-size:9.5px; letter-spacing:0.2em; text-transform:uppercase; color:#767C75; font-weight:600; margin-bottom:5px;">Ficha cadastral · anexos</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-size:17px; font-weight:700; color:#39453A;">Documentos que acompanham esta ficha</div>
+    </div>
+
+    <p style="font-size:11.5px; line-height:1.6; color:#565B56; margin:0 0 8px; max-width:70ch;">Envie a ficha e os documentos numa mensagem só. Cadastro que chega picado volta em pedido de complemento e atrasa a primeira compra.</p>
+    <p class="no-print" style="font-size:10.5px; line-height:1.55; color:#8A8F89; margin:0 0 15px; max-width:70ch;">Ao clicar num link de emissão abaixo, o CNPJ vai para a área de transferência já sem pontuação — no site é só colar (Ctrl+V) no campo.</p>
+
+    <div style="display:flex; flex-direction:column; gap:7px; margin-bottom:20px;">
+      <sc-for list="{{ anexos }}" as="a" hint-placeholder-count="7">
+        <div style="display:flex; gap:11px; align-items:flex-start; border:1px solid #E4E7E3; border-radius:8px; padding:9px 13px;">
+          <span style="flex:none; width:13px; height:13px; border:1.5px solid #A9AFA7; border-radius:3px; margin-top:2px;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="font-size:12px; font-weight:600; color:#333333;">{{ a.nome }}</div>
+            <div style="font-size:10px; color:#8A8F89; line-height:1.5; margin-top:2px;">{{ a.nota }}</div>
+            <sc-if value="{{ a.url }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ a.url }}" target="_blank" rel="noopener" onClick="{{ abrirEcopiar }}" data-copiar="{{ a.copiar }}" style="display:inline-block; font-size:10px; font-weight:600; color:#219653; text-decoration:none; margin-top:4px; border-bottom:1px solid #A5D6A7;">{{ a.urlRotulo }}</a>
+            </sc-if>
+          </div>
+          <span style="flex:none; font-size:9px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#219653; margin-top:3px;">{{ a.quando }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="border:1px solid #A5D6A7; background:#EEF3EF; border-radius:10px; padding:13px 17px; margin-bottom:16px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:7px;">Regra de casa</div>
+      <div style="font-size:11.5px; line-height:1.6; color:#333333;">Cadastro é dado que envelhece. Certidão negativa vale por prazo curto e endereço, conta e representante mudam. Reveja esta ficha uma vez por safra e sempre que houver alteração contratual — e reenvie aos fornecedores ativos, sem esperar que peçam.</div>
+    </div>
+
+    <div>
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:8px;">
+        <span style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8A8F89; white-space:nowrap;">O que não vai no cadastro</span>
+        <span style="flex:1; height:1px; background:#E4E7E3;"></span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <sc-for list="{{ naoVai }}" as="n" hint-placeholder-count="3">
+          <div style="display:flex; gap:10px; align-items:flex-start;">
+            <span style="flex:none; width:5px; height:5px; border-radius:50%; background:#B9BEB7; margin-top:7px;"></span>
+            <span style="flex:1; font-size:11.5px; line-height:1.55; color:#565B56;">{{ n }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="margin-top:auto; border-top:1px solid #E4E7E3; padding-top:8px; font-size:8.5px; color:#8A8F89; line-height:1.5;">
+      Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Rua Santa Catarina de Alexandria, 2127 · Sorriso/MT · contato@grupooppmais.com.br · página 2 de 2
+    </div>
+  </section>
+</x-import>
+
+<sc-if value="{{ aviso }}" hint-placeholder-val="{{ false }}">
+  <div class="no-print" style="position:fixed; left:50%; bottom:26px; transform:translateX(-50%); z-index:10000; background:#39453A; color:#FFFFFF; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:600; padding:12px 20px; border-radius:12px; box-shadow:0 12px 30px rgba(28,32,28,.32); display:flex; align-items:center; gap:10px;">
+    <span style="color:#A5D6A7;">✓</span>{{ aviso }}
+  </div>
+</sc-if>
+
+<div class="no-print" style="font-family:'Montserrat',sans-serif; background:#F0F2EF; padding:26px; ">
+  <div style="max-width:816px; margin:0 auto;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:14px; font-weight:700; color:#39453A; margin-bottom:9px;">Campos que faltam preencher</div>
+    <p style="font-size:12.5px; line-height:1.6; color:#565B56; margin:0 0 13px; max-width:68ch;">Estes valores eu não tenho — estão marcados na ficha como <strong>a informar</strong>. Me passe e eu fecho o documento; sem eles o fornecedor devolve pedindo complemento.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:7px;">
+      <sc-for list="{{ pendentes }}" as="p" hint-placeholder-count="6">
+        <span style="background:#FFFFFF; border:1px solid #DDE1DA; border-radius:999px; padding:6px 13px; font-size:11.5px; color:#565B56;">{{ p }}</span>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarBancarios&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;},&quot;inscricaoMunicipal&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;dataAbertura&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;regimeTributario&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;representanteCpf&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;banco&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;agencia&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;conta&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;},&quot;pix&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:null,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Dados a preencher&quot;}}">
+const FALTA = '— a informar —';
+
+class Component extends DCLogic {
+  state = { rotuloBloco: 'Copiar dados em texto', rotuloEmail: 'Copiar mensagem de envio', aviso: '' };
+
+  toast(msg) {
+    this.setState({ aviso: msg });
+    clearTimeout(this._ta);
+    this._ta = setTimeout(() => this.setState({ aviso: '' }), 3200);
+  }
+
+  dados() {
+    const p = this.props;
+    return {
+      razao: 'Opp Aviação Agrícola Ltda',
+      fantasia: p.nomeFantasia ?? 'Opp Aviação Agrícola',
+      cnpj: '33.910.736/0001-56',
+      nire: p.nire ?? '51201647984 — JUCEMAT',
+      capital: p.capitalSocial ?? 'R$ 1.259.485,00 (integralizado)',
+      admins: p.socios ?? 'Luciano Fernandes de Oliveira e Abner Gomes Carvalho',
+      ie: p.inscricaoEstadual ?? '14.076.024-5',
+      im: p.inscricaoMunicipal ?? FALTA,
+      abertura: p.dataAbertura ?? FALTA,
+      cnae: p.cnae ?? '0161-0/01 — Serviço de pulverização e controle de pragas agrícolas',
+      regime: p.regimeTributario ?? 'Lucro Real',
+      endereco: 'Rua Santa Catarina de Alexandria, 2127',
+      bairro: 'Parque Universitário',
+      cidade: 'Sorriso/MT',
+      cep: '78893-126',
+      tel: '+55 (41) 99947-1355',
+      email: 'contato@grupooppmais.com.br',
+      site: 'grupooppmais.com.br',
+      emailNf: p.emailNotaFiscal ?? 'financeiro@grupooppmais.com.br',
+      emailFin: p.emailFinanceiro ?? 'financeiro@grupooppmais.com.br',
+      telFin: p.telefoneFinanceiro ?? '(66) 99245-7097',
+      telOper: p.telefoneOperacoes ?? '(66) 99245-6863',
+      repNome: p.representanteNome ?? 'Abner Gomes Carvalho',
+      repCpf: p.representanteCpf ?? '766.078.449-87',
+      banco: p.banco ?? 'Sicredi',
+      agencia: p.agencia ?? '0812',
+      conta: p.conta ?? '50994-5 (corrente)',
+      pix: p.pix ?? '33910736000156 (CNPJ)'
+    };
+  }
+
+  grupos() {
+    const d = this.dados();
+    const g = [
+      { titulo: 'Identificação', linhas: [
+        { campos: [ { r: 'Razão social', v: d.razao }, { r: 'CNPJ', v: d.cnpj } ] },
+        { campos: [ { r: 'Nome fantasia', v: d.fantasia }, { r: 'Inscrição estadual', v: d.ie }, { r: 'Inscrição municipal', v: d.im } ] },
+        { campos: [ { r: 'Atividade principal (CNAE)', v: d.cnae } ] },
+        { campos: [ { r: 'NIRE', v: d.nire }, { r: 'Capital social', v: d.capital } ] },
+        { campos: [ { r: 'Data de abertura', v: d.abertura }, { r: 'Regime tributário', v: d.regime } ] }
+      ] },
+      { titulo: 'Endereço da sede', linhas: [
+        { campos: [ { r: 'Logradouro e número', v: d.endereco }, { r: 'Bairro', v: d.bairro } ] },
+        { campos: [ { r: 'Município / UF', v: d.cidade }, { r: 'CEP', v: d.cep }, { r: 'País', v: 'Brasil' } ] }
+      ] },
+      { titulo: 'Contatos', linhas: [
+        { campos: [ { r: 'Telefone / WhatsApp', v: d.tel }, { r: 'E-mail institucional', v: d.email }, { r: 'Site', v: d.site } ] },
+        { campos: [ { r: 'Financeiro', v: d.telFin }, { r: 'Operações (Base)', v: d.telOper } ] },
+        { campos: [ { r: 'E-mail para nota fiscal, XML e financeiro', v: d.emailNf } ] }
+      ] },
+      { titulo: 'Quadro societário', linhas: [
+        { campos: [ { r: 'Representante legal (assina o cadastro)', v: d.repNome }, { r: 'CPF', v: d.repCpf } ] },
+        { campos: [ { r: 'Sócios administradores', v: d.admins } ] }
+      ] }
+    ];
+    if (this.props.mostrarBancarios !== false) {
+      g.push({ titulo: 'Dados bancários', linhas: [
+        { campos: [ { r: 'Banco', v: this.dados().banco }, { r: 'Agência', v: this.dados().agencia }, { r: 'Conta', v: this.dados().conta } ] },
+        { campos: [ { r: 'Chave PIX', v: this.dados().pix } ] }
+      ] });
+    }
+    return g;
+  }
+
+  blocoTexto() {
+    const d = this.dados();
+    const L = [
+      'DADOS PARA CADASTRO',
+      '',
+      'Razão social: ' + d.razao,
+      'Nome fantasia: ' + d.fantasia,
+      'CNPJ: ' + d.cnpj,
+      'Inscrição estadual: ' + d.ie,
+      'Inscrição municipal: ' + d.im,
+      'Atividade principal (CNAE): ' + d.cnae,
+      'Regime tributário: ' + d.regime,
+      '',
+      'Endereço: ' + d.endereco + ' · ' + d.bairro,
+      d.cidade + ' · CEP ' + d.cep + ' · Brasil',
+      '',
+      'Telefone/WhatsApp: ' + d.tel,
+      'E-mail institucional: ' + d.email,
+      'E-mail para nota fiscal, XML e financeiro: ' + d.emailNf,
+      'Financeiro: ' + d.telFin,
+      'Operações (Base): ' + d.telOper,
+      '',
+      'NIRE: ' + d.nire,
+      'Capital social: ' + d.capital,
+      'Representante legal: ' + d.repNome + ' · CPF ' + d.repCpf,
+      'Sócios administradores: ' + d.admins
+    ];
+    if (this.props.mostrarBancarios !== false) {
+      L.push('', 'Banco: ' + d.banco + ' · Agência ' + d.agencia + ' · Conta ' + d.conta, 'PIX: ' + d.pix);
+    }
+    return L.join('\n');
+  }
+
+  mensagemEmail() {
+    return [
+      'Boa tarde,',
+      '',
+      'Seguem os dados da Opp Aviação Agrícola Ltda para abertura do cadastro, junto com os documentos em anexo (cartão CNPJ, contrato social, comprovante de inscrição estadual e certidões negativas).',
+      '',
+      this.blocoTexto(),
+      '',
+      'Qualquer documento adicional que o cadastro exija, é só pedir que enviamos no mesmo dia.',
+      '',
+      'Atenciosamente,',
+      'Opp Aviação Agrícola Ltda · Sorriso/MT',
+      'contato@grupooppmais.com.br · +55 (41) 99947-1355'
+    ].join('\n');
+  }
+
+  copia(texto, chave, rotuloOk, rotuloPadrao) {
+    const fim = () => {
+      this.setState({ [chave]: rotuloOk });
+      clearTimeout(this._t); this._t = setTimeout(() => this.setState({ [chave]: rotuloPadrao }), 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(fim, fim);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = texto; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta); fim();
+    }
+  }
+
+  renderVals() {
+    return {
+      grupos: this.grupos(),
+      rotuloBloco: this.state.rotuloBloco,
+      rotuloEmail: this.state.rotuloEmail,
+      aviso: this.state.aviso,
+      baixarPdf: () => window.print(),
+      abrirEcopiar: (e) => {
+        const v = e.currentTarget.getAttribute('data-copiar');
+        if (!v) return;
+        this.copia(v, '_x', '', '');
+        this.toast('CNPJ ' + v + ' copiado — cole no campo do site');
+      },
+      copiarBloco: () => this.copia(this.blocoTexto(), 'rotuloBloco', '✓ Copiado', 'Copiar dados em texto'),
+      copiarEmail: () => this.copia(this.mensagemEmail(), 'rotuloEmail', '✓ Copiado', 'Copiar mensagem de envio'),
+      copiarCampo: (e) => {
+        const v = e.currentTarget.getAttribute('data-v') || '';
+        if (v && v !== FALTA) this.copia(v, '_x', '', '');
+      },
+      anexos: [
+        { nome: 'Cartão CNPJ', nota: 'Comprovante de inscrição e situação cadastral, emitido no dia do envio.', quando: 'Sempre', url: 'https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp', urlRotulo: 'Emitir na Receita Federal →', copiar: '33910736000156' },
+        { nome: 'Contrato social e última alteração', nota: 'Consolidado quando houver; é o que prova quem assina pela empresa.', quando: 'Sempre' },
+        { nome: 'Comprovante de inscrição estadual', nota: 'Exigido por fornecedor que emite nota com destaque de ICMS. Consulta pública pelo CNPJ, sem senha.', quando: 'Sempre', url: 'https://www.sefaz.mt.gov.br/cadastro/consultaPublica', urlRotulo: 'Consultar na SEFAZ-MT →', copiar: '33910736000156' },
+        { nome: 'Documento do representante legal', nota: 'RG/CNH e CPF de quem assina o cadastro.', quando: 'Sempre' },
+        { nome: 'Certidões negativas', nota: 'Federal (Receita/PGFN), estadual (SEFAZ-MT), municipal (Sorriso), FGTS (Caixa) e trabalhista (TST).', quando: 'Sob pedido', url: 'https://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaInter/InformaNICertidao.asp?tipo=1', urlRotulo: 'Emitir a federal (Receita/PGFN) →', copiar: '33910736000156' },
+        { nome: 'Comprovante de conta bancária', nota: 'Só quando o fornecedor precisar devolver valor ou pagar a Opp.', quando: 'Sob pedido' },
+        { nome: 'Certificado ANAC / COA', nota: 'Fornecedor do setor aeronáutico costuma exigir; número COA-2020-12-0OHI-06-00.', quando: 'Setor aéreo' }
+      ],
+      naoVai: [
+        'Dado de cliente, contrato de serviço ou volume aplicado — cadastro de fornecedor não é lugar de informação de operação.',
+        'Número de telefone pessoal de colaborador. O contato é sempre a linha da função, nunca o celular de quem estiver no cargo.',
+        'Logotipo do Grupo Opp+ ou da Opp Gestão de Ativos no campo de razão social — nenhuma das duas tem CNPJ.'
+      ],
+      pendentes: [
+        'Inscrição municipal', 'Data de abertura',
+        'Confirmar se a conta Sicredi ag. 0812 / c/c 50994-5 segue a conta ativa'
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

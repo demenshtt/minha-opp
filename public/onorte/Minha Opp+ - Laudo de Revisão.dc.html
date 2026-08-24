@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="fontes.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin:0; background:#EDEFEA; -webkit-font-smoothing:antialiased; }
+    a { color:#219653; text-decoration:none; } a:hover { color:#1B7A44; }
+  </style>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<div style="min-height:100vh; padding:44px 24px 80px; font-family:'Montserrat',sans-serif; color:#1C201C;">
+<div style="max-width:960px; margin:0 auto; background:#FFFFFF; border-radius:20px; box-shadow:0 22px 60px rgba(57,69,58,.14); overflow:hidden;">
+
+  <div style="background:#39453A url('assets/fundo-opp-verde.png') center/cover; padding:44px 52px 40px; color:#FFFFFF;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:18px;">
+          <span style="width:24px; height:1.5px; background:#6FCF97; display:inline-block;"></span>Revisão · Minha Opp+
+        </div>
+        <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:38px; line-height:1.08; margin:0 0 14px; color:#FFFFFF; max-width:18ch; text-wrap:balance;">Laudo de revisão</h1>
+        <p style="font-size:14.5px; line-height:1.6; color:#D6DDD5; max-width:62ch; margin:0;">Varredura completa do que está no ar hoje: funcionalidade, sequência, textos, feedbacks, caminhos, imagens e usabilidade. Nada foi alterado no aplicativo — este documento é para você decidir o que entra.</p>
+        <p style="font-size:11.5px; line-height:1.6; color:#A5B0A4; margin:14px 0 0;">Fonte lida: demenshtt/minha-opp @ 527648e6 · public/minhaopp (app.js, app.css, tokens.css, sw.js, manifest.json, img/)</p>
+      </div>
+      <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:44px; width:auto; flex:none; opacity:.96;">
+    </div>
+  </div>
+
+  <div style="padding:44px 52px 8px;">
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">Veredito</div>
+    <p style="font-size:15px; line-height:1.75; color:#3E453D; max-width:70ch; margin:0 0 14px;">O aplicativo está <strong style="color:#39453A;">melhor do que a maioria do que se vê em empresa deste porte</strong> — a jornada tem começo, meio e fim, a metáfora do Ágora e do Nexo funciona, o retorno tátil e sonoro é um cuidado raro, e a parte mais chata (configurar SMTP no celular) foi decomposta em dez passos com desenho em cada um. Não é um protótipo: é produto.</p>
+    <p style="font-size:15px; line-height:1.75; color:#3E453D; max-width:70ch; margin:0 0 14px;">O que ele tem são <strong style="color:#39453A;">problemas de borda</strong> — e borda, num app usado uma vez só na vida do colaborador, é o app inteiro. Se a rede falhar no primeiro toque, a pessoa vê tela branca. Se a rede falhar no segundo, o app diz que o e-mail dela não existe. Nenhum dos dois é bug de programação difícil: são decisões de "o que fazer quando dá errado" que ainda não foram tomadas.</p>
+    <p style="font-size:15px; line-height:1.75; color:#3E453D; max-width:70ch; margin:0 0 24px;">Três achados não são de conforto, são de <strong style="color:#39453A;">integridade</strong>, e é por eles que eu começaria — inclusive antes de qualquer melhoria visual. São 33 no total, distribuídos assim:</p>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:44px;">
+      <div style="border:1px solid #F0DCC0; background:#FDF8F0; border-radius:14px; padding:16px 18px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; color:#B4432B; line-height:1;">3</div>
+        <div style="font-size:11.5px; line-height:1.5; color:#6B5426; margin-top:6px;">de integridade<br>promessa que o código não cumpre</div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:16px 18px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; color:#39453A; line-height:1;">6</div>
+        <div style="font-size:11.5px; line-height:1.5; color:#6B706A; margin-top:6px;">quebrados<br>falham na hora, hoje</div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:16px 18px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; color:#39453A; line-height:1;">16</div>
+        <div style="font-size:11.5px; line-height:1.5; color:#6B706A; margin-top:6px;">de atrito<br>sequência, caminhos e peso</div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:16px 18px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:26px; color:#9AA097; line-height:1;">8</div>
+        <div style="font-size:11.5px; line-height:1.5; color:#6B706A; margin-top:6px;">de dívida<br>cobra depois, no portal logado</div>
+      </div>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#B4432B; font-weight:600; margin-bottom:6px;">A · Integridade</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:23px; margin:0 0 8px; color:#39453A;">O que o app promete e o código não cumpre</h2>
+    <p style="font-size:13.5px; line-height:1.7; color:#5A5F58; max-width:68ch; margin:0 0 18px;">Estes três não são erro de digitação nem gosto de design. São promessas feitas por escrito à pessoa que está lendo, e desmentidas algumas linhas abaixo no mesmo arquivo.</p>
+    <div style="border:1px solid #F0DCC0; background:#FDFBF7; border-radius:16px; padding:4px 22px 12px; margin-bottom:40px;">
+      <sc-for list="{{ integridade }}" as="i" hint-placeholder-count="3">
+        <div style="padding:16px 0; border-top:1px solid #F2EADC;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:monospace; font-size:11px; font-weight:700; color:#B4432B; flex:none;">{{ i.n }}</span>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">{{ i.titulo }}</div>
+          </div>
+          <div style="font-size:13.5px; line-height:1.7; color:#4A514A; margin-bottom:8px;">{{ i.oq }}</div>
+          <div style="display:flex; gap:10px; align-items:flex-start; background:#FFFFFF; border:1px solid #EFE4D2; border-radius:9px; padding:9px 12px;">
+            <span style="flex:none; font-size:8.5px; letter-spacing:0.1em; text-transform:uppercase; color:#B48A4A; font-weight:700; padding-top:2px; width:66px;">Sugestão</span>
+            <span style="font-size:12.5px; line-height:1.6; color:#5A5142;">{{ i.fazer }}</span>
+          </div>
+          <div style="font-family:monospace; font-size:10.5px; color:#A79781; margin-top:7px;">{{ i.onde }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:6px;">B · Quebrado</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:23px; margin:0 0 8px; color:#39453A;">Falha na hora, com o app do jeito que está</h2>
+    <p style="font-size:13.5px; line-height:1.7; color:#5A5F58; max-width:68ch; margin:0 0 18px;">Cada um destes já aconteceu ou acontece na primeira vez que a condição aparece. Nenhum depende de redesenho — são correções pontuais.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:4px 22px 12px; margin-bottom:40px;">
+      <sc-for list="{{ quebrado }}" as="i" hint-placeholder-count="6">
+        <div style="padding:16px 0; border-top:1px solid #F2F3F0;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:monospace; font-size:11px; font-weight:700; color:#219653; flex:none;">{{ i.n }}</span>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">{{ i.titulo }}</div>
+          </div>
+          <div style="font-size:13.5px; line-height:1.7; color:#4A514A; margin-bottom:8px;">{{ i.oq }}</div>
+          <div style="display:flex; gap:10px; align-items:flex-start; background:#F7F8F6; border:1px solid #EAECE8; border-radius:9px; padding:9px 12px;">
+            <span style="flex:none; font-size:8.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8A9188; font-weight:700; padding-top:2px; width:66px;">Sugestão</span>
+            <span style="font-size:12.5px; line-height:1.6; color:#4F564E;">{{ i.fazer }}</span>
+          </div>
+          <div style="font-family:monospace; font-size:10.5px; color:#A3A9A1; margin-top:7px;">{{ i.onde }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:6px;">C · Sequência e texto</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:23px; margin:0 0 8px; color:#39453A;">A ordem das coisas e as palavras</h2>
+    <p style="font-size:13.5px; line-height:1.7; color:#5A5F58; max-width:68ch; margin:0 0 18px;">Aqui nada trava — mas é o que decide se a pessoa termina animada ou apenas alivia. É a camada que mais rende e a que precisa da sua leitura junto com a minha.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:4px 22px 12px; margin-bottom:40px;">
+      <sc-for list="{{ sequencia }}" as="i" hint-placeholder-count="7">
+        <div style="padding:16px 0; border-top:1px solid #F2F3F0;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:monospace; font-size:11px; font-weight:700; color:#219653; flex:none;">{{ i.n }}</span>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">{{ i.titulo }}</div>
+          </div>
+          <div style="font-size:13.5px; line-height:1.7; color:#4A514A; margin-bottom:8px;">{{ i.oq }}</div>
+          <div style="display:flex; gap:10px; align-items:flex-start; background:#F7F8F6; border:1px solid #EAECE8; border-radius:9px; padding:9px 12px;">
+            <span style="flex:none; font-size:8.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8A9188; font-weight:700; padding-top:2px; width:66px;">Sugestão</span>
+            <span style="font-size:12.5px; line-height:1.6; color:#4F564E;">{{ i.fazer }}</span>
+          </div>
+          <div style="font-family:monospace; font-size:10.5px; color:#A3A9A1; margin-top:7px;">{{ i.onde }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:6px;">D · Caminhos e usabilidade</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:23px; margin:0 0 8px; color:#39453A;">Onde a pessoa fica sem saída</h2>
+    <p style="font-size:13.5px; line-height:1.7; color:#5A5F58; max-width:68ch; margin:0 0 18px;">O aplicativo é uma linha reta: só existe avançar e voltar. Isso é bom para não perder ninguém, e ruim para quem precisa sair da linha — e alguém sempre precisa.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:4px 22px 12px; margin-bottom:40px;">
+      <sc-for list="{{ caminhos }}" as="i" hint-placeholder-count="5">
+        <div style="padding:16px 0; border-top:1px solid #F2F3F0;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:monospace; font-size:11px; font-weight:700; color:#219653; flex:none;">{{ i.n }}</span>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">{{ i.titulo }}</div>
+          </div>
+          <div style="font-size:13.5px; line-height:1.7; color:#4A514A; margin-bottom:8px;">{{ i.oq }}</div>
+          <div style="display:flex; gap:10px; align-items:flex-start; background:#F7F8F6; border:1px solid #EAECE8; border-radius:9px; padding:9px 12px;">
+            <span style="flex:none; font-size:8.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8A9188; font-weight:700; padding-top:2px; width:66px;">Sugestão</span>
+            <span style="font-size:12.5px; line-height:1.6; color:#4F564E;">{{ i.fazer }}</span>
+          </div>
+          <div style="font-family:monospace; font-size:10.5px; color:#A3A9A1; margin-top:7px;">{{ i.onde }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:6px;">E · Imagens e peso</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:23px; margin:0 0 8px; color:#39453A;">O que o celular precisa baixar</h2>
+    <p style="font-size:13.5px; line-height:1.7; color:#5A5F58; max-width:68ch; margin:0 0 18px;">O público abre isto no celular, muitas vezes longe de Wi-Fi. Peso aqui não é detalhe técnico: é o tempo que a pessoa passa olhando para nada antes de desistir.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:4px 22px 12px; margin-bottom:40px;">
+      <sc-for list="{{ imagens }}" as="i" hint-placeholder-count="4">
+        <div style="padding:16px 0; border-top:1px solid #F2F3F0;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:monospace; font-size:11px; font-weight:700; color:#219653; flex:none;">{{ i.n }}</span>
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">{{ i.titulo }}</div>
+          </div>
+          <div style="font-size:13.5px; line-height:1.7; color:#4A514A; margin-bottom:8px;">{{ i.oq }}</div>
+          <div style="display:flex; gap:10px; align-items:flex-start; background:#F7F8F6; border:1px solid #EAECE8; border-radius:9px; padding:9px 12px;">
+            <span style="flex:none; font-size:8.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8A9188; font-weight:700; padding-top:2px; width:66px;">Sugestão</span>
+            <span style="font-size:12.5px; line-height:1.6; color:#4F564E;">{{ i.fazer }}</span>
+          </div>
+          <div style="font-family:monospace; font-size:10.5px; color:#A3A9A1; margin-top:7px;">{{ i.onde }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:6px;">F · Dívida</div>
+    <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:23px; margin:0 0 8px; color:#39453A;">Funciona hoje, cobra no portal logado</h2>
+    <p style="font-size:13.5px; line-height:1.7; color:#5A5F58; max-width:68ch; margin:0 0 18px;">Nada aqui atrapalha o onboarding. Tudo aqui atrapalha quando o Minha Opp+ virar hub com login — que é o passo seguinte já decidido.</p>
+    <div style="border:1px solid #E6E7E4; border-radius:16px; padding:4px 22px 12px; margin-bottom:40px;">
+      <sc-for list="{{ divida }}" as="i" hint-placeholder-count="8">
+        <div style="padding:14px 0; border-top:1px solid #F2F3F0; display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-family:monospace; font-size:11px; font-weight:700; color:#9AA097; flex:none; padding-top:2px;">{{ i.n }}</span>
+          <div style="flex:1;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:3px;">{{ i.titulo }}</div>
+            <div style="font-size:12.5px; line-height:1.65; color:#5A615A;">{{ i.oq }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'Comfortaa',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9AA097; font-weight:600; margin-bottom:16px;">Ordem sugerida</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px;">
+      <div style="border:1px solid #CBE3D2; background:#F1F7F2; border-radius:14px; padding:18px 20px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12px; color:#1B7A44; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Onda 1</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:6px;">Integridade</div>
+        <div style="font-size:12px; line-height:1.6; color:#4A514A;">Anonimato, senha de primeiro acesso e a chave SMTP compartilhada. Sobe sozinha, sem tocar em tela.</div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:18px 20px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12px; color:#6B706A; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Onda 2</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:6px;">Quebrado + peso</div>
+        <div style="font-size:12px; line-height:1.6; color:#4A514A;">Tela de carregamento, erro honesto de rede, áudio, copiar. E enxugar os PNGs. Risco baixo, ganho imediato.</div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:18px 20px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12px; color:#6B706A; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Onda 3</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:6px;">Sequência e texto</div>
+        <div style="font-size:12px; line-height:1.6; color:#4A514A;">Nomes das missões, comemoração no lugar certo, saída para a TI, fusão das telas repetidas. Aqui eu preciso de você.</div>
+      </div>
+      <div style="border:1px solid #E6E7E4; border-radius:14px; padding:18px 20px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:12px; color:#6B706A; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Onda 4</div>
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#39453A; margin-bottom:6px;">Dívida</div>
+        <div style="font-size:12px; line-height:1.6; color:#4A514A;">Carimbo de versão, guarda de estado, crédito de autoria. Entra junto com o portal logado, não antes.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px; align-items:flex-start; background:#F1F7F2; border:1px solid #CBE3D2; border-radius:10px; padding:12px 15px; margin-bottom:44px;">
+      <span style="flex:none; color:#219653; font-weight:700;">i</span>
+      <span style="font-size:12px; line-height:1.6; color:#2F5C41;">As ondas 1 e 2 podem subir na mesma publicação: nenhuma delas muda o que a pessoa lê na tela, então não exigem retreinar ninguém. A onda 3 muda texto e ordem — essa merece publicação própria, com aviso à equipe.</span>
+    </div>
+
+  </div>
+
+  <div style="padding:22px 52px 30px; border-top:1px solid #EEF0ED; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+    <div style="font-size:10.5px; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT<br>"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de marketing da razão social acima.</div>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end;">
+      <span data-carimbo></span>
+      <div style="font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600; text-align:right;">O Norte · MDC-GDI</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1060,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      integridade: [
+        {
+          n: 'A1',
+          titulo: 'O questionário promete anonimato e envia o nome',
+          oq: 'A tela de opinião diz, com todas as letras, "suas respostas são anônimas". No envio, o pacote carrega nome completo, e-mail pessoal, cargo e e-mail corporativo junto com as cinco notas e o comentário. Quem responder "muito difícil" na configuração está assinando embaixo sem saber. Se alguém da equipe descobrir isso depois, o custo não é o formulário: é a confiança em tudo que o Minha Opp+ vier a pedir daqui pra frente.',
+          fazer: 'Escolher um dos dois e cumprir. Anônimo de verdade: cortar os quatro campos de identificação do envio e manter só as notas. Identificado: trocar a frase por "suas respostas vão para a gestão com seu nome — é assim que a gente sabe quem ajudar". A segunda opção é legítima e inclusive mais útil para você; o que não pode é a frase de agora.',
+          onde: 'app.js · tela "feedback" (texto) + submitFeedback() (payload)',
+        },
+        {
+          n: 'A2',
+          titulo: 'A senha do primeiro acesso é o e-mail pessoal da pessoa',
+          oq: 'Duas telas antes, o app ensina "senha é secreta, nunca passe para ninguém". Depois entrega uma senha inicial que é o dado mais público que a pessoa tem — e ainda a exibe escrita na tela de resumo, que fica salva no aparelho. Quem tiver o e-mail pessoal de um colega tem a senha dele até a troca acontecer, e a troca depende da pessoa lembrar de fazer.',
+          fazer: 'Manter a mecânica, se for a que a TI consegue operar hoje, mas fechar a janela: senha inicial com validade curta, troca obrigatória no primeiro login (o Workspace já força isso — vale confirmar que está ligado) e o app parando de imprimir a senha no resumo. A instrução vira "sua senha inicial foi enviada pela TI", não o valor em si.',
+          onde: 'app.js · telas "celebration" e "summary"',
+        },
+        {
+          n: 'A3',
+          titulo: 'Todo mundo autentica o SMTP com a mesma chave',
+          oq: 'No passo 8, o usuário do servidor é opp@grupooppmais.com.br e a senha é a Chave de Integração de 16 dígitos que a TI manda por mensagem — a mesma para todos. Na prática, cada colaborador guarda no Gmail pessoal dele uma credencial que envia e-mail em nome da empresa. Quem sai continua conseguindo enviar até alguém lembrar de girar a chave, e girar a chave derruba a configuração de todo mundo de uma vez, obrigando o onboarding inteiro a ser refeito.',
+          fazer: 'Não é para resolver dentro do app, é decisão da TI: uma senha de app por pessoa, gerada na conta corporativa dela. O app só passa a dizer "use a chave que a TI gerou para você". Se hoje não há como emitir uma por pessoa, no mínimo registrar quem recebeu a chave e a data, para que a rotação futura seja possível sem apagão.',
+          onde: 'app.js · tela "smtp-8" · procedimento da TI',
+        },
+      ],
+      quebrado: [
+        {
+          n: 'B1',
+          titulo: 'Tela branca até o Google responder',
+          oq: 'A primeira coisa que o app faz é buscar a lista de colaboradores numa planilha do Google, e só desenha alguma coisa depois que a resposta chega. Em sinal de fazenda isso são vários segundos de tela em branco, sem logo, sem "carregando", sem nada. A pessoa acha que o link quebrou e fecha — e a primeira impressão do ambiente digital da empresa foi um app que não abre.',
+          fazer: 'Desenhar a tela de abertura na hora e buscar a lista em segundo plano. O botão "Começar agora" pode ficar aguardando por um instante, mas a marca aparece imediatamente.',
+          onde: 'app.js · final do arquivo: loadUsers().then(() => render())',
+        },
+        {
+          n: 'B2',
+          titulo: 'Falha de rede vira "e-mail não encontrado"',
+          oq: 'Se a busca da planilha falhar, a lista fica vazia e qualquer e-mail digitado cai na mensagem "E-mail não encontrado. Verifique a digitação ou chame a TI." O app culpa a pessoa por um problema que é dele. Ela confere, digita de novo, erra de novo, e liga para a TI reclamar de um cadastro que está perfeito.',
+          fazer: 'Separar os dois casos. Sem lista carregada: "não conseguimos consultar o cadastro agora — confira a internet e tente de novo", com botão de tentar novamente. Lista carregada e e-mail ausente: aí sim a mensagem atual, que passa a ser verdadeira.',
+          onde: 'app.js · loadUsers() (catch silencioso) + handleEmailSubmit()',
+        },
+        {
+          n: 'B3',
+          titulo: 'O som para de funcionar no meio da jornada',
+          oq: 'Cada bipe cria um canal de áudio novo e nunca fecha. O navegador permite poucos abertos ao mesmo tempo; passando disso, os sons simplesmente somem. Como são 23 telas com retorno sonoro, a segunda metade do onboarding tende a ficar muda — e a Missão 3, que é a que mais precisa da confirmação "deu certo", é justamente a que fica sem.',
+          fazer: 'Criar um único canal de áudio na primeira interação e reaproveitar em todos os sons.',
+          onde: 'app.js · playTone(): new AudioContext() a cada chamada',
+        },
+        {
+          n: 'B4',
+          titulo: 'Apóstrofo no nome quebra o botão de copiar',
+          oq: 'Os valores copiáveis são montados dentro de uma instrução com aspas simples. Um nome como D\u2019Ávila ou O\u2019Brien fecha a aspa no meio e o toque para de funcionar — sem erro visível, o dedo bate e nada acontece. Vale para o campo "Nome" do passo 5, que usa o nome completo do colaborador.',
+          fazer: 'Trocar o toque embutido por um vínculo de evento (o mesmo que já existe no restante do arquivo), que aceita qualquer caractere.',
+          onde: 'app.js · copyableValue() · usado em smtp-5, smtp-7, smtp-8',
+        },
+        {
+          n: 'B5',
+          titulo: 'Copiar dispara duas vezes',
+          oq: 'Os campos copiáveis recebem dois comandos ao mesmo tempo: o embutido na criação e outro adicionado depois em todas as telas. Um mostra o aviso flutuante "Copiado!", o outro troca o texto do próprio campo por "Copiado! ✓". Resultado: dois avisos, duas vibrações e dois bipes num toque só. Parece falha de aplicativo mal feito, quando é só instrução repetida.',
+          fazer: 'Ficar com um dos dois. Sugiro o que troca o texto no lugar — dá retorno onde o dedo está, sem tapar a tela.',
+          onde: 'app.js · copyableValue() + bindScreenEvents() (.step-instruction__value)',
+        },
+        {
+          n: 'B6',
+          titulo: 'A opinião pode se perder e o app diz que deu certo',
+          oq: 'O envio das respostas é disparado e ignorado: se a rede cair naquele instante, o erro é engolido e a tela de agradecimento aparece do mesmo jeito. Você perde a resposta e nunca fica sabendo — e como o app marca como enviado, nem a pessoa pode tentar de novo.',
+          fazer: 'Esperar a confirmação antes de agradecer. Falhando, guardar a resposta no aparelho e reenviar na próxima abertura, com um aviso honesto de "vamos enviar assim que a internet voltar".',
+          onde: 'app.js · submitFeedback(): fetch(...).catch(() => {})',
+        },
+      ],
+      sequencia: [
+        {
+          n: 'C1',
+          titulo: 'A mesma missão tem dois nomes na mesma tela',
+          oq: 'O cabeçalho diz "Missão 1 — Preparação" enquanto o crachá logo abaixo diz "Missão 1: Identificação". Na tela de aceite, cabeçalho e crachá discordam de novo ("Suas Ferramentas" contra "Missão 2: Finalizando"). Quem lê com atenção — e o público lê, porque está aprendendo — fica na dúvida se pulou alguma coisa.',
+          fazer: 'Um nome só por missão, vindo do mesmo lugar no código. O crachá passa a mostrar o assunto da tela, não uma segunda versão do nome da missão.',
+          onde: 'app.js · MISSION_NAMES × phase-badge de cada tela',
+        },
+        {
+          n: 'C2',
+          titulo: 'Metade do app é a parte mais difícil',
+          oq: 'São 23 telas, e 11 delas são a configuração do SMTP. A barra de progresso conta telas, então a pessoa atravessa a metade mais penosa vendo a barra andar de um em um — a sensação é de que a jornada não acaba justamente onde ela é mais frágil.',
+          fazer: 'Duas saídas, complementares. A barra passa a mostrar a missão ("Missão 3 de 4") em vez da contagem de telas; e o passo a passo do SMTP ganha um indicador próprio de "passo 4 de 10", que já existe, mas hoje compete com a contagem geral.',
+          onde: 'app.js · renderHeader(): progress por índice de tela',
+        },
+        {
+          n: 'C3',
+          titulo: 'A comemoração acontece antes do fim',
+          oq: 'Troféu, confete e "Parabéns" chegam ao terminar o SMTP — e a frase imediatamente abaixo diz "agora faltam só alguns passos para você estar 100% operacional", seguida de cinco itens, entre eles fazer o primeiro login e trocar a senha. Comemorar antes da linha de chegada ensina que o resto é opcional, e o resto é justamente o que dá acesso ao ambiente.',
+          fazer: 'Mover a festa para depois do primeiro login confirmado, ou rebaixá-la a "SMTP configurado ✓" e reservar o troféu para o fim de verdade. Os cinco itens pendentes viram a Missão 4, com o mesmo tratamento de passo a passo que a 3 recebeu.',
+          onde: 'app.js · tela "celebration"',
+        },
+        {
+          n: 'C4',
+          titulo: 'Duas telas dizem a mesma coisa em seguida',
+          oq: '"Seu e-mail profissional" e "Pessoal vs. Trabalho" fazem a mesma distinção — corporativo é da empresa e pode ser auditado, pessoal é seu e ninguém acessa —, uma logo depois da outra, com as mesmas duas caixas. Repetição em onboarding não reforça: sinaliza que dá para passar batido.',
+          fazer: 'Fundir numa tela só, mantendo o melhor de cada: as duas caixas da primeira e a frase da segunda, que é mais direta. O app fica uma tela mais curto sem perder nada.',
+          onde: 'app.js · telas "identity" e "privacy"',
+        },
+        {
+          n: 'C5',
+          titulo: 'O confete volta se a pessoa voltar',
+          oq: 'A festa é disparada toda vez que a tela é desenhada. Quem tocar em "Voltar" na tela de opinião assiste ao confete e à sequência de sons de novo, do começo. Some o efeito de conquista e vira um tique do aplicativo.',
+          fazer: 'Disparar uma vez por conclusão, guardando que já aconteceu.',
+          onde: 'app.js · render(): if (screen.id === "celebration") launchConfetti()',
+        },
+        {
+          n: 'C6',
+          titulo: 'Palavras que aparecem uma vez só',
+          oq: '"Tripulante" surge no resumo final, sem nunca ter sido apresentado — a jornada inteira falou em colaborador. "Serei um guardião" é um botão que ninguém do público diria em voz alta. E o texto de abertura entrega nuvem, e-mail, Drive, Nexo e Ágora num parágrafo só, antes de a pessoa ter tocado em nada.',
+          fazer: 'Ou adotar a metáfora de tripulação desde a abertura, ou tirá-la do resumo. O botão vira "Entendi as regras". E o parágrafo de abertura fica com duas ideias — você tem um ambiente da empresa, e a gente vai configurar juntos —, porque as ferramentas já têm tela própria logo à frente.',
+          onde: 'app.js · telas "summary", "security", "splash"',
+        },
+        {
+          n: 'C7',
+          titulo: 'O crédito cita a ferramenta',
+          oq: 'O rodapé diz "Desenvolvido por ΣΘ Sistere Stabilis com assistência de IA Claude (Anthropic)". O padrão que você fechou é o contrário: o estúdio assina, a ferramenta é bancada e não aparece no crédito público.',
+          fazer: 'Deixar "Desenvolvido por ΣΘ Sistere Stabilis · Soluções Integradas", como já está no restante das peças.',
+          onde: 'app.js · tela "summary" · bloco credits',
+        },
+      ],
+      caminhos: [
+        {
+          n: 'D1',
+          titulo: 'Não há socorro nos dez passos do SMTP',
+          oq: 'O "fale com a TI" só aparece no resumo final — quer dizer, exatamente onde quem travou nunca chegou. Nos dez passos só existem "Voltar" e "Feito ✓". Quem não achou a engrenagem no passo 3 fica olhando para a tela, sem terceira opção, e sai do app para procurar o telefone de alguém.',
+          fazer: 'Um link discreto e fixo em toda a Missão 3: "travei aqui — chamar a TI", abrindo o WhatsApp ou o Chat já com o número do passo escrito na mensagem. Você descobre em qual passo as pessoas travam sem precisar perguntar.',
+          onde: 'app.js · smtpStep() e telas smtp-1 a smtp-10',
+        },
+        {
+          n: 'D2',
+          titulo: 'Rever uma tela custa apagar tudo',
+          oq: 'Dá para voltar passo a passo, mas não existe índice nem atalho. Quem terminou e quer reler o que é o Nexo só encontra o botão "Refazer onboarding", que zera o progresso, o aceite e as respostas. Na prática, ninguém revê nada.',
+          fazer: 'Um menu de missões no cabeçalho, permitindo pular para qualquer tela já visitada — a lista de visitadas já é guardada, só não é usada. E o "Refazer" passa a pedir confirmação.',
+          onde: 'app.js · state.completedSteps (registrado e nunca usado) · restart()',
+        },
+        {
+          n: 'D3',
+          titulo: 'O tema só pode ser escolhido na primeira tela',
+          oq: 'A escolha entre claro e escuro fica na abertura e nunca mais reaparece. Quem tocou errado, ou quem começou de dia e continuou de noite no galpão, atravessa o resto do onboarding no tema errado.',
+          fazer: 'Um botão pequeno no cabeçalho, presente em todas as telas. A troca já funciona; falta só onde tocar.',
+          onde: 'app.js · theme-toggle presente apenas na tela "splash"',
+        },
+        {
+          n: 'D4',
+          titulo: 'O teclado abre sozinho e cobre o botão',
+          oq: 'A tela do e-mail coloca o cursor no campo assim que aparece, o que faz o teclado subir na hora. Em celular de tela pequena o botão "Encontrar meu perfil" fica atrás do teclado, e a pessoa não vê que existe um botão — ela também não tem como saber que o Enter funciona.',
+          fazer: 'Não abrir o teclado sozinho, ou manter o botão colado acima do teclado. E, já que o Enter funciona, dizer isso no próprio campo.',
+          onde: 'app.js · bindScreenEvents(): input.focus() na tela "email-input"',
+        },
+        {
+          n: 'D5',
+          titulo: 'O som não tem como ser desligado',
+          oq: 'Cada toque emite bipe e vibração, sem preferência e sem botão de silêncio. Quem abrir o app numa reunião, no hangar ao lado de alguém ou de madrugada não tem escolha a não ser baixar o volume do aparelho inteiro. Em iPhone a vibração nem funciona, então parte do retorno some sem aviso.',
+          fazer: 'Um botão de som no cabeçalho, ao lado do de tema, com a escolha guardada. Manter ligado por padrão — o retorno é bom —, mas dando saída.',
+          onde: 'app.js · haptic/audio, sem preferência guardada',
+        },
+      ],
+      imagens: [
+        {
+          n: 'E1',
+          titulo: 'Dois megabytes e meio de logo decorativo',
+          oq: 'As variações do logo que vão sendo desbloqueadas — esmeralda, rubi, prata, ouro, diamante — somam cerca de 2,5 MB em PNG, com arquivos individuais de 374 a 432 KB, para serem exibidas com poucos centímetros de largura. É, com folga, a coisa mais pesada do aplicativo, e serve a um enfeite. Em 4G ruim de estrada, é o que separa abrir de desistir.',
+          fazer: 'Reexportar cada variação no tamanho em que aparece de fato (algo como 256 px de largura) e em formato moderno. Dá para ficar abaixo de 30 KB por arquivo sem perda visível — o conjunto inteiro passa a pesar menos que um único arquivo de hoje.',
+          onde: 'public/minhaopp/img/icon/*.png · icon-512.png (259 KB)',
+        },
+        {
+          n: 'E2',
+          titulo: 'A imagem que aparece primeiro é a que mais demora',
+          oq: 'O ícone do cabeçalho está marcado para carregar tarde, recurso pensado para imagens que só aparecem quando se rola a tela. Como ele está sempre no topo, o efeito é o oposto do desejado: atrasa justamente a marca que deveria aparecer antes de tudo.',
+          fazer: 'Tirar a marcação de carregamento tardio do ícone do cabeçalho e do logo da abertura; manter nas demais.',
+          onde: 'app.js · iconImg()/logoImg(): loading="lazy"',
+        },
+        {
+          n: 'E3',
+          titulo: 'Os desenhos do Gmail têm letra de 9 pixels',
+          oq: 'Os mockups que mostram onde tocar são desenhos de 320 px de largura com textos de 9 a 11 px. Numa tela de celular isso é menor que qualquer letra do resto do app, e o público inclui gente de mais de 50 anos configurando o celular pela primeira vez. Os desenhos são o melhor recurso da Missão 3 — e são a parte ilegível dela.',
+          fazer: 'Aumentar a base do desenho (mesma proporção, textos a partir de 13 px) e permitir tocar para ampliar. Além disso, trocar os dedinhos em emoji por uma seta desenhada: emoji dentro de desenho vetorial muda de forma entre Android e iPhone, e às vezes nem aparece.',
+          onde: 'app.js · gmailMockup() e SMTP_ILLUSTRATIONS 1 a 10',
+        },
+        {
+          n: 'E4',
+          titulo: 'Uma segunda paleta escondida nos desenhos',
+          oq: 'Os mockups trazem as próprias cores no código — cinzas azulados que sobraram da versão anterior do sistema de design e não pertencem à paleta oficial. Junto com dois crachás de missão em azul-claro e laranja, é o único ponto do app que não obedece ao design system. As cores do Google dentro do desenho são reprodução da tela alheia e podem ficar.',
+          fazer: 'Ligar essas cores aos tokens do sistema, como já está o resto do CSS. É troca mecânica e resolve a última divergência conhecida com o v1.2.',
+          onde: 'app.js · gmailMockup() · app.css · .phase-badge--2 e --3',
+        },
+      ],
+      divida: [
+        { n: 'F1', titulo: 'Ninguém sabe qual versão está no celular', oq: 'O Norte tem carimbo de versão e índice; o Minha Opp+ não tem nada disso, e ainda guarda os arquivos no aparelho para funcionar sem internet. Você não tem como saber, olhando o celular de um colaborador, se ele está vendo a versão nova ou uma cópia de semanas atrás. O mesmo problema que o carimbo resolveu no hub.' },
+        { n: 'F2', titulo: 'Índice de tela salvo sem guarda', oq: 'A tela em que a pessoa parou fica gravada no aparelho pelo número. No dia em que uma tela for removida — e a fusão sugerida em C4 remove uma —, quem tiver o número antigo salvo abre o app numa tela que não existe mais. Uma verificação de duas linhas evita.' },
+        { n: 'F3', titulo: 'Endereço da planilha exposto no arquivo', oq: 'O endereço do serviço que lê e grava a planilha está escrito no código, que é público. Hoje o risco é pequeno (dá para listar os cadastros e injetar respostas falsas), mas quando o mesmo caminho servir ao ambiente logado, deixa de ser pequeno.' },
+        { n: 'F4', titulo: 'Parâmetro de cache fora do padrão', oq: 'A consulta usa o parâmetro que o Norte já aposentou por conflitar com o host de pré-visualização. Em produção funciona; padronizar agora evita reencontrar o problema quando as duas bases se juntarem.' },
+        { n: 'F5', titulo: 'Trilhas por cor publicadas e sem uso', oq: 'Os tokens de cliente, colaborador e fornecedor já estão no ar, sem nenhuma tela que os aplique. Esperado — eles valem para o ambiente logado —, mas convém registrar para não parecerem esquecimento.' },
+        { n: 'F6', titulo: 'Progresso preso a um único aparelho', oq: 'Tudo é guardado no navegador do celular. Trocar de aparelho, limpar dados ou abrir pelo computador significa começar do zero. Com o login do portal isso se resolve sozinho; até lá, vale dizer à pessoa que o progresso vive naquele aparelho.' },
+        { n: 'F7', titulo: 'O aplicativo se identifica pelo onboarding', oq: 'Nome, descrição e título ainda dizem "Onboarding Digital". Quando o Minha Opp+ virar o hub de relacionamento, o ícone na tela inicial do celular continuará anunciando a fase antiga — e reinstalar não é algo que se peça a ninguém duas vezes.' },
+        { n: 'F8', titulo: 'A tela de resumo é o embrião do portal', oq: 'Ela já faz o que a home logada vai fazer: mostra quem é a pessoa, o que ela tem acesso e os atalhos. É o melhor ponto de partida para o portal — vale preservá-la como referência quando aquela fase começar, em vez de desenhar do zero.' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

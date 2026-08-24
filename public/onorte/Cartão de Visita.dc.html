@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fontes.css">
   <style>body { margin:0; background:#EDEFEA; } a { color:#219653; } a:hover { color:#1B7A44; }</style>
   <script src="carimbo.js"></script>
 </helmet>
@@ -54,11 +54,37 @@
       <div style="width:510px; height:283px; background:#39453A; border-radius:10px; box-shadow:0 10px 30px rgba(57,69,58,.22); position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;">
         <div style="position:absolute; top:-110px; right:-80px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.18), transparent 62%);"></div>
         <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:230px; height:auto; position:relative;"/>
-        <div style="font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#8FA394; position:relative;">Sorriso · Mato Grosso</div>
+        <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:9px;">
+          <div style="font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#8FA394;">Sorriso · Mato Grosso</div>
+          <div style="font-size:8.5px; color:#A9B6AB; letter-spacing:0.02em;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+        </div>
       </div>
     </div>
   </div>
-  <div style="max-width:760px; text-align:center; font-size:11px; line-height:1.7; color:#8A8F89;">Para a gráfica: arte final em 90 × 50 mm + 3 mm de sangria em cada borda, CMYK, papel couché fosco 300 g/m² com laminação fosca. A faixa em degradê da frente encosta na borda — precisa ir até a sangria.</div>
+  <div style="width:100%; max-width:1060px;">
+    <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:#219653; font-weight:600; margin-bottom:16px;"><span style="width:22px; height:1.5px; background:#219653;"></span>Regras fechadas</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:16px;">
+
+      <div style="background:#FFFFFF; border:1px solid #E1E4DE; border-radius:12px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13.5px; color:#39453A; margin-bottom:9px;">Hierarquia medida na tinta</div>
+        <p style="font-size:12px; line-height:1.75; color:#565B56; margin:0;">Quando a unidade divide a face com o Grupo Opp+, o Grupo entra a <strong style="color:#39453A;">45% da altura da unidade</strong> — e os 45% se medem na tinta visível, nunca na caixa do arquivo.</p>
+        <p style="font-size:11.5px; line-height:1.7; color:#8A8F89; margin:10px 0 0;">Cada PNG tem uma sobra transparente diferente: escalar pela caixa compara moldura, não marca. Tinta medida sobre a caixa — aviação 53,2% · ativos 60,8% · grupo flat 55,0%.</p>
+      </div>
+
+      <div style="background:#FFFFFF; border:1px solid #E1E4DE; border-radius:12px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13.5px; color:#39453A; margin-bottom:9px;">Razão social no verso, sempre</div>
+        <p style="font-size:12px; line-height:1.75; color:#565B56; margin:0;">Todo verso fecha com <strong style="color:#39453A;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</strong>, qualquer que seja a marca da frente.</p>
+        <p style="font-size:11.5px; line-height:1.7; color:#8A8F89; margin:10px 0 0;">Grupo Opp+ e Opp Gestão de Ativos são marcas sem CNPJ próprio. Quem responde pelo cartão é a empresa registrada, e ela precisa estar legível na peça.</p>
+      </div>
+
+      <div style="background:#FFFFFF; border:1px solid #E1E4DE; border-radius:12px; padding:20px 22px;">
+        <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:13.5px; color:#39453A; margin-bottom:9px;">Corte, sangria e papel</div>
+        <p style="font-size:12px; line-height:1.75; color:#565B56; margin:0;">Corte em <strong style="color:#39453A;">90 × 50 mm</strong>, prancha em <strong style="color:#39453A;">96 × 56 mm</strong> — 3 mm de sangria por borda. CMYK, couché fosco 300 g/m² com laminação fosca.</p>
+        <p style="font-size:11.5px; line-height:1.7; color:#8A8F89; margin:10px 0 0;">A faixa em degradê da frente encosta na borda: precisa ir até o fim da sangria. Prancha pronta em <a href="Cartão de Visita - Arte Final.dc.html" style="font-weight:600; text-decoration:none;">Arte Final</a>.</p>
+      </div>
+
+    </div>
+  </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1180, &quot;height&quot;: 620}, &quot;emissor&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;holding&quot;, &quot;options&quot;: [&quot;holding&quot;, &quot;aviacao&quot;, &quot;ativos&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Emissor&quot;}, &quot;pessoa&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;abner&quot;, &quot;options&quot;: [&quot;abner&quot;, &quot;rafael&quot;, &quot;alexsandra&quot;, &quot;personalizado&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa&quot;}, &quot;nome&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Nome Completo&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}, &quot;cargo&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Cargo / Função&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}, &quot;telefone&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;+55 (41) 99947-1355&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}, &quot;email&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;contato@grupooppmais.com.br&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pessoa (se personalizado)&quot;}}">

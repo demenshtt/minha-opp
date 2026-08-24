@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="fontes.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #EDF0EC; }
+    a { color: #219653; }
+    a:hover { color: #1E5A33; }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <path d="M 120 150 L 220 150 Q 260 150 260 190 L 260 262" stroke="#6FCF97" stroke-width="40" stroke-linecap="round" fill="none"/>
+      <circle cx="146" cy="238" r="34" fill="#219653"/>
+    </svg>
+  </template>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<div style="font-family:'Montserrat',sans-serif; color:#1C201C; max-width:1180px; margin:0 auto; padding:44px 32px 70px;">
+
+  <div style="margin-bottom:30px;">
+    <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;"><span style="width:26px; height:1.5px; background:#219653;"></span>O Norte · Central de Marca</div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:27px; color:#39453A; margin:0 0 10px;">Logotipos oficiais — arquivos para baixar</h1>
+    <p style="font-size:13.5px; color:#5E655D; margin:0; max-width:760px; line-height:1.65; text-wrap:pretty;">Esta é a fonte dos arquivos. O logotipo <strong style="color:#39453A;">colorido</strong> é o padrão de cada marca — Grupo Opp+, Opp Aviação Agrícola e Opp Gestão de Ativos. Clique em qualquer arte para baixar o PNG. Todas as versões aqui são as <strong style="color:#39453A;">atuais</strong>; nada de arquivo antigo circulando por e-mail.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:38px;">
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:14px; padding:16px 18px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:7px;">Padrão</div>
+      <div style="font-size:11.5px; color:#5E655D; line-height:1.6;">Colorido sobre fundo claro. Se você não tem motivo para usar outra versão, é esta.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:14px; padding:16px 18px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:7px;">Fundo escuro</div>
+      <div style="font-size:11.5px; color:#5E655D; line-height:1.6;">Versão <em>–branco</em>: fonte branca e símbolo colorido. Nunca aplique inversão de cor na versão preta.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:14px; padding:16px 18px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:7px;">Uma tinta só</div>
+      <div style="font-size:11.5px; color:#5E655D; line-height:1.6;">Preto ou branco monocromático: gravação, carimbo, serigrafia de uma cor, documento em P&amp;B.</div>
+    </div>
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:14px; padding:16px 18px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:7px;">3D</div>
+      <div style="font-size:11.5px; color:#5E655D; line-height:1.6;">Peça especial (capa, brinde, abertura). Não é o logo do dia a dia.</div>
+    </div>
+  </div>
+
+  <sc-for list="{{ marcas }}" as="m" hint-placeholder-count="3">
+    <div style="margin-bottom:42px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:6px;">
+        <h2 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:18px; color:#39453A; margin:0;">{{ m.nome }}</h2>
+        <div style="font-size:11px; color:#868C85; text-align:right; max-width:520px; line-height:1.5;">{{ m.nota }}</div>
+      </div>
+      <div style="height:2px; background:#DDE1DB; margin:0 0 16px; border-radius:2px;"></div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+        <sc-for list="{{ m.artes }}" as="a" hint-placeholder-count="4">
+          <a href="{{ a.src }}" download="{{ a.arquivo }}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; background:#FFFFFF; border:1px solid #E0E3DE; border-radius:16px; overflow:hidden;" style-hover="border-color:#219653; box-shadow:0 6px 18px rgba(57,69,58,.10);">
+            <span style="display:flex; align-items:center; justify-content:center; height:132px; background:{{ a.fundo }}; padding:18px;"><img src="{{ a.src }}" alt="{{ a.rotulo }}" style="max-width:84%; max-height:86%; width:auto; height:auto;"></span>
+            <span style="display:block; padding:13px 15px 15px; border-top:1px solid #EEF0ED; flex:1;">
+              <span style="display:flex; align-items:center; gap:7px; margin-bottom:5px;">
+                <span style="font-size:12.5px; font-weight:600; color:#39453A;">{{ a.rotulo }}</span>
+                <sc-if value="{{ a.padrao }}" hint-placeholder-val="{{ false }}"><span style="font-size:8.5px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#219653; background:#EEF3EF; border-radius:5px; padding:3px 6px;">padrão</span></sc-if>
+              </span>
+              <span style="display:block; font-size:11px; color:#767C75; line-height:1.55;">{{ a.uso }}</span>
+              <span style="display:flex; align-items:center; gap:6px; margin-top:10px; font-size:10.5px; font-weight:600; color:#219653;"><i data-lucide="download" style="width:13px; height:13px;"></i>{{ a.arquivo }}</span>
+            </span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+
+  <div style="background:#39453A; border-radius:18px; padding:26px 28px; color:#FFFFFF;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; margin-bottom:14px;">Antes de mandar para alguém produzir</div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px 26px; font-size:12.5px; color:#C9D2C8; line-height:1.65;">
+      <div>Nunca esticar, girar, contornar, sombrear ou recolorir. Redimensione sempre pelos cantos.</div>
+      <div>Respiro mínimo em volta do logo = altura da letra "o" do "opp". Nada entra nessa margem.</div>
+      <div>Fundo claro pede a versão colorida; fundo escuro, a de fonte branca. Fundo com foto poluída: use uma faixa lisa atrás.</div>
+      <div>Quem é de fora recebe o <a href="Kit Express de Marca.dc.html" style="color:#A5D6A7;">Kit Express</a> — guia + artes em alta num zip só.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px; font-size:11px; color:#8A8F89; text-align:right;"><span data-carimbo></span></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
+  renderVals() {
+    const CLARO = '#FFFFFF', ESCURO = '#39453A', TINTA = '#1C201C', CINZA = '#F0F0F0';
+    return {
+      marcas: [
+        {
+          nome: 'Opp Aviação Agrícola',
+          nota: 'Razão social do grupo. Assina proposta, contrato, adesivo de veículo e aeronave.',
+          artes: [
+            { rotulo: 'Colorido (flat)', arquivo: 'logo-opp-aviacao.png', src: 'assets/logo-opp-aviacao.png', fundo: CLARO, padrao: true, uso: 'Documento, slide, site, adesivo. É a arte oficial da unidade.' },
+            { rotulo: 'Fonte branca', arquivo: 'logo-opp-aviacao-branco.png', src: 'assets/logo-opp-aviacao-branco.png', fundo: ESCURO, uso: 'Fundo escuro em peça a cores — símbolo segue colorido.' },
+            { rotulo: '3D', arquivo: 'logo-opp-aviacao-3d.png', src: 'assets/logo-opp-aviacao-3d.png', fundo: CLARO, uso: 'Peça especial. Texto preto — não inverter por filtro.' },
+            { rotulo: 'Ícone', arquivo: 'icone-opp-aviacao.png', src: 'assets/icone-opp-aviacao.png', fundo: CLARO, uso: 'Avatar, favicon, selo pequeno. Sem o texto ao lado.' },
+            { rotulo: 'Monocromático preto', arquivo: 'logo-opp-aviacao-preto.png', src: 'assets/logo-opp-aviacao-preto.png', fundo: CINZA, uso: 'Gravação, carimbo, serigrafia de uma cor, cópia em P&B.' },
+            { rotulo: 'Monocromático branco', arquivo: 'logo-opp-aviacao-mono-branco.png', src: 'assets/logo-opp-aviacao-mono-branco.png', fundo: TINTA, uso: 'Uma tinta só sobre fundo escuro ou vinil branco.' },
+            { rotulo: 'Ícone 3D', arquivo: 'icone-opp-aviacao-3d.png', src: 'assets/icone-opp-aviacao-3d.png', fundo: CLARO, uso: 'Versão especial do ícone, para brinde e capa.' },
+            { rotulo: 'Ícone (fundo transparente)', arquivo: 'icone-opp-aviacao-transp.png', src: 'assets/icone-opp-aviacao-transp.png', fundo: CINZA, uso: 'Quando o ícone precisa sentar direto sobre outra arte.' },
+          ],
+        },
+        {
+          nome: 'Opp Gestão de Ativos',
+          nota: 'Marca de marketing, sem CNPJ próprio. Toda peça cita a Opp Aviação Agrícola Ltda como razão social.',
+          artes: [
+            { rotulo: 'Colorido (flat)', arquivo: 'logo-opp-ativos.png', src: 'assets/logo-opp-ativos.png', fundo: CLARO, padrao: true, uso: 'Proposta OACO, relatório PP-CPG, slide e site. Arte oficial da unidade.' },
+            { rotulo: 'Fonte branca', arquivo: 'logo-opp-ativos-branco.png', src: 'assets/logo-opp-ativos-branco.png', fundo: ESCURO, uso: 'Fundo escuro em peça a cores — símbolo segue colorido.' },
+            { rotulo: 'Ícone', arquivo: 'icone-opp-ativos.png', src: 'assets/icone-opp-ativos.png', fundo: CLARO, uso: 'Avatar e selo pequeno. Roda em degradê, sem o texto.' },
+            { rotulo: 'Monocromático preto', arquivo: 'logo-opp-ativos-preto.png', src: 'assets/logo-opp-ativos-preto.png', fundo: CINZA, uso: 'Gravação, carimbo, serigrafia de uma cor, cópia em P&B.' },
+            { rotulo: 'Monocromático branco', arquivo: 'logo-opp-ativos-mono-branco.png', src: 'assets/logo-opp-ativos-mono-branco.png', fundo: TINTA, uso: 'Uma tinta só sobre fundo escuro.' },
+          ],
+        },
+        {
+          nome: 'Grupo Opp+',
+          nota: 'Assina o grupo. Em peça de unidade, entra endossando no topo — menor que a marca da unidade.',
+          artes: [
+            { rotulo: 'Colorido (flat)', arquivo: 'logo-opp-flat.png', src: 'assets/logo-opp-flat.png', fundo: CLARO, padrao: true, uso: 'Uso geral em fundo claro.' },
+            { rotulo: 'Fonte branca', arquivo: 'logo-opp-flat-branco.png', src: 'assets/logo-opp-flat-branco.png', fundo: ESCURO, uso: 'Fundo escuro. Usar sem filtro de cor.' },
+            { rotulo: '3D', arquivo: 'logo-opp-3d.png', src: 'assets/logo-opp-3d.png', fundo: CLARO, uso: 'Peça especial, fundo claro.' },
+            { rotulo: '3D fonte branca', arquivo: 'logo-opp-3d-branco.png', src: 'assets/logo-opp-3d-branco.png', fundo: ESCURO, uso: 'Peça especial, fundo escuro. Relevo do símbolo preservado.' },
+            { rotulo: 'Ícone', arquivo: 'icone-opp-grupo.png', src: 'assets/icone-opp-grupo.png', fundo: CLARO, uso: 'Avatar, favicon e figurinha.' },
+            { rotulo: 'Ícone branco', arquivo: 'icone-opp-grupo-branco.png', src: 'assets/icone-opp-grupo-branco.png', fundo: ESCURO, uso: 'Base dos avatares de WhatsApp por setor.' },
+            { rotulo: 'Monocromático preto', arquivo: 'logo-opp-flat-preto.png', src: 'assets/logo-opp-flat-preto.png', fundo: CINZA, uso: 'Uma tinta só: gravação, carimbo, P&B.' },
+            { rotulo: 'Monocromático branco', arquivo: 'logo-opp-flat-mono-branco.png', src: 'assets/logo-opp-flat-mono-branco.png', fundo: TINTA, uso: 'Uma tinta só sobre fundo escuro.' },
+          ],
+        },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

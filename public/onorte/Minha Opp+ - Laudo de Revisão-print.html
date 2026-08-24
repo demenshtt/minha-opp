@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="omelette-print-source" content="v1786882939237179 Minha Opp+ - Laudo de Revisão.dc.html">
+<title>Minha Opp+ · Laudo de Revisão · Grupo Opp+</title>
+  <link rel="stylesheet" href="fontes.css">
+<script src="doc-page.js"></script>
+<style>
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-sizing: border-box; }
+  doc-page:not(:defined) { visibility: hidden; }
+  body { margin: 0; font-family: 'Montserrat', sans-serif; color: #1C201C; }
+  h1, h2, h3 { font-family: 'Comfortaa', sans-serif; }
+  p { margin: 0 0 12px; font-size: 12pt; line-height: 1.7; color: #353B34; }
+  h2.bloco { font-size: 17pt; font-weight: 700; color: #39453A; margin: 26px 0 4px; break-after: avoid; }
+  h3.item { font-size: 12.5pt; font-weight: 700; color: #39453A; margin: 18px 0 6px; break-after: avoid; }
+  .kicker { font-family:'Comfortaa',sans-serif; font-size:8.5pt; letter-spacing:0.2em; text-transform:uppercase; color:#8B9189; font-weight:600; margin-top:26px; }
+  .intro { font-size: 10.5pt; line-height: 1.6; color: #6C736B; margin: 0 0 16px; }
+  .onde { font-size: 8.5pt; color: #9AA097; margin: -6px 0 14px; font-family: monospace; }
+  .bloco-lead { font-size: 11pt; line-height: 1.65; color: #5A6159; margin: 0 0 6px; font-style: italic; }
+</style>
+</head>
+<body>
+<doc-page margin="0.7in">
+
+  <div style="background:#39453A; padding:26px 30px; color:#FFFFFF; display:flex; align-items:flex-start; justify-content:space-between; gap:20px; break-inside:avoid; margin-bottom:22px;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:9px; font-family:'Comfortaa',sans-serif; font-size:8pt; letter-spacing:0.22em; text-transform:uppercase; color:#A5D6A7; font-weight:600; margin-bottom:12px;"><span style="width:24px; height:1.5px; background:#6FCF97; display:inline-block;"></span>Revisão · Minha Opp+</div>
+      <h1 style="font-weight:700; font-size:26pt; line-height:1.08; margin:0 0 10px; color:#FFFFFF;">Laudo de revisão</h1>
+      <p style="font-size:11pt; line-height:1.55; color:#D6DDD5; margin:0; max-width:62ch;">Versão para leitura em voz alta. Trinta e três achados na varredura do aplicativo que está no ar, organizados na ordem em que eu atacaria. Nada foi alterado no aplicativo.</p>
+      <p style="font-size:9pt; line-height:1.5; color:#A5B0A4; margin:12px 0 0;">Fonte lida: repositório minha-opp, pasta public/minhaopp — app.js, app.css, tokens.css, sw.js, manifest.json e imagens. Agosto de 2026.</p>
+    </div>
+    <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="height:34px; width:auto; flex:none;">
+  </div>
+
+  <h2 class="bloco" style="margin-top:6px;">Veredito</h2>
+  <p>O aplicativo está melhor do que a maioria do que se vê em empresa deste porte. A jornada tem começo, meio e fim; a metáfora do Ágora e do Nexo funciona; o retorno tátil e sonoro é um cuidado raro; e a parte mais chata, que é configurar o e-mail no celular, foi decomposta em dez passos com um desenho em cada um. Não é protótipo: é produto.</p>
+  <p>O que ele tem são problemas de borda. E borda, num aplicativo que a pessoa usa uma vez só na vida, é o aplicativo inteiro. Se a internet falhar no primeiro toque, ela vê tela branca. Se falhar no segundo, o aplicativo diz que o e-mail dela não existe. Nenhum dos dois é programação difícil: são decisões sobre o que fazer quando dá errado, que ainda não foram tomadas.</p>
+  <p>Três achados não são de conforto, são de integridade — promessas feitas por escrito à pessoa que está lendo e desmentidas algumas linhas abaixo, no mesmo arquivo. É por eles que eu começaria, inclusive antes de qualquer melhoria visual. No total são trinta e três: três de integridade, seis quebrados, dezesseis de atrito e oito de dívida que só cobra quando o Minha Opp+ virar portal com login.</p>
+
+  <div class="kicker">Bloco A</div>
+  <h2 class="bloco">Integridade: o que o aplicativo promete e o código não cumpre</h2>
+  <p class="bloco-lead">Estes três não são erro de digitação nem gosto de design.</p>
+
+  <h3 class="item">A um. O questionário promete anonimato e envia o nome.</h3>
+  <p>A tela de opinião diz, com todas as letras, que as respostas são anônimas. No envio, o pacote carrega nome completo, e-mail pessoal, cargo e e-mail corporativo junto com as cinco notas e o comentário. Quem responder "muito difícil" na configuração está assinando embaixo sem saber. Se alguém da equipe descobrir isso depois, o custo não é o formulário: é a confiança em tudo que o Minha Opp+ vier a pedir daqui para a frente.</p>
+  <p><strong>Sugestão:</strong> escolher um dos dois caminhos e cumprir. Anônimo de verdade significa cortar os quatro campos de identificação do envio e manter só as notas. Identificado significa trocar a frase por algo como "suas respostas vão para a gestão com seu nome — é assim que a gente sabe quem ajudar". A segunda opção é legítima e inclusive mais útil para você. O que não pode é a frase de agora.</p>
+  <p class="onde">Onde: app.js, tela de feedback e função submitFeedback.</p>
+
+  <h3 class="item">A dois. A senha do primeiro acesso é o e-mail pessoal da pessoa.</h3>
+  <p>Duas telas antes, o aplicativo ensina que senha é secreta e nunca deve ser passada a ninguém. Depois entrega uma senha inicial que é o dado mais público que a pessoa tem, e ainda a exibe escrita na tela de resumo, que fica salva no aparelho. Quem tiver o e-mail pessoal de um colega tem a senha dele até a troca acontecer — e a troca depende de a pessoa lembrar de fazer.</p>
+  <p><strong>Sugestão:</strong> manter a mecânica, se for a que a TI consegue operar hoje, mas fechar a janela. Senha inicial com validade curta, troca obrigatória no primeiro login — o Workspace já força isso, vale confirmar que está ligado — e o aplicativo parando de imprimir a senha no resumo. A instrução vira "sua senha inicial foi enviada pela TI", não o valor em si.</p>
+  <p class="onde">Onde: app.js, telas de comemoração e de resumo.</p>
+
+  <h3 class="item">A três. Todo mundo autentica o servidor com a mesma chave.</h3>
+  <p>No passo oito, o usuário do servidor é o endereço opp arroba grupooppmais ponto com ponto br, e a senha é a Chave de Integração de dezesseis dígitos que a TI manda por mensagem — a mesma para todos. Na prática, cada colaborador guarda no Gmail pessoal dele uma credencial que envia e-mail em nome da empresa. Quem sai continua conseguindo enviar até alguém lembrar de girar a chave; e girar a chave derruba a configuração de todo mundo de uma vez, obrigando o onboarding inteiro a ser refeito.</p>
+  <p><strong>Sugestão:</strong> isto não se resolve dentro do aplicativo, é decisão da TI. Uma senha de aplicativo por pessoa, gerada na conta corporativa dela; o aplicativo só passa a dizer "use a chave que a TI gerou para você". Se hoje não há como emitir uma por pessoa, no mínimo registrar quem recebeu a chave e em que data, para que a rotação futura seja possível sem apagão.</p>
+  <p class="onde">Onde: app.js, passo 8 da Missão 3, e procedimento da TI.</p>
+
+  <div class="kicker">Bloco B</div>
+  <h2 class="bloco">Quebrado: falha na hora, do jeito que está hoje</h2>
+  <p class="bloco-lead">Nenhum destes depende de redesenho. São correções pontuais.</p>
+
+  <h3 class="item">B um. Tela branca até o Google responder.</h3>
+  <p>A primeira coisa que o aplicativo faz é buscar a lista de colaboradores numa planilha do Google, e só desenha alguma coisa depois que a resposta chega. Em sinal de fazenda, isso são vários segundos de tela em branco: sem logo, sem "carregando", sem nada. A pessoa acha que o link quebrou e fecha — e a primeira impressão do ambiente digital da empresa foi um aplicativo que não abre.</p>
+  <p><strong>Sugestão:</strong> desenhar a tela de abertura na hora e buscar a lista em segundo plano. O botão "Começar agora" pode ficar aguardando um instante, mas a marca aparece imediatamente.</p>
+
+  <h3 class="item">B dois. Falha de rede vira "e-mail não encontrado".</h3>
+  <p>Se a busca da planilha falhar, a lista fica vazia, e qualquer e-mail digitado cai na mensagem "e-mail não encontrado, verifique a digitação ou chame a TI". O aplicativo culpa a pessoa por um problema que é dele. Ela confere, digita de novo, erra de novo, e liga para a TI reclamar de um cadastro que está perfeito.</p>
+  <p><strong>Sugestão:</strong> separar os dois casos. Sem lista carregada, dizer que não foi possível consultar o cadastro agora, pedir para conferir a internet e oferecer um botão de tentar novamente. Com a lista carregada e o e-mail realmente ausente, aí sim a mensagem atual, que passa a ser verdadeira.</p>
+
+  <h3 class="item">B três. O som para de funcionar no meio da jornada.</h3>
+  <p>Cada bipe cria um canal de áudio novo e nunca fecha. O navegador permite poucos abertos ao mesmo tempo; passando disso, os sons simplesmente somem. Como são vinte e três telas com retorno sonoro, a segunda metade do onboarding tende a ficar muda — e a Missão 3, que é a que mais precisa da confirmação de que deu certo, é justamente a que fica sem.</p>
+  <p><strong>Sugestão:</strong> criar um único canal de áudio na primeira interação e reaproveitar em todos os sons.</p>
+
+  <h3 class="item">B quatro. Apóstrofo no nome quebra o botão de copiar.</h3>
+  <p>Os valores copiáveis são montados dentro de uma instrução com aspas simples. Um sobrenome com apóstrofo fecha a aspa no meio e o toque para de funcionar, sem erro visível: o dedo bate e nada acontece. Vale para o campo "Nome" do passo cinco, que usa o nome completo do colaborador.</p>
+  <p><strong>Sugestão:</strong> trocar o toque embutido por um vínculo de evento — o mesmo que já existe no restante do arquivo —, que aceita qualquer caractere.</p>
+
+  <h3 class="item">B cinco. Copiar dispara duas vezes.</h3>
+  <p>Os campos copiáveis recebem dois comandos ao mesmo tempo: o embutido na criação e outro adicionado depois em todas as telas. Um mostra o aviso flutuante "copiado", o outro troca o texto do próprio campo. Resultado: dois avisos, duas vibrações e dois bipes num toque só. Parece falha de aplicativo mal feito, quando é só instrução repetida.</p>
+  <p><strong>Sugestão:</strong> ficar com um dos dois. Sugiro o que troca o texto no lugar, porque dá retorno onde o dedo está, sem tapar a tela.</p>
+
+  <h3 class="item">B seis. A opinião pode se perder e o aplicativo diz que deu certo.</h3>
+  <p>O envio das respostas é disparado e ignorado: se a rede cair naquele instante, o erro é engolido e a tela de agradecimento aparece do mesmo jeito. Você perde a resposta e nunca fica sabendo. E como o aplicativo marca como enviado, nem a pessoa pode tentar de novo.</p>
+  <p><strong>Sugestão:</strong> esperar a confirmação antes de agradecer. Falhando, guardar a resposta no aparelho e reenviar na próxima abertura, com um aviso honesto de que será enviada quando a internet voltar.</p>
+
+  <div class="kicker">Bloco C</div>
+  <h2 class="bloco">Sequência e texto: a ordem das coisas e as palavras</h2>
+  <p class="bloco-lead">Aqui nada trava, mas é o que decide se a pessoa termina animada ou apenas aliviada.</p>
+
+  <h3 class="item">C um. A mesma missão tem dois nomes na mesma tela.</h3>
+  <p>O cabeçalho diz "Missão 1, Preparação", enquanto o crachá logo abaixo diz "Missão 1, Identificação". Na tela de aceite, cabeçalho e crachá discordam de novo. Quem lê com atenção — e o público lê, porque está aprendendo — fica na dúvida se pulou alguma coisa.</p>
+  <p><strong>Sugestão:</strong> um nome só por missão, vindo do mesmo lugar no código. O crachá passa a mostrar o assunto da tela, não uma segunda versão do nome da missão.</p>
+
+  <h3 class="item">C dois. Metade do aplicativo é a parte mais difícil.</h3>
+  <p>São vinte e três telas, e onze delas são a configuração do servidor de e-mail. A barra de progresso conta telas, então a pessoa atravessa a metade mais penosa vendo a barra andar de um em um. A sensação é de que a jornada não acaba, justamente onde ela é mais frágil.</p>
+  <p><strong>Sugestão:</strong> duas saídas complementares. A barra passa a mostrar a missão, "missão três de quatro", em vez da contagem de telas; e o passo a passo ganha um indicador próprio de "passo quatro de dez", que já existe, mas hoje compete com a contagem geral.</p>
+
+  <h3 class="item">C três. A comemoração acontece antes do fim.</h3>
+  <p>Troféu, confete e parabéns chegam ao terminar a configuração — e a frase imediatamente abaixo diz que ainda faltam alguns passos para a pessoa estar cem por cento operacional, seguida de cinco itens, entre eles fazer o primeiro login e trocar a senha. Comemorar antes da linha de chegada ensina que o resto é opcional. E o resto é justamente o que dá acesso ao ambiente.</p>
+  <p><strong>Sugestão:</strong> mover a festa para depois do primeiro login confirmado, ou rebaixá-la a um simples "configuração concluída" e reservar o troféu para o fim de verdade. Os cinco itens pendentes viram a Missão 4, com o mesmo tratamento de passo a passo que a três recebeu.</p>
+
+  <h3 class="item">C quatro. Duas telas dizem a mesma coisa em seguida.</h3>
+  <p>"Seu e-mail profissional" e "Pessoal versus trabalho" fazem a mesma distinção — o corporativo é da empresa e pode ser auditado, o pessoal é seu e ninguém acessa —, uma logo depois da outra, com as mesmas duas caixas. Repetição em onboarding não reforça: sinaliza que dá para passar batido.</p>
+  <p><strong>Sugestão:</strong> fundir numa tela só, mantendo o melhor de cada. O aplicativo fica uma tela mais curto sem perder nada.</p>
+
+  <h3 class="item">C cinco. O confete volta se a pessoa voltar.</h3>
+  <p>A festa é disparada toda vez que a tela é desenhada. Quem tocar em "voltar" na tela de opinião assiste ao confete e à sequência de sons de novo, do começo. Some o efeito de conquista e vira um tique do aplicativo.</p>
+  <p><strong>Sugestão:</strong> disparar uma vez por conclusão, guardando que já aconteceu.</p>
+
+  <h3 class="item">C seis. Palavras que aparecem uma vez só.</h3>
+  <p>A palavra "tripulante" surge no resumo final, sem nunca ter sido apresentada — a jornada inteira falou em colaborador. O botão "serei um guardião" é uma frase que ninguém do público diria em voz alta. E o texto de abertura entrega nuvem, e-mail, Drive, Nexo e Ágora num parágrafo só, antes de a pessoa ter tocado em nada.</p>
+  <p><strong>Sugestão:</strong> ou adotar a metáfora de tripulação desde a abertura, ou tirá-la do resumo. O botão vira "entendi as regras". E o parágrafo de abertura fica com duas ideias apenas: você tem um ambiente da empresa, e a gente vai configurar juntos. As ferramentas já têm tela própria logo à frente.</p>
+
+  <h3 class="item">C sete. O crédito cita a ferramenta.</h3>
+  <p>O rodapé diz que foi desenvolvido pela Sistere Stabilis com assistência de inteligência artificial. O padrão que você fechou é o contrário: o estúdio assina, a ferramenta é bancada e não aparece no crédito público.</p>
+  <p><strong>Sugestão:</strong> deixar apenas "desenvolvido por Sistere Stabilis, Soluções Integradas", como já está no restante das peças.</p>
+
+  <div class="kicker">Bloco D</div>
+  <h2 class="bloco">Caminhos: onde a pessoa fica sem saída</h2>
+  <p class="bloco-lead">O aplicativo é uma linha reta. Bom para não perder ninguém, ruim para quem precisa sair da linha — e alguém sempre precisa.</p>
+
+  <h3 class="item">D um. Não há socorro nos dez passos da configuração.</h3>
+  <p>O "fale com a TI" só aparece no resumo final, quer dizer, exatamente onde quem travou nunca chegou. Nos dez passos só existem "voltar" e "feito". Quem não achou a engrenagem no passo três fica olhando para a tela, sem terceira opção, e sai do aplicativo para procurar o telefone de alguém.</p>
+  <p><strong>Sugestão:</strong> um link discreto e fixo em toda a Missão 3, dizendo "travei aqui, chamar a TI", que abre o WhatsApp ou o Chat já com o número do passo escrito na mensagem. Você descobre em qual passo as pessoas travam sem precisar perguntar. Este é, na minha leitura, o achado com melhor retorno de todo o laudo.</p>
+
+  <h3 class="item">D dois. Rever uma tela custa apagar tudo.</h3>
+  <p>Dá para voltar passo a passo, mas não existe índice nem atalho. Quem terminou e quer reler o que é o Nexo só encontra o botão "refazer onboarding", que zera o progresso, o aceite e as respostas. Na prática, ninguém revê nada.</p>
+  <p><strong>Sugestão:</strong> um menu de missões no cabeçalho, permitindo pular para qualquer tela já visitada. A lista de telas visitadas já é guardada pelo aplicativo, só não é usada para nada. E o botão de refazer passa a pedir confirmação.</p>
+
+  <h3 class="item">D três. O tema só pode ser escolhido na primeira tela.</h3>
+  <p>A escolha entre claro e escuro fica na abertura e nunca mais reaparece. Quem tocou errado, ou quem começou de dia e continuou de noite no galpão, atravessa o resto do onboarding no tema errado.</p>
+  <p><strong>Sugestão:</strong> um botão pequeno no cabeçalho, presente em todas as telas. A troca já funciona; falta só onde tocar.</p>
+
+  <h3 class="item">D quatro. O teclado abre sozinho e cobre o botão.</h3>
+  <p>A tela do e-mail coloca o cursor no campo assim que aparece, o que faz o teclado subir na hora. Em celular de tela pequena, o botão de continuar fica atrás do teclado, e a pessoa não vê que existe um botão. Ela também não tem como saber que a tecla enter funciona.</p>
+  <p><strong>Sugestão:</strong> não abrir o teclado sozinho, ou manter o botão colado acima dele. E, já que o enter funciona, dizer isso no próprio campo.</p>
+
+  <h3 class="item">D cinco. O som não tem como ser desligado.</h3>
+  <p>Cada toque emite bipe e vibração, sem preferência e sem botão de silêncio. Quem abrir o aplicativo numa reunião, no hangar ao lado de alguém, ou de madrugada, não tem escolha a não ser baixar o volume do aparelho inteiro. Em iPhone a vibração nem funciona, então parte do retorno some sem aviso.</p>
+  <p><strong>Sugestão:</strong> um botão de som no cabeçalho, ao lado do de tema, com a escolha guardada. Manter ligado por padrão, porque o retorno é bom, mas dando saída.</p>
+
+  <div class="kicker">Bloco E</div>
+  <h2 class="bloco">Imagens e peso: o que o celular precisa baixar</h2>
+  <p class="bloco-lead">O público abre isto no celular, muitas vezes longe de Wi-Fi. Peso aqui é o tempo que a pessoa passa olhando para nada antes de desistir.</p>
+
+  <h3 class="item">E um. Dois megabytes e meio de logo decorativo.</h3>
+  <p>As variações do logo que vão sendo desbloqueadas — esmeralda, rubi, prata, ouro, diamante — somam cerca de dois megabytes e meio, com arquivos individuais de trezentos e setenta a quatrocentos e trinta quilobytes, para serem exibidas com poucos centímetros de largura. É, com folga, a coisa mais pesada do aplicativo, e serve a um enfeite. Em quatro G ruim de estrada, é o que separa abrir de desistir.</p>
+  <p><strong>Sugestão:</strong> reexportar cada variação no tamanho em que ela realmente aparece e em formato moderno. Dá para ficar abaixo de trinta quilobytes por arquivo sem perda visível — o conjunto inteiro passa a pesar menos que um único arquivo de hoje.</p>
+
+  <h3 class="item">E dois. A imagem que aparece primeiro é a que mais demora.</h3>
+  <p>O ícone do cabeçalho está marcado para carregar tarde, recurso pensado para imagens que só aparecem quando se rola a tela. Como ele está sempre no topo, o efeito é o oposto do desejado: atrasa justamente a marca que deveria aparecer antes de tudo.</p>
+  <p><strong>Sugestão:</strong> tirar a marcação de carregamento tardio do ícone do cabeçalho e do logo da abertura, mantendo nas demais.</p>
+
+  <h3 class="item">E três. Os desenhos da configuração têm letra de nove pixels.</h3>
+  <p>Os desenhos que mostram onde tocar têm textos de nove a onze pixels. Numa tela de celular isso é menor que qualquer letra do resto do aplicativo, e o público inclui gente de mais de cinquenta anos configurando o celular pela primeira vez. Os desenhos são o melhor recurso da Missão 3, e são a parte ilegível dela.</p>
+  <p><strong>Sugestão:</strong> aumentar a base do desenho, mantendo a proporção, com textos a partir de treze pixels, e permitir tocar para ampliar. Além disso, trocar os dedinhos em emoji por uma seta desenhada: emoji dentro de desenho vetorial muda de forma entre Android e iPhone, e às vezes nem aparece.</p>
+
+  <h3 class="item">E quatro. Uma segunda paleta escondida nos desenhos.</h3>
+  <p>Os desenhos trazem as próprias cores no código: cinzas azulados que sobraram da versão anterior do sistema de design e não pertencem à paleta oficial. Junto com dois crachás de missão em azul-claro e laranja, é o único ponto do aplicativo que não obedece ao design system. As cores do Google dentro do desenho são reprodução da tela alheia e podem ficar.</p>
+  <p><strong>Sugestão:</strong> ligar essas cores aos tokens do sistema, como já está o resto da folha de estilo. É troca mecânica e resolve a última divergência conhecida com a versão um ponto dois.</p>
+
+  <div class="kicker">Bloco F</div>
+  <h2 class="bloco">Dívida: funciona hoje, cobra no portal logado</h2>
+  <p class="bloco-lead">Nada aqui atrapalha o onboarding. Tudo aqui atrapalha quando o Minha Opp+ virar hub com login.</p>
+  <p><strong>Um.</strong> Ninguém sabe qual versão está no celular. O Norte tem carimbo de versão e índice; o Minha Opp+ não tem nada disso, e ainda guarda os arquivos no aparelho para funcionar sem internet. Você não tem como saber, olhando o celular de um colaborador, se ele está vendo a versão nova ou uma cópia de semanas atrás. É o mesmo problema que o carimbo resolveu no hub.</p>
+  <p><strong>Dois.</strong> A tela em que a pessoa parou fica gravada no aparelho pelo número. No dia em que uma tela for removida — e a fusão sugerida no bloco C remove uma —, quem tiver o número antigo salvo abre o aplicativo numa tela que não existe mais. Uma verificação de duas linhas evita.</p>
+  <p><strong>Três.</strong> O endereço do serviço que lê e grava a planilha está escrito no código, que é público. Hoje o risco é pequeno, mas quando o mesmo caminho servir ao ambiente logado, deixa de ser pequeno.</p>
+  <p><strong>Quatro.</strong> A consulta usa um parâmetro de cache que o Norte já aposentou por conflitar com o host de pré-visualização. Em produção funciona; padronizar agora evita reencontrar o problema quando as duas bases se juntarem.</p>
+  <p><strong>Cinco.</strong> Os tokens das trilhas por cor — cliente, colaborador e fornecedor — já estão publicados, sem nenhuma tela que os aplique. É esperado, porque valem para o ambiente logado, mas convém registrar para não parecer esquecimento.</p>
+  <p><strong>Seis.</strong> Todo o progresso é guardado no navegador daquele celular. Trocar de aparelho, limpar dados ou abrir pelo computador significa começar do zero. Com o login do portal isso se resolve sozinho; até lá, vale avisar a pessoa de que o progresso vive naquele aparelho.</p>
+  <p><strong>Sete.</strong> Nome, descrição e título do aplicativo ainda dizem "onboarding digital". Quando o Minha Opp+ virar o hub de relacionamento, o ícone na tela inicial do celular continuará anunciando a fase antiga — e reinstalar não é algo que se peça a ninguém duas vezes.</p>
+  <p><strong>Oito.</strong> A tela de resumo já faz o que a home logada vai fazer: mostra quem é a pessoa, o que ela tem acesso e os atalhos. É o melhor ponto de partida para o portal. Vale preservá-la como referência quando aquela fase começar, em vez de desenhar do zero.</p>
+
+  <div class="kicker">Fechamento</div>
+  <h2 class="bloco">Ordem sugerida, em quatro ondas</h2>
+  <p><strong>Onda um, integridade.</strong> Anonimato, senha de primeiro acesso e a chave de servidor compartilhada. Sobe sozinha, sem tocar em nenhuma tela.</p>
+  <p><strong>Onda dois, quebrado e peso.</strong> Tela de carregamento, erro honesto de rede, áudio, copiar, e o enxugamento das imagens. Risco baixo, ganho imediato.</p>
+  <p><strong>Onda três, sequência e texto.</strong> Nomes das missões, comemoração no lugar certo, saída para a TI, fusão das telas repetidas. Aqui eu preciso de você, porque é decisão de conteúdo, não de código.</p>
+  <p><strong>Onda quatro, dívida.</strong> Carimbo de versão, guarda de estado, crédito de autoria. Entra junto com o portal logado, não antes.</p>
+  <p>As ondas um e dois podem subir na mesma publicação: nenhuma delas muda o que a pessoa lê na tela, então não exigem retreinar ninguém. A onda três muda texto e ordem, e essa merece publicação própria, com aviso à equipe.</p>
+
+  <div style="border-top:1px solid #EEF0ED; padding-top:12px; margin-top:20px; display:flex; align-items:flex-end; justify-content:space-between; gap:18px; break-inside:avoid;">
+    <div style="font-size:8pt; line-height:1.6; color:#9AA097;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56 · Sorriso/MT<br>"Grupo Opp+" e "Opp Gestão de Ativos" são marcas de marketing da razão social acima.</div>
+    <div style="font-size:7.5pt; letter-spacing:0.16em; text-transform:uppercase; color:#B4B9B1; font-family:'Comfortaa',sans-serif; font-weight:600; text-align:right; flex:none;">O Norte · MDC-GDI</div>
+  </div>
+
+</doc-page>
+</body>
+</html>

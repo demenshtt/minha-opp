@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="fontes.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #EDF0EC; }
+    a { color: #219653; }
+    a:hover { color: #1E5A33; }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#39453A"/>
+      <text x="200" y="262" font-family="Georgia, serif" font-size="210" font-weight="700" fill="#6FCF97" text-anchor="middle">Aa</text>
+    </svg>
+  </template>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="carimbo.js"></script>
+</helmet>
+
+<div style="font-family:'Montserrat',sans-serif; color:#1C201C; max-width:1180px; margin:0 auto; padding:44px 32px 70px;">
+
+  <div style="margin-bottom:30px;">
+    <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:10px;"><span style="width:26px; height:1.5px; background:#219653;"></span>O Norte · Central de Marca</div>
+    <h1 style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:27px; color:#39453A; margin:0 0 10px;">Fontes da marca — instalar na sua máquina</h1>
+    <p style="font-size:13.5px; color:#5E655D; margin:0; max-width:780px; line-height:1.65; text-wrap:pretty;">Duas fontes, e só. <strong style="color:#39453A;">Comfortaa</strong> nos títulos e na marca; <strong style="color:#39453A;">Montserrat</strong> no corpo do texto e na interface. Quem trabalha no Word, no Excel ou no PowerPoint precisa instalar as duas — sem elas, o Office troca por outra fonte e o documento desmonta na tela de quem abrir. Leva dois minutos e se faz uma vez só.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(400px, 1fr)); gap:16px; margin-bottom:38px;">
+    <sc-for list="{{ fontes }}" as="f" hint-placeholder-count="2">
+      <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:16px; overflow:hidden; display:flex; flex-direction:column;">
+        <div style="padding:26px 26px 22px; border-bottom:1px solid #EEF0ED;">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:14px; margin-bottom:16px;">
+            <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#39453A;">{{ f.nome }}</div>
+            <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; background:#EEF3EF; border-radius:5px; padding:4px 8px; white-space:nowrap;">{{ f.papel }}</div>
+          </div>
+          <div style="font-family:{{ f.familia }}; font-weight:700; font-size:46px; color:#39453A; line-height:1.1; letter-spacing:-0.01em;">Opp Aviação</div>
+          <div style="font-family:{{ f.familia }}; font-weight:400; font-size:15px; color:#5E655D; line-height:1.55; margin-top:10px;">{{ f.amostra }}</div>
+          <div style="font-family:{{ f.familia }}; font-size:13px; color:#868C85; letter-spacing:0.04em; margin-top:14px; padding-top:14px; border-top:1px solid #F2F4F1;">ABCDEFGHIJKLM abcdefghijklm 0123456789 ÁÃÇÉÍÕÚ</div>
+        </div>
+        <div style="padding:18px 26px 22px; flex:1; display:flex; flex-direction:column; gap:14px;">
+          <div style="font-size:12px; color:#5E655D; line-height:1.65;">{{ f.uso }}</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;">
+            <sc-for list="{{ f.pesos }}" as="p" hint-placeholder-count="4">
+              <span style="font-size:10.5px; color:#5E655D; background:#F4F6F3; border:1px solid #E6E9E4; border-radius:5px; padding:4px 9px;">{{ p }}</span>
+            </sc-for>
+          </div>
+          <a href="{{ f.link }}" download="{{ f.arquivo }}" style="margin-top:auto; display:flex; align-items:center; justify-content:center; gap:8px; background:#219653; color:#FFFFFF; border-radius:9px; padding:12px 18px; font-size:13px; font-weight:600; text-decoration:none;" style-hover="background:#1B7A44; color:#FFFFFF;"><i data-lucide="download" style="width:15px; height:15px;"></i>Baixar {{ f.nome }}</a>
+          <div style="font-size:10.5px; color:#9AA097; text-align:center; margin-top:-4px;">{{ f.tamanho }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="background:#EEF3EF; border:1px solid #D5E3D9; border-radius:16px; padding:22px 26px; margin-bottom:38px; display:flex; gap:16px; align-items:flex-start;">
+    <i data-lucide="package-check" style="width:20px; height:20px; color:#219653; flex:none; margin-top:2px;"></i>
+    <div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14px; color:#2C5F3E; margin-bottom:7px;">Baixe daqui, não do Google Fonts</div>
+      <p style="font-size:12.5px; color:#3E6B4E; line-height:1.7; margin:0;">O zip do Google traz duas versões da mesma fonte e a errada quebra no Office do Windows. Os arquivos desta página já vêm filtrados: só os pesos que a marca usa, prontos para instalar, com um leia-me dentro. É a mesma fonte que o Norte usa nas próprias páginas.</p>
+    </div>
+  </div>
+
+  <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:16px;"><span style="width:22px; height:1.5px; background:#219653;"></span>Como instalar</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:16px; margin-bottom:38px;">
+    <sc-for list="{{ sistemas }}" as="s" hint-placeholder-count="3">
+      <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:16px; padding:22px 24px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <i data-lucide="{{ s.icone }}" style="width:17px; height:17px; color:#219653;"></i>
+          <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14.5px; color:#39453A;">{{ s.nome }}</div>
+        </div>
+        <ol style="margin:0; padding-left:18px; font-size:12.5px; color:#5E655D; line-height:1.75;">
+          <sc-for list="{{ s.passos }}" as="p" hint-placeholder-count="3">
+            <li style="margin-bottom:6px;">{{ p }}</li>
+          </sc-for>
+        </ol>
+        <div style="margin-top:14px; padding-top:13px; border-top:1px solid #F2F4F1; font-size:11.5px; color:#868C85; line-height:1.6;">{{ s.nota }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:inline-flex; align-items:center; gap:10px; font-family:'Comfortaa',sans-serif; font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:16px;"><span style="width:22px; height:1.5px; background:#219653;"></span>Mandando o arquivo para alguém</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(330px, 1fr)); gap:16px; margin-bottom:38px;">
+
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:9px;">Dentro de casa</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14.5px; color:#39453A; margin-bottom:9px;">Manda o editável</div>
+      <p style="font-size:12.5px; color:#5E655D; line-height:1.7; margin:0;">Se as máquinas da equipe têm as duas fontes instaladas, o arquivo do Word ou do PowerPoint abre igual em todas. É o caminho normal para trabalho em andamento.</p>
+    </div>
+
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#219653; font-weight:700; margin-bottom:9px;">Para fora</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14.5px; color:#39453A; margin-bottom:9px;">Manda PDF</div>
+      <p style="font-size:12.5px; color:#5E655D; line-height:1.7; margin:0;">Cliente, fornecedor, gráfica: o PDF carrega a fonte dentro dele e abre igual em qualquer aparelho. Documento que sai da empresa sai em PDF — não é preferência, é o que garante que a peça chega como foi feita.</p>
+    </div>
+
+    <div style="background:#FFFFFF; border:1px solid #E0E3DE; border-radius:16px; padding:22px 24px;">
+      <div style="font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:#868C85; font-weight:700; margin-bottom:9px;">Exceção</div>
+      <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:14.5px; color:#39453A; margin-bottom:9px;">Editável para fora</div>
+      <p style="font-size:12.5px; color:#5E655D; line-height:1.7; margin:0;">Quando não tem jeito, no Windows: <em>Arquivo → Opções → Salvar → Incorporar fontes no arquivo</em>. O arquivo engorda e a opção não existe no Office do Mac — por isso é exceção, não rotina.</p>
+    </div>
+
+  </div>
+
+  <div style="background:#39453A; border-radius:18px; padding:26px 28px; color:#FFFFFF;">
+    <div style="font-family:'Comfortaa',sans-serif; font-size:15px; font-weight:700; margin-bottom:14px;">Três coisas que evitam retrabalho</div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px 26px; font-size:12.5px; color:#C9D2C8; line-height:1.65;">
+      <div><strong style="color:#FFFFFF;">Google Workspace não precisa de nada.</strong> Comfortaa e Montserrat já estão no Docs, Slides e Sheets — em "Mais fontes", busca pelo nome.</div>
+      <div><strong style="color:#FFFFFF;">Nunca substituir por parecida.</strong> Se a fonte não está na máquina, instale — não troque por Arial nem por Poppins. Fonte trocada é peça fora do padrão.</div>
+      <div><strong style="color:#FFFFFF;">Usar é livre.</strong> As duas são de licença aberta: instalar, incorporar e usar em peça comercial não custa nem exige permissão.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px; font-size:11px; color:#8A8F89; text-align:right;"><span data-carimbo></span></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { if (window.lucide) window.lucide.createIcons(); }
+  componentDidUpdate() { if (window.lucide) window.lucide.createIcons(); }
+  renderVals() {
+    return {
+      fontes: [
+        {
+          nome: 'Comfortaa',
+          familia: "'Comfortaa', cursive",
+          papel: 'Títulos e marca',
+          amostra: 'Título de capa, nome de seção, palavra da marca.',
+          uso: 'Entra em título, capa e assinatura de marca. Nunca em bloco de texto corrido — em parágrafo longo ela cansa a leitura.',
+          pesos: ['Light 300', 'Regular 400', 'Medium 500', 'SemiBold 600', 'Bold 700'],
+          link: 'assets/fontes/Comfortaa-Opp.zip',
+          arquivo: 'Comfortaa-Opp.zip',
+          tamanho: '5 arquivos · 258 KB',
+        },
+        {
+          nome: 'Montserrat',
+          familia: "'Montserrat', sans-serif",
+          papel: 'Corpo e interface',
+          amostra: 'Todo o texto que se lê de verdade: parágrafo, tabela, legenda, número de relatório e rodapé legal.',
+          uso: 'É a fonte de trabalho. Corpo de documento, planilha, legenda, rodapé. Na dúvida sobre qual usar, é esta.',
+          pesos: ['Light 300', 'Regular 400', 'Medium 500', 'SemiBold 600', 'Bold 700', 'itálicos'],
+          link: 'assets/fontes/Montserrat-Opp.zip',
+          arquivo: 'Montserrat-Opp.zip',
+          tamanho: '10 arquivos · 1,4 MB',
+        },
+      ],
+      sistemas: [
+        {
+          nome: 'Windows',
+          icone: 'monitor',
+          passos: [
+            'Baixe os dois zips acima e extraia cada um.',
+            'Selecione todos os arquivos .ttf da pasta.',
+            'Clique com o botão direito e escolha "Instalar para todos os usuários".',
+            'Feche e reabra o Word, o Excel ou o PowerPoint.',
+          ],
+          nota: 'Se instalar só para o seu usuário, quem entrar com outro login na mesma máquina não enxerga a fonte. Se pedir senha de administrador, chame o suporte.',
+        },
+        {
+          nome: 'Mac',
+          icone: 'laptop',
+          passos: [
+            'Baixe os dois zips acima e extraia cada um.',
+            'Selecione todos os arquivos .ttf da pasta.',
+            'Duplo clique — o Livro de Fontes abre e mostra "Instalar fonte".',
+            'Feche e reabra os aplicativos do Office.',
+          ],
+          nota: 'O Livro de Fontes pode avisar que já existe uma versão. Pode substituir sem medo: é a mesma fonte, versão atual.',
+        },
+        {
+          nome: 'Google Workspace',
+          icone: 'cloud',
+          passos: [
+            'Não precisa instalar nada.',
+            'No Docs, Slides ou Sheets, abra a lista de fontes e clique em "Mais fontes".',
+            'Busque Comfortaa e Montserrat e marque as duas.',
+            'A partir daí elas ficam na sua lista, em qualquer arquivo.',
+          ],
+          nota: 'Vale para qualquer aparelho onde você entrar com a mesma conta — a escolha fica na conta, não na máquina.',
+        },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,13 +1,13 @@
 {
-  "versao": "2026.08.12-12",
-  "data": "2026-08-12",
-  "rotulo": "Norte v2026.08.12-12",
-  "nota": "Padrão de Publicação ganhou a seção do acervo releases/. Logos das Controladas lê as artes de origem de assets/.",
+  "versao": "2026.08.23-2",
+  "data": "2026-08-23",
+  "rotulo": "Norte v2026.08.23-2",
+  "nota": "Fechamento da entrega. Fontes da Marca entrou na busca do hub — quem procurar \"fonte\" ou \"instalar\" acha a página e os dois kits para baixar. A apresentação O Norte passou a carregar o carimbo de versão, que faltava. E o índice ficou completo: Ficha Cadastral da Empresa e o Laudo de Revisão do Minha Opp+ estavam publicados sem constar aqui. Da versão anterior: Comfortaa e Montserrat servidas pelo próprio site (nenhuma página depende mais do Google), botão de copiar mensagem no Contato Digital e as regras fechadas do Cartão de Visita.",
   "paginas": [
     {
       "titulo": "Central de Marca Opp+",
       "arquivo": "Central de Marca Opp+.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-08-14"
     },
     {
       "titulo": "O que você vai fazer",
@@ -40,6 +40,16 @@
       "atualizado": "2026-08-12"
     },
     {
+      "titulo": "Fontes da Marca",
+      "arquivo": "Fontes da Marca.dc.html",
+      "atualizado": "2026-08-23"
+    },
+    {
+      "titulo": "Logotipos Oficiais",
+      "arquivo": "Logotipos Oficiais.dc.html",
+      "atualizado": "2026-08-14"
+    },
+    {
       "titulo": "Logos das Controladas",
       "arquivo": "Logos das Controladas.dc.html",
       "atualizado": "2026-08-12"
@@ -62,7 +72,7 @@
     {
       "titulo": "O Norte · Apresentação",
       "arquivo": "O Norte - Apresentação.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-08-23"
     },
     {
       "titulo": "Assinatura de E-mail",
@@ -77,17 +87,17 @@
     {
       "titulo": "Cartão de Visita",
       "arquivo": "Cartão de Visita.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-08-23"
     },
     {
       "titulo": "Cartão de Visita · Arte Final",
       "arquivo": "Cartão de Visita - Arte Final.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-08-23"
     },
     {
       "titulo": "Contato Digital (vCard)",
       "arquivo": "Contato Digital (vCard).dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-08-23"
     },
     {
       "titulo": "Template de Apresentação",
@@ -108,6 +118,11 @@
       "titulo": "Ata de Reunião",
       "arquivo": "Ata de Reuniao.dc.html",
       "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Ficha Cadastral da Empresa",
+      "arquivo": "Ficha Cadastral da Empresa.dc.html",
+      "atualizado": "2026-08-14"
     },
     {
       "titulo": "Convite · Reunião de Diretoria",
@@ -213,6 +228,11 @@
       "titulo": "Minha Opp+ · Portal (conceito)",
       "arquivo": "Minha Opp+ - Portal (conceito).dc.html",
       "atualizado": "2026-08-12"
+    },
+    {
+      "titulo": "Minha Opp+ · Laudo de Revisão",
+      "arquivo": "Minha Opp+ - Laudo de Revisão.dc.html",
+      "atualizado": "2026-08-16"
     },
     {
       "titulo": "Site Institucional · chamada Minha Opp+",

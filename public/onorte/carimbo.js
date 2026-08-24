@@ -4,7 +4,7 @@
    Se a página tiver um <span data-carimbo></span>, o selo é montado ali;
    caso contrário é injetado discretamente no fim do documento. */
 (function () {
-  var VERSAO = '2026.08.12-12';
+  var VERSAO = '2026.08.23-2';
 
   var ESTADOS = {
     conferindo: ['conferindo…', '#C9CEC7'],

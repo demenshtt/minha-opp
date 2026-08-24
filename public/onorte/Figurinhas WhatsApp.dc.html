@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fontes.css">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>body { margin:0; background:#EDEFEA; } a { color:#219653; } a:hover { color:#1B7A44; }</style>
   <script src="carimbo.js"></script>
@@ -25,7 +25,7 @@
   <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
     <div style="font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase; color:#9AA097; font-weight:600;">Foto de perfil</div>
     <div id="perfil" style="width:220px; height:220px; border-radius:50%; background:radial-gradient(circle at 32% 28%, #43523F, #39453A 70%); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(57,69,58,.22);">
-      <img src="assets/icone-opp-grupo.png" alt="Grupo Opp+" style="width:58%; height:auto;">
+      <img src="assets/icone-opp-grupo-branco.png" alt="Grupo Opp+" style="width:58%; height:auto;">
     </div>
     <div style="font-size:10.5px; color:#9AA097;">O WhatsApp corta em círculo — o ícone já fica centrado com folga.</div>
   </div>
@@ -39,7 +39,7 @@
         <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">Positivo!</div>
       </div>
       <div id="fig-parabens" style="width:220px; height:220px; border-radius:26px; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; box-shadow:0 8px 22px rgba(57,69,58,.18); position:relative;">
-        <img src="assets/icone-opp-grupo.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto;">
+        <img src="assets/icone-opp-grupo-branco.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto;">
         <i data-lucide="party-popper" style="width:88px; height:88px; color:#6FCF97; stroke-width:1.8;"></i>
         <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#FFFFFF;">Parabéns!</div>
       </div>
@@ -49,7 +49,7 @@
         <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:21px; color:#39453A;">Parceria firmada</div>
       </div>
       <div id="fig-fe" style="width:220px; height:220px; border-radius:26px; background:#39453A; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; box-shadow:0 8px 22px rgba(57,69,58,.18); position:relative;">
-        <img src="assets/icone-opp-grupo.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto;">
+        <img src="assets/icone-opp-grupo-branco.png" alt="" style="position:absolute; top:15px; right:15px; height:22px; width:auto;">
         <svg viewBox="0 0 24 24" style="width:88px; height:88px; fill:none; stroke:#6FCF97; stroke-width:1.6; stroke-linecap:round;"><path d="M12 3v18M7 8h10"></path></svg>
         <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:19px; color:#FFFFFF;">Fé no trabalho</div>
       </div>
@@ -88,6 +88,22 @@
       <div style="border-radius:12px; overflow:hidden; border:1px solid #E3E6E1;"><img src="assets/fundo-opp-logos.png" alt="Fundo com logos" style="width:100%; display:block;"></div>
     </div>
     <div style="font-size:10.5px; color:#9AA097; max-width:480px; text-align:center;">Salvos na biblioteca da marca: verde liso, branco liso, com ícones e com logos — prontos para slides, capas e materiais.</div>
+  </div>
+
+  <div style="width:100%; max-width:700px; background:#FFFFFF; border:1px solid #E3E6E1; border-radius:16px; padding:26px 28px; box-sizing:border-box;">
+    <div style="font-family:'Comfortaa',sans-serif; font-weight:700; font-size:15px; color:#39453A;">Baixar os arquivos</div>
+    <div style="font-size:11.5px; color:#8A8F89; margin-top:5px; line-height:1.6;">PNG 512 × 512, o tamanho que o WhatsApp usa. No celular: toque e segure a imagem → salvar; depois use como foto de perfil ou envie na conversa.</div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+      <a href="assets/figurinhas/perfil-whatsapp.png" download style="font-size:11.5px; font-weight:600; text-decoration:none; color:#FFFFFF; background:#39453A; padding:9px 15px; border-radius:8px;">Foto de perfil</a>
+      <a href="assets/figurinhas/serie1-positivo.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">1 · Positivo</a>
+      <a href="assets/figurinhas/serie1-parabens.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">1 · Parabéns</a>
+      <a href="assets/figurinhas/serie1-parceria.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">1 · Parceria</a>
+      <a href="assets/figurinhas/serie1-fe.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">1 · Fé no trabalho</a>
+      <a href="assets/figurinhas/serie2-positivo.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">2 · Positivo</a>
+      <a href="assets/figurinhas/serie2-parabens.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">2 · Parabéns</a>
+      <a href="assets/figurinhas/serie2-parceria.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">2 · Parceria</a>
+      <a href="assets/figurinhas/serie2-fe.png" download style="font-size:11.5px; font-weight:500; text-decoration:none; color:#39453A; background:#F0F2ED; border:1px solid #E3E6E1; padding:9px 15px; border-radius:8px;">2 · Fé no trabalho</a>
+    </div>
   </div>
 
   <div style="max-width:620px; text-align:center; font-size:11px; line-height:1.7; color:#8A8F89;">Duas séries: a minimalista (cartões) e a de círculo cheio, mais chamativa em conversa. Aprovando, eu gero os PNGs prontos para você salvar no celular.</div>

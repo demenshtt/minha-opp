@@ -1,0 +1,31 @@
+/* Fontes da marca Opp+ — hospedadas no próprio Norte.
+   Comfortaa: títulos e marca. Montserrat: corpo e interface.
+   Arquivo variável: um só cobre todos os pesos.
+   Licença SIL Open Font License — ver assets/fontes/OFL-*.txt */
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('assets/fontes/Comfortaa-VariableFont_wght.ttf') format('truetype-variations'),
+       url('assets/fontes/Comfortaa-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fontes/Montserrat-VariableFont_wght.ttf') format('truetype-variations'),
+       url('assets/fontes/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fontes/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations'),
+       url('assets/fontes/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}

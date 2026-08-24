@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fontes.css">
   <script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
   <style>*, *::before, *::after { box-sizing:border-box; } body { margin:0; background:#DDE1DA; } a { color:#219653; } a:hover { color:#1B7A44; }</style>
   <script src="carimbo.js"></script>
@@ -28,12 +28,12 @@
         <sc-if value="{{ p.ehFrente }}" hint-placeholder-val="{{ true }}">
           <div id="{{ p.id }}" style="width:1134px; height:661px; background:#FFFFFF; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding:101px 115px;">
             <div style="position:absolute; left:0; top:0; bottom:0; width:16px; background:linear-gradient(180deg, #219653, #6FCF97);"></div>
-            <div style="display:flex; align-items:flex-start; justify-content:space-between;">
+            <div style="display:flex; align-items:center; gap:26px;">
               <img src="{{ p.logo }}" alt="" style="height:{{ p.logoAltura }}; width:auto; display:block;">
               <sc-if value="{{ p.mostraGrupo }}" hint-placeholder-val="{{ false }}">
-                <div style="display:flex; align-items:center; gap:16px; padding-top:9px;">
-                  <img src="assets/icone-opp-grupo.png" alt="" style="height:36px; width:auto; opacity:0.75;">
-                  <span style="font-family:'Comfortaa',sans-serif; font-size:20px; font-weight:600; letter-spacing:0.02em; color:#9AA097;">Grupo opp+</span>
+                <div style="display:flex; align-items:center; gap:26px;">
+                  <div style="width:1.5px; height:70px; background:#C9CCC7;"></div>
+                  <img src="assets/logo-opp-grupo-preto.png" alt="Grupo Opp+" style="height:41px; width:auto; display:block;">
                 </div>
               </sc-if>
             </div>
@@ -52,7 +52,10 @@
           <div id="{{ p.id }}" style="width:1134px; height:661px; background:#39453A; position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:40px;">
             <div style="position:absolute; top:-244px; right:-178px; width:667px; height:667px; border-radius:50%; background:radial-gradient(circle at 40% 40%, rgba(111,207,151,.18), transparent 62%);"></div>
             <img src="assets/logo-opp-flat-branco.png" alt="Grupo Opp+" style="width:511px; height:auto; position:relative;">
-            <div style="font-size:22px; letter-spacing:0.22em; text-transform:uppercase; color:#8FA394; position:relative;">Sorriso · Mato Grosso</div>
+            <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:16px;">
+              <div style="font-size:22px; letter-spacing:0.22em; text-transform:uppercase; color:#8FA394;">Sorriso · Mato Grosso</div>
+              <div style="font-size:18px; color:#A9B6AB; letter-spacing:0.02em;">Opp Aviação Agrícola Ltda · CNPJ 33.910.736/0001-56</div>
+            </div>
             <sc-if value="{{ qrAtivo }}" hint-placeholder-val="{{ false }}">
               <div style="position:absolute; right:101px; bottom:90px; display:flex; flex-direction:column; align-items:center; gap:10px;">
                 <div style="background:#FFFFFF; border-radius:14px; padding:12px;"><img src="{{ qrSrc }}" alt="QR vCard" style="width:150px; height:150px; display:block;"></div>
@@ -127,9 +130,11 @@ class Component extends DCLogic {
       email: this.props.email ?? 'contato@grupooppmais.com.br',
     };
     const frentes = {
-      holding: { id: 'frente-holding', rotulo: 'Frente — Grupo Opp+ (holding)', logo: 'assets/logo-opp-flat.png', logoAltura: '116px', mostraGrupo: false },
-      aviacao: { id: 'frente-aviacao', rotulo: 'Frente — Opp Aviação Agrícola', logo: 'assets/logo-opp-aviacao.png', logoAltura: '125px', mostraGrupo: true },
-      ativos: { id: 'frente-ativos', rotulo: 'Frente — Opp Gestão de Ativos', logo: 'assets/logo-opp-ativos.png', logoAltura: '125px', mostraGrupo: true },
+      // alturas de CAIXA calculadas para dar 90px de TINTA visível na unidade
+      // (tinta medida: aviação 53,2% · ativos 60,8% · grupo flat 55,0% da caixa)
+      holding: { id: 'frente-holding', rotulo: 'Frente — Grupo Opp+ (holding)', logo: 'assets/logo-opp-flat.png', logoAltura: '175px', mostraGrupo: false },
+      aviacao: { id: 'frente-aviacao', rotulo: 'Frente — Opp Aviação Agrícola', logo: 'assets/logo-opp-aviacao.png', logoAltura: '169px', mostraGrupo: true },
+      ativos: { id: 'frente-ativos', rotulo: 'Frente — Opp Gestão de Ativos', logo: 'assets/logo-opp-ativos.png', logoAltura: '148px', mostraGrupo: true },
     };
     const pranchas = (this.props.todasVariantes ?? true)
       ? [frentes.holding, frentes.aviacao, frentes.ativos]
