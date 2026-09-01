@@ -10,3 +10,6 @@ dist/
 # staging drops for O Norte releases — raw workspace dumps, not the curated archive
 releases/norte_*.zip
 entregas_old.zip
+
+# PRO>SIGA dossies — private project docs, never pushed to remote
+dossie/
