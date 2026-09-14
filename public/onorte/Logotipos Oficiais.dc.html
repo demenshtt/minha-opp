@@ -88,18 +88,13 @@
       <div>Respiro mínimo em volta do logo = altura da letra "o" do "opp". Nada entra nessa margem.</div>
       <div>Fundo claro pede a versão colorida; fundo escuro, a de fonte branca. Fundo com foto poluída: use uma faixa lisa atrás.</div>
       <div>Quem é de fora recebe o <a href="Kit Express de Marca.dc.html" style="color:#A5D6A7;">Kit Express</a> — guia + artes em alta num zip só.</div>
+      <div>O lockup só se aplica com as medidas certas: veja <a href="Adesivagem de Frota.dc.html" style="color:#A5D6A7;">Adesivagem de Frota</a> antes de mandar cortar vinil.</div>
     </div>
   </div>
 
   <div style="margin-top:26px; font-size:11px; color:#8A8F89; text-align:right;"><span data-carimbo></span></div>
 
 </div>
-    <div style="margin-top:40px; padding-top:20px; border-top:1px solid #E6E7E4; text-align:center;">
-      <a href="Central%20de%20Marca%20Opp%2B.dc.html" style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:#39453A; text-decoration:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-        Voltar à Central de Marca
-      </a>
-    </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
@@ -146,6 +141,18 @@ class Component extends DCLogic {
             { rotulo: 'Ícone branco', arquivo: 'icone-opp-grupo-branco.png', src: 'assets/icone-opp-grupo-branco.png', fundo: ESCURO, uso: 'Base dos avatares de WhatsApp por setor.' },
             { rotulo: 'Monocromático preto', arquivo: 'logo-opp-flat-preto.png', src: 'assets/logo-opp-flat-preto.png', fundo: CINZA, uso: 'Uma tinta só: gravação, carimbo, P&B.' },
             { rotulo: 'Monocromático branco', arquivo: 'logo-opp-flat-mono-branco.png', src: 'assets/logo-opp-flat-mono-branco.png', fundo: TINTA, uso: 'Uma tinta só sobre fundo escuro.' },
+          ],
+        },
+        {
+          nome: 'Lockup — Aviação + Grupo',
+          nota: 'As duas marcas na mesma superfície, só neste bloco. Fora do lockup elas nunca dividem a mesma peça. Regras de tamanho e posição na página Adesivagem de Frota.',
+          artes: [
+            { rotulo: 'Lockup (lado esquerdo)', arquivo: 'lockup-aviacao-grupo.png', src: 'assets/lockup-aviacao-grupo.png', fundo: CLARO, padrao: true, uso: 'Porta esquerda do veículo e traseira. Fundo transparente, 4000 px.' },
+            { rotulo: 'Lockup (lado direito)', arquivo: 'lockup-aviacao-grupo-espelhado.png', src: 'assets/lockup-aviacao-grupo-espelhado.png', fundo: CLARO, uso: 'Porta direita: ordem invertida dos blocos, nunca arte espelhada.' },
+            { rotulo: 'Lockup branco (esquerdo)', arquivo: 'lockup-aviacao-grupo-branco.png', src: 'assets/lockup-aviacao-grupo-branco.png', fundo: ESCURO, uso: 'Veículo prata, escuro ou alugado. Monocromático branco.' },
+            { rotulo: 'Lockup branco (direito)', arquivo: 'lockup-aviacao-grupo-branco-espelhado.png', src: 'assets/lockup-aviacao-grupo-branco-espelhado.png', fundo: ESCURO, uso: 'Porta direita em fundo escuro, ordem invertida.' },
+            { rotulo: 'Grupo Opp+ sozinho (adesivo)', arquivo: 'logo-opp-grupo-cor.png', src: 'assets/logo-opp-grupo-cor.png', fundo: CLARO, uso: 'Traseira, sem a Aviação. Leva o site, nunca o telefone.' },
+            { rotulo: 'Grupo Opp+ branco (adesivo)', arquivo: 'logo-opp-grupo-branco.png', src: 'assets/logo-opp-grupo-branco.png', fundo: ESCURO, uso: 'O mesmo, em veículo de cor escura.' },
           ],
         },
       ],

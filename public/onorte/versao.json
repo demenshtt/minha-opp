@@ -1,8 +1,8 @@
 {
-  "versao": "2026.08.23-2",
-  "data": "2026-08-23",
-  "rotulo": "Norte v2026.08.23-2",
-  "nota": "Fechamento da entrega. Fontes da Marca entrou na busca do hub — quem procurar \"fonte\" ou \"instalar\" acha a página e os dois kits para baixar. A apresentação O Norte passou a carregar o carimbo de versão, que faltava. E o índice ficou completo: Ficha Cadastral da Empresa e o Laudo de Revisão do Minha Opp+ estavam publicados sem constar aqui. Da versão anterior: Comfortaa e Montserrat servidas pelo próprio site (nenhuma página depende mais do Google), botão de copiar mensagem no Contato Digital e as regras fechadas do Cartão de Visita.",
+  "versao": "2026.09.13-2",
+  "data": "2026-09-14",
+  "rotulo": "Norte v2026.09.13-2",
+  "nota": "Rodada de desfricção. O telefone antigo saiu de todas as peças: o contato agora é do departamento, nunca da pessoa — institucional (66) 99232-0821 em rodapé, timbrado e proposta, e o cartão do Gestor Financeiro passou a trazer a linha do Financeiro, (66) 99245-7097. A especificação do MERA ainda tratava isso como pendência em aberto; agora registra a regra fechada. Três downloads que davam erro voltaram a funcionar: o kit express, o contexto do design system e o tokens.css estavam fora da pasta que sobe para o site. O link \"Voltar à Central\" e o selo de versão deixaram de aparecer no PDF — a regra vale para todas as páginas de uma vez. O Template de Apresentação ganhou botão de baixar: oito slides em PowerPoint editável. E as seis artes de lockup da frota entraram em Logotipos Oficiais, que é onde se procura logotipo.",
   "paginas": [
     {
       "titulo": "Central de Marca Opp+",
@@ -12,7 +12,7 @@
     {
       "titulo": "O que você vai fazer",
       "arquivo": "O que você vai fazer.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Padrão de Publicação",
@@ -22,7 +22,7 @@
     {
       "titulo": "Guia Rápido da Marca",
       "arquivo": "Guia Rapido da Marca.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Códice da Marca",
@@ -32,7 +32,7 @@
     {
       "titulo": "Sistema de Design + MDC",
       "arquivo": "Sistema de Design + MDC.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Arquitetura de Marcas",
@@ -62,7 +62,7 @@
     {
       "titulo": "Kit Express de Marca",
       "arquivo": "Kit Express de Marca.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Central de Marca · Registro Histórico",
@@ -77,32 +77,32 @@
     {
       "titulo": "Assinatura de E-mail",
       "arquivo": "Assinatura de E-mail.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Papel Timbrado",
       "arquivo": "Papel Timbrado.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Cartão de Visita",
       "arquivo": "Cartão de Visita.dc.html",
-      "atualizado": "2026-08-23"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Cartão de Visita · Arte Final",
       "arquivo": "Cartão de Visita - Arte Final.dc.html",
-      "atualizado": "2026-08-23"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Contato Digital (vCard)",
       "arquivo": "Contato Digital (vCard).dc.html",
-      "atualizado": "2026-08-23"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Template de Apresentação",
       "arquivo": "Template de Apresentação.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Documento de Projeto",
@@ -122,7 +122,7 @@
     {
       "titulo": "Ficha Cadastral da Empresa",
       "arquivo": "Ficha Cadastral da Empresa.dc.html",
-      "atualizado": "2026-08-14"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Convite · Reunião de Diretoria",
@@ -132,12 +132,12 @@
     {
       "titulo": "Proposta Comercial",
       "arquivo": "Proposta Comercial.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Proposta Comercial · OACO",
       "arquivo": "Proposta Comercial - OACO.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Contrato de Gestão Operacional",
@@ -182,7 +182,7 @@
     {
       "titulo": "Kit de Presença Digital",
       "arquivo": "Kit de Presença Digital.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "WhatsApp Business",
@@ -207,7 +207,7 @@
     {
       "titulo": "OppOn · Bot Institucional",
       "arquivo": "OppOn - Bot Institucional.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Adesivagem de Frota",
@@ -222,7 +222,7 @@
     {
       "titulo": "Minha Opp+",
       "arquivo": "Minha Opp+.dc.html",
-      "atualizado": "2026-08-12"
+      "atualizado": "2026-09-13"
     },
     {
       "titulo": "Minha Opp+ · Portal (conceito)",

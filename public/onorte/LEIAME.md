@@ -1,34 +1,59 @@
-# Norte v2026.08.23-2 — pacote de publicação
+# Norte v2026.09.13-2 — pacote de publicação
 
-Entrega de **23/08/2026, 04:05 (hora de Cuiabá)**.
 Este pacote É o conteúdo de `public/onorte/`. Cada arquivo daqui vai para lá, na mesma
 estrutura — nada de subpasta extra, nada de renomear.
 
 ## O que mudou nesta versão
 
-1. **Fontes da Marca entrou na busca do hub.** A página existia desde a v-1 mas não
-   era encontrável: quem digitasse "fonte", "instalar" ou "montserrat" não achava nada.
-   Agora acha a página e os dois kits `.zip` direto no resultado.
-2. **A apresentação O Norte ganhou o carimbo de versão**, que faltava — era a única
-   página do índice sem selo. Ele aparece no rodapé do slide de encerramento.
-3. **Índice completo.** `Ficha Cadastral da Empresa` e `Minha Opp+ · Laudo de Revisão`
-   estavam no ar sem constar no `versao.json`, então nunca conseguiam dizer se estavam
-   em dia. Agora constam.
+Rodada de **desfricção**: tirar o que impedia a equipe de usar os templates.
 
-Da versão anterior (v2026.08.23-1), que este pacote também carrega: as duas famílias
-tipográficas servidas pelo próprio site (nenhuma página depende mais do Google), o
-botão de copiar mensagem no Contato Digital e as regras fechadas do Cartão de Visita.
+1. **Três downloads voltaram a funcionar.** O kit express, o contexto do design system e
+   o `tokens.css` davam 404 no ar. Causa: moravam em `entregas/`, e só
+   `entregas/downloads/` é publicada. Movidos para lá e todos os links reapontados.
+2. **O telefone antigo saiu de todas as peças.** O (41) era celular pessoal. Agora o
+   contato é do departamento: institucional **(66) 99232-0821** em rodapé, timbrado,
+   proposta, guia, vCard, ficha, OppOn e presença digital; o cartão do Gestor Financeiro
+   passou à linha do Financeiro, **(66) 99245-7097**.
+3. **O PDF parou de sair sujo.** O link "Voltar à Central" e o selo de versão apareciam
+   impressos no meio do documento. A regra de impressão foi para dentro do `carimbo.js`,
+   que toda página já carrega — resolve em todas de uma vez, sem editar 45 arquivos.
+4. **Template de Apresentação ganhou arquivo.** Botão de baixar na própria página, com
+   `.pptx` editável de 8 slides gerado da página, notas de uso em cada slide.
+5. **O lockup da frota entrou em Logotipos Oficiais.** As seis artes estavam só na página
+   de Adesivagem — quem procurava logotipo não achava. Agora estão no catálogo, com
+   ponteiro para as regras de aplicação.
+6. **A especificação do MERA parou de contradizer a regra de contato.** Ela ainda tratava
+   os telefones como pendência em aberto e citava o celular pessoal como "contato
+   institucional registrado no Norte". Agora registra a regra fechada: institucional,
+   Financeiro e Operações Base I.
+
+## Correções sobre o pacote -1 (que não chegou a ser publicado)
+
+O recorte `-1` tinha dois defeitos, achados na conferência antes do commit:
+
+- **Faltava `ios-frame.jsx`.** A página `Minha Opp+ - Portal (conceito).dc.html` monta as
+  nove telas dentro dele. Publicar sem esse arquivo deixaria a página vazia no ar.
+- **O telefone pessoal sobrevivia no MERA**, num texto de pendência já vencida.
+
+Os dois estão resolvidos aqui. O `-1` não deve ser publicado.
+
+## Arquivos que precisam subir, senão algo quebra
+
+- **`arquivo-button.js`** — novo na raiz. Sem ele, o botão "Baixar PowerPoint" da página
+  `Template de Apresentação.dc.html` simplesmente não aparece.
+- **`ios-frame.jsx`** — já existe no ar e **continua necessário**. Faltava por engano no
+  recorte `-1`; está aqui. Não remover.
 
 ## Conferência antes de subir
 
-- `carimbo.js` → `VERSAO = '2026.08.23-2'`
-- `versao.json` → `"versao": "2026.08.23-2"`
+- `carimbo.js` → `VERSAO = '2026.09.13-2'`
+- `versao.json` → `"versao": "2026.09.13-2"`
 - os dois números são iguais. Se divergirem, toda página do site diz "desatualizada".
 
 ## Depois de subir
 
 Abrir **grupooppmais.com.br/onorte no celular** (não no computador que publicou) e
-conferir se o rodapé diz `Norte v2026.08.23-2` · **em dia**. Se disser "desatualizada",
+conferir se o rodapé diz `Norte v2026.09.13-2` · **em dia**. Se disser "desatualizada",
 o `versao.json` não subiu junto. Se disser "sem índice", subiu no lugar errado.
 
 ## O que este pacote NÃO leva (de propósito)
@@ -44,11 +69,11 @@ o `versao.json` não subiu junto. Se disser "sem índice", subiu no lugar errado
 
 ## Inventário
 
-- **53 páginas** (`.dc.html` e as cópias `-print`)
+- **55 páginas** (`.dc.html` e as cópias `-print`)
 - **apoio:** `support.js` · `carimbo.js` · `busca-indice.js` · `deck-stage.js` ·
   `doc-page.js` · `image-slot.js` · `print-button.js` · `word-button.js` ·
-  `ios-frame.jsx` · `fontes.css` · `index.html` · `versao.json`
-- **`assets/`** — logotipos, avatares, fotos de base, fundos, favicons e
-  `assets/fontes/` (as duas variáveis usadas pelo site + os dois kits de download)
-- **`entregas/downloads/`** — os modelos `.docx`, o `.pptx` e as artes de cartão que
-  os botões de baixar das páginas apontam
+  **`arquivo-button.js`** · `ios-frame.jsx` · `fontes.css` · `index.html` · `versao.json`
+- **`assets/`** — logotipos, lockups, avatares, fotos de base, fundos, favicons e
+  `assets/fontes/`
+- **`entregas/downloads/`** — os modelos `.docx`, o `.pptx` novo do template, as artes de
+  cartão, o kit express e os dois arquivos do design system

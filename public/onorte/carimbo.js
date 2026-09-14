@@ -4,7 +4,28 @@
    Se a página tiver um <span data-carimbo></span>, o selo é montado ali;
    caso contrário é injetado discretamente no fim do documento. */
 (function () {
-  var VERSAO = '2026.08.23-2';
+  var VERSAO = '2026.09.13-2';
+
+  /* Tela e papel são meios diferentes: o que serve para navegar no site não pode
+     sair no documento que vai para fora. Como toda página do Norte carrega este
+     arquivo, a regra mora aqui — uma vez só, em vez de repetida em 45 páginas. */
+  function regrasDeImpressao() {
+    if (document.getElementById('norte-print-rules')) return;
+    var s = document.createElement('style');
+    s.id = 'norte-print-rules';
+    s.textContent =
+      '@media print {' +
+      '  [data-carimbo-solto],' +                        /* selo injetado no fim   */
+      '  [data-nao-imprimir],' +                         /* marcação manual        */
+      '  .no-print,' +
+      '  a[href$="Central de Marca Opp+.dc.html"],' +     /* ← Voltar à Central      */
+      '  a[href$="o-norte.dc.html"],' +
+      '  a[href$="O que você vai fazer.dc.html"]' +
+      '  { display: none !important; }' +
+      '}';
+    (document.head || document.documentElement).appendChild(s);
+  }
+  regrasDeImpressao();
 
   var ESTADOS = {
     conferindo: ['conferindo…', '#C9CEC7'],
